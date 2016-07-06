@@ -1,6 +1,6 @@
 
+const hashPwd = require('./hashPwd');
+
 module.exports = {
-    parseHtml: require('./parseHtml'),
-    getVideos: require('./getVideos'),
-    getImageFromNews: require('./getImageFromNews')
+    hashPwd: hashPwd
 };

@@ -1,0 +1,52 @@
+<aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <div class="datoutie-img img-rounded">
+                    <div class="datoutie-name">{{ user.name | first() }}</div>
+                </div>
+            </div>
+            <div class="pull-left info">
+                <p>{{ user.name }}</p>
+                <!-- Status -->
+                <a href="#">{{ user.email }}</a>
+            </div>
+        </div>
+
+        {#暫時隱藏起來<!-- search form (Optional) -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                    </button>
+                  </span>
+            </div>
+        </form>#}
+        <!-- /.search form -->
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+            <li class="header">HEADER</li>
+            {# user #}
+            {% if route.type == 'user' %}
+                <li class="active"><a href="/user"><i class="fa fa-users"></i> <span>會員管理</span></a></li>
+            {% else %}
+                <li><a href="/user"><i class="fa fa-users"></i> <span>會員管理</span></a></li>
+            {% endif %}
+
+            {# rss #}
+            {% if route.type == 'rss' %}
+                <li class="active"><a href="/rss"><i class="fa fa-rss"></i> <span>選單管理</span></a></li>
+            {% else %}
+                <li><a href="/rss"><i class="fa fa-rss"></i> <span>選單管理</span></a></li>
+            {% endif %}
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>
