@@ -5,6 +5,10 @@
     position: relative;
     font-size: 15px;
 }
+.sidebar-collapse .datoutie-img {
+    width: 30px;
+    height: 30px;
+}
 .datoutie-name {
     color: #27b6e8;
     left: 50%;
