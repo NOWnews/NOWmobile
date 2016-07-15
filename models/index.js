@@ -15,8 +15,11 @@ console.log(`mongodb connect to: ${config.mongodb.host}/${config.mongodb.dbName}
 autoIncrement.initialize(connection);
 
 const user = require('./user');
+const menu = require('./menu');
 
 module.exports = {
     // 後台管理者
-    user: user
+    user: user,
+    // 手機的 menu 設定
+    menu: menu
 };

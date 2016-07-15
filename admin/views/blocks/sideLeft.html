@@ -39,11 +39,11 @@
                 <li><a href="/user"><i class="fa fa-users"></i> <span>會員管理</span></a></li>
             {% endif %}
 
-            {# rss #}
-            {% if route.type == 'rss' %}
-                <li class="active"><a href="/rss"><i class="fa fa-rss"></i> <span>選單管理</span></a></li>
+            {# menu #}
+            {% if route.type == 'menu' %}
+                <li class="active"><a href="/menu"><i class="fa fa-list-ol"></i> <span>選單管理</span></a></li>
             {% else %}
-                <li><a href="/rss"><i class="fa fa-rss"></i> <span>選單管理</span></a></li>
+                <li><a href="/menu"><i class="fa fa-list-ol"></i> <span>選單管理</span></a></li>
             {% endif %}
         </ul>
         <!-- /.sidebar-menu -->

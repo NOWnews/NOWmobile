@@ -2,6 +2,7 @@
 const auth = require('./auth');
 const user = require('./user');
 const home = require('./home');
+const menu = require('./menu');
 
 module.exports = function(app) {
 
@@ -10,6 +11,7 @@ module.exports = function(app) {
 
     app.use('/', auth);
     app.use('/', user);
+    app.use('/', menu);
 
 
 
