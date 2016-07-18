@@ -6,7 +6,7 @@ const redis = require('../../redis');
 
 router.route('/')
     .get(function(req, res, next) {
-        return res.send('Hello');
+        return res.render('home/home');
     });
 
 module.exports = router;

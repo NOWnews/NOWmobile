@@ -22,8 +22,8 @@ module.exports = function(app) {
     // express session setting
     app.set('trust proxy', 1);
     app.use(cookieSession({
-        name: 'mobile',
-        keys: ['NOWmobile', 'mobile']
+        name: 'adminMobile',
+        keys: ['NOWAdminMobile', 'adminMobile']
     }));
 
     // view engine 設定與 views 擺放位置設定

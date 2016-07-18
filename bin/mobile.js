@@ -1,5 +1,6 @@
 require('babel-core/register');
 require('babel-polyfill');
+require('../global.js');
 
 let mobile = require('../mobile.js');
 let http = require('http');

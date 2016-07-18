@@ -11,8 +11,8 @@ mobile.set('port', port);
 
 var server = http.createServer(mobile);
 server.listen(port);
-console.log(`-------------------------------`);
-console.log(`Start NOWmobile Admin`);
-console.log(`Listen Port ${port}`);
-console.log(`${env} mode`);
-console.log(`-------------------------------`);
+console.log(`-------------------------------`.magenta);
+console.log(`Start NOWmobile Admin`.magenta);
+console.log(`Listen Port ${port}`.magenta);
+console.log(`${env} mode`.magenta);
+console.log(`-------------------------------`.magenta);

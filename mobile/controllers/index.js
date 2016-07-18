@@ -1,9 +1,9 @@
 
-const test = require('./test');
+const home = require('./home');
 
 module.exports = function(app) {
 
-    app.use('/', test);
+    app.use('/', home);
 
     return function(req, res, next) {
         return next();
