@@ -4,7 +4,7 @@
   "description": "NOWnews mobile service",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=NOWmobile* && npm install && NODE_ENV=staging ./node_modules/nodemon/bin/nodemon.js ./bin/mobile.js",
+    "start": "DEBUG=NOWmobile* && npm install && NODE_ENV=staging ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
     "admin": "DEBUG=NOWmobile* && npm install && NODE_ENV=staging ./node_modules/nodemon/bin/nodemon.js ./bin/admin.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

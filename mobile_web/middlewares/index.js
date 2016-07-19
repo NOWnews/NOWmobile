@@ -26,14 +26,14 @@ module.exports = function(app) {
 
     // view engine 設定與 views 擺放位置設定
     app.set('view engine', 'html');
-    nunjucks.configure( rootPath + '/mobile/views/', {
+    nunjucks.configure( rootPath + '/mobile_web/views/', {
         autoescape: true,
         express: app,
         watch: true
     });
 
     // 靜態檔案位置
-    app.use('/static', express.static( rootPath + '/mobile/public/'));
+    app.use('/static', express.static( rootPath + '/mobile_web/public/dist'));
 
     // overwrite put and delete method
     app.use(methodOverride(function(req, res) {

@@ -2,7 +2,7 @@ require('babel-core/register');
 require('babel-polyfill');
 require('../global.js');
 
-let mobile = require('../mobile.js');
+let mobile = require('../mobile_web.js');
 let http = require('http');
 
 let env = process.env.NODE_ENV;

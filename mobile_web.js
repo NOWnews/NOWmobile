@@ -1,8 +1,8 @@
 import express from 'express';
 
-const controllers = require('./mobile/controllers');
-const middlewares = require('./mobile/middlewares');
-const errorHandlers = require('./mobile/errorHandlers');
+const controllers = require('./mobile_web/controllers');
+const middlewares = require('./mobile_web/middlewares');
+const errorHandlers = require('./mobile_web/errorHandlers');
 
 let app = express();
 
