@@ -1,58 +1,56 @@
 {% extends "../base.html" %}
 {% block container %}
-<div id="sidedrawer" class="mui--no-user-select">
-  <div id="sidedrawer-brand" class="mui--appbar-line-height">Brand.io</div>
-  <div class="mui-divider"></div>
-  <ul>
-    <li>
-      <strong>Category 1</strong>
-      <ul>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#">Item 3</a></li>
-      </ul>
-    </li>
-    <li>
-      <strong>Category 2</strong>
-      <ul>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#">Item 3</a></li>
-      </ul>
-    </li>
-    <li>
-      <strong>Category 3</strong>
-      <ul>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#">Item 3</a></li>
-      </ul>
-    </li>
-  </ul>
-</div>
-<header id="header">
-  <div class="mui-appbar mui--appbar-line-height">
+    <header class="header">
+        <nav class="mui-container-fluid">
+            <table width="100%">
+                <tr class="mui--appbar-height">
+                    <td>
+                        <button class="mui-btn mui-btn--flat mui-btn--primary mui-btn--fab">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </td>
+                    <td class="mui--text-center">
+                        <img src="http://www.nownews.com/assets/images/logo.png" style="width: 260px;" title="NOWnews"/>
+                    </td>
+                    <td align="right">
+                        <button class="mui-btn mui-btn--flat mui-btn--primary mui-btn--fab">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+        <nav class="category-select mui-container-fluid">
+            <ul>
+                <li class=""><a href="/realtimenews/section/new" data-role="none"><span>最新</span></a></li>
+                <li class="on"><a href="/realtimenews/section/recommend" data-role="none"><span>焦點</span></a></li>
+                <li class=""><a href="/realtimenews/section/hot" data-role="none"><span>熱門</span></a></li>
+                <li class=""><a href="/realtimenews/section/animal" data-role="none"><span>動物</span></a></li>
+                <li class=""><a href="/realtimenews/section/strange" data-role="none"><span>副刊</span></a></li>
+                <li class=""><a href="/realtimenews/section/3c" data-role="none"><span>3C</span></a></li>
+                <li class=""><a href="/realtimenews/section/video" data-role="none"><span>影片</span></a></li>
+                <li class=""><a href="/realtimenews/section/sports" data-role="none"><span>體育</span></a></li>
+                <li class=""><a href="/realtimenews/section/entertainment" data-role="none"><span>娛樂</span></a></li>
+                <li class=""><a href="/realtimenews/section/fashion" data-role="none"><span>時尚</span></a></li>
+                <li class=""><a href="/realtimenews/section/life" data-role="none"><span>生活</span></a></li>
+                <li class=""><a href="/realtimenews/section/local" data-role="none"><span>社會</span></a></li>
+                <li class=""><a href="/realtimenews/section/international" data-role="none"><span>國際</span></a></li>
+                <li class=""><a href="/realtimenews/section/finance" data-role="none"><span>財經</span></a></li>
+                <li class=""><a href="/realtimenews/section/property" data-role="none"><span>地產</span></a></li>
+                <li class=""><a href="/realtimenews/section/politics" data-role="none"><span>政治</span></a></li>
+                <li class=""><a href="/realtimenews/section/forum" data-role="none"><span>論壇</span></a></li>
+                <li class=""><a href="/realtimenews/section/nextmag" data-role="none"><span>壹週刊</span></a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="mui-container-fluid">
-      <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
-      <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
-      <span class="mui--text-title mui--visible-xs-inline-block mui--visible-sm-inline-block">Brand.io</span>
+        <div class="mui-row">
+            <div class="mui-col-md-12">md-12</div>
+        </div>
     </div>
-  </div>
-</header>
-<div id="content-wrapper">
-  <div class="mui--appbar-height"></div>
-  <div class="mui-container-fluid">
-    <br>
-    <h1>Brand.io</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin volutpat molestie. Nullam id tempor nulla. Aenean sit amet urna et elit pharetra consequat. Aliquam fringilla tortor vitae lectus tempor, tempor bibendum nunc elementum. Etiam ultrices tristique diam, vitae sodales metus bibendum id. Suspendisse blandit ligula eu fringilla pretium. Mauris dictum gravida tortor eu lacinia. Donec purus purus, ornare sit amet consectetur sed, dictum sit amet ex. Vivamus sit amet imperdiet tellus. Quisque ultrices risus a massa laoreet, vitae tempus sem congue. Maecenas nec eros ut lectus vehicula rutrum. Donec consequat tincidunt arcu non faucibus. Duis elementum, ante venenatis lacinia cursus, turpis massa congue magna, sed dapibus felis nibh sed tellus. Nam consectetur non nibh vitae sodales. Pellentesque malesuada dolor nec mi volutpat, eget vehicula eros ultrices.</p>
-    <p>Aenean vehicula tortor a tellus porttitor, id elementum est tincidunt. Etiam varius odio tortor. Praesent vel pulvinar sapien. Praesent ac sodales sem. Phasellus id ultrices massa. Sed id erat sit amet magna accumsan vulputate eu at quam. Etiam feugiat semper imperdiet. Sed a sem vitae massa condimentum vestibulum. In vehicula, quam vel aliquet aliquam, enim elit placerat libero, at pretium nisi lorem in ex. Vestibulum lorem augue, semper a efficitur in, dictum vitae libero. Donec velit est, sollicitudin a volutpat quis, iaculis sit amet metus. Nulla at ante nec dolor euismod mattis cursus eu nisl.</p>
-    <p>Quisque interdum facilisis consectetur. Nam eu purus purus. Curabitur in ligula quam. Nam euismod ligula eu tellus pellentesque laoreet. Aliquam erat volutpat. Curabitur eu bibendum velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc efficitur lorem sit amet quam porta pharetra. Cras ultricies pellentesque eros sit amet semper.</p>
-  </div>
-</div>
-<footer id="footer">
-  <div class="mui-container-fluid">
-    <br>
-    Made with ♥ by <a href="https://www.muicss.com">MUI</a>
-  </div>
-</footer>
+    <div class="mui-container-fluid">
+        <div class="mui-row content-box">
+            <div class="mui-col-md-12">md-12</div>
+        </div>
+    </div>
 {% endblock%}

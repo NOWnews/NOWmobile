@@ -1,0 +1,31 @@
+/*header*/
+.header {
+    background: #777;
+}
+.header .mui-btn {
+    font-size: 30px;
+}
+
+/*category*/
+.category-select {
+    background: #000;
+    overflow: hidden;
+    height: 45px;
+}
+.category-select > ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: scroll;
+}
+.category-select > ul > li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+/*content*/
+.content-box {
+
+}
