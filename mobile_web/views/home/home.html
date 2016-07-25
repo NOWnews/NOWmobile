@@ -1,25 +1,24 @@
 {% extends "../base.html" %}
 {% block container %}
-    <header class="header">
-        <nav class="mui-container-fluid">
+    <header class="mui-appbar mui--z1">
+        <div class="mui-container">
             <table width="100%">
                 <tr class="mui--appbar-height">
-                    <td>
-                        <button class="mui-btn mui-btn--flat mui-btn--primary mui-btn--fab">
-                            <i class="fa fa-bars"></i>
-                        </button>
+                    <td class="mui--text-title">
+                        <a class="header-btn" href="#"><i class="fa fa-bars"></i></a>
                     </td>
                     <td class="mui--text-center">
-                        <img src="http://www.nownews.com/assets/images/logo.png" style="width: 260px;" title="NOWnews"/>
+                        <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
                     </td>
-                    <td align="right">
-                        <button class="mui-btn mui-btn--flat mui-btn--primary mui-btn--fab">
-                            <i class="fa fa-search"></i>
-                        </button>
+                    <td class="mui--text-title" align="right">
+                        <a class="header-btn" href="#"><i class="fa fa-search"></i></a>
                     </td>
                 </tr>
             </table>
-        </nav>
+        </div>
+    </header>
+    <div id="content-wrapper">
+        <div class="mui--appbar-height"></div>
         <nav class="category-select mui-container-fluid">
             <ul>
                 <li class=""><a href="/realtimenews/section/new" data-role="none"><span>最新</span></a></li>
@@ -42,15 +41,51 @@
                 <li class=""><a href="/realtimenews/section/nextmag" data-role="none"><span>壹週刊</span></a></li>
             </ul>
         </nav>
-    </header>
-    <div class="mui-container-fluid">
-        <div class="mui-row">
-            <div class="mui-col-md-12">md-12</div>
+        <div class="mui-container-fluid">
+            <div class="mui-row">
+                <!-- <div class="mui-col-md-12"> -->
+                    <div class="single-item">
+                        <div>
+                            <span class="category-title">國際</span>
+                            <div style="position: absolute;bottom:0;color:#fff;font-size:13px;display:block;height:50px;">
+                                <p>青年海外打工圓夢去！8月打工協定的國家增加至15</p>
+                            </div>
+                            <img style="width: 100%;" src="/static/img/demo-img.jpg" />
+
+                        </div>
+                        <div>
+                            <span class="category-title">國際2</span>
+                            <div style="position: absolute;bottom:0;color:#fff;font-size:13px;display:block;height:50px;">
+                                <p>青年海外打工圓夢去！8月打工協定的國家增加至15</p>
+                            </div>
+                            <img style="width: 100%;" src="/static/img/demo-img.jpg" />
+
+                        </div>
+                        <div>
+                            <span class="category-title">國際3</span>
+                            <div style="position: absolute;bottom:0;color:#fff;font-size:13px;display:block;height:50px;">
+                                <p>青年海外打工圓夢去！8月打工協定的國家增加至15</p>
+                            </div>
+                            <img style="width: 100%;" src="/static/img/demo-img.jpg" />
+
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
         </div>
-    </div>
-    <div class="mui-container-fluid">
-        <div class="mui-row content-box">
-            <div class="mui-col-md-12">md-12</div>
+
+        <div class="news-block">
+
         </div>
+        <br>
+        <br>
+        <button class="mui-btn mui-btn--raised">Get started</button>
     </div>
+    <footer>
+        <div class="mui-container mui--text-center">
+            <span class="mui--text-dark">
+                今日傳媒(股)公司版權所有 不許轉載 <br> © 2016 NOWnews.com. All Rights Reserved.
+            </span>
+        </div>
+    </footer>
 {% endblock%}

@@ -1,12 +1,17 @@
 /*header*/
-.header {
+
+
+/*.header {
     background: #777;
 }
 .header .mui-btn {
     font-size: 30px;
-}
+}*/
+
 
 /*category*/
+
+
 .category-select {
     background: #000;
     overflow: hidden;
@@ -25,7 +30,118 @@
     font-size: 20px;
     padding: 10px 20px;
 }
-/*content*/
-.content-box {
 
+
+/*content*/
+
+.content-box {}
+
+/**
+ * Body CSS
+ */
+
+html, body {
+    height: 100%;
+}
+html, body, input, textarea, buttons {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+/**
+ * Header CSS
+ */
+
+header.mui-appbar {
+    background-color: #444;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+header ul.mui-list--inline {
+    margin-bottom: 0;
+}
+header a {
+    color: white;
+}
+header a:hover {
+    color: white;
+}
+header .header-btn {
+    color: #1976d2;
+}
+
+header .mobile-logo {
+    height: 30px;
+}
+
+/**
+ * 輪播 CSS
+ */
+
+.single-item {
+    /*overflow: hidden;*/
+    position: relative;
+}
+
+/* 豆子 CSS
+ */
+.single-item .slick-dots {
+    bottom: initial;
+    top: 0;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.single-item .slick-dots li {
+    width: 5px;
+}
+
+.single-item .slick-dots li.slick-active button:before {
+    color: #fff;
+    opacity: 1;
+}
+.single-item .slick-dots li button:before {
+    color: #fff;
+    font-size: 12px;
+}
+
+/* 左右箭頭 CSS
+ */
+.single-item .slick-next {
+    right: 0;
+}
+.single-item .slick-prev {
+    left: 0;
+    z-index: 1;
+}
+
+.single-item .category-title {
+    position: absolute;
+    padding:5px;
+    color:#1976d2;
+    font-size:16px;
+    font-weight:900;
+}
+
+/**
+ * Content CSS
+ */
+
+#content-wrapper {
+    min-height: 100%;
+}
+
+/**
+ * Footer CSS
+ */
+
+footer {
+    height: 60px;
+    background-color: #eee;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
 }

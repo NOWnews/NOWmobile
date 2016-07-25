@@ -104,6 +104,7 @@
       "NODE_ENV": false,
       "$": false,
       "swal": false,
+      "fetch": true,
       "is": false
   }
 }
