@@ -135,6 +135,47 @@ header .mobile-logo {
     min-height: 100%;
 }
 
+.news-block {
+    position: relative;
+}
+.news-block .category-title {
+    position: absolute;
+    background: rgba(255,255,255,0.8);
+    min-width: 100px;
+    text-align: center;
+    padding: 7px 0;
+    right: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.news-block .news-info {
+    position: absolute;
+    bottom: -10px;
+    background: url(/static/img/news-info-bg.png);
+    color: #333;
+    width: 49%;
+    font-size: 14px;
+    font-weight: bold;
+    background-size: 100% 100%;
+}
+.news-block .news-info .news-date {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+/*.news-block .news-info .date {
+    font-size:
+}*/
+
+.nownews-wrapper {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: auto;
+}
+
 /**
  * Footer CSS
  */
