@@ -109,6 +109,24 @@ header .mobile-logo {
     font-size: 12px;
 }
 
+.slick-news {
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slick-news .slick-news-info {
+    position: absolute;
+    bottom:0;
+    color:#fff;
+    font-size:15px;
+    height:60px;
+    padding: 20px 10px;
+    background: url(/static/img/slick-news-info-bg.png);
+    width: 100%;
+    background-size: 100% 100%;
+}
+
 /* 左右箭頭 CSS
  */
 .single-item .slick-next {
@@ -117,14 +135,6 @@ header .mobile-logo {
 .single-item .slick-prev {
     left: 0;
     z-index: 1;
-}
-
-.single-item .category-title {
-    position: absolute;
-    padding:5px;
-    color:#1976d2;
-    font-size:16px;
-    font-weight:900;
 }
 
 /**
@@ -137,16 +147,23 @@ header .mobile-logo {
 
 .news-block {
     position: relative;
+    margin-bottom: 30px;
+    height: 250px;
+    overflow: hidden;
 }
 .news-block .category-title {
     position: absolute;
-    background: rgba(255,255,255,0.8);
-    min-width: 100px;
+    background: #fff;
+    min-width: 60px;
     text-align: center;
     padding: 7px 0;
     right: 0;
     font-size: 12px;
     font-weight: bold;
+    border-radius: 0 0 0 5px;
+    -moz-border-radius: 0 0 0 5px; /* Firefox */
+    -webkit-border-radius: 0 0 0 5px; /* Safari, Chrome */
+    -khtml-border-radius: 0 0 0 5px; /* Konqueror */
 }
 
 .news-block .news-info {
@@ -154,10 +171,12 @@ header .mobile-logo {
     bottom: -10px;
     background: url(/static/img/news-info-bg.png);
     color: #333;
-    width: 49%;
+    width: 80%;
     font-size: 14px;
     font-weight: bold;
     background-size: 100% 100%;
+    padding: 0 10px;
+    left: -2px;
 }
 .news-block .news-info .news-date {
     font-size: 12px;

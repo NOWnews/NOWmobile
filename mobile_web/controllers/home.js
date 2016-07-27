@@ -20,7 +20,11 @@ router.route('/')
                 return Promise.resolve(json);
             });
             debug('headLineNews = %j', headLineNews);
-            return res.render('home/home', {news: headLineNews});
+            if(req.query.data === 'PLAYJJ'){
+                return res.json({newsList: headLineNews});
+            } else {
+                return res.render('home/home', {newsList: headLineNews});
+            }
         });
 
     });

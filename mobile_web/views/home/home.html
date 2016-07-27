@@ -22,23 +22,6 @@
         <nav class="category-select mui-container-fluid">
             <ul>
                 <li class=""><a href="/realtimenews/section/new" data-role="none"><span>最新</span></a></li>
-                <li class="on"><a href="/realtimenews/section/recommend" data-role="none"><span>焦點</span></a></li>
-                <li class=""><a href="/realtimenews/section/hot" data-role="none"><span>熱門</span></a></li>
-                <li class=""><a href="/realtimenews/section/animal" data-role="none"><span>動物</span></a></li>
-                <li class=""><a href="/realtimenews/section/strange" data-role="none"><span>副刊</span></a></li>
-                <li class=""><a href="/realtimenews/section/3c" data-role="none"><span>3C</span></a></li>
-                <li class=""><a href="/realtimenews/section/video" data-role="none"><span>影片</span></a></li>
-                <li class=""><a href="/realtimenews/section/sports" data-role="none"><span>體育</span></a></li>
-                <li class=""><a href="/realtimenews/section/entertainment" data-role="none"><span>娛樂</span></a></li>
-                <li class=""><a href="/realtimenews/section/fashion" data-role="none"><span>時尚</span></a></li>
-                <li class=""><a href="/realtimenews/section/life" data-role="none"><span>生活</span></a></li>
-                <li class=""><a href="/realtimenews/section/local" data-role="none"><span>社會</span></a></li>
-                <li class=""><a href="/realtimenews/section/international" data-role="none"><span>國際</span></a></li>
-                <li class=""><a href="/realtimenews/section/finance" data-role="none"><span>財經</span></a></li>
-                <li class=""><a href="/realtimenews/section/property" data-role="none"><span>地產</span></a></li>
-                <li class=""><a href="/realtimenews/section/politics" data-role="none"><span>政治</span></a></li>
-                <li class=""><a href="/realtimenews/section/forum" data-role="none"><span>論壇</span></a></li>
-                <li class=""><a href="/realtimenews/section/nextmag" data-role="none"><span>壹週刊</span></a></li>
             </ul>
         </nav>
         <div class="nownews-wrapper">
@@ -46,59 +29,49 @@
                 <div class="mui-row">
                     <!-- <div class="mui-col-md-12"> -->
                         <div class="single-item">
-                            <div>
-                                <span class="category-title">國際</span>
-                                <div style="position: absolute;bottom:0;color:#fff;font-size:13px;display:block;height:50px;">
-                                    <p>青年海外打工圓夢去！8月打工協定的國家增加至15</p>
-                                </div>
-                                <img style="width: 100%;" src="/static/img/demo-img.jpg" />
-
-                            </div>
-                            <div>
-                                <span class="category-title">國際2</span>
-                                <div style="position: absolute;bottom:0;color:#fff;font-size:13px;display:block;height:50px;">
-                                    <p>青年海外打工圓夢去！8月打工協定的國家增加至15</p>
-                                </div>
-                                <img style="width: 100%;" src="/static/img/demo-img.jpg" />
-
-                            </div>
-                            <div>
-                                <span class="category-title">國際3</span>
-                                <div style="position: absolute;bottom:0;color:#fff;font-size:13px;display:block;height:50px;">
-                                    <p>青年海外打工圓夢去！8月打工協定的國家增加至15</p>
-                                </div>
-                                <img style="width: 100%;" src="/static/img/demo-img.jpg" />
-
-                            </div>
+                            {% for news in newsList %}
+                                {% if loop.index < 4 %}
+                                    <div class="slick-news">
+                                        <a href="/{{ news._id }}">
+                                            <div class="slick-news-info">
+                                                <p>{{ news.field_short_title.value }}</p>
+                                            </div>
+                                            <img style="width: 100%;min-height:100%;" src="{{ news.image.url }}" />
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
 
-        <div class="mui-divider"></div>
+        <!-- <div class="mui-divider"></div> -->
 
         <div class="nownews-wrapper">
-            <div class="news-block">
-                <div class="mui-container-fluid">
-                    <div class="mui-row">
-                        <a href="#">
-                        <div class="category-title">
-                            <span>國際</span>
+            {% for news in newsList %}
+                {% if loop.index >= 4 %}
+                    <div class="news-block">
+                        <div class="mui-container-fluid">
+                            <div class="mui-row">
+                                <a href="/{{ news._id }}">
+                                    <div class="category-title">
+                                        <span>{% if news.category == null %}不分類{% endif %}{{ news.category }}</span>
+                                    </div>
+                                    <img style="width: 100%;min-height:100%;" src="{{ news.image.url }}" />
+                                    <div class="news-info">
+                                        <p class="news-date mui--text-subhead">{{ news.createdAt }}</p>
+                                        <p>{{ news.field_short_title.value }}</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <img style="width: 100%;" src="/static/img/demo-img.jpg" />
-                        <div class="news-info">
-                            <p class="news-date mui--text-subhead">2016-06-23 12:30</p>
-                            <p>女星被前夫拿菜刀追砍！　再也不敢結婚</p>
-                        </div>
-                        </a>
                     </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
         <br>
         <br>
-        <button class="mui-btn mui-btn--raised">Get started</button>
     </div>
     <footer>
         <div class="mui-container mui--text-center">
