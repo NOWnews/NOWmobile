@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
     <head>
-
         {% include "./blocks/head-meta.html" %}
         {% include "./blocks/head-include.html" %}
-
     </head>
 
     <body>
+        {% include "./blocks/header.html" %}
         {% block container %}{% endblock %}
+        {% include "./blocks/footer.html" %}
     </body>
 
 </html>

@@ -4,33 +4,27 @@ let router = express.Router();
 const co = require('co');
 const fetch = require('node-fetch');
 
-const debug = require('debug')('NOWmobile:controllers:home');
+const debug = require('debug')('NOWmobile:controllers:news');
 const models = require('../../models');
 const redis = require('../../redis');
 
-router.route('/')
+router.route('/news/:newsId')
     .get(function(req, res, next) {
         let v3Api = 'http://61.67.121.26:5000';
+        let newsId = req.params.newsId;
         co(function*() {
-            var headLineNews = yield fetch(v3Api + '/headline', {
+            var news = yield fetch(`${v3Api}/news/${newsId}` , {
                 timeout: 3000
             }).then(function(res) {
                 return res.json();
             }).then(function(json) {
                 return Promise.resolve(json);
             });
-            var mainCategory = yield fetch(v3Api + '/category', {
-                timeout: 3000
-            }).then(function(res) {
-                return res.json();
-            }).then(function(json) {
-                return Promise.resolve(json);
-            });
-            debug('headLineNews = %j', headLineNews);
+            debug('news = %j', news);
             if(req.query.data === 'PLAYJJ'){
-                return res.json({newsList: headLineNews});
+                return res.json({news: news});
             } else {
-                return res.render('home/home', {newsList: headLineNews, mainCategory: mainCategory});
+                return res.render('one/news', {news: news});
             }
         });
 

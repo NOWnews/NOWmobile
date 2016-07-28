@@ -1,52 +1,34 @@
 {% extends "../base.html" %}
 {% block container %}
-    <header class="mui-appbar mui--z1">
-        <div class="mui-container">
-            <table width="100%">
-                <tr class="mui--appbar-height">
-                    <td class="mui--text-title">
-                        <a class="header-btn" href="#"><i class="fa fa-bars"></i></a>
-                    </td>
-                    <td class="mui--text-center">
-                        <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
-                    </td>
-                    <td class="mui--text-title" align="right">
-                        <a class="header-btn" href="#"><i class="fa fa-search"></i></a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </header>
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
         <nav class="category-select mui-container-fluid">
             <ul>
-                <li class=""><a href="/realtimenews/section/new" data-role="none"><span>最新</span></a></li>
+                {% for category in mainCategory %}
+                    <li class=""><a href="/taxonomy/{{ category.name }}"><span>{{ category.name }}</span></a></li>
+                {% endfor %}
             </ul>
         </nav>
         <div class="nownews-wrapper">
             <div class="mui-container-fluid">
                 <div class="mui-row">
-                    <!-- <div class="mui-col-md-12"> -->
-                        <div class="single-item">
-                            {% for news in newsList %}
-                                {% if loop.index < 4 %}
-                                    <div class="slick-news">
-                                        <a href="/{{ news._id }}">
-                                            <div class="slick-news-info">
-                                                <p>{{ news.field_short_title.value }}</p>
-                                            </div>
-                                            <img style="width: 100%;min-height:100%;" src="{{ news.image.url }}" />
-                                        </a>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
+                    <div class="single-item">
+                        {% for news in newsList %}
+                            {% if loop.index < 4 %}
+                                <div class="slick-news">
+                                    <a href="/news/{{ news._id }}">
+                                        <div class="slick-news-info">
+                                            <p>{{ news.field_short_title.value }}</p>
+                                        </div>
+                                        <img class="news-main-image" src="{{ news.image.url }}" />
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="mui-divider"></div> -->
 
         <div class="nownews-wrapper">
             {% for news in newsList %}
@@ -54,11 +36,11 @@
                     <div class="news-block">
                         <div class="mui-container-fluid">
                             <div class="mui-row">
-                                <a href="/{{ news._id }}">
+                                <a href="/news/{{ news._id }}">
                                     <div class="category-title">
                                         <span>{% if news.category == null %}不分類{% endif %}{{ news.category }}</span>
                                     </div>
-                                    <img style="width: 100%;min-height:100%;" src="{{ news.image.url }}" />
+                                    <img class="news-main-image" src="{{ news.image.url }}" />
                                     <div class="news-info">
                                         <p class="news-date mui--text-subhead">{{ news.createdAt }}</p>
                                         <p>{{ news.field_short_title.value }}</p>
@@ -73,11 +55,4 @@
         <br>
         <br>
     </div>
-    <footer>
-        <div class="mui-container mui--text-center">
-            <span class="mui--text-dark">
-                今日傳媒(股)公司版權所有 不許轉載 <br> © 2016 NOWnews.com. All Rights Reserved.
-            </span>
-        </div>
-    </footer>
-{% endblock%}
+{% endblock %}

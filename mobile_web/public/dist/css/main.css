@@ -16,6 +16,8 @@
     background: #000;
     overflow: hidden;
     height: 45px;
+    padding: 0 30px;
+    -webkit-overflow-scrolling: touch;
 }
 .category-select > ul {
     width: 100%;
@@ -28,7 +30,7 @@
 .category-select > ul > li {
     display: inline-block;
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 10px 10px;
 }
 
 
@@ -184,15 +186,16 @@ header .mobile-logo {
     margin: 0;
 }
 
-/*.news-block .news-info .date {
-    font-size:
-}*/
-
 .nownews-wrapper {
     width: 100%;
     min-width: 320px;
     max-width: 640px;
     margin: auto;
+}
+
+.news-main-image {
+    width: 100%;
+    min-height:100%;
 }
 
 /**
