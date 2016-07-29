@@ -2,9 +2,99 @@
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
-        <div class="nownews-wrapper">
-            <h1>one page</h1>
+        <div class="nownews-wrapper news-one-page">
+            <h2>{{ news.summary }}</h2>
+            <div class="mini-info">
+                <p class="mui--text-dark">{{ news.author }}</p>
+                <p class="mui--text-dark"><i class="fa fa-clock-o fa-fw"></i>{{ news.createdAt}}</p>
+                <div class="font-size-controllers">
+                    <a class="font-link font-size-large mui-btn mui-btn--flat">A</a>
+                    <a class="font-link font-size-middle mui-btn mui-btn--flat">A</a>
+                    <a class="font-link font-size-small mui-btn mui-btn--flat">A</a>
+                </div>
+            </div>
 
+            <div class="news-body">
+                {{ news.htmlBody | safe }}
+            </div>
+            <div class="arrow-block mui--appbar-line-height">
+                <div class="prev-arrow mui--text-nowrap">
+                    <span>{{ news.shortTitle }}</span>
+                </div>
+                <div class="next-arrow mui--text-nowrap mui--text-right">
+                    <span>{{ news.shortTitle }}</span>
+                </div>
+            </div>
+
+            <div class="related-news-block">
+                <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
+                <div class="mui-row one-news">
+                    <div class="mui-col-xs-5">
+                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">國際</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ news.summary }}</span>
+                    </div>
+                </div>
+                <div class="mui-row one-news">
+                    <div class="mui-col-xs-5">
+                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">國際</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ news.summary }}</span>
+                    </div>
+                </div>
+                <div class="mui-row one-news">
+                    <div class="mui-col-xs-5">
+                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">國際</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ news.summary }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="related-news-block">
+                <h3><i class="fa fa-bolt fa-fw"></i>頭條新聞</h3>
+                <div class="mui-row one-news">
+                    <div class="mui-col-xs-5">
+                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">國際</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ news.summary }}</span>
+                    </div>
+                </div>
+                <div class="mui-row one-news">
+                    <div class="mui-col-xs-5">
+                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">國際</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ news.summary }}</span>
+                    </div>
+                </div>
+                <div class="mui-row one-news">
+                    <div class="mui-col-xs-5">
+                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">國際</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ news.summary }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="freeBody">
+                {{ news.freeBody | safe }}
+            </div>
         </div>
     </div>
 

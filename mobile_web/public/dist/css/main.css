@@ -198,6 +198,81 @@ header .mobile-logo {
     min-height:100%;
 }
 
+.mini-info p {
+    margin: 0;
+}
+
+.news-one-page {
+    padding: 0 15px;
+}
+
+.news-body {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.news-body img {
+    max-width: 100%;
+}
+
+.font-link {
+    border: 1px solid #000;
+}
+
+.font-size-small {
+    font-size: 16px;
+}
+
+.font-size-middle {
+    font-size: 20px;
+}
+
+.font-size-large {
+    font-size: 24px;
+}
+
+.arrow-block {
+    margin: 20px -15px;
+}
+
+.arrow-block .next-arrow {
+    background-image: url(/static/img/next-btn-bg.png);
+    background-size: 100% 100%;
+    padding-right: 18%;
+    color: #fff;
+}
+
+.arrow-block .prev-arrow {
+    background-image: url(/static/img/prev-btn-bg.png);
+    background-size: 100% 100%;
+    padding-left: 18%;
+    color: #fff;
+}
+
+.related-news-block .category-title {
+    margin: 0;
+}
+
+.related-news-block .one-news {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.related-news-block .related-news-info {
+    padding-left: 0;
+}
+/*.news-body.font-size-small p {
+    font-size: 16px;
+}
+
+.news-body.font-size-middle p {
+    font-size: 20px;
+}
+
+.news-body.font-size-large p {
+    font-size: 24px;
+}*/
+
 /**
  * Footer CSS
  */
