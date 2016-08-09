@@ -15,6 +15,10 @@
             </div>
 
             <div class="news-body">
+                <div class="main-image-box">
+                    <img src="{{ news.image.url }}" />
+                    <p class="text-muted">{{ news.image.description }}</p>
+                </div>
                 {{ news.htmlBody | safe }}
             </div>
             <div class="arrow-block mui--appbar-line-height">
