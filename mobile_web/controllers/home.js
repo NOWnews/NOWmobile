@@ -10,16 +10,15 @@ const redis = require('../../redis');
 
 router.route('/')
     .get(function(req, res, next) {
-        let v3Api = 'http://61.67.121.26:5000';
         co(function*() {
-            var headLineNews = yield fetch(v3Api + '/headline', {
+            var headLineNews = yield fetch(`${config.apiServer}/headline`, {
                 timeout: 3000
             }).then(function(res) {
                 return res.json();
             }).then(function(json) {
                 return Promise.resolve(json);
             });
-            var mainCategory = yield fetch(v3Api + '/category', {
+            var mainCategory = yield fetch(`${config.apiServer}/category`, {
                 timeout: 3000
             }).then(function(res) {
                 return res.json();
