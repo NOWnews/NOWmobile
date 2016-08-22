@@ -18,9 +18,14 @@ module.exports = {
     /*
      * redis 資料
      */
-     redis: {
+    redis: {
         host: process.env.NODE_ENV === 'production' ? 'localhost' : 'localhost',
         expireSeconds: 3600
-     },
+    },
+
+    /*
+     * api Server
+     */
+    apiServer: process.env.NODE_ENV === 'production' ? 'http://61.67.121.26:5000' : 'http://61.67.121.26:5000',
 
 };

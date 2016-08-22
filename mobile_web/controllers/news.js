@@ -10,10 +10,9 @@ const redis = require('../../redis');
 
 router.route('/news/:newsId')
     .get(function(req, res, next) {
-        let v3Api = 'http://61.67.121.26:5000';
         let newsId = req.params.newsId;
         co(function*() {
-            var news = yield fetch(`${v3Api}/news/${newsId}` , {
+            var news = yield fetch(`${config.apiServer}/news/${newsId}` , {
                 timeout: 3000
             }).then(function(res) {
                 return res.json();

@@ -112,7 +112,6 @@ header .mobile-logo {
 }
 
 .slick-news {
-    height: 260px;
     overflow: hidden;
     position: relative;
 }
@@ -150,7 +149,6 @@ header .mobile-logo {
 .news-block {
     position: relative;
     margin-bottom: 30px;
-    height: 250px;
     overflow: hidden;
 }
 .news-block .category-title {

@@ -20,7 +20,7 @@
                                         <div class="slick-news-info">
                                             <p>{{ news.field_short_title.value }}</p>
                                         </div>
-                                        <img class="news-main-image" src="{{ news.image.url }}" />
+                                        <img class="news-main-image" src="{{ news.image.thumbnail }}" />
                                     </a>
                                 </div>
                             {% endif %}
@@ -40,7 +40,7 @@
                                     <div class="category-title">
                                         <span>{% if news.category == null %}不分類{% endif %}{{ news.category }}</span>
                                     </div>
-                                    <img class="news-main-image" src="{{ news.image.url }}" />
+                                    <img class="news-main-image" src="{{ news.image.thumbnail }}" />
                                     <div class="news-info">
                                         <p class="news-date mui--text-subhead">{{ news.createdAt }}</p>
                                         <p>{{ news.field_short_title.value }}</p>
