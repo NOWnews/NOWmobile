@@ -272,6 +272,29 @@ header .mobile-logo {
 }*/
 
 /**
+ * Search Bar CSS
+ */
+
+#search-bar .mui-textfield {
+    margin: 0;
+    padding: 0;
+}
+
+#search-input{
+    border-color: white;
+}
+
+#search-input:focus{
+    border-color: white;
+}
+
+#search-input::-webkit-input-placeholder {
+    border-color: white;
+    color: #5D5D5D;
+    font-size: 17px;
+}
+
+/**
  * Footer CSS
  */
 
