@@ -26,6 +26,6 @@ module.exports = {
     /*
      * api Server
      */
-    apiServer: process.env.NODE_ENV === 'production' ? 'localhost' : 'http://61.67.121.26:5000',
+    apiServer: process.env.NODE_ENV === 'production' ? 'http://61.67.121.26:5000' : 'http://61.67.121.26:5000',
 
 };
