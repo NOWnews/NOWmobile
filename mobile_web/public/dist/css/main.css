@@ -84,8 +84,8 @@ header .mobile-logo {
  * Nav Bar CSS
  */
 #nav-wrapper {
-    background: black;
-    opacity: .9;
+    background-image: url(/static/img/burglist-bg90.png);
+    background-repeat: repeat;
     margin-top: -1px;
     min-height: 100%;
     min-width: 100%;
