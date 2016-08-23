@@ -1,12 +1,8 @@
 import express from 'express';
 let router = express.Router();
 
-const co = require('co');
 const fetch = require('node-fetch');
-
 const debug = require('debug')('NOWmobile:controllers:home');
-const models = require('../../models');
-const redis = require('../../redis');
 
 router.route('/')
     .get(function(req, res, next) {
@@ -31,7 +27,7 @@ router.route('/')
             } else {
                 return res.render('home/home', {newsList: headLineNews, mainCategory: mainCategory});
             }
-        });
+        }).catch(next);
 
     });
 
