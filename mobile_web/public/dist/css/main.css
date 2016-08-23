@@ -81,6 +81,83 @@ header .mobile-logo {
 }
 
 /**
+ * Nav Bar CSS
+ */
+#nav-wrapper {
+    background: black;
+    opacity: .9;
+    margin-top: -1px;
+    min-height: 100%;
+    min-width: 100%;
+    padding: 0;
+    position: fixed;
+    z-index: 9999;
+}
+
+#nav-wrapper > .nav-item {
+    font-size: 20px;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 30px;
+    border-bottom: 1px solid #5F5D5F;
+}
+
+#nav-wrapper a {
+    height: 30px;
+    color: white;
+}
+
+#social-link {
+    width: 100%;
+    padding: 5% 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#social-link i {
+    min-height: 50px;
+    min-width: 50px;
+    color: white;
+}
+
+#social-link .bg-fb {
+    background: #0734B5;
+}
+#social-link .bg-line {
+    background: #7EB24A;
+}
+#social-link .bg-google {
+    background: #B5061D;
+}
+#social-link .bg-wechat {
+    background: #599B46;
+}
+
+/**
+ * Search Bar CSS
+ */
+
+#search-bar .mui-textfield {
+    margin: 0;
+    padding: 0;
+}
+
+#search-input{
+    border-color: white;
+}
+
+#search-input:focus{
+    border-color: white;
+}
+
+#search-input::-webkit-input-placeholder {
+    border-color: white;
+    color: #5D5D5D;
+    font-size: 17px;
+}
+
+
+/**
  * 輪播 CSS
  */
 
@@ -271,28 +348,6 @@ header .mobile-logo {
     font-size: 24px;
 }*/
 
-/**
- * Search Bar CSS
- */
-
-#search-bar .mui-textfield {
-    margin: 0;
-    padding: 0;
-}
-
-#search-input{
-    border-color: white;
-}
-
-#search-input:focus{
-    border-color: white;
-}
-
-#search-input::-webkit-input-placeholder {
-    border-color: white;
-    color: #5D5D5D;
-    font-size: 17px;
-}
 
 /**
  * Footer CSS

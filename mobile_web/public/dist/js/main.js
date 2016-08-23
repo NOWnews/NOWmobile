@@ -14,15 +14,36 @@ $(function(){
         $('.news-body').removeClass(beforeClass[0]).addClass(fontClass[0]);
     });
 
-    // 搜尋按鈕控制 - 開啟搜尋
-    $('.header-btn > .fa-search').on('click', function(){
-        $('#search-bar').removeClass("mui--hide")
-        $('#header-bar').addClass("mui--hide")
+    function switchHeaderBarTo (selecter) {
+        $(selecter).removeClass('mui--hide');
+        $('#header-bar').addClass('mui--hide');
+    }
+
+    function switchToHeaderBar (selecter) {
+        $(selecter).addClass('mui--hide');
+        $('#header-bar').removeClass('mui--hide');
+    }
+
+    // 搜尋開啟
+    $('#header-bar .fa-search').on('click', function(){
+        switchHeaderBarTo('#search-bar')
     });
 
-    // 搜尋按鈕控制 - 關閉搜尋
-    $('.header-btn > .fa-close').on('click', function(){
-        $('#search-bar').addClass("mui--hide")
-        $('#header-bar').removeClass("mui--hide")
+    // 搜尋關閉
+    $('#search-bar .fa-close').on('click', function(){
+        switchToHeaderBar('#search-bar')
     });
+
+    // 漢堡選單開啟
+    $('#header-bar .fa-bars').on('click', function(){
+        switchHeaderBarTo('#nav-bar')
+        $('nav').removeClass('mui--hide');
+    });
+
+    // 漢堡選單關閉
+    $('#nav-bar .fa-close').on('click', function(){
+        switchToHeaderBar('#nav-bar')
+        $('nav').addClass('mui--hide');
+    });
+
 });
