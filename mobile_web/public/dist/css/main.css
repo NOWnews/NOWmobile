@@ -81,9 +81,9 @@ header .mobile-logo {
 }
 
 /**
- * Nav Bar CSS
+ * MenuNav Bar CSS
  */
-#nav-wrapper {
+#menu-nav-wrapper {
     background-image: url(/static/img/burglist-bg90.png);
     background-repeat: repeat;
     margin-top: -1px;
@@ -94,7 +94,7 @@ header .mobile-logo {
     z-index: 9999;
 }
 
-#nav-wrapper > .nav-item {
+#menu-nav-wrapper > .menu-nav-item {
     font-size: 20px;
     height: 60px;
     line-height: 60px;
@@ -102,7 +102,7 @@ header .mobile-logo {
     border-bottom: 1px solid #5F5D5F;
 }
 
-#nav-wrapper a {
+#menu-nav-wrapper a {
     height: 30px;
     color: white;
 }

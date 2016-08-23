@@ -36,14 +36,14 @@ $(function(){
 
     // 漢堡選單開啟
     $('#header-bar .fa-bars').on('click', function(){
-        switchHeaderBarTo('#nav-bar')
-        $('nav').removeClass('mui--hide');
+        switchHeaderBarTo('#menu-nav-bar')
+        $('#menu-nav').removeClass('mui--hide');
     });
 
     // 漢堡選單關閉
-    $('#nav-bar .fa-close').on('click', function(){
-        switchToHeaderBar('#nav-bar')
-        $('nav').addClass('mui--hide');
+    $('#menu-nav-bar .fa-close').on('click', function(){
+        switchToHeaderBar('#menu-nav-bar')
+        $('#menu-nav').addClass('mui--hide');
     });
 
 });
