@@ -2,8 +2,7 @@
     <div class="mui-container-fluid">
         <div class="mui-row">
             <a href="/news/{{ news._id }}">
-
-                <img class="news-main-image" src="{{ news.image.thumbnail }}" />
+                <img class="news-main-image" src="{{ news.image.thumbnail if news.image.thumbnail else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                 <div class="news-info">
                     <p class="category-title">
                         {% if news.category == null %}不分類{% endif %}{{ news.category }}
