@@ -33,6 +33,13 @@
     padding: 10px 10px;
 }
 
+#photo-category-nav {
+    background: #001971;
+}
+
+#photo-category-nav a {
+    color: white;
+}
 
 /*content*/
 
