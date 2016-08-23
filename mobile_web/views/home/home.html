@@ -37,13 +37,15 @@
                         <div class="mui-container-fluid">
                             <div class="mui-row">
                                 <a href="/news/{{ news._id }}">
-                                    <div class="category-title">
-                                        <span>{% if news.category == null %}不分類{% endif %}{{ news.category }}</span>
-                                    </div>
+
                                     <img class="news-main-image" src="{{ news.image.thumbnail }}" />
                                     <div class="news-info">
-                                        <p class="news-date mui--text-subhead">{{ news.createdAt }}</p>
+                                        <p class="category-title">
+                                            {% if news.category == null %}不分類{% endif %}{{ news.category }}
+                                        </p>
                                         <p>{{ news.field_short_title.value }}</p>
+                                        <p class="news-date mui--text-subhead">{{ news.createdAt }}</p>
+
                                     </div>
                                 </a>
                             </div>

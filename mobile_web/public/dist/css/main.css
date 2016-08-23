@@ -225,40 +225,36 @@ header .mobile-logo {
 
 .news-block {
     position: relative;
-    margin-bottom: 30px;
-    overflow: hidden;
+    margin-bottom: 40px;
 }
+
+.news-block p {
+    margin: 0 0 0 5px;
+}
+
 .news-block .category-title {
-    position: absolute;
-    background: #fff;
-    min-width: 60px;
-    text-align: center;
-    padding: 7px 0;
-    right: 0;
+    margin-top: 10px;
+    color: #1976d2;
     font-size: 12px;
     font-weight: bold;
-    border-radius: 0 0 0 5px;
-    -moz-border-radius: 0 0 0 5px; /* Firefox */
-    -webkit-border-radius: 0 0 0 5px; /* Safari, Chrome */
-    -khtml-border-radius: 0 0 0 5px; /* Konqueror */
 }
 
 .news-block .news-info {
     position: absolute;
-    bottom: -10px;
+    bottom: -25px;
     background: url(/static/img/news-info-bg.png);
     color: #333;
-    width: 80%;
+    width: 97%;
     font-size: 14px;
     font-weight: bold;
     background-size: 100% 100%;
     padding: 0 10px;
     left: -2px;
 }
+
 .news-block .news-info .news-date {
     font-size: 12px;
     color: #999;
-    margin: 0;
 }
 
 .nownews-wrapper {
