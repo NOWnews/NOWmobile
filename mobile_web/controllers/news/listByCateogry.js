@@ -6,17 +6,14 @@ const fetch = require('node-fetch');
 const debug = require('debug')('NOWmobile:controllers:news:category');
 
 module.exports = function(req, res, next) {
-    let categoryId = req.params.categoryId;
+    let taxId = req.params.taxId;
 
-    if (!categoryId) return next();
+    if (!taxId) return next();
 
     co(function*() {
-        // TODO:: wait api.
-        // let url = `${config.apiServer}/category/news/${categoryId}`;
+        let categoryBaseUrl = `${config.apiServer}/category/news`;
 
-        let url = `${config.apiServer}/headline`;
-
-        var newsList = yield fetch(url, {
+        var newsList = yield fetch(`${categoryBaseUrl}/${taxId}`, {
             timeout: 3000
         }).then(function(res) {
             return res.json();
@@ -24,7 +21,7 @@ module.exports = function(req, res, next) {
             return Promise.resolve(json);
         });
 
-        var mainCategory = yield fetch(`${config.apiServer}/category`, {
+        var mainCategory = yield fetch(categoryBaseUrl, {
             timeout: 3000
         }).then(function(res) {
             return res.json();

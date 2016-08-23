@@ -7,14 +7,14 @@ const debug = require('debug')('NOWmobile:controllers:home');
 router.route('/')
     .get(function(req, res, next) {
         co(function*() {
-            var headLineNews = yield fetch(`${config.apiServer}/headline`, {
+            var headLineNews = yield fetch(`${config.apiServer}/news/headline`, {
                 timeout: 3000
             }).then(function(res) {
                 return res.json();
             }).then(function(json) {
                 return Promise.resolve(json);
             });
-            var mainCategory = yield fetch(`${config.apiServer}/category`, {
+            var mainCategory = yield fetch(`${config.apiServer}/category/news`, {
                 timeout: 3000
             }).then(function(res) {
                 return res.json();
