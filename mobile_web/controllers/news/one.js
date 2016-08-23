@@ -19,7 +19,7 @@ module.exports = function(req, res, next) {
         if(req.query.data === 'PLAYJJ'){
             return res.json({news: news});
         } else {
-            return res.render('one/news', {news: news});
+            return res.render('news/one', {news: news});
         }
     }).catch(next);
 }
