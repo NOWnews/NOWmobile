@@ -1,32 +1,32 @@
+import co from 'co';
 import express from 'express';
+import getApi from '../util/getApi';
 let router = express.Router();
 
-const fetch = require('node-fetch');
 const debug = require('debug')('NOWmobile:controllers:home');
 
 router.route('/')
-    .get(function(req, res, next) {
+    .get((req, res, next) => {
         co(function*() {
-            var headLineNews = yield fetch(`${config.apiServer}/news/headline`, {
-                timeout: 3000
-            }).then(function(res) {
-                return res.json();
-            }).then(function(json) {
-                return Promise.resolve(json);
-            });
-            var mainCategory = yield fetch(`${config.apiServer}/category/news`, {
-                timeout: 3000
-            }).then(function(res) {
-                return res.json();
-            }).then(function(json) {
-                return Promise.resolve(json);
-            });
-            debug('headLineNews = %j', headLineNews);
+
+            let headLineNewsPromise = getApi('news/headline');
+
+            let mainCategoryPromise = getApi('category/news');
+
+            let result = yield [
+                headLineNewsPromise,
+                mainCategoryPromise,
+            ];
+
+            let newsList = result[0];
+            let mainCategory = result[1];
+
             if(req.query.data === 'PLAYJJ'){
-                return res.json({newsList: headLineNews});
-            } else {
-                return res.render('home/home', {newsList: headLineNews, mainCategory: mainCategory});
+                return res.json({ newsList });
             }
+
+            return res.render('home/home', { newsList, mainCategory });
+
         }).catch(next);
 
     });

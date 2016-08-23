@@ -1,44 +1,36 @@
+import co from 'co';
 import express from 'express';
-let router = express.Router();
+import getApi from '../../util/getApi';
 
-const fetch = require('node-fetch');
+let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:photo:category');
 
-module.exports = function(req, res, next) {
+module.exports = (req, res, next) => {
     let taxId = req.params.taxId;
-    let photoBaseUrl = `${config.apiServer}/category/photo`;
 
     co(function*() {
 
         // TODO:: change api.
-        // var mainCategory = yield fetch(photoBaseUrl, {
-        let categoryBaseUrl = `${config.apiServer}/category/news`;
-        var mainCategory = yield fetch(categoryBaseUrl, {
-            timeout: 3000
-        }).then(function(res) {
-            return res.json();
-        }).then(function(json) {
-            return Promise.resolve(json);
-        });
+        // let photoBaseUrl = `category/photo`;
+        // let mainCategory = yield getApi(photoBaseUrl)
 
-        if (!taxId) taxId = mainCategory[0].tid
+        let categoryBaseUrl = `category/news`;;
+
+        let mainCategory = yield getApi(categoryBaseUrl);
+
+        if (!taxId) taxId = mainCategory[0].tid;
 
         // TODO:: change api.
-        // var photoList = yield fetch(`${photoBaseUrl}/${taxId}`, {
-        var photoList = yield fetch(`${categoryBaseUrl}/${taxId}`, {
-            timeout: 3000
-        }).then(function(res) {
-            return res.json();
-        }).then(function(json) {
-            return Promise.resolve(json);
-        });
+        // let photoList = yield getApi(`${photoBaseUrl}/${taxId}`);
+        let photoList = yield getApi(`${categoryBaseUrl}/${taxId}`);
 
         if(req.query.data === 'PLAYJJ'){
-            return res.json({photoList: photoList});
-        } else {
-            return res.render('photo/category', {photoList: photoList, mainCategory: mainCategory});
+            return res.json({ photoList });
         }
+
+        return res.render('photo/category', { photoList, mainCategory });
+
     }).catch(next);
 
 }

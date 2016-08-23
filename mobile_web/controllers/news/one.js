@@ -1,25 +1,24 @@
+import co from 'co';
 import express from 'express';
-let router = express.Router();
+import getApi from '../../util/getApi';
 
-const fetch = require('node-fetch');
+let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:news');
 
-module.exports = function(req, res, next) {
-    let newsId = req.params.newsId;
+module.exports = (req, res, next) => {
+    let { newsId } = req.params;
+
     co(function*() {
-        var news = yield fetch(`${config.apiServer}/news/${newsId}` , {
-            timeout: 3000
-        }).then(function(res) {
-            return res.json();
-        }).then(function(json) {
-            return Promise.resolve(json);
-        });
+        let news = yield getApi(`news/${newsId}`);
+
         debug('news = %j', news);
+
         if(req.query.data === 'PLAYJJ'){
-            return res.json({news: news});
-        } else {
-            return res.render('news/one', {news: news});
+            return res.json({ news });
         }
+
+        return res.render('news/one', { news });
+
     }).catch(next);
 }

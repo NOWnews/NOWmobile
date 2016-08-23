@@ -1,8 +1,8 @@
 import express from 'express';
 let router = express.Router();
 
-const one = require('./one');
-const listByCateogry = require('./listByCateogry');
+import one from './one';
+import listByCateogry from './listByCateogry';
 
 router.route('/news/category/:taxId')
     .get(listByCateogry);

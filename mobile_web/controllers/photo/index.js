@@ -1,7 +1,7 @@
 import express from 'express';
 let router = express.Router();
 
-const listByCateogry = require('./listByCateogry');
+import listByCateogry from './listByCateogry';
 
 router.route('/photo/')
     .get(listByCateogry);

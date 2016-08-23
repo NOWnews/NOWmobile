@@ -1,41 +1,39 @@
+import co from 'co';
 import express from 'express';
+import getApi from '../../util/getApi';
+
 let router = express.Router();
 
-const fetch = require('node-fetch');
 
 const debug = require('debug')('NOWmobile:controllers:news:category');
 
-module.exports = function(req, res, next) {
-    let taxId = req.params.taxId;
+module.exports = (req, res, next) => {
+    let { taxId } = req.params;
 
     if (!taxId) return next();
 
     co(function*() {
-        let categoryBaseUrl = `${config.apiServer}/category/news`;
+        let categoryBaseUrl = 'category/news';
 
-        var newsList = yield fetch(`${categoryBaseUrl}/${taxId}`, {
-            timeout: 3000
-        }).then(function(res) {
-            return res.json();
-        }).then(function(json) {
-            return Promise.resolve(json);
-        });
+        let newsListPromise = getApi(`${categoryBaseUrl}/${taxId}`);
 
-        var mainCategory = yield fetch(categoryBaseUrl, {
-            timeout: 3000
-        }).then(function(res) {
-            return res.json();
-        }).then(function(json) {
-            return Promise.resolve(json);
-        });
+        let mainCategoryPromise = getApi(categoryBaseUrl);
 
-        debug('newsList = %j', newsList);
+        let result = yield [
+            newsListPromise,
+            mainCategoryPromise,
+        ];
+
+        let newsList = result[0];
+        let mainCategory = result[1];
+
 
         if(req.query.data === 'PLAYJJ'){
-            return res.json({newsList: newsList});
-        } else {
-            return res.render('news/category', {newsList: newsList, mainCategory: mainCategory});
+            return res.json({ newsList });
         }
+
+        return res.render('news/category', { newsList, mainCategory });
+
     }).catch(next);
 
 }
