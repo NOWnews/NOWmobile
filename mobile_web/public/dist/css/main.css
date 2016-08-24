@@ -55,6 +55,31 @@
     color: white;
 }
 
+/* channel Nav */
+
+#channel-nav-block > .mui-panel {
+    background: #D09D22;
+    color: white;
+    font-size: 18px;
+}
+
+#channel-nav-block .channel-name {
+    margin-right: 10px;
+}
+
+#channel-nav > div {
+    display: inline-flex;
+    margin-bottom: 10px;
+    padding-left: 10%;
+    width: 45%;
+}
+
+#channel-nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /*content*/
 
 .content-box {}
@@ -77,7 +102,7 @@ html, body, input, textarea, buttons {
  */
 
 header.mui-appbar {
-    background-color: #444;
+    background-color: #232323;
     position: fixed;
     top: 0;
     right: 0;
@@ -94,9 +119,8 @@ header a:hover {
     color: white;
 }
 header .header-btn {
-    color: #1976d2;
+    color: #0083FF;
 }
-
 header .mobile-logo {
     height: 30px;
 }
@@ -126,6 +150,7 @@ header .mobile-logo {
 #menu-nav-wrapper a {
     height: 30px;
     color: white;
+    text-decoration: none;
 }
 
 #social-link {
@@ -291,7 +316,7 @@ header .mobile-logo {
 
 .news-main-image {
     width: 100%;
-    min-height:100%;
+    max-height:100%;
 }
 
 .mini-info p {
@@ -369,6 +394,31 @@ header .mobile-logo {
     font-size: 24px;
 }*/
 
+
+/**
+ * Photo CSS
+ */
+
+.shadow-photo {
+    position: relative;
+}
+
+.shadow-photo .shadow-photo-info {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    height: 80px;
+    padding: 20px 30px;
+    background: url(/static/img/slick-news-info-bg.png);
+    width: 100%;
+    background-size: 100% 100%;
+}
+
+.photo-main-image {
+    width: 100%;
+    max-height:100%;
+}
 
 /**
  * Footer CSS

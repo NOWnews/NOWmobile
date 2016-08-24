@@ -7,7 +7,7 @@ let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:photo:category');
 
 module.exports = (req, res, next) => {
-    let taxId = req.params.taxId;
+    let { taxId } = req.params;
 
     co(function*() {
 
@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
         // let photoBaseUrl = `category/photo`;
         // let mainCategory = yield getApi(photoBaseUrl)
 
-        let categoryBaseUrl = `category/news`;;
+        let categoryBaseUrl = `category/news`;
 
         let mainCategory = yield getApi(categoryBaseUrl);
 
