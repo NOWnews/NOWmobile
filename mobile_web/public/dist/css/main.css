@@ -302,7 +302,7 @@ header .mobile-logo {
 
 .news-main-image {
     width: 100%;
-    min-height:100%;
+    max-height:100%;
 }
 
 .mini-info p {
@@ -399,6 +399,11 @@ header .mobile-logo {
     background: url(/static/img/slick-news-info-bg.png);
     width: 100%;
     background-size: 100% 100%;
+}
+
+.photo-main-image {
+    width: 100%;
+    max-height:100%;
 }
 
 /**

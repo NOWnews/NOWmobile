@@ -3,29 +3,30 @@
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
         <nav id="photo-category-nav" class="category-select mui-container-fluid">
-          <ul>
-              {% for category in mainCategory %}
-                  <li class=""><a href="/photo/category/{{ category.tid }}"><span>{{ category.name }}</span></a></li>
-              {% endfor %}
-          </ul>
+            <ul>
+                {% for category in mainCategory %}
+                    <li class="">
+                        <a href="/photo/category/{{ category.tid }}">
+                            <span>{{ category.name }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
         </nav>
-
         <div class="nownews-wrapper">
             {% for photo in photoList %}
                 <div class="mui-container-fluid">
                     <div class="mui-row">
-                        <a href="#">
-                            <div class="shadow-photo">
-                                <a href="#">
-                                    <div class="shadow-photo-info">
-                                        <p>
-                                            {{ photo.field_short_title.value }}
-                                        </p>
-                                    </div>
-                                    <img class="photo-main-image" src="{{ photo.image.thumbnail }}" />
-                                </a>
-                            </div>
-                        </a>
+                        <div class="shadow-photo">
+                            <a href="#">
+                                <div class="shadow-photo-info">
+                                    <p>
+                                        {{ photo.field_short_title.value }}
+                                    </p>
+                                </div>
+                                <img class="photo-main-image" src="{{ photo.image.thumbnail }}" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
