@@ -1,0 +1,10 @@
+<ul>
+    {% for category in mainCategory %}
+        <li class="">
+            <a href="/{{categoryType}}/category/{{ category.tid }}">
+                <span>{{ category.name }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
