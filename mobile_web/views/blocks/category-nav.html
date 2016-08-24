@@ -1,0 +1,11 @@
+<div class="left-cover"></div>
+<div class="right-cover fa-rotate-180"></div>
+<ul>
+    {% for category in mainCategory %}
+        <li class="">
+            <a href="/{{categoryType}}/category/{{ category.tid }}">
+                <span>{{ category.name }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
