@@ -1,0 +1,9 @@
+<div id="channel-nav" class="mui-container mui--hide">
+    {% for channel in mainChannel %}
+      <div>
+          <a class="mui--text-subhead" href="/news/channel/{{channel.nodeId}}">
+            {{ channel.name }}
+          </a>
+      </div>
+    {% endfor %}
+</div>

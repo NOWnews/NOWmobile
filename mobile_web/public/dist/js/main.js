@@ -46,4 +46,13 @@ $(function(){
         $('#menu-nav').addClass('mui--hide');
     });
 
+    // 開關 channel nav
+    $('#channel-nav-block > .mui-panel').on('click', function(){
+        $('#channel-nav').toggleClass('mui--hide');
+        $('#channel-content').toggleClass('mui--hide');
+        $(this).find('.channel-name').toggleClass('mui--hide');
+        $(this).find('i').toggleClass('fa-rotate-270');
+        return
+    })
+
 });
