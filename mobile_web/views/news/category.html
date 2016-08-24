@@ -1,0 +1,14 @@
+{% extends "../base.html" %}
+{% block container %}
+    <div id="content-wrapper">
+        <div class="mui--appbar-height"></div>
+        {% include "../blocks/news-category.html" %}
+        <div class="nownews-wrapper">
+            {% for news in newsList %}
+                {% include "../blocks/news-block.html" %}
+            {% endfor %}
+        </div>
+        <br>
+        <br>
+    </div>
+{% endblock %}

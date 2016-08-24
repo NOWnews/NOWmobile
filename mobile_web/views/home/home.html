@@ -3,11 +3,7 @@
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
         <nav class="category-select mui-container-fluid">
-            <ul>
-                {% for category in mainCategory %}
-                    <li class=""><a href="/taxonomy/{{ category.name }}"><span>{{ category.name }}</span></a></li>
-                {% endfor %}
-            </ul>
+            {% include "../blocks/news-category.html" %}
         </nav>
         <div class="nownews-wrapper">
             <div class="mui-container-fluid">
@@ -33,24 +29,7 @@
         <div class="nownews-wrapper">
             {% for news in newsList %}
                 {% if loop.index >= 4 %}
-                    <div class="news-block">
-                        <div class="mui-container-fluid">
-                            <div class="mui-row">
-                                <a href="/news/{{ news._id }}">
-
-                                    <img class="news-main-image" src="{{ news.image.thumbnail }}" />
-                                    <div class="news-info">
-                                        <p class="category-title">
-                                            {% if news.category == null %}不分類{% endif %}{{ news.category }}
-                                        </p>
-                                        <p>{{ news.field_short_title.value }}</p>
-                                        <p class="news-date mui--text-subhead">{{ news.createdAt }}</p>
-
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% include "../blocks/news-block.html" %}
                 {% endif %}
             {% endfor %}
         </div>
