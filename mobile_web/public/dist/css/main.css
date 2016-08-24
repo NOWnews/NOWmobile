@@ -63,7 +63,7 @@ html, body, input, textarea, buttons {
  */
 
 header.mui-appbar {
-    background-color: #444;
+    background-color: #232323;
     position: fixed;
     top: 0;
     right: 0;
@@ -80,9 +80,8 @@ header a:hover {
     color: white;
 }
 header .header-btn {
-    color: #1976d2;
+    color: #0083FF;
 }
-
 header .mobile-logo {
     height: 30px;
 }
