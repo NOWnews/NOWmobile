@@ -15,8 +15,8 @@
 .category-select {
     background: #000;
     overflow: hidden;
-    height: 45px;
-    padding: 0 30px;
+    height: 48px;
+    padding: 0;
     -webkit-overflow-scrolling: touch;
 }
 .category-select > ul {
@@ -27,6 +27,20 @@
     white-space: nowrap;
     overflow: scroll;
 }
+
+.category-select > div {
+    background: url(/static/img/category-gradient-cover.png);
+
+    background-repeat: repeat-y;
+    position: absolute;
+    height: 48px;
+    max-width: 15%;
+    min-width: 15%;
+}
+.category-select > .right-cover {
+    right: 0;
+}
+
 .category-select > ul > li {
     display: inline-block;
     font-size: 20px;
