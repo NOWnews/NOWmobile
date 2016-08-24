@@ -2,7 +2,14 @@
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
-        <div class="nownews-wrapper">
+        <div id=channel-nav-block>
+            <div class="mui-panel mui--text-center ">
+                <span> {{ channelName }}</span>
+                <i class="fa fa-play fa-rotate-90" aria-hidden="true"></i>
+            </div>
+            {% include "../blocks/channel-nav.html" %}
+        <div>
+        <div id="channel-content" class="nownews-wrapper">
             {% for news in newsList %}
                 {% include "../blocks/news-block.html" %}
             {% endfor %}

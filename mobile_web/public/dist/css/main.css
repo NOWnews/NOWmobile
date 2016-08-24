@@ -41,6 +41,24 @@
     color: white;
 }
 
+/* channel Nav */
+
+#channel-nav-block > .mui-panel {
+    background: #D09D22;
+    color: white;
+    font-size: 18px;
+}
+
+#channel-nav-block span {
+    margin-right: 10px;
+}
+
+#channel-nav > .mui--text-title{
+    display: inline-flex;
+    padding-left: 10%;
+    width: 45%;
+}
+
 /*content*/
 
 .content-box {}
@@ -353,6 +371,7 @@ header .mobile-logo {
 .news-body.font-size-large p {
     font-size: 24px;
 }*/
+
 
 /**
  * Photo CSS

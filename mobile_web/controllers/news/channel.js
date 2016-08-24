@@ -16,11 +16,20 @@ module.exports = (req, res, next) => {
 
         let newsList = yield getApi(`${channelBaseUrl}/${channelId}`);
 
+        // TODO :: API 尚未回傳
+        let channelName = '今日新聞';
+
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList });
         }
 
-        return res.render('news/channel', { newsList, mainChannel });
+        let data = {
+            newsList,
+            mainChannel,
+            channelName,
+        }
+
+        return res.render('news/channel', data);
 
     }).catch(next);
 
