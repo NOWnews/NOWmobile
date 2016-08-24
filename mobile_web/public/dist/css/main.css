@@ -1,7 +1,7 @@
 /*header*/
 
 .text-gray {
-    color: #999;
+    color: #888;
     font-size: 12px;
 }
 
@@ -338,6 +338,27 @@ header .mobile-logo {
 
 .related-news-block .related-news-info {
     padding-left: 0;
+}
+
+
+/**
+ * page freeBody CSS
+ */
+.freeBody ul {
+    padding: 0;
+    list-style-type: none;
+}
+.freeBody ul > li > a {
+    coloe: #0083FF;
+    padding: 5px 0;
+    display: block;
+}
+.freeBody ul > li span {
+    margin-left: 10px;
+}
+
+.freeBody ul > li img {
+    max-width: 40px;
 }
 
 /**

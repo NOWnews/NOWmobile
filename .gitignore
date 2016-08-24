@@ -36,3 +36,4 @@ jspm_packages
 dump.rdb
 
 bower_components
+.DS_Store
