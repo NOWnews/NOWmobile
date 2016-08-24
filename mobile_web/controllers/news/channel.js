@@ -14,10 +14,7 @@ module.exports = (req, res, next) => {
 
         if (!channelId) channelId = mainChannel[0].nodeId;
 
-        let newsList = yield getApi(`${channelBaseUrl}/${channelId}`);
-
-        // TODO :: API 尚未回傳
-        let channelName = '今日新聞';
+        let { newsList, channelName } = yield getApi(`${channelBaseUrl}/${channelId}`);
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList });
