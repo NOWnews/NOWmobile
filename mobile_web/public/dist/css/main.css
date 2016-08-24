@@ -144,6 +144,12 @@ header .mobile-logo {
     border-bottom: 1px solid #5F5D5F;
 }
 
+#menu-nav-wrapper > .menu-nav-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 #menu-nav-wrapper a {
     height: 30px;
     color: white;
