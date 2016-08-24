@@ -50,20 +50,8 @@ $(function(){
     $('#channel-nav-block > .mui-panel').on('click', function(){
         $('#channel-nav').toggleClass('mui--hide');
         $('#channel-content').toggleClass('mui--hide');
-        $(this).find('span').toggleClass('mui--hide');
+        $(this).find('.channel-name').toggleClass('mui--hide');
         $(this).find('i').toggleClass('fa-rotate-270');
-        return
-    })
-
-    // 選擇 channel 並切換
-    $('#channel-nav > .mui--text-title').on('click', function(){
-        var channelId = $(this).attr('nodeId');
-        var chaneNameDom = $('#channel-nav-block > .mui-panel > span');
-        chaneNameDom.toggleClass('mui--hide');
-        $(this).find('i').toggleClass('fa-rotate-270');
-        $('#channel-nav').toggleClass('mui--hide');
-        $('#channel-content').toggleClass('mui--hide');
-        location.href = '/news/channel/' + channelId;
         return
     })
 

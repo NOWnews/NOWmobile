@@ -49,14 +49,21 @@
     font-size: 18px;
 }
 
-#channel-nav-block span {
+#channel-nav-block .channel-name {
     margin-right: 10px;
 }
 
-#channel-nav > .mui--text-title{
+#channel-nav > div {
     display: inline-flex;
+    margin-bottom: 10px;
     padding-left: 10%;
     width: 45%;
+}
+
+#channel-nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 /*content*/
@@ -129,6 +136,7 @@ header .mobile-logo {
 #menu-nav-wrapper a {
     height: 30px;
     color: white;
+    text-decoration: none;
 }
 
 #social-link {
