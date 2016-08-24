@@ -1,16 +1,11 @@
 /*header*/
 
-
-/*.header {
-    background: #777;
+.text-gray {
+    color: #999;
+    font-size: 12px;
 }
-.header .mui-btn {
-    font-size: 30px;
-}*/
-
 
 /*category*/
-
 
 .category-select {
     background: #000;
@@ -169,7 +164,6 @@ header .mobile-logo {
  */
 
 .single-item {
-    /*overflow: hidden;*/
     position: relative;
 }
 
@@ -236,7 +230,7 @@ header .mobile-logo {
 
 .news-block {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .news-block p {
@@ -252,11 +246,12 @@ header .mobile-logo {
 
 .news-block .news-info {
     position: absolute;
-    bottom: -25px;
+    line-height: 150%;
+    bottom: -40px;
     background: url(/static/img/news-info-bg.png);
     color: #333;
     width: 97%;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     background-size: 100% 100%;
     padding: 0 10px;
@@ -276,8 +271,7 @@ header .mobile-logo {
 }
 
 .news-main-image {
-    width: 100%;
-    min-height:100%;
+    max-width: 100%;
 }
 
 .mini-info p {
@@ -291,6 +285,8 @@ header .mobile-logo {
 .news-body {
     margin: 15px 0;
     font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 180%;
 }
 
 .news-body img {
@@ -343,18 +339,6 @@ header .mobile-logo {
 .related-news-block .related-news-info {
     padding-left: 0;
 }
-/*.news-body.font-size-small p {
-    font-size: 16px;
-}
-
-.news-body.font-size-middle p {
-    font-size: 20px;
-}
-
-.news-body.font-size-large p {
-    font-size: 24px;
-}*/
-
 
 /**
  * Footer CSS
