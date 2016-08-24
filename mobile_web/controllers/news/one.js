@@ -10,6 +10,7 @@ module.exports = (req, res, next) => {
     let { newsId } = req.params;
 
     co(function*() {
+
         let news = yield getApi(`news/${newsId}`);
 
         debug('news = %j', news);

@@ -15,17 +15,13 @@ module.exports = (req, res, next) => {
     co(function*() {
         let categoryBaseUrl = 'category/news';
 
-        let newsListPromise = getApi(`${categoryBaseUrl}/${taxId}`);
-
-        let mainCategoryPromise = getApi(categoryBaseUrl);
-
         let result = yield [
-            newsListPromise,
-            mainCategoryPromise,
+            getApi(categoryBaseUrl),
+            getApi(`${categoryBaseUrl}/${taxId}`),
         ];
 
-        let newsList = result[0];
-        let mainCategory = result[1];
+        let mainCategory = result[0];
+        let newsList = result[1];
 
 
         if(req.query.data === 'PLAYJJ'){

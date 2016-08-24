@@ -9,17 +9,13 @@ router.route('/')
     .get((req, res, next) => {
         co(function*() {
 
-            let headLineNewsPromise = getApi('news/headline');
-
-            let mainCategoryPromise = getApi('category/news');
-
             let result = yield [
-                headLineNewsPromise,
-                mainCategoryPromise,
+                getApi('category/news'),
+                getApi('news/headline'),
             ];
 
-            let newsList = result[0];
-            let mainCategory = result[1];
+            let mainCategory = result[0];
+            let newsList = result[1];
 
             if(req.query.data === 'PLAYJJ'){
                 return res.json({ newsList });
