@@ -3,15 +3,8 @@
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
         <nav id="photo-category-nav" class="category-select mui-container-fluid">
-            <ul>
-                {% for category in mainCategory %}
-                    <li class="">
-                        <a href="/photo/category/{{ category.tid }}">
-                            <span>{{ category.name }}</span>
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
+            {% set categoryType = 'photo' %}
+            {% include "../blocks/category-nav.html" %}
         </nav>
         <div class="nownews-wrapper">
             {% for photo in photoList %}

@@ -15,18 +15,31 @@
 .category-select {
     background: #000;
     overflow: hidden;
-    height: 45px;
-    padding: 0 30px;
+    height: 48px;
+    padding: 0;
     -webkit-overflow-scrolling: touch;
 }
 .category-select > ul {
     width: 100%;
     list-style: none;
-    padding: 0;
     margin: 0;
     white-space: nowrap;
     overflow: scroll;
 }
+
+.category-select > div {
+    background: url(/static/img/category-gradient-cover.png);
+    background-repeat: repeat-y;
+    position: absolute;
+    height: 48px;
+    max-width: 20%;
+    min-width: 20%;
+    z-index: 1;
+}
+.category-select > .right-cover {
+    right: 0;
+}
+
 .category-select > ul > li {
     display: inline-block;
     font-size: 20px;
@@ -41,6 +54,9 @@
     color: white;
 }
 
+#photo-category-nav .category-select {
+    background: url(/static/img/category-gradient-cover-for-photo.png);
+}
 /* channel Nav */
 
 #channel-nav-block > .mui-panel {

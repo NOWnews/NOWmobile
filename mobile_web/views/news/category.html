@@ -2,7 +2,10 @@
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
-        {% include "../blocks/news-category.html" %}
+        <nav class="category-select mui-container-fluid">
+            {% set categoryType = 'news' %}
+            {% include "../blocks/category-nav.html" %}
+        </nav>
         <div class="nownews-wrapper">
             {% for news in newsList %}
                 {% include "../blocks/news-block.html" %}
