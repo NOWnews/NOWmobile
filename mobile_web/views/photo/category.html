@@ -15,9 +15,15 @@
                 <div class="mui-container-fluid">
                     <div class="mui-row">
                         <a href="#">
-                            <img class="photo-main-image" src="{{ photo.image.thumbnail }}" />
-                            <div class="photo-titile">
-                                {{ photo.field_short_title.value }}
+                            <div class="shadow-photo">
+                                <a href="#">
+                                    <div class="shadow-photo-info">
+                                        <p>
+                                            {{ photo.field_short_title.value }}
+                                        </p>
+                                    </div>
+                                    <img class="photo-main-image" src="{{ photo.image.thumbnail }}" />
+                                </a>
                             </div>
                         </a>
                     </div>

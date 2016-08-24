@@ -355,6 +355,25 @@ header .mobile-logo {
     font-size: 24px;
 }*/
 
+/**
+ * Photo CSS
+ */
+
+.shadow-photo {
+    position: relative;
+}
+
+.shadow-photo .shadow-photo-info {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    height: 80px;
+    padding: 20px 30px;
+    background: url(/static/img/slick-news-info-bg.png);
+    width: 100%;
+    background-size: 100% 100%;
+}
 
 /**
  * Footer CSS
