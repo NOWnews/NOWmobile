@@ -1,4 +1,3 @@
-import faker from 'faker';
 import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
@@ -24,12 +23,7 @@ module.exports = (req, res, next) => {
             return res.json({ news, headline });
         }
 
-        let phone = {
-            url: faker.image.image(300, 250)
-        };
-
         return res.render('news/one', {
-            phone,
             news,
             headline
         });

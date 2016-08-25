@@ -5,6 +5,7 @@ let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:home');
 
+
 router.route('/')
     .get((req, res, next) => {
         co(function*() {
@@ -21,7 +22,10 @@ router.route('/')
                 return res.json({ newsList });
             }
 
-            return res.render('home/home', { newsList, mainCategory });
+            return res.render('home/home', {
+                newsList,
+                mainCategory
+            });
 
         }).catch(next);
 

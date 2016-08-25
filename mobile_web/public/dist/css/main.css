@@ -41,17 +41,27 @@
     padding: 10px 10px;
 }
 
+.category-select li a {
+    color: white;
+}
+
+.category-select li.isActive a{
+    color: #EEA229;
+}
+
 #photo-category-nav {
     background: #001971;
 }
 
-#photo-category-nav a {
-    color: white;
+#photo-category-nav li.isActive a{
+    color: #00FFFE;
 }
+
 
 #photo-category-nav .category-select {
     background: url(/static/img/category-gradient-cover-for-photo.png);
 }
+
 /* channel Nav */
 
 #channel-nav-block > .mui-panel {
@@ -270,6 +280,7 @@ header .mobile-logo {
 #content-wrapper {
     min-height: 100%;
 }
+
 
 /**
  * news CSS

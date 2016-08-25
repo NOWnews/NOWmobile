@@ -24,6 +24,7 @@ module.exports = (req, res, next) => {
             newsList,
             mainChannel,
             channelName,
+            channelId,
         }
 
         return res.render('news/channel', data);

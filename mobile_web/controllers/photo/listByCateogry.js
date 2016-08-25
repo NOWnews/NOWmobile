@@ -29,7 +29,11 @@ module.exports = (req, res, next) => {
             return res.json({ photoList });
         }
 
-        return res.render('photo/category', { photoList, mainCategory });
+        return res.render('photo/category', {
+            photoList,
+            mainCategory,
+            taxId,
+        });
 
     }).catch(next);
 

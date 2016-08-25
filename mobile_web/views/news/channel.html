@@ -9,11 +9,17 @@
             </div>
             {% include "../blocks/channel-nav.html" %}
         <div>
-        <div id="channel-content" class="nownews-wrapper">
+        <div class="nownews-wrapper">
             {% for news in newsList %}
                 {% include "../blocks/news-block.html" %}
+                {# 廣告版位 #}
+                {% if loop.index % 3 == 0 %}
+                    {% include "../ad/ad-news-block.html" %}
+                {% endif %}
             {% endfor %}
         </div>
+        {# 廣告版位 #}
+        {% include "../ad/ad320x50.html" %}
         <br>
         <br>
     </div>
