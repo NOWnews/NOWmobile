@@ -1,0 +1,20 @@
+{% set adShortTitile = "贊助標題短標贊助標題短標贊助標題短標" %}
+{% set ad640x360 = "http://lorempixel.com/640/360/technics/" %}
+
+<div class="news-block">
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+            <a href="#">
+                <div calss="ads-block">
+                    <img class="news-main-image" src="{{ ad640x360 }}"/>
+                </div>
+                <div class="sponser news-info" style="bottom:-20px">
+                    <p class="text-gray" style="margin-top:10px"> Sponsor </p>
+                    <p style="white-space:nowrap;">{{ adShortTitile }}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% include "../ad/ad320x100.html" %}
