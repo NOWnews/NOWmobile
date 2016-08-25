@@ -11,19 +11,12 @@ module.exports = (req, res, next) => {
 
     co(function*() {
 
-        // TODO:: change api.
-        // let photoBaseUrl = `category/photo`;
-        // let mainCategory = yield getApi(photoBaseUrl)
-
-        let categoryBaseUrl = `category/news`;
-
-        let mainCategory = yield getApi(categoryBaseUrl);
+        let photoBaseUrl = `category/photos`;
+        let mainCategory = yield getApi(photoBaseUrl)
 
         if (!taxId) taxId = mainCategory[0].tid;
 
-        // TODO:: change api.
-        // let photoList = yield getApi(`${photoBaseUrl}/${taxId}`);
-        let photoList = yield getApi(`${categoryBaseUrl}/${taxId}`);
+        let photoList = yield getApi(`${photoBaseUrl}/${taxId}`);
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ photoList });
