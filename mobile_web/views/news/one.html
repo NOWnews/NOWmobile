@@ -2,11 +2,15 @@
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
+
+        {# 廣告版位 #}
+        {% include "../ad/ad300x250.html" %}
+
         <div class="nownews-wrapper news-one-page">
             <h2>{{ news.shortTitle }}</h2>
             <div class="mini-info">
-                <p class="mui--text-dark">{{ news.author }}</p>
-                <p class="mui--text-dark"><i class="fa fa-clock-o fa-fw"></i>{{ news.createdAt}}</p>
+                <p class="text-gray">{{ news.author }}</p>
+                <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ news.createdAt}}</p>
                 <div class="font-size-controllers">
                     <a class="font-link font-size-large mui-btn mui-btn--flat">A</a>
                     <a class="font-link font-size-middle mui-btn mui-btn--flat">A</a>
@@ -21,6 +25,41 @@
                 </div>
                 {{ news.htmlBody | safe }}
             </div>
+
+            <div class="freeBody">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>Link</span>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Link</span>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Link</span>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Link</span>
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="arrow-block mui--appbar-line-height">
+                {# 廣告版位 #}
+                {% include "../ad/ad300x250.html" %}
+            </div>
+
             <div class="arrow-block mui--appbar-line-height">
                 <div class="prev-arrow mui--text-nowrap">
                     <span>{{ news.shortTitle }}</span>
@@ -32,72 +71,70 @@
 
             <div class="related-news-block">
                 <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
-                <div class="mui-row one-news">
-                    <div class="mui-col-xs-5">
-                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
-                    </div>
-                    <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">國際</h4>
-                        <div class="mui-divider"></div>
-                        <span> {{ news.summary }}</span>
-                    </div>
-                </div>
-                <div class="mui-row one-news">
-                    <div class="mui-col-xs-5">
-                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
-                    </div>
-                    <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">國際</h4>
-                        <div class="mui-divider"></div>
-                        <span> {{ news.summary }}</span>
-                    </div>
-                </div>
-                <div class="mui-row one-news">
-                    <div class="mui-col-xs-5">
-                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
-                    </div>
-                    <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">國際</h4>
-                        <div class="mui-divider"></div>
-                        <span> {{ news.summary }}</span>
-                    </div>
-                </div>
+                {% for news in headline %}
+                    {% if loop.index > 3 and loop.index < 7 %}
+                        <div class="mui-row one-news">
+                            <div class="mui-col-xs-5">
+                                <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
+                            </div>
+                            <div class="mui-col-xs-7 related-news-info">
+                                <h4 class="category-title">{{ news.category }}</h4>
+                                <div class="mui-divider"></div>
+                                <span> {{ news.title }}</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
             <div class="related-news-block">
                 <h3><i class="fa fa-bolt fa-fw"></i>頭條新聞</h3>
-                <div class="mui-row one-news">
-                    <div class="mui-col-xs-5">
-                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
-                    </div>
-                    <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">國際</h4>
-                        <div class="mui-divider"></div>
-                        <span> {{ news.summary }}</span>
-                    </div>
-                </div>
-                <div class="mui-row one-news">
-                    <div class="mui-col-xs-5">
-                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
-                    </div>
-                    <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">國際</h4>
-                        <div class="mui-divider"></div>
-                        <span> {{ news.summary }}</span>
-                    </div>
-                </div>
-                <div class="mui-row one-news">
-                    <div class="mui-col-xs-5">
-                        <img style="max-width: 100%" src="/static/img/demo-img.jpg">
-                    </div>
-                    <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">國際</h4>
-                        <div class="mui-divider"></div>
-                        <span> {{ news.summary }}</span>
-                    </div>
-                </div>
+                {% for news in headline %}
+                    {% if loop.index < 4 %}
+                        <div class="mui-row one-news">
+                            <div class="mui-col-xs-5">
+                                <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
+                            </div>
+                            <div class="mui-col-xs-7 related-news-info">
+                                <h4 class="category-title">{{ news.category }}</h4>
+                                <div class="mui-divider"></div>
+                                <span> {{ news.title }}</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
+
+            <div class="related-news-block">
+                <h1>POPIN</h1>
+            </div>
+
             <div class="freeBody">
-                {{ news.freeBody | safe }}
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="/static/img/link_icon-vote.png">
+                            <span>投票去</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/static/img/link_icon-android.png">
+                            <span>Android APP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/static/img/link_icon-ios.png">
+                            <span>IOS APP</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="/static/img/link_icon-apk.png">
+                            <span>大陸地區下載 APK 安裝</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
