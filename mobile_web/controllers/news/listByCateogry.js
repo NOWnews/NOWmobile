@@ -28,7 +28,11 @@ module.exports = (req, res, next) => {
             return res.json({ newsList });
         }
 
-        return res.render('news/category', { newsList, mainCategory });
+        return res.render('news/category', {
+            newsList,
+            mainCategory,
+            taxId,
+        });
 
     }).catch(next);
 

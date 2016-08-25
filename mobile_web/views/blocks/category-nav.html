@@ -2,7 +2,7 @@
 <div class="right-cover fa-rotate-180"></div>
 <ul>
     {% for category in mainCategory %}
-        <li class="">
+        <li class="{{ 'isActive' if category.tid == taxId else ''  }}">
             <a href="/{{categoryType}}/category/{{ category.tid }}">
                 <span>{{ category.name }}</span>
             </a>
