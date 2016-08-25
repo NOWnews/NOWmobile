@@ -207,6 +207,9 @@ header .mobile-logo {
 
 #search-input:focus{
     border-color: white;
+    color: white;
+    height: 31px;
+    margin: 0;
 }
 
 #search-input::-webkit-input-placeholder {
