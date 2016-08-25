@@ -9,8 +9,14 @@
         <div class="nownews-wrapper">
             {% for news in newsList %}
                 {% include "../blocks/news-block.html" %}
+                {# 廣告版位 #}
+                {% if loop.index % 3 == 0 %}
+                    {% include "../ad/adNewsBlock.html" %}
+                {% endif %}
             {% endfor %}
         </div>
+        {# 廣告版位 #}
+        {% include "../ad/ad320x50.html" %}
         <br>
         <br>
     </div>
