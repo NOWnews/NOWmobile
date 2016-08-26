@@ -12,9 +12,9 @@
                 <p class="text-gray">{{ news.author }}</p>
                 <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ news.createdAt}}</p>
                 <div class="font-size-controllers">
-                    <a class="font-link font-size-large mui-btn mui-btn--flat">A</a>
-                    <a class="font-link font-size-middle mui-btn mui-btn--flat">A</a>
-                    <a class="font-link font-size-small mui-btn mui-btn--flat">A</a>
+                    <a class="font-link mui-btn mui-btn--flat">大</a>
+                    <a class="font-link mui-btn mui-btn--flat">中</a>
+                    <a class="font-link mui-btn mui-btn--flat">小</a>
                 </div>
             </div>
 
@@ -25,8 +25,8 @@
                 </div>
                 {{ news.htmlBody | safe }}
             </div>
-
-            <div class="freeBody">
+            <!-- 沒有 API 先隱藏 -->
+<!--             <div class="freeBody">
                 <ul>
                     <li>
                         <a href="#">
@@ -54,7 +54,7 @@
                     </li>
                 </ul>
             </div>
-
+ -->
             <div class="arrow-block mui--appbar-line-height">
                 {# 廣告版位 #}
                 {% include "../ad/ad300x250.html" %}
@@ -62,30 +62,33 @@
 
             <div class="arrow-block mui--appbar-line-height">
                 <div class="prev-arrow mui--text-nowrap">
-                    <span>{{ news.shortTitle }}</span>
+                    <a href="/news/{{ news.prev._id }}">{{ news.prev.title }}</a>
                 </div>
                 <div class="next-arrow mui--text-nowrap mui--text-right">
-                    <span>{{ news.shortTitle }}</span>
+                    <a href="/news/{{ news.next._id }}">{{ news.next.title }}</a>
                 </div>
             </div>
 
-            <div class="related-news-block">
-                <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
-                {% for news in headline %}
-                    {% if loop.index > 3 and loop.index < 7 %}
-                        <div class="mui-row one-news">
-                            <div class="mui-col-xs-5">
-                                <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
+            {% if news.refNews.length > 0 %}
+                <div class="related-news-block">
+                    <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
+                    {% for relatedNews in news.refNews %}
+                        {% if loop.index > 3 and loop.index < 7 %}
+                            <div class="mui-row one-news">
+                                <div class="mui-col-xs-5">
+                                    <img style="max-width: 100%;padding-top:5px;" src="{{ relatedNews.image.thumbnail }}">
+                                </div>
+                                <div class="mui-col-xs-7 related-news-info">
+                                    <h4 class="category-title">{{ relatedNews.category }}</h4>
+                                    <div class="mui-divider"></div>
+                                    <span> {{ relatedNews.title }}</span>
+                                </div>
                             </div>
-                            <div class="mui-col-xs-7 related-news-info">
-                                <h4 class="category-title">{{ news.category }}</h4>
-                                <div class="mui-divider"></div>
-                                <span> {{ news.title }}</span>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
             <div class="related-news-block">
                 <h3><i class="fa fa-bolt fa-fw"></i>頭條新聞</h3>
                 {% for news in headline %}

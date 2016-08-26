@@ -372,18 +372,20 @@ header .mobile-logo {
     margin: 20px -15px;
 }
 
+.arrow-block a {
+    color: #fff;
+}
+
 .arrow-block .next-arrow {
     background-image: url(/static/img/next-btn-bg.png);
     background-size: 100% 100%;
     padding-right: 18%;
-    color: #fff;
 }
 
 .arrow-block .prev-arrow {
     background-image: url(/static/img/prev-btn-bg.png);
     background-size: 100% 100%;
     padding-left: 18%;
-    color: #fff;
 }
 
 .related-news-block .category-title {
