@@ -58,8 +58,9 @@
 }
 
 
-#photo-category-nav .category-select {
+#photo-category-nav.category-select > div {
     background: url(/static/img/category-gradient-cover-for-photo.png);
+    background-repeat: repeat-y;
 }
 
 /* channel Nav */
