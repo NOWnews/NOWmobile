@@ -62,25 +62,25 @@
 
             <div class="arrow-block mui--appbar-line-height">
                 <div class="prev-arrow mui--text-nowrap">
-                    <span>{{ news.shortTitle }}</span>
+                    <a href="/news/{{ news.prev._id }}">{{ news.prev.title }}</a>
                 </div>
                 <div class="next-arrow mui--text-nowrap mui--text-right">
-                    <span>{{ news.shortTitle }}</span>
+                    <a href="/news/{{ news.next._id }}">{{ news.next.title }}</a>
                 </div>
             </div>
 
             <div class="related-news-block">
                 <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
-                {% for news in headline %}
+                {% for relatedNews in news.refNews %}
                     {% if loop.index > 3 and loop.index < 7 %}
                         <div class="mui-row one-news">
                             <div class="mui-col-xs-5">
-                                <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
+                                <img style="max-width: 100%;padding-top:5px;" src="{{ relatedNews.image.thumbnail }}">
                             </div>
                             <div class="mui-col-xs-7 related-news-info">
-                                <h4 class="category-title">{{ news.category }}</h4>
+                                <h4 class="category-title">{{ relatedNews.category }}</h4>
                                 <div class="mui-divider"></div>
-                                <span> {{ news.title }}</span>
+                                <span> {{ relatedNews.title }}</span>
                             </div>
                         </div>
                     {% endif %}
