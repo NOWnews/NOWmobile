@@ -2,6 +2,17 @@
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
-        <h1>PHOTO</h1>
+        <div class="nownews-wrapper">
+            <div class="slick-photos">
+                {% for image in photo.collectionImages %}
+                    <div class="slick-photo shadow-photo">
+                        <img class="photo-main-image " src="{{ image.thumbnail }}" />
+                        <div class="slick-photo-info shadow-photo-info mui--text-subhead">
+                            {{ image.cite }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -429,9 +429,25 @@ header .mobile-logo {
  * Photo CSS
  */
 
-.shadow-photo {
-    max-height: 360px;
+
+.photo-block .shadow-photo {
     overflow-y: hidden;
+    max-height: 360px;
+}
+
+@media (max-width: 480px){
+    .photo-block .shadow-photo {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 360px){
+    .photo-block .shadow-photo {
+        max-height: 213px;
+    }
+}
+
+.shadow-photo {
     position: relative;
 }
 
