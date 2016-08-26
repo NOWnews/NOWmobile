@@ -19,7 +19,7 @@
 
             <div class="news-body">
                 <div class="video-container" >
-                    <iframe height="360" src="https://www.youtube.com/embed/68xVkIrFYCo" frameborder="0" allowfullscreen></iframe>
+                    <iframe height="360" src="{{ video.src }}" frameborder="0" allowfullscreen></iframe>
                 </div>
                 {{ video.body.value | safe }}
             </div>
@@ -32,5 +32,4 @@
             {% include "../blocks/free-body.html" %}
         </div>
     </div>
-    {% include "../blocks/social-link.html" %}
 {% endblock %}
