@@ -1,6 +1,6 @@
 import express from 'express';
 let router = express.Router();
-import listByCateogry from './listByCateogry';
+import listByCategory from './listByCategory';
 import one from './one';
 
 router.route('/photo')
