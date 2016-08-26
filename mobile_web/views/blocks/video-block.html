@@ -1,0 +1,16 @@
+<div class="news-block">
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+            <a href="/video/{{ video._id }}">
+                <img class="news-main-image" src="{{ video.youtubeThumbnail}}">
+                <div class="news-info">
+                    <p class="category-title">
+                        {% if video.category == null %}不分類{% endif %}{{ video.category }}
+                    </p>
+                    <p style="white-space:nowrap;">{{ video.title }}</p>
+                    <p class="text-gray">{{ video.createdAt }}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

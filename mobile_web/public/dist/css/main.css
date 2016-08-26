@@ -31,6 +31,27 @@
     min-width: 20%;
     z-index: 1;
 }
+
+@media (min-width: 500px){
+    .category-select > div {
+        max-width: 15%;
+        min-width: 15%;
+    }
+}
+
+@media (min-width: 700px){
+    .category-select > div {
+        max-width: 10%;
+        min-width: 10%;
+    }
+}
+
+@media (min-width: 900px){
+    .category-select > div {
+        max-width: 7%;
+        min-width: 7%;
+    }
+}
 .category-select > .right-cover {
     right: 0;
 }
@@ -59,6 +80,20 @@
 
 
 #photo-category-nav.category-select > div {
+    background: url(/static/img/category-gradient-cover-for-video.png);
+    background-repeat: repeat-y;
+}
+
+#video-category-nav {
+    background: #420073;
+}
+
+#video-category-nav li.isActive a{
+    color: #00FFFE;
+}
+
+
+#video-category-nav.category-select > div {
     background: url(/static/img/category-gradient-cover-for-photo.png);
     background-repeat: repeat-y;
 }
@@ -440,7 +475,6 @@ header .mobile-logo {
 /**
  * Photo CSS
  */
-
 
 .photo-block .shadow-photo {
     overflow-y: hidden;

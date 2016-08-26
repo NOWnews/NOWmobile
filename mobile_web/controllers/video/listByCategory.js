@@ -4,32 +4,26 @@ import getApi from '../../util/getApi';
 
 let router = express.Router();
 
-
-const debug = require('debug')('NOWmobile:controllers:news:video');
+const debug = require('debug')('NOWmobile:controllers:video:category');
 
 module.exports = (req, res, next) => {
     let { taxId } = req.params;
 
-    if (!taxId) return next();
-
     co(function*() {
-        let categoryBaseUrl = 'category/video';
 
-        let result = yield [
-            getApi(categoryBaseUrl),
-            getApi(`${categoryBaseUrl}/${taxId}`),
-        ];
+        let videoBaseUrl = `category/videos`;
+        let mainCategory = yield getApi(videoBaseUrl)
 
-        let mainCategory = result[0];
-        let newsList = result[1];
+        if (!taxId) taxId = mainCategory[0].tid;
 
+        let videoList = yield getApi(`${videoBaseUrl}/${taxId}`);
 
         if(req.query.data === 'PLAYJJ'){
-            return res.json({ newsList });
+            return res.json({ videoList });
         }
 
         return res.render('video/category', {
-            newsList,
+            videoList,
             mainCategory,
             taxId,
         });

@@ -1,0 +1,25 @@
+{% set adShortTitile = "贊助標題短標贊助標題短標贊助標題短標" %}
+<!-- {% set ad640x360 = "http://lorempixel.com/640/360/technics/" %} -->
+{% set ad640x360 = "https://placehold.it/640x360" %}
+
+<div class="video-block">
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+            <a href="#">
+                <div calss="ads-block">
+                    <img class="video-main-image" src="{{ ad640x360 }}"/>
+                </div>
+                <div class="sponser video-info" style="bottom:-20px">
+                    <p class="text-gray" style="margin-top:10px"> Sponsor </p>
+                    <p style="white-space:nowrap;">{{ adShortTitile }}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% if loop.index % 2 == 0 %}
+{% include "../ad/ad300x250.html" %}
+{% else %}
+{% include "../ad/ad320x100.html" %}
+{% endif %}
