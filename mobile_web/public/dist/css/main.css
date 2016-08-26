@@ -243,8 +243,8 @@ header .mobile-logo {
  */
 .single-item .slick-dots {
     bottom: initial;
-    top: 0;
-    text-align: right;
+    bottom: 2px;
+    text-align: center;
     padding-right: 10px;
 }
 
