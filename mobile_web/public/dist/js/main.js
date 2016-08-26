@@ -71,6 +71,18 @@ $(function(){
             $('.ads-block.fixed-bottom').addClass('mui--hide');
         } , scrollDelay );
 
+        //  TODO Category;
+        var nowScrollTop = $(this).scrollTop();
+        var isScrollUp = nowScrollTop > beforeScrollTop;
+        beforeScrollTop = nowScrollTop;
+        if ( isScrollUp) {
+            // Show Category
+            return
+        }
+
+        // Hidden Category
+        return
+
     });
 
 });
