@@ -2,7 +2,7 @@ import express from 'express';
 let router = express.Router();
 
 import channel from './channel';
-import listByCateogry from './listByCateogry';
+import listByCategory from './listByCategory';
 import one from './one';
 import special from './special';
 
@@ -16,7 +16,7 @@ router.route('/news/channel/:channelId')
     .get(channel);
 
 router.route('/news/category/:taxId')
-    .get(listByCateogry);
+    .get(listByCategory);
 
 router.route('/news/:newsId')
     .get(one);
