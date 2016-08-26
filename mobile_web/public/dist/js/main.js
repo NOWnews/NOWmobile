@@ -53,6 +53,24 @@ $(function(){
         $(this).find('.channel-name').toggleClass('mui--hide');
         $(this).find('i').toggleClass('fa-rotate-270');
         return
-    })
+    });
+
+
+    var beforeScrollTop = 0,
+        scrollCheckTimer = null,
+        scrollDelay = 200;  
+    // 偵測 scroll 事件
+    $(window).on('scroll', function(){
+
+        clearTimeout(scrollCheckTimer);
+
+        $('.ads-block.fixed-bottom').removeClass('mui--hide');
+
+        scrollCheckTimer = setTimeout(function(){
+            console.log("!!off");
+            $('.ads-block.fixed-bottom').addClass('mui--hide');
+        } , scrollDelay );
+
+    });
 
 });
