@@ -1,0 +1,23 @@
+{% extends "../base.html" %}
+{% block container %}
+    <div id="content-wrapper">
+        <div class="mui--appbar-height"></div>
+        <nav class="category-select mui-container-fluid">
+            {% set categoryType = 'news' %}
+            {% include "../blocks/category-nav.html" %}
+        </nav>
+        <div class="nownews-wrapper">
+            {% for news in newsList %}
+                {% include "../blocks/news-block.html" %}
+                {# 廣告版位 #}
+                {% if loop.index % 3 == 0 %}
+                    {% include "../ad/ad-news-block.html" %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        {# 廣告版位 #}
+        {% include "../ad/ad320x50.html" %}
+        <br>
+        <br>
+    </div>
+{% endblock %}
