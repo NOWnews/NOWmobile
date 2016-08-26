@@ -430,6 +430,8 @@ header .mobile-logo {
  */
 
 .shadow-photo {
+    max-height: 360px;
+    overflow-y: hidden;
     position: relative;
 }
 
