@@ -166,29 +166,32 @@ header .mobile-logo {
     text-decoration: none;
 }
 
-#social-link {
+#menu-social-link {
     width: 100%;
     padding: 5% 5%;
     display: flex;
     justify-content: space-around;
 }
 
-#social-link i {
+#menu-social-link i {
     min-height: 50px;
     min-width: 50px;
+}
+
+.social-link i {
     color: white;
 }
 
-#social-link .bg-fb {
+.social-link .bg-fb {
     background: #0734B5;
 }
-#social-link .bg-line {
+.social-link .bg-line {
     background: #7EB24A;
 }
-#social-link .bg-google {
+.social-link .bg-google {
     background: #B5061D;
 }
-#social-link .bg-wechat {
+.social-link .bg-wechat {
     background: #599B46;
 }
 
@@ -207,6 +210,9 @@ header .mobile-logo {
 
 #search-input:focus{
     border-color: white;
+    color: white;
+    height: 31px;
+    margin: 0;
 }
 
 #search-input::-webkit-input-placeholder {
@@ -215,6 +221,14 @@ header .mobile-logo {
     font-size: 17px;
 }
 
+/**
+ * photo one Bar CSS
+ */
+
+#photo-one-bar td {
+    width: 100%;
+    padding-top: 10px;
+}
 
 /**
  * 輪播 CSS
@@ -426,6 +440,24 @@ header .mobile-logo {
  * Photo CSS
  */
 
+
+.photo-block .shadow-photo {
+    overflow-y: hidden;
+    max-height: 360px;
+}
+
+@media (max-width: 480px){
+    .photo-block .shadow-photo {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 360px){
+    .photo-block .shadow-photo {
+        max-height: 213px;
+    }
+}
+
 .shadow-photo {
     position: relative;
 }
@@ -444,9 +476,27 @@ header .mobile-logo {
 
 .photo-main-image {
     width: 100%;
-    max-height:100%;
+    max-width:100%;
+}
+/* fixed share social link */
+#social-link {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
 }
 
+#social-link ul {
+    padding: 0;
+    text-align: center;
+}
+
+#social-link li {
+    list-style: none;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    width: 25%;
+}
 /**
  * Footer CSS
  */
@@ -456,4 +506,10 @@ footer {
     background-color: #eee;
     border-top: 1px solid #e0e0e0;
     padding-top: 10px;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

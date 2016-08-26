@@ -9,15 +9,13 @@
         <div class="nownews-wrapper">
             {% for photo in photoList %}
                 <div class="mui-container-fluid">
-                    <div class="mui-row">
+                    <div class="mui-row photo-block">
                         <div class="shadow-photo">
-                            <a href="#">
+                            <a href="/photo/{{photo.nodeId}}">
                                 <div class="shadow-photo-info">
-                                    <p>
-                                        {{ photo.field_short_title.value }}
-                                    </p>
+                                    <p>{{ photo.title }}</p>
                                 </div>
-                                <img class="photo-main-image" src="{{ photo.image.thumbnail }}" />
+                                <img class="photo-main-image" src="{{ photo.thumbnail }}" />
                             </a>
                         </div>
                     </div>
@@ -31,7 +29,5 @@
         </div>
         {# 廣告版位 #}
         {% include "../ad/ad320x50.html" %}
-        <br>
-        <br>
     </div>
 {% endblock %}

@@ -7,6 +7,14 @@ $(function(){
         adaptiveHeight: true,
         arrows: false
     });
+
+    $('.slick-photos').slick({
+        adaptiveHeight: true,
+    });
+    $('.slick-photos').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $('#photo-one-bar span').html(nextSlide + 1);
+    });
+
     // 文章文字大小調整
     $('.font-size-controllers .font-link').on('click', function(){
         var fontClass = $(this).attr('class').match(/font-size-[a-z]+/g);
@@ -53,6 +61,36 @@ $(function(){
         $(this).find('.channel-name').toggleClass('mui--hide');
         $(this).find('i').toggleClass('fa-rotate-270');
         return
-    })
+    });
+
+
+    var beforeScrollTop = 0,
+        scrollCheckTimer = null,
+        scrollDelay = 200;  
+    // 偵測 scroll 事件
+    $(window).on('scroll', function(){
+
+        clearTimeout(scrollCheckTimer);
+
+        $('.ads-block.fixed-bottom').removeClass('mui--hide');
+
+        scrollCheckTimer = setTimeout(function(){
+            console.log("!!off");
+            $('.ads-block.fixed-bottom').addClass('mui--hide');
+        } , scrollDelay );
+
+        //  TODO Category;
+        var nowScrollTop = $(this).scrollTop();
+        var isScrollUp = nowScrollTop > beforeScrollTop;
+        beforeScrollTop = nowScrollTop;
+        if ( isScrollUp) {
+            // Show Category
+            return
+        }
+
+        // Hidden Category
+        return
+
+    });
 
 });
