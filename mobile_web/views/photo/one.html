@@ -1,18 +1,28 @@
 {% extends "../base.html" %}
 {% block container %}
-    <div id="content-wrapper">
+    <div id="content-wrapper" style="background:#000; display:flex;align-items:center;">
         <div class="mui--appbar-height"></div>
         <div class="nownews-wrapper">
-            <div class="slick-photos">
-                {% for image in photo.collectionImages %}
-                    <div class="slick-photo shadow-photo">
-                        <img class="photo-main-image " src="{{ image.thumbnail }}" />
-                        <div class="slick-photo-info shadow-photo-info mui--text-subhead">
-                            {{ image.cite }}
+            <div class="mui-container-fluid">
+                <div class="mui-row">
+                    <div class="single-item">
+                        <div class="slick-photos">
+                            {% for image in photo.collectionImages %}
+                                <div class="slick-photo">
+                                    <img class="photo-main-image" src="{{ image.thumbnail }}" />
+                                    <div class="shadow-photo">
+                                        <div class="shadow-photo-info mui--text-subhead">
+                                            {{ image.cite }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
                         </div>
                     </div>
-                {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+    {% include "../blocks/social-link.html" %}
 {% endblock %}

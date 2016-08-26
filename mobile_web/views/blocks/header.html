@@ -16,7 +16,7 @@
                 </td>
             </tr>
 
-            <!-- 列表模式 -->
+            <!-- 漢堡列表模式 -->
             <tr id="menu-nav-bar" class="mui--appbar-height mui--hide">
                 <td class="mui--text-center">
                     <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
@@ -28,8 +28,9 @@
                 </td>
             </tr>
 
-            <!-- Common Header 模式 -->
-            <tr id="header-bar" class="mui--appbar-height">
+            <!-- Default Header 模式 -->
+            <tr id="header-bar" class="mui--appbar-height
+                {{ 'mui--hide' if isPhotoOne else '' }}">
                 <td class="mui--text-title">
                     <a class="header-btn"><i class="fa fa-bars"></i></a>
                 </td>
@@ -40,6 +41,20 @@
                     <a class="header-btn" href="#"><i class="fa fa-search"></i></a>
                 </td>
             </tr>
+
+            <!-- Photo One 模式 -->
+            <tr id="photo-one-bar" class="mui--appbar-height
+                {{ 'mui--show' if isPhotoOne else 'mui--hide' }}">
+                <td class="mui--text-center mui--text-headline">
+                    <span>1</span>/{{ photo.collectionImages.length }}
+                </td>
+                <td class="mui--text-title" align="right">
+                    <a class="header-btn" onclick="history.back()">
+                        <i class="fa fa-lg fa-close"></i>
+                    </a>
+                </td>
+            </tr>
+
         </table>
     </div>
 </header>

@@ -11,6 +11,9 @@ $(function(){
     $('.slick-photos').slick({
         adaptiveHeight: true,
     });
+    $('.slick-photos').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $('#photo-one-bar span').html(nextSlide + 1);
+    });
 
     // 文章文字大小調整
     $('.font-size-controllers .font-link').on('click', function(){

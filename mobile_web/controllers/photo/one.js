@@ -20,6 +20,7 @@ module.exports = (req, res, next) => {
         }
 
         return res.render('photo/one', {
+            isPhotoOne: true,
             photo,
         });
 
