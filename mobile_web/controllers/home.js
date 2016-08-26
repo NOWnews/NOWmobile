@@ -24,7 +24,8 @@ router.route('/')
 
             return res.render('home/home', {
                 newsList,
-                mainCategory
+                mainCategory,
+                specialType: 'headline',
             });
 
         }).catch(next);
