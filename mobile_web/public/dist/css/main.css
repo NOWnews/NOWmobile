@@ -86,6 +86,8 @@
 
 #video-category-nav {
     background: #420073;
+    position: relative;
+    z-index: 1;
 }
 
 #video-category-nav li.isActive a{
@@ -520,7 +522,7 @@ header .mobile-logo {
 
 .video-block {
     position: relative;
-    margin-bottom: 20px;
+    margin-top: -10%;
 }
 
 .video-block p {
@@ -536,8 +538,9 @@ header .mobile-logo {
 
 .video-block .video-info {
     position: absolute;
+    z-index: 1;
     line-height: 150%;
-    bottom: 15px;
+    bottom: 3px;
     background: url(/static/img/video-info-bg.png);
     color: #333;
     width: 97%;
@@ -554,8 +557,8 @@ header .mobile-logo {
 .video-block .circle {
     position: absolute;
     color: #fff;
-    top: 47%;
-    left: 41.5%;
+    top: 26%;
+    left: 38.5%;
     border: 2px solid #fff;
     border-radius: 50%;
     height: 90px;
@@ -565,7 +568,7 @@ header .mobile-logo {
 .video-block i {
     position: absolute;
     color: #fff;
-    top: 50%;
+    top: 30%;
     left: 45%;
 }
 

@@ -2,24 +2,28 @@
 <!-- {% set ad640x360 = "http://lorempixel.com/640/360/technics/" %} -->
 {% set ad640x360 = "https://placehold.it/640x360" %}
 
-<div class="video-block">
+<div class="video-block" style="border-top: 35px solid #000;">
     <div class="mui-container-fluid">
         <div class="mui-row">
             <a href="#">
                 <div calss="ads-block">
                     <img class="video-main-image" src="{{ ad640x360 }}"/>
                 </div>
-                <div class="sponser video-info" style="bottom:0px">
+                <div class="sponser video-info" style="bottom: -20px">
                     <p class="text-gray" style="margin-top:10px"> Sponsor </p>
                     <p style="white-space:nowrap;">{{ adShortTitile }}</p>
+                    <p class="text-gray">{{ video.createdAt }}</p>
                 </div>
             </a>
         </div>
     </div>
 </div>
-
-{% if loop.index % 2 == 0 %}
-{% include "../ad/ad300x250.html" %}
-{% else %}
-{% include "../ad/ad320x100.html" %}
-{% endif %}
+<div style="background: white; position: relative; z-index: 1; padding: 5px 0; border-top: 35px solid #000;">
+    {% if loop.index % 2 == 0 %}
+    {% include "../ad/ad300x250.html" %}
+    {% else %}
+    <div style="margin-top:15px;">
+        {% include "../ad/ad320x100.html" %}
+    </div>
+    {% endif %}
+</div>
