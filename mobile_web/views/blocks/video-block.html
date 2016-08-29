@@ -1,18 +1,17 @@
 <div class="video-block">
     <div class="mui-container-fluid">
         <div class="mui-row">
-            <a href="/video/{{ video.nodeId }}">
-                <div class="circle"></div>
-                <i class="fa fa-5x fa-play" aria-hidden="true"></i>
-                <img class="video-main-image" src="{{ video.youtubeThumbnail}}">
-                <div class="video-info">
-                    <p class="category-title">
-                        {% if video.category == null %}不分類{% endif %}{{ video.category }}
-                    </p>
-                    <p style="max-width:90%">{{ video.title }}</p>
-                    <p class="text-gray">{{ video.createdAt }}</p>
-                </div>
-            </a>
+            <div class="shadow-photo">
+                <a href="/video/{{ video.nodeId }}">
+                    <div class="circle"></div>
+                    <i class="fa fa-4x fa-play" aria-hidden="true"></i>
+                    <div class="shadow-photo-info">
+                        <p style="margin-top: -10px">{{ video.title }}</p>
+                        <p class="text-gray">{{ video.createdAt }}</p>
+                    </div>
+                    <img class="video-main-image" src="{{ video.youtubeThumbnail}}">
+                </a>
+            </div>
         </div>
     </div>
 </div>

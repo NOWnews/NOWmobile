@@ -502,7 +502,7 @@ header .mobile-logo {
 .shadow-photo .shadow-photo-info {
     position: absolute;
     bottom: 0;
-    color: #000;
+    color: #fff;
     font-size: 18px;
     height: 80px;
     padding: 20px 30px;
@@ -522,11 +522,11 @@ header .mobile-logo {
 
 .video-block {
     position: relative;
-    margin-top: -10%;
+    margin-bottom: 0px;
 }
 
 .video-block p {
-    margin: 0 0 0 5px;
+    margin: 0;
 }
 
 .video-block .category-title {
@@ -536,40 +536,26 @@ header .mobile-logo {
     font-weight: bold;
 }
 
-.video-block .video-info {
-    position: absolute;
-    z-index: 1;
-    line-height: 150%;
-    bottom: 3px;
-    background: url(/static/img/video-info-bg.png);
-    color: #333;
-    width: 97%;
-    font-size: 15px;
-    font-weight: bold;
-    background-size: 100% 100%;
-    padding: 0 10px;
-}
-
-.video-block .video-info .video-date {
+.video-block .shadow-photo-info .video-date {
     font-size: 12px;
-    color: #999;
+    color: white;
 }
 .video-block .circle {
     position: absolute;
     color: #fff;
-    top: 26%;
-    left: 38.5%;
+    top: 30%;
+    left: 43%;
     border: 2px solid #fff;
     border-radius: 50%;
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
 }
 
 .video-block i {
     position: absolute;
     color: #fff;
-    top: 30%;
-    left: 45%;
+    top: 32.5%;
+    left: 48%;
 }
 
 .video-main-image {
