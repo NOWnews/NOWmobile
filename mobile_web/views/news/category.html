@@ -14,6 +14,18 @@
                     {% include "../ad/ad-news-block.html" %}
                 {% endif %}
             {% endfor %}
+            <div>{{ newsList.length }}</div>
+            {% if (not newsList or newsList.length == 0) %}
+                <br />
+                <div class="mui--text-center text-gray">
+                    <i class="fa fa-3x fa-search"></i>
+                    <br />
+                    <br />
+                    <p class="mui--text-title">
+                        <b>抱歉，找不到您要的新聞</b>
+                    </p>
+                </div>
+            {% endif %}
         </div>
         {# 廣告版位 #}
         {% include "../ad/ad320x50.html" %}
