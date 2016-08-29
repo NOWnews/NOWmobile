@@ -25,6 +25,7 @@
                 </div>
                 {{ news.htmlBody | safe }}
             </div>
+
             <!-- 沒有 API 先隱藏 -->
 <!--             <div class="freeBody">
                 <ul>
@@ -69,76 +70,9 @@
                 </div>
             </div>
 
-            {% if news.refNews.length > 0 %}
-                <div class="related-news-block">
-                    <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
-                    {% for relatedNews in news.refNews %}
-                        {% if loop.index > 3 and loop.index < 7 %}
-                            <div class="mui-row one-news">
-                                <div class="mui-col-xs-5">
-                                    <img style="max-width: 100%;padding-top:5px;" src="{{ relatedNews.image.thumbnail }}">
-                                </div>
-                                <div class="mui-col-xs-7 related-news-info">
-                                    <h4 class="category-title">{{ relatedNews.category.name }}</h4>
-                                    <div class="mui-divider"></div>
-                                    <span> {{ relatedNews.title }}</span>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% endif %}
+            {% include "../blocks/related-content.html" %}
+            {% include "../blocks/free-body.html" %}
 
-            <div class="related-news-block">
-                <h3><i class="fa fa-bolt fa-fw"></i>頭條新聞</h3>
-                {% for news in headline %}
-                    {% if loop.index < 4 %}
-                        <div class="mui-row one-news">
-                            <div class="mui-col-xs-5">
-                                <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
-                            </div>
-                            <div class="mui-col-xs-7 related-news-info">
-                                <h4 class="category-title">{{ news.category.name }}</h4>
-                                <div class="mui-divider"></div>
-                                <span> {{ news.title }}</span>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-
-            <div class="related-news-block">
-                <h1>POPIN</h1>
-            </div>
-
-            <div class="freeBody">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="/static/img/link_icon-vote.png">
-                            <span>投票去</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/static/img/link_icon-android.png">
-                            <span>Android APP</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/static/img/link_icon-ios.png">
-                            <span>IOS APP</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="/static/img/link_icon-apk.png">
-                            <span>大陸地區下載 APK 安裝</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
 

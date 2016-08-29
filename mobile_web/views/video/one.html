@@ -1,0 +1,35 @@
+{% extends "../base.html" %}
+{% block container %}
+    <div id="content-wrapper">
+        <div class="mui--appbar-height"></div>
+
+        {# 廣告版位 #}
+        {% include "../ad/ad300x250.html" %}
+
+        <div class="nownews-wrapper news-one-page">
+            <h2>{{ video.title }}</h2>
+            <div class="mini-info">
+                <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ video.createdAt}}</p>
+                <div class="font-size-controllers">
+                    <a class="font-link font-size-large mui-btn mui-btn--flat">大</a>
+                    <a class="font-link font-size-middle mui-btn mui-btn--flat">中</a>
+                    <a class="font-link font-size-small mui-btn mui-btn--flat">小</a>
+                </div>
+            </div>
+
+            <div class="news-body">
+                <div class="video-container" >
+                    <iframe height="360" src="{{ video.src }}" frameborder="0" allowfullscreen></iframe>
+                </div>
+                {{ video.body.value | safe }}
+            </div>
+            <div class="arrow-block mui--appbar-line-height">
+                {# 廣告版位 #}
+                {% include "../ad/ad300x250.html" %}
+            </div>
+
+            {% include "../blocks/related-content.html" %}
+            {% include "../blocks/free-body.html" %}
+        </div>
+    </div>
+{% endblock %}

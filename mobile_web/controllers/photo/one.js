@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
         let photo = yield getApi(`photos/${photoId}`);
 
         if(req.query.data === 'PLAYJJ'){
-            return res.json({ photo, headline });
+            return res.json({ photo });
         }
 
         return res.render('photo/one', {
