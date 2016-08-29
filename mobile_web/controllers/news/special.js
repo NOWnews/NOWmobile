@@ -10,7 +10,9 @@ const debug = require('debug')('NOWmobile:controllers:news:category');
 module.exports = (req, res, next) => {
     let { specialType } = req.params;
 
-    if (!specialType) return next();
+    if (!specialType) {
+        return next();
+    }
 
     co(function*() {
 
@@ -26,7 +28,7 @@ module.exports = (req, res, next) => {
             return res.json({ newsList });
         }
 
-        return res.render('news/category', {
+        return res.render('home/home', {
             newsList,
             mainCategory,
             specialType,
@@ -34,6 +36,4 @@ module.exports = (req, res, next) => {
 
     }).catch(next);
 
-}
-
-
+};
