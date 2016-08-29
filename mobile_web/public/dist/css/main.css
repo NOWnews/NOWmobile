@@ -5,6 +5,14 @@
     font-size: 12px;
 }
 
+.info-title{
+    font-size: 18px;
+}
+
+.info-caption {
+    font-size: 13px;
+}
+
 /*category*/
 
 .category-select {
@@ -536,26 +544,22 @@ header .mobile-logo {
     font-weight: bold;
 }
 
-.video-block .shadow-photo-info .video-date {
-    font-size: 12px;
+.video-block .shadow-photo-info .info-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: white;
 }
-.video-block .circle {
-    position: absolute;
-    color: #fff;
-    top: 30%;
-    left: 43%;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
+.video-block .shadow-photo-info .info-caption {
+    color: white;
 }
 
-.video-block i {
+.video-block .icon-play-circle {
     position: absolute;
-    color: #fff;
-    top: 32.5%;
-    left: 48%;
+    width: 15%;
+    z-index: 1;
+    top: 40%;
+    left: 40%;
 }
 
 .video-main-image {

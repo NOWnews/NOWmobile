@@ -3,13 +3,12 @@
         <div class="mui-row">
             <div class="shadow-photo">
                 <a href="/video/{{ video.nodeId }}">
-                    <div class="circle"></div>
-                    <i class="fa fa-3x fa-play" aria-hidden="true"></i>
+                    <img class="icon-play-circle" src="/static/img/play-icon.png">
                     <div class="shadow-photo-info">
-                        <p style="margin-top: -10px">{{ video.title }}</p>
-                        <p class="video-date">{{ video.createdAt }}</p>
+                        <p class="info-title">{{ video.title }}</p>
+                        <p class="info-caption">{{ video.createdAt }}</p>
                     </div>
-                    <img class="video-main-image" src="{{ video.youtubeThumbnail}}">
+                    <img class="video-main-image" src="{{ video.youtubeThumbnail}}" />
                 </a>
             </div>
         </div>
