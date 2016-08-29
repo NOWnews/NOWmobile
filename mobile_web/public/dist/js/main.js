@@ -102,6 +102,16 @@ $(function(){
         var itemWidthHalf = $nav.find('li').outerWidth()/2;
         $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);
     }
-    navCategoryCenter();
+    var navDom = $('.category-select > ul').length > 0;
+    if (navDom) {
+        navCategoryCenter();
+    }
 
+    // 內頁的 social
+    var socialDom = $('#social-link').length > 0;
+    if (socialDom) {
+        alert($('#social-link').height())
+        var socialHeight = $('#social-link').height();
+        $('footer').css('margin-bottom', socialHeight);
+    }
 });
