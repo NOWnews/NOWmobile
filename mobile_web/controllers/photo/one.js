@@ -9,7 +9,9 @@ const debug = require('debug')('NOWmobile:controllers:photo');
 module.exports = (req, res, next) => {
     let { photoId } = req.params;
 
-    if (!photoId) return next();
+    if (!photoId) {
+        return next();
+    }
 
     co(function*() {
 
