@@ -4,6 +4,7 @@ let router = express.Router();
 import channel from './channel';
 import listByCategory from './listByCategory';
 import one from './one';
+import search from './search';
 import special from './special';
 
 router.route('/news/special/:specialType')
@@ -17,6 +18,9 @@ router.route('/news/channel/:channelId')
 
 router.route('/news/category/:taxId')
     .get(listByCategory);
+
+router.route('/news/search')
+    .get(search);
 
 router.route('/news/:newsId')
     .get(one);
