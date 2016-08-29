@@ -2,8 +2,9 @@ import express from 'express';
 let router = express.Router();
 
 import channel from './channel';
-import listByCateogry from './listByCateogry';
+import listByCategory from './listByCategory';
 import one from './one';
+import search from './search';
 import special from './special';
 
 router.route('/news/special/:specialType')
@@ -16,7 +17,10 @@ router.route('/news/channel/:channelId')
     .get(channel);
 
 router.route('/news/category/:taxId')
-    .get(listByCateogry);
+    .get(listByCategory);
+
+router.route('/news/search')
+    .get(search);
 
 router.route('/news/:newsId')
     .get(one);

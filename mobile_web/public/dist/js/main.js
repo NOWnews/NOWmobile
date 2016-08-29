@@ -39,6 +39,7 @@ $(function(){
 
     // 搜尋關閉
     $('#search-bar .fa-close-area').on('click', function(){
+        $('#search-input').val('');
         switchToHeaderBar('#search-bar');
     });
 
