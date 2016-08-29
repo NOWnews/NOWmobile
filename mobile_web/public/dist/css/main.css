@@ -17,7 +17,7 @@
 
 .category-select {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     background: #000;
     overflow: hidden;
@@ -99,8 +99,6 @@
 
 #video-category-nav {
     background: #420073;
-    position: relative;
-    z-index: 1;
 }
 
 #video-category-nav li.isActive a{
@@ -115,14 +113,28 @@
 
 /* channel Nav */
 
+#channel-nav-block {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
+}
+
 #channel-nav-block > .mui-panel {
     background: #D09D22;
     color: white;
     font-size: 18px;
+    margin: 0;
+    padding-top: 11px;
+    padding-bottom: 10px;
 }
 
 #channel-nav-block .channel-name {
     margin-right: 10px;
+}
+
+#channel-nav {
+    padding-top: 20px;
 }
 
 #channel-nav > div {
