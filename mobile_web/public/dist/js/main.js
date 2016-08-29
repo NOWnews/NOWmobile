@@ -39,6 +39,7 @@ $(function(){
 
     // 搜尋關閉
     $('#search-bar .fa-close').on('click', function(){
+        $('#search-input').val('');
         switchToHeaderBar('#search-bar')
     });
 
@@ -62,6 +63,7 @@ $(function(){
         $(this).find('i').toggleClass('fa-rotate-270');
         return
     });
+
 
 
     var beforeScrollTop = 0,
