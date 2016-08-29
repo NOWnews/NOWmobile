@@ -33,23 +33,23 @@ $(function(){
     }
 
     // 搜尋開啟
-    $('#header-bar .fa-search').on('click', function(){
+    $('#header-bar .fa-search-area').on('click', function(){
         switchHeaderBarTo('#search-bar');
     });
 
     // 搜尋關閉
-    $('#search-bar .fa-close').on('click', function(){
+    $('#search-bar .fa-close-area').on('click', function(){
         switchToHeaderBar('#search-bar');
     });
 
     // 漢堡選單開啟
-    $('#header-bar .fa-bars').on('click', function(){
+    $('#header-bar .fa-bars-area').on('click', function(){
         switchHeaderBarTo('#menu-nav-bar');
         $('#menu-nav').removeClass('mui--hide');
     });
 
     // 漢堡選單關閉
-    $('#menu-nav-bar .fa-close').on('click', function(){
+    $('#menu-nav-bar .fa-close-area').on('click', function(){
         switchToHeaderBar('#menu-nav-bar');
         $('#menu-nav').addClass('mui--hide');
     });
