@@ -110,8 +110,7 @@ $(function(){
     // 內頁的 social
     var socialDom = $('#social-link').length > 0;
     if (socialDom) {
-        alert($('#social-link').height())
         var socialHeight = $('#social-link').height();
-        $('footer').css('margin-bottom', socialHeight);
+        $('.custom-space').css('height', socialHeight);
     }
 });

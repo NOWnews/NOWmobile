@@ -61,12 +61,12 @@
             </div>
 
             <div class="arrow-block mui--appbar-line-height">
-                <div class="prev-arrow mui--text-nowrap">
-                    <a href="/news/{{ news.prev._id }}">{{ news.prev.title }}</a>
-                </div>
-                <div class="next-arrow mui--text-nowrap mui--text-right">
-                    <a href="/news/{{ news.next._id }}">{{ news.next.title }}</a>
-                </div>
+                <a href="/news/{{ news.prev._id }}" class="prev-arrow mui--text-nowrap">
+                    <span>{{ news.prev.title }}</span>
+                </a>
+                <a href="/news/{{ news.next._id }}" class="next-arrow mui--text-nowrap mui--text-right">
+                    <span>{{ news.next.title }}</span>
+                </a>
             </div>
 
             {% if news.refNews.length > 0 %}
@@ -75,14 +75,16 @@
                     {% for relatedNews in news.refNews %}
                         {% if loop.index > 3 and loop.index < 7 %}
                             <div class="mui-row one-news">
-                                <div class="mui-col-xs-5">
-                                    <img style="max-width: 100%;padding-top:5px;" src="{{ relatedNews.image.thumbnail }}">
-                                </div>
-                                <div class="mui-col-xs-7 related-news-info">
-                                    <h4 class="category-title">{{ relatedNews.category }}</h4>
-                                    <div class="mui-divider"></div>
-                                    <span> {{ relatedNews.title }}</span>
-                                </div>
+                                <a href="/news/{{ relatedNews._id }}">
+                                    <div class="mui-col-xs-5">
+                                        <img style="max-width: 100%;padding-top:5px;" src="{{ relatedNews.image.thumbnail }}">
+                                    </div>
+                                    <div class="mui-col-xs-7 related-news-info">
+                                        <h4 class="category-title">{{ relatedNews.category }}</h4>
+                                        <div class="mui-divider"></div>
+                                        <span> {{ relatedNews.title }}</span>
+                                    </div>
+                                </a>
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -94,14 +96,16 @@
                 {% for news in headline %}
                     {% if loop.index < 4 %}
                         <div class="mui-row one-news">
-                            <div class="mui-col-xs-5">
-                                <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
-                            </div>
-                            <div class="mui-col-xs-7 related-news-info">
-                                <h4 class="category-title">{{ news.category }}</h4>
-                                <div class="mui-divider"></div>
-                                <span> {{ news.title }}</span>
-                            </div>
+                            <a href="/news/{{ news._id }}">
+                                <div class="mui-col-xs-5">
+                                    <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
+                                </div>
+                                <div class="mui-col-xs-7 related-news-info">
+                                    <h4 class="category-title">{{ news.category }}</h4>
+                                    <div class="mui-divider"></div>
+                                    <span> {{ news.title }}</span>
+                                </div>
+                            </a>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -141,6 +145,8 @@
             </div>
         </div>
     </div>
+
+    {# 至底的 social link #}
     {% include "../blocks/social-link.html" %}
 
 {% endblock %}
