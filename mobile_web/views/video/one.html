@@ -9,6 +9,11 @@
         <div class="nownews-wrapper news-one-page">
             <h2>{{ video.title }}</h2>
             <div class="mini-info">
+                <p class="text-gray one-category">
+                {% for category in video.categories %}
+                    <a href="/video/category/{{ category._id }}">{{ category.name }}</a>
+                {% endfor %}
+                </p>
                 <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ video.createdAt}}</p>
                 <div class="font-size-controllers">
                     <a class="font-link font-size-large mui-btn mui-btn--flat">大</a>
@@ -32,4 +37,7 @@
             {% include "../blocks/free-body.html" %}
         </div>
     </div>
+
+    {# 置底的 social link #}
+    {% include "../blocks/social-link.html" %}
 {% endblock %}

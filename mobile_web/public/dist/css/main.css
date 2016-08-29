@@ -617,6 +617,25 @@ header .mobile-logo {
     line-height: 60px;
     width: 25%;
 }
+
+/**
+ * Footer CSS
+ */
+.one-category {
+    padding-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.one-category a {
+    color: #888;
+    padding: 2px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    margin-right: 10px;
+}
+
 /**
  * Footer CSS
  */
