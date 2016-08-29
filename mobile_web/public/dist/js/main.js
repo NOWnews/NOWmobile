@@ -34,23 +34,23 @@ $(function(){
 
     // 搜尋開啟
     $('#header-bar .fa-search').on('click', function(){
-        switchHeaderBarTo('#search-bar')
+        switchHeaderBarTo('#search-bar');
     });
 
     // 搜尋關閉
     $('#search-bar .fa-close').on('click', function(){
-        switchToHeaderBar('#search-bar')
+        switchToHeaderBar('#search-bar');
     });
 
     // 漢堡選單開啟
     $('#header-bar .fa-bars').on('click', function(){
-        switchHeaderBarTo('#menu-nav-bar')
+        switchHeaderBarTo('#menu-nav-bar');
         $('#menu-nav').removeClass('mui--hide');
     });
 
     // 漢堡選單關閉
     $('#menu-nav-bar .fa-close').on('click', function(){
-        switchToHeaderBar('#menu-nav-bar')
+        switchToHeaderBar('#menu-nav-bar');
         $('#menu-nav').addClass('mui--hide');
     });
 
@@ -60,13 +60,14 @@ $(function(){
         $('#channel-content').toggleClass('mui--hide');
         $(this).find('.channel-name').toggleClass('mui--hide');
         $(this).find('i').toggleClass('fa-rotate-270');
-        return
+        return;
     });
 
 
     var beforeScrollTop = 0,
         scrollCheckTimer = null,
-        scrollDelay = 200;  
+        scrollDelay = 200;
+
     // 偵測 scroll 事件
     $(window).on('scroll', function(){
 
@@ -75,7 +76,7 @@ $(function(){
         $('.ads-block.fixed-bottom').removeClass('mui--hide');
 
         scrollCheckTimer = setTimeout(function(){
-            console.log("!!off");
+            console.log('!!off');
             $('.ads-block.fixed-bottom').addClass('mui--hide');
         } , scrollDelay );
 
@@ -85,12 +86,22 @@ $(function(){
         beforeScrollTop = nowScrollTop;
         if ( isScrollUp) {
             // Show Category
-            return
+            return;
         }
 
         // Hidden Category
-        return
+        return;
 
     });
+
+    // nav 的 category 置中
+    function navCategoryCenter (){
+        var $nav = $('.category-select > ul');
+        var isActivePosition = $nav.find('.isActive').offset().left;
+        var mobileWidthHalf = $(window).width()/2;
+        var itemWidthHalf = $nav.find('li').outerWidth()/2;
+        $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);
+    }
+    navCategoryCenter();
 
 });
