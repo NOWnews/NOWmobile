@@ -63,36 +63,34 @@ $(function(){
         return;
     });
 
-
     var beforeScrollTop = 0,
         scrollCheckTimer = null,
         scrollDelay = 200;
 
     // 偵測 scroll 事件
-    $(window).on('scroll', function(){
+    var $adsBottom = $('.ads-block.fixed-bottom');
+    var adsBottomOpacity = $adsBottom.css('opacity');
+    var adsBottomDom = $adsBottom.length > 0;
+    var scrollStopped;
+    var adsBottomScrollFunc = function(){
+        var fadeInCallback = function () {
+            if (typeof scrollStopped !== 'undefined') {
+                clearInterval(scrollStopped);
+                $adsBottom.addClass('mui--hide');
+            }
 
-        clearTimeout(scrollCheckTimer);
+            scrollStopped = setTimeout(function () {
+                $adsBottom.animate({ opacity: 1 }, 'fast');
+                $adsBottom.removeClass('mui--hide');
+            }, 800);
+        };
+        fadeInCallback.call(this);
+    };
 
-        $('.ads-block.fixed-bottom').removeClass('mui--hide');
-
-        scrollCheckTimer = setTimeout(function(){
-            console.log('!!off');
-            $('.ads-block.fixed-bottom').addClass('mui--hide');
-        } , scrollDelay );
-
-        //  TODO Category;
-        var nowScrollTop = $(this).scrollTop();
-        var isScrollUp = nowScrollTop > beforeScrollTop;
-        beforeScrollTop = nowScrollTop;
-        if ( isScrollUp) {
-            // Show Category
-            return;
-        }
-
-        // Hidden Category
-        return;
-
-    });
+    if (adsBottomDom) {
+        $('.custom-space').css('height', 50);
+        $(window).on('scroll', adsBottomScrollFunc);
+    }
 
     // nav 的 category 置中
     function navCategoryCenter (){
