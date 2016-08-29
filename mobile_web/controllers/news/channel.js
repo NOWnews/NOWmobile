@@ -12,7 +12,9 @@ module.exports = (req, res, next) => {
 
         let mainChannel = yield getApi(channelBaseUrl);
 
-        if (!channelId) channelId = mainChannel[0].nodeId;
+        if (!channelId) {
+            channelId = mainChannel[0].nodeId;
+        }
 
         let { newsList, channelName } = yield getApi(`${channelBaseUrl}/${channelId}`);
 
@@ -25,10 +27,10 @@ module.exports = (req, res, next) => {
             mainChannel,
             channelName,
             channelId,
-        }
+        };
 
         return res.render('news/channel', data);
 
     }).catch(next);
 
-}
+};

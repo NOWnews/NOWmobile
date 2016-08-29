@@ -9,6 +9,7 @@
         <div class="nownews-wrapper news-one-page">
             <h2>{{ news.shortTitle }}</h2>
             <div class="mini-info">
+                <p class="text-gray one-category"><a href="/news/category/{{ news.category._id }}">{{ news.category.name }}</a></p>
                 <p class="text-gray">{{ news.author }}</p>
                 <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ news.createdAt}}</p>
                 <div class="font-size-controllers">
@@ -62,12 +63,12 @@
             </div>
 
             <div class="arrow-block mui--appbar-line-height">
-                <div class="prev-arrow mui--text-nowrap">
-                    <a href="/news/{{ news.prev._id }}">{{ news.prev.title }}</a>
-                </div>
-                <div class="next-arrow mui--text-nowrap mui--text-right">
-                    <a href="/news/{{ news.next._id }}">{{ news.next.title }}</a>
-                </div>
+                <a href="/news/{{ news.prev._id }}" class="prev-arrow mui--text-nowrap">
+                    <span>{{ news.prev.title }}</span>
+                </a>
+                <a href="/news/{{ news.next._id }}" class="next-arrow mui--text-nowrap mui--text-right">
+                    <span>{{ news.next.title }}</span>
+                </a>
             </div>
 
             {% include "../blocks/related-content.html" %}
@@ -75,5 +76,8 @@
 
         </div>
     </div>
+
+    {# 置底的 social link #}
+    {% include "../blocks/social-link.html" %}
 
 {% endblock %}

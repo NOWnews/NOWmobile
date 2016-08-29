@@ -10,7 +10,9 @@ const debug = require('debug')('NOWmobile:controllers:news:category');
 module.exports = (req, res, next) => {
     let { taxId } = req.params;
 
-    if (!taxId) return next();
+    if (!taxId) {
+        return next();
+    }
 
     co(function*() {
         let categoryBaseUrl = 'category/news';
@@ -28,7 +30,7 @@ module.exports = (req, res, next) => {
             return res.json({ newsList });
         }
 
-        return res.render('news/category', {
+        return res.render('home/home', {
             newsList,
             mainCategory,
             taxId,
@@ -36,4 +38,4 @@ module.exports = (req, res, next) => {
 
     }).catch(next);
 
-}
+};

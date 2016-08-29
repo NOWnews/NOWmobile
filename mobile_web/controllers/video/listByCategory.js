@@ -12,9 +12,11 @@ module.exports = (req, res, next) => {
     co(function*() {
 
         let videoBaseUrl = `category/videos`;
-        let mainCategory = yield getApi(videoBaseUrl)
+        let mainCategory = yield getApi(videoBaseUrl);
 
-        if (!taxId) taxId = mainCategory[0].tid;
+        if (!taxId) {
+            taxId = mainCategory[0].tid;
+        }
 
         let videoList = yield getApi(`${videoBaseUrl}/${taxId}`);
 
@@ -30,4 +32,4 @@ module.exports = (req, res, next) => {
 
     }).catch(next);
 
-}
+};

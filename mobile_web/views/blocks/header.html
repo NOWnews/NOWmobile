@@ -12,21 +12,24 @@
                         </div>
                     </form>
                 </td>
-                <td class="mui--text-title" align="right">
+                <td class="mui--text-title fa-close-area" align="right">
                     <a class="header-btn">
-                        <i class="fa fa-lg fa-close"></i>
+                        <i class="fa fa-fw fa-close"></i>
                     </a>
                 </td>
             </tr>
 
             <!-- 漢堡列表模式 -->
             <tr id="menu-nav-bar" class="mui--appbar-height mui--hide">
+                <td class="mui--text-title mui--invisible">
+                    <a class="header-btn"><i class="fa-fw fa fa-bars"></i></a>
+                </td>
                 <td class="mui--text-center">
                     <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
                 </td>
-                <td class="mui--text-title" align="right">
+                <td class="mui--text-title fa-close-area" align="right">
                     <a class="header-btn" href="#">
-                        <i class="fa fa-lg fa-close"></i>
+                        <i class="fa-fw fa fa-close"></i>
                     </a>
                 </td>
             </tr>
@@ -34,14 +37,16 @@
             <!-- Default Header 模式 -->
             <tr id="header-bar" class="mui--appbar-height
                 {{ 'mui--hide' if (isPhotoOne or isSearch) else '' }}">
-                <td class="mui--text-title">
-                    <a class="header-btn"><i class="fa fa-bars"></i></a>
+                <td class="mui--text-title fa-bars-area">
+                    <a class="header-btn"><i class="fa-fw fa fa-bars"></i></a>
                 </td>
                 <td class="mui--text-center">
-                    <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
+                    <a href="/">
+                        <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
+                    </a>
                 </td>
-                <td class="mui--text-title" align="right">
-                    <a class="header-btn" href="#"><i class="fa fa-search"></i></a>
+                <td class="mui--text-title fa-search-area" align="right">
+                    <a class="header-btn" href="#"><i class="fa-fw fa fa-search"></i></a>
                 </td>
             </tr>
 
@@ -51,9 +56,9 @@
                 <td class="mui--text-center mui--text-headline">
                     <span>1</span>/{{ photo.collectionImages.length }}
                 </td>
-                <td class="mui--text-title" align="right">
+                <td class="mui--text-title fa-close-area" align="right">
                     <a class="header-btn" onclick="history.back()">
-                        <i class="fa fa-lg fa-close"></i>
+                        <i class="fa-fw fa fa-close"></i>
                     </a>
                 </td>
             </tr>

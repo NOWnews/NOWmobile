@@ -33,25 +33,25 @@ $(function(){
     }
 
     // 搜尋開啟
-    $('#header-bar .fa-search').on('click', function(){
-        switchHeaderBarTo('#search-bar')
+    $('#header-bar .fa-search-area').on('click', function(){
+        switchHeaderBarTo('#search-bar');
     });
 
     // 搜尋關閉
-    $('#search-bar .fa-close').on('click', function(){
+    $('#search-bar .fa-close-area').on('click', function(){
         $('#search-input').val('');
-        switchToHeaderBar('#search-bar')
+        switchToHeaderBar('#search-bar');
     });
 
     // 漢堡選單開啟
-    $('#header-bar .fa-bars').on('click', function(){
-        switchHeaderBarTo('#menu-nav-bar')
+    $('#header-bar .fa-bars-area').on('click', function(){
+        switchHeaderBarTo('#menu-nav-bar');
         $('#menu-nav').removeClass('mui--hide');
     });
 
     // 漢堡選單關閉
-    $('#menu-nav-bar .fa-close').on('click', function(){
-        switchToHeaderBar('#menu-nav-bar')
+    $('#menu-nav-bar .fa-close-area').on('click', function(){
+        switchToHeaderBar('#menu-nav-bar');
         $('#menu-nav').addClass('mui--hide');
     });
 
@@ -61,38 +61,55 @@ $(function(){
         $('#channel-content').toggleClass('mui--hide');
         $(this).find('.channel-name').toggleClass('mui--hide');
         $(this).find('i').toggleClass('fa-rotate-270');
-        return
+        return;
     });
-
-
 
     var beforeScrollTop = 0,
         scrollCheckTimer = null,
-        scrollDelay = 200;  
+        scrollDelay = 200;
+
     // 偵測 scroll 事件
-    $(window).on('scroll', function(){
+    var $adsBottom = $('.ads-block.fixed-bottom');
+    var adsBottomOpacity = $adsBottom.css('opacity');
+    var adsBottomDom = $adsBottom.length > 0;
+    var scrollStopped;
+    var adsBottomScrollFunc = function(){
+        var fadeInCallback = function () {
+            if (typeof scrollStopped !== 'undefined') {
+                clearInterval(scrollStopped);
+                $adsBottom.addClass('mui--hide');
+            }
 
-        clearTimeout(scrollCheckTimer);
+            scrollStopped = setTimeout(function () {
+                $adsBottom.animate({ opacity: 1 }, 'fast');
+                $adsBottom.removeClass('mui--hide');
+            }, 800);
+        };
+        fadeInCallback.call(this);
+    };
 
-        $('.ads-block.fixed-bottom').removeClass('mui--hide');
+    if (adsBottomDom) {
+        $('.custom-space').css('height', 50);
+        $(window).on('scroll', adsBottomScrollFunc);
+    }
 
-        scrollCheckTimer = setTimeout(function(){
-            console.log("!!off");
-            $('.ads-block.fixed-bottom').addClass('mui--hide');
-        } , scrollDelay );
+    // nav 的 category 置中
+    function navCategoryCenter (){
+        var $nav = $('.category-select > ul');
+        var isActivePosition = $nav.find('.isActive').offset().left;
+        var mobileWidthHalf = $(window).width()/2;
+        var itemWidthHalf = $nav.find('li').outerWidth()/2;
+        $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);
+    }
+    var navDom = $('.category-select > ul').length > 0;
+    if (navDom) {
+        navCategoryCenter();
+    }
 
-        //  TODO Category;
-        var nowScrollTop = $(this).scrollTop();
-        var isScrollUp = nowScrollTop > beforeScrollTop;
-        beforeScrollTop = nowScrollTop;
-        if ( isScrollUp) {
-            // Show Category
-            return
-        }
-
-        // Hidden Category
-        return
-
-    });
-
+    // 內頁的 social
+    var socialDom = $('#social-link').length > 0;
+    if (socialDom) {
+        var socialHeight = $('#social-link').height();
+        $('.custom-space').css('height', socialHeight);
+    }
 });

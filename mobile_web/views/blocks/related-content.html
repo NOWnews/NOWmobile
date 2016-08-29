@@ -4,14 +4,16 @@
     {% for relatedNews in news.refNews %}
         {% if loop.index > 3 and loop.index < 7 %}
             <div class="mui-row one-news">
-                <div class="mui-col-xs-5">
-                    <img style="max-width: 100%;padding-top:5px;" src="{{ relatedNews.image.thumbnail }}">
-                </div>
-                <div class="mui-col-xs-7 related-news-info">
-                    <h4 class="category-title">{{ relatedNews.category.name }}</h4>
-                    <div class="mui-divider"></div>
-                    <span> {{ relatedNews.title }}</span>
-                </div>
+                <a href="/news/{{ relatedNews._id }}">
+                    <div class="mui-col-xs-5">
+                        <img src="{{ relatedNews.image.thumbnail }}">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">{{ relatedNews.category.name }}</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ relatedNews.title }}</span>
+                    </div>
+                </a>
             </div>
         {% endif %}
     {% endfor %}
@@ -25,14 +27,16 @@
     {% for news in headline %}
         {% if loop.index < 4 %}
             <div class="mui-row one-news">
-                <div class="mui-col-xs-5">
-                    <img style="max-width: 100%;padding-top:5px;" src="{{ news.image.thumbnail }}">
-                </div>
-                <div class="mui-col-xs-7 related-news-info">
-                    <h4 class="category-title">{{ news.category.name }}</h4>
-                    <div class="mui-divider"></div>
-                    <span> {{ news.title }}</span>
-                </div>
+                <a href="/news/{{ news._id }}">
+                    <div class="mui-col-xs-5">
+                        <img src="{{ news.image.thumbnail }}">
+                    </div>
+                    <div class="mui-col-xs-7 related-news-info">
+                        <h4 class="category-title">{{ news.category.name }}</h4>
+                        <div class="mui-divider"></div>
+                        <span> {{ news.title }}</span>
+                    </div>
+                </a>
             </div>
         {% endif %}
     {% endfor %}
@@ -41,5 +45,3 @@
 <div class="related-news-block">
     <h1>POPIN</h1>
 </div>
-
-
