@@ -426,7 +426,7 @@ header .mobile-logo {
     line-height: 180%;
 }
 
-.news-body img {
+.news-body img , .news-body p, .news-body iframe{
     max-width: 100%;
 }
 
