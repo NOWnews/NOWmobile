@@ -15,7 +15,9 @@
                                 <div class="slick-news">
                                     <a href="/news/{{ news._id }}">
                                         <div class="slick-news-info">
-                                            <p>{{ news.field_short_title.value }}</p>
+                                            <p class="info-title">
+                                                {{ news.field_short_title.value }}
+                                            </p>
                                         </div>
                                         <img class="news-main-image" src="{{ news.image.thumbnail }}" />
                                     </a>
