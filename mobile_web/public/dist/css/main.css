@@ -752,6 +752,41 @@ header .mobile-logo {
 }
 
 /**
+ * About
+ */
+
+.about-content {
+    font-size: 16px;
+    line-height: 180%;
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: "";
+    width: 2px;
+    background-color: #f1f1f1;
+    left: 16.5%;
+    margin-left: -1.5px;
+
+}
+.timeline img{
+    border-radius: 50%;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-row {
+    margin-bottom: 15px;
+}
+
+/**
  * Footer CSS
  */
 
