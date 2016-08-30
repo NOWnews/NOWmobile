@@ -7,7 +7,7 @@
 
 .info-title{
     font-weight: bold;
-    font-size: 17px;
+    font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -184,7 +184,6 @@ header .header-btn {
     color: #0083FF;
 }
 header .mobile-logo {
-    height: 30px;
     max-width: 80%;
 }
 
@@ -388,7 +387,20 @@ header .mobile-logo {
     position: absolute;
     line-height: 150%;
     bottom: -40px;
+    color: #333;
+    width: 97%;
+    font-size: 15px;
+    background-size: 100% 100%;
+    padding: 0 10px;
+    left: -2px;
+}
+
+.news-block .news-info-bg, .sponser.news-info-with-bg{
+    position: absolute;
+    line-height: 150%;
+    bottom: -40px;
     background: url(/static/img/news-info-bg.png);
+    height: 64px;
     color: #333;
     width: 97%;
     font-size: 15px;
@@ -577,7 +589,7 @@ header .mobile-logo {
 
 .video-block {
     position: relative;
-    margin-bottom: 0px;
+    margin-bottom: 1px;
 }
 
 .video-block p {
