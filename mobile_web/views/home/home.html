@@ -29,7 +29,7 @@
         {# 廣告版位 #}
         {% include "../ad/ad336x280.html" %}
 
-        <div class="nownews-wrapper">
+        <div class="nownews-wrapper" {% if taxId %}id="list-wrapper"{% endif %}>
             {% for news in newsList %}
                 {% if loop.index >= 4 %}
                     {% include "../blocks/news-block.html" %}
