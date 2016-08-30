@@ -185,6 +185,7 @@ header .header-btn {
 }
 header .mobile-logo {
     height: 30px;
+    max-width: 80%;
 }
 
 /**
