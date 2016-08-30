@@ -1,5 +1,9 @@
 /*header*/
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+}
 .text-gray {
     color: #888;
     font-size: 12px;
