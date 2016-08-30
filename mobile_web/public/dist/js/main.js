@@ -124,12 +124,14 @@ $(function() {
     if (hasListWrapperDom){
         win.scroll(function() {
             if ($(document).height() - win.height() === win.scrollTop()) {
+                $('#loading').removeClass('mui--hide');
                 page++;
                 $.ajax({
                     url: '/ajaxPost?page=' + page + '&url=' + location.pathname,
                     dataType: 'html',
                     success: function(html) {
                         $('#list-wrapper').append(html);
+                        $('#loading').addClass('mui--hide');
                     }
                 });
 
