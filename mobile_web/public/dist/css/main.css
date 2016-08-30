@@ -7,6 +7,9 @@
 
 .info-title{
     font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .info-caption {
@@ -387,7 +390,7 @@ header .mobile-logo {
 .news-block .category-title {
     margin-top: 10px;
     color: #1976d2;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -549,7 +552,6 @@ header .mobile-logo {
     position: absolute;
     bottom: 0;
     color: #fff;
-    font-size: 18px;
     height: 80px;
     padding: 20px 30px;
     background: url(/static/img/slick-news-info-bg.png);
@@ -558,8 +560,6 @@ header .mobile-logo {
 }
 
 .photo-info {
-    /*position: absolute;*/
-    /*bottom: 60px;*/
     color: #fff;
     font-size: 18px;
     height: 80px;
@@ -571,6 +571,10 @@ header .mobile-logo {
  /*.slick-list .draggable {height:100%!important;}*/
 .slick-list {
     height: auto;
+}
+
+.photo-block .info-title {
+    margin-top: 20px;
 }
 
 .photo-main-image {
@@ -599,13 +603,14 @@ header .mobile-logo {
 }
 
 .video-block .shadow-photo-info .info-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color: white;
 }
 .video-block .shadow-photo-info .info-caption {
     color: white;
+}
+
+.video-block .sponser .info-caption {
+    color: #888;
 }
 
 .video-block .icon-play-circle {
@@ -659,7 +664,7 @@ header .mobile-logo {
 }
 
 /**
- * Footer CSS
+ * page category
  */
 .one-category {
     padding-bottom: 10px;
@@ -674,6 +679,52 @@ header .mobile-logo {
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     margin-right: 10px;
+}
+
+.tid419883 {
+    color: #e71900
+}
+.tid419884 {
+    color: #ff5a17
+}
+.tid419885 {
+    color: #ff9900
+}
+.tid419886 {
+    color: #ffe72e
+}
+.tid419887 {
+    color: #72ff5c
+}
+.tid419888 {
+    color: #53ffe0
+}
+.tid419889 {
+    color: #2ee7ff
+}
+.tid419890 {
+    color: #0099ff
+}
+.tid419891 {
+    color: #2763ff
+}
+.tid419892 {
+    color: #6645ff
+}
+.tid419893 {
+    color: #ff737d
+}
+.tid419894 {
+    color: #ff456e
+}
+.tid419895 {
+    color: #ff45d5
+}
+.tid419896 {
+    color: #d073ff
+}
+.tid419897 {
+    color: #b911f7
 }
 
 /**
