@@ -2,15 +2,12 @@
 {% if specialType=='headline' %}
     {% set specialName = '頭條' %}
     {% set url = '/' %}
-    {% set sectionName = '頭條' %}
 {% elif specialType=='hotNews' %}
     {% set specialName = '熱門' %}
     {% set url = '/news/special/hotNews/' %}
-    {% set sectionName = '熱門' %}
 {% elif specialType=='instant' %}
     {% set specialName = '速報' %}
     {% set url = '/news/special/instant/' %}
-    {% set sectionName = '速報' %}
 {% endif %}
 <meta property="fb:app_id" content="132863386747341">
 <meta property="fb:pages" content="102884532662">
@@ -28,7 +25,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="image" content="/static/img/mobile-logo-dark.png">
 <meta itemprop="keywords" content="">
-<meta itemprop="articleSection" content="{{ sectionName }}">
+<meta itemprop="articleSection" content="{{ specialName }}">
 <meta itemprop="dateCreated" content="">
 <meta itemprop="dateModified" content="">
 <meta itemprop="datePublished" content="">
