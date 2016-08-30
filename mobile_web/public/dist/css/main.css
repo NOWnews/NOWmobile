@@ -352,6 +352,10 @@ header .mobile-logo {
     background-size: 100% 100%;
 }
 
+.slick-news .slick-news-info .info-title {
+    margin-top: -5px;
+}
+
 /* 左右箭頭 CSS
  */
 .single-item .slick-next, .slick-photos .slick-next {
@@ -405,7 +409,7 @@ header .mobile-logo {
 .news-block .news-info {
     position: absolute;
     line-height: 150%;
-    bottom: -40px;
+    bottom: -28px;
     color: #333;
     width: 97%;
     font-size: 15px;
@@ -417,7 +421,7 @@ header .mobile-logo {
 .news-block .news-info-bg, .sponser.news-info-with-bg{
     position: absolute;
     line-height: 150%;
-    bottom: -40px;
+    bottom: -20px;
     background: url(/static/img/news-info-bg.png);
     height: 64px;
     color: #333;
