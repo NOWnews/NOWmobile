@@ -6,7 +6,7 @@
             {% set categoryType = 'video' %}
             {% include "../blocks/category-nav.html" %}
         </nav>
-        <div class="nownews-wrapper">
+        <div class="nownews-wrapper" {% if taxId %}id="list-wrapper"{% endif %}>
             {% for video in videoList %}
                 {% include "../blocks/video-block.html" %}
                 {# 廣告版位 #}
