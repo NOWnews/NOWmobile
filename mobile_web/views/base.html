@@ -4,10 +4,12 @@
         {% include "./blocks/head-meta.html" %}
         {% include "./blocks/head-include.html" %}
 
+        {# seo block #}
+        {% include "./seo/base/fbBase.html" %}
+        {% block socialblock %}{% endblock %}
 
         {# JSON-LD 資料 #}
         {% include "./seo/jsonld.html" %}
-        {% block socialblock %}{% endblock %}
     </head>
 
     <body>
