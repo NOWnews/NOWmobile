@@ -1,12 +1,17 @@
 /*header*/
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+}
 .text-gray {
     color: #888;
     font-size: 12px;
 }
 
 .info-title{
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -39,8 +44,7 @@
 }
 
 .category-select > div {
-    background: url(/static/img/category-gradient-cover.png);
-    background-repeat: repeat-y;
+    background: url(/static/img/category-gradient-black.png);
     position: absolute;
     height: 48px;
     max-width: 20%;
@@ -83,35 +87,23 @@
 }
 
 .category-select li.isActive a{
-    color: #EEA229;
+    color: #00FFFE;
 }
 
 #photo-category-nav {
     background: #001971;
 }
 
-#photo-category-nav li.isActive a{
-    color: #00FFFE;
-}
-
-
 #photo-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-cover-for-video.png);
-    background-repeat: repeat-y;
+    background: url(/static/img/category-gradient-blue.png);
 }
 
 #video-category-nav {
     background: #420073;
 }
 
-#video-category-nav li.isActive a{
-    color: #00FFFE;
-}
-
-
 #video-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-cover-for-photo.png);
-    background-repeat: repeat-y;
+    background: url(/static/img/category-gradient-purple.png);
 }
 
 /* channel Nav */
@@ -191,11 +183,12 @@ header a {
 header a:hover {
     color: white;
 }
-header .header-btn {
-    color: #0083FF;
+header .header-btn > img {
+    max-width: 25px;
 }
+
 header .mobile-logo {
-    height: 30px;
+    max-width: 80%;
 }
 
 /**
@@ -205,13 +198,28 @@ header .mobile-logo {
     background-image: url(/static/img/burglist-bg90.png);
     background-repeat: repeat;
     margin-top: -1px;
-    min-height: 100%;
+    max-height: calc(100% - 56px);
+    min-height: calc(100% - 56px);
     min-width: 100%;
+    overflow: scroll;
     padding: 0;
     position: fixed;
     z-index: 9999;
 }
 
+@media (orientation: landscape) and (max-height: 480px) {
+    #menu-nav-wrapper {
+        max-height: calc(100% - 48px);
+        min-height: calc(100% - 48px);
+    }
+}
+
+@media (min-width: 480px) {
+    #menu-nav-wrapper {
+        max-height: calc(100% - 64px);
+        min-height: calc(100% - 64px);
+    }
+}
 #menu-nav-wrapper > .menu-nav-item {
     font-size: 20px;
     height: 60px;
@@ -344,6 +352,10 @@ header .mobile-logo {
     background-size: 100% 100%;
 }
 
+.slick-news .slick-news-info .info-title {
+    margin-top: -5px;
+}
+
 /* 左右箭頭 CSS
  */
 .single-item .slick-next, .slick-photos .slick-next {
@@ -397,12 +409,24 @@ header .mobile-logo {
 .news-block .news-info {
     position: absolute;
     line-height: 150%;
-    bottom: -40px;
-    background: url(/static/img/news-info-bg.png);
+    bottom: -28px;
     color: #333;
     width: 97%;
     font-size: 15px;
-    font-weight: bold;
+    background-size: 100% 100%;
+    padding: 0 10px;
+    left: -2px;
+}
+
+.news-block .news-info-bg, .sponser.news-info-with-bg{
+    position: absolute;
+    line-height: 150%;
+    bottom: -20px;
+    background: url(/static/img/news-info-bg.png);
+    height: 64px;
+    color: #333;
+    width: 97%;
+    font-size: 15px;
     background-size: 100% 100%;
     padding: 0 10px;
     left: -2px;
@@ -588,7 +612,7 @@ header .mobile-logo {
 
 .video-block {
     position: relative;
-    margin-bottom: 0px;
+    margin-bottom: 1px;
 }
 
 .video-block p {
@@ -658,8 +682,8 @@ header .mobile-logo {
 #social-link li {
     list-style: none;
     float: left;
-    height: 60px;
-    line-height: 60px;
+    height: 40px;
+    line-height: 40px;
     width: 25%;
 }
 
