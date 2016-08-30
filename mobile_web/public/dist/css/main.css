@@ -183,9 +183,10 @@ header a {
 header a:hover {
     color: white;
 }
-header .header-btn {
-    color: #0083FF;
+header .header-btn > img {
+    max-width: 25px;
 }
+
 header .mobile-logo {
     max-width: 80%;
 }
@@ -197,13 +198,28 @@ header .mobile-logo {
     background-image: url(/static/img/burglist-bg90.png);
     background-repeat: repeat;
     margin-top: -1px;
-    min-height: 100%;
+    max-height: calc(100% - 56px);
+    min-height: calc(100% - 56px);
     min-width: 100%;
+    overflow: scroll;
     padding: 0;
     position: fixed;
     z-index: 9999;
 }
 
+@media (orientation: landscape) and (max-height: 480px) {
+    #menu-nav-wrapper {
+        max-height: calc(100% - 48px);
+        min-height: calc(100% - 48px);
+    }
+}
+
+@media (min-width: 480px) {
+    #menu-nav-wrapper {
+        max-height: calc(100% - 64px);
+        min-height: calc(100% - 64px);
+    }
+}
 #menu-nav-wrapper > .menu-nav-item {
     font-size: 20px;
     height: 60px;
