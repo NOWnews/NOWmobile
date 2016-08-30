@@ -1,4 +1,13 @@
 {% extends "../base.html" %}
+
+{% block socialblock %}
+    {% if specialType %}
+        {% include "../seo/head-social-category-special.html" %}
+    {% else %}
+        {% include "../seo/head-social-category.html" %}
+    {% endif %}
+{% endblock %}
+
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
