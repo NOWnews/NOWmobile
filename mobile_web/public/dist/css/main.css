@@ -7,6 +7,9 @@
 
 .info-title{
     font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .info-caption {
@@ -376,7 +379,7 @@ header .mobile-logo {
 .news-block .category-title {
     margin-top: 10px;
     color: #1976d2;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -537,12 +540,15 @@ header .mobile-logo {
     position: absolute;
     bottom: 0;
     color: #fff;
-    font-size: 18px;
     height: 80px;
     padding: 20px 30px;
     background: url(/static/img/slick-news-info-bg.png);
     width: 100%;
     background-size: 100% 100%;
+}
+
+.photo-block .info-title {
+    margin-top: 20px;
 }
 
 .photo-main-image {
@@ -571,13 +577,14 @@ header .mobile-logo {
 }
 
 .video-block .shadow-photo-info .info-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     color: white;
 }
 .video-block .shadow-photo-info .info-caption {
     color: white;
+}
+
+.video-block .sponser .info-caption {
+    color: #888;
 }
 
 .video-block .icon-play-circle {

@@ -7,8 +7,8 @@
                     <p class="category-title">
                         {% if news.category == null %}不分類{% endif %}{{ news.category.name }}
                     </p>
-                    <p style="white-space:nowrap;">{{ news.field_short_title.value }}</p>
-                    <p class="text-gray">{{ news.createdAt }}</p>
+                    <p class="info-title">{{ news.field_short_title.value }}</p>
+                    <p class="info-caption text-gray">{{ news.createdAt }}</p>
                 </div>
             </a>
         </div>
