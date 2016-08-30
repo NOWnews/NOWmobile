@@ -13,38 +13,36 @@ router.route('/ajaxPost')
         let taxId = req.query.url.split('/').pop();
 
         co(function*() {
-            let newsList = null;
+            let result = null;
             let template = null;
 
             if ( url.indexOf('news') > -1 ) {
-                newsList = {
+                result = {
                     newsList: yield getApi(`category/news/${taxId}?page=${page}`)
                 };
                 template = 'newsPost';
             } else if  (url.indexOf('video') > -1 ) {
-                newsList = {
+                result = {
                     videoList: yield getApi(`category/videos/${taxId}?page=${page}`)
                 };
                 template = 'videosPost';
             } else if ( url.indexOf('photo') > -1 ) {
-                newsList = {
+                result = {
                     photoList: yield getApi(`category/photos/${taxId}?page=${page}`)
                 };
                 template = 'photosPost';
             }
 
             if(req.query.data === 'PLAYJJ'){
-                return res.json({ newsList });
+                return res.json(result);
             }
 
             // 如果沒資料就回傳掉
-            if (!newsList && !template) {
+            if (!result && !template) {
                 return;
             }
 
-            // debug('newsList = %j', newsList);
-
-            return res.render(`ajaxPost/${template}`, newsList);
+            return res.render(`ajaxPost/${template}`, result);
 
         }).catch(next);
 
