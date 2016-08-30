@@ -39,7 +39,7 @@
 }
 
 .category-select > div {
-    background: url(/static/img/category-gradient-cover.png);
+    background: url(/static/img/category-gradient-black.png);
     background-repeat: repeat-y;
     position: absolute;
     height: 48px;
@@ -83,35 +83,23 @@
 }
 
 .category-select li.isActive a{
-    color: #EEA229;
+    color: #00FFFE;
 }
 
 #photo-category-nav {
     background: #001971;
 }
 
-#photo-category-nav li.isActive a{
-    color: #00FFFE;
-}
-
-
 #photo-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-cover-for-video.png);
-    background-repeat: repeat-y;
+    background: url(/static/img/category-gradient-blue.png);
 }
 
 #video-category-nav {
     background: #420073;
 }
 
-#video-category-nav li.isActive a{
-    color: #00FFFE;
-}
-
-
 #video-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-cover-for-photo.png);
-    background-repeat: repeat-y;
+    background: url(/static/img/category-gradient-purple.png);
 }
 
 /* channel Nav */
