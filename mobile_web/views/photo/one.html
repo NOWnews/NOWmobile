@@ -1,29 +1,39 @@
 {% extends "../base.html" %}
 {% block container %}
-    <div id="content-wrapper" style="background:#000; display:flex;align-items:center;">
-        <div class="mui--appbar-height"></div>
+    <div id="content-wrapper" style="background:#000;">
         <div class="nownews-wrapper">
             <div class="mui-container-fluid">
                 <div class="mui-row">
-                    <div class="single-item">
-                        <div class="slick-photos">
-                            {% for image in photo.collectionImages %}
-                                <div class="slick-photo">
-                                    <img class="photo-main-image" src="{{ image.thumbnail }}" />
-                                    <div class="shadow-photo">
-                                        <div class="shadow-photo-info mui--text-subhead">
-                                            {{ image.cite }}
-                                        </div>
+                    <div class="photo-info" style="margin-top: 20px;">
+                        <div class="news_item" style="color: #fff">{{ photo.collectionImages[0].cite }}</div>
+                    </div>
+                    <div class="slick-photos">
+                        {% for image in photo.collectionImages %}
+                            <div class="slick-photo">
+                                <img class="photo-main-image" src="{{ image.thumbnail }}" />
+                                <div class="shadow-photo mui--hide">
+                                    <div class="shadow-photo-info mui--text-subhead">
+                                        {{ image.cite }}
                                     </div>
                                 </div>
-
-                            {% endfor %}
-                        </div>
+                            </div>
+                        {% endfor %}
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function(){
+            //首圖圖說
+            $('.photo-info .news_item').text($('.slick-photo.slick-active .shadow-photo-info').text());
+            //圖說
+            $('.slick-photos').on('afterChange', function(event, slick, currentSlide, nextSlide){
+                $('.photo-info .news_item').text($('.slick-photo.slick-active .shadow-photo-info').text());
+            });
+        });
+    </script>
 
     {# 置底的 social link #}
     {% include "../blocks/social-link.html" %}
