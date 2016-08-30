@@ -9,7 +9,7 @@
                         <img src="{{ relatedNews.image.thumbnail }}">
                     </div>
                     <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">{{ relatedNews.category.name }}</h4>
+                        <h4 class="category-title tid{{ relatedNews.category._id }}">{{ relatedNews.category.name }}</h4>
                         <div class="mui-divider"></div>
                         <span> {{ relatedNews.title }}</span>
                     </div>
@@ -32,7 +32,7 @@
                         <img src="{{ news.image.thumbnail }}">
                     </div>
                     <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title">{{ news.category.name }}</h4>
+                        <h4 class="category-title tid{{ news.category._id }}">{{ news.category.name }}</h4>
                         <div class="mui-divider"></div>
                         <span> {{ news.title }}</span>
                     </div>
