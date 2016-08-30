@@ -346,12 +346,23 @@ header .mobile-logo {
 
 /* 左右箭頭 CSS
  */
-.single-item .slick-next {
+.single-item .slick-next, .slick-photos .slick-next {
     right: 0;
+    height: 46px;
+    background: url(/static/img/slick-next.png);
+    background-size: 100%;
 }
-.single-item .slick-prev {
+
+.slick-photos .slick-arrow::before {
+    opacity: 0;
+}
+
+.single-item .slick-prev, .slick-photos .slick-prev {
     left: 0;
     z-index: 1;
+    height: 46px;
+    background: url(/static/img/slick-prev.png);
+    background-size: 100%;
 }
 
 /**
@@ -407,6 +418,7 @@ header .mobile-logo {
     min-width: 320px;
     max-width: 640px;
     margin: 49px auto 0;
+    overflow: hidden;
 }
 
 .news-main-image {
@@ -545,6 +557,20 @@ header .mobile-logo {
     background: url(/static/img/slick-news-info-bg.png);
     width: 100%;
     background-size: 100% 100%;
+}
+
+.photo-info {
+    color: #fff;
+    font-size: 18px;
+    height: 80px;
+    width: 100%;
+    padding: 0 30px 20px 30px;
+    background-image: url(/static/img/slick-news-info-bg.png);
+    background-size: 100% 100%;
+}
+ /*.slick-list .draggable {height:100%!important;}*/
+.slick-list {
+    height: auto;
 }
 
 .photo-block .info-title {

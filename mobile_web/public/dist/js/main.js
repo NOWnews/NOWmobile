@@ -8,8 +8,12 @@ $(function(){
         arrows: false
     });
 
+    // $('.photo-info').slick({
+    //     adaptiveHeight: true,
+    //     variableWidth: true
+    // });
     $('.slick-photos').slick({
-        adaptiveHeight: true,
+        adaptiveHeight: true
     });
     $('.slick-photos').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         $('#photo-one-bar span').html(nextSlide + 1);
