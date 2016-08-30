@@ -41,7 +41,6 @@
 
 .category-select > div {
     background: url(/static/img/category-gradient-black.png);
-    background-repeat: repeat-y;
     position: absolute;
     height: 48px;
     max-width: 20%;
