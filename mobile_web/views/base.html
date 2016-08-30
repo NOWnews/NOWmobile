@@ -4,6 +4,9 @@
         {% include "./blocks/head-meta.html" %}
         {% include "./blocks/head-include.html" %}
         {% block socialblock %}{% endblock %}
+
+        {# JSON-LD 資料 #}
+        {% include "./seo/jsonld.html" %}
     </head>
 
     <body>
@@ -12,6 +15,7 @@
         {% block container %}{% endblock %}
         {% include "./blocks/footer.html" %}
         <div class="custom-space"></div>
+        <div class="mui--hide" id="loading"></div>
     </body>
 
 </html>

@@ -24,7 +24,9 @@
                                 <div class="slick-news">
                                     <a href="/news/{{ news._id }}">
                                         <div class="slick-news-info">
-                                            <p>{{ news.field_short_title.value }}</p>
+                                            <p class="info-title">
+                                                {{ news.field_short_title.value }}
+                                            </p>
                                         </div>
                                         <img class="news-main-image" src="{{ news.image.thumbnail }}" />
                                     </a>
@@ -38,7 +40,7 @@
         {# 廣告版位 #}
         {% include "../ad/ad336x280.html" %}
 
-        <div class="nownews-wrapper">
+        <div class="nownews-wrapper" {% if taxId %}id="list-wrapper"{% endif %}>
             {% for news in newsList %}
                 {% if loop.index >= 4 %}
                     {% include "../blocks/news-block.html" %}
