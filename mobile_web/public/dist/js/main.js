@@ -8,10 +8,6 @@ $(function(){
         arrows: false
     });
 
-    // $('.photo-info').slick({
-    //     adaptiveHeight: true,
-    //     variableWidth: true
-    // });
     $('.slick-photos').slick({
         adaptiveHeight: true
     });
