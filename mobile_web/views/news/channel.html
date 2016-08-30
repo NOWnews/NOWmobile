@@ -1,8 +1,13 @@
 {% extends "../base.html" %}
+
+{% block socialblock %}
+    {% include "../seo/head-social-channel.html" %}
+{% endblock %}
+
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
-        <div id=channel-nav-block>
+        <div id="channel-nav-block">
             <div class="mui-panel mui--text-center ">
                 <span class="channel-name"> {{ channelName }}</span>
                 <i class="fa fa-play fa-rotate-90" aria-hidden="true"></i>
