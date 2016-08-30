@@ -6,7 +6,8 @@
 }
 
 .info-title{
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 17px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -390,7 +391,6 @@ header .mobile-logo {
     color: #333;
     width: 97%;
     font-size: 15px;
-    font-weight: bold;
     background-size: 100% 100%;
     padding: 0 10px;
     left: -2px;
