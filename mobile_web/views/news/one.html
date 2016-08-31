@@ -18,7 +18,11 @@
         <div class="nownews-wrapper news-one-page">
             <h2>{{ news.shortTitle }}</h2>
             <div class="mini-info">
-                <p class="text-gray one-category"><a href="/news/category/{{ news.category._id }}">{{ news.category.name }}</a></p>
+                <p class="text-gray one-category">
+                    <a href="/news/category/{{ news.category._id }}">
+                        {{ news.category.name or '不分類' }}
+                    </a>
+                </p>
                 <p class="text-gray">{{ news.author }}</p>
                 <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ news.createdAt}}</p>
                 <div class="font-size-controllers">
