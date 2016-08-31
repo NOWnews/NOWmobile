@@ -28,6 +28,7 @@
 
                 {# 廣告版位 #}
                 {% if loop.index % 3 == 0 %}
+                    {% set noSliderNumber = loop.index %}
                     {% include "../ad/ad-photo-block.html" %}
                 {% endif %}
             {% endfor %}

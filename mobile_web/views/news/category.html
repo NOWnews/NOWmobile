@@ -16,6 +16,7 @@
                 {% include "../blocks/news-block.html" %}
                 {# 廣告版位 #}
                 {% if loop.index % 3 == 0 %}
+                    {% set noSliderNumber = loop.index %}
                     {% include "../ad/ad-news-block.html" %}
                 {% endif %}
             {% endfor %}
@@ -33,6 +34,6 @@
             {% endif %}
         </div>
         {# 廣告版位 #}
-        {% include "../ad/ad320x50.html" %}
+        {% include "../ad/list/ad320x50.html" %}
     </div>
 {% endblock %}
