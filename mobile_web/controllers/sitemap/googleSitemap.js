@@ -1,5 +1,4 @@
 import sm from 'sitemap';
-// import moment from 'moment-timezone';
 import co from 'co';
 import Promise from 'bluebird';
 import _ from 'lodash';
