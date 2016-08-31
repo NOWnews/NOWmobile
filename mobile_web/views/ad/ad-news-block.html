@@ -24,26 +24,27 @@
      - 每三則做由 300x250 以及 320x100 做置換
      - 目前寫死
 #}
-{% if loop.index % 2 == 0 %}
-    {% if loop.index == (slideItem+1) * 1 %}
+
+{% if noSliderNumber % 2 == 1 %}
+    {% if noSliderNumber == 3 * 1 %}
         {% include "../ad/list/ad300x250_1.html" %}
-    {% elif loop.index == (slideItem+1) * 2 %}
+    {% elif noSliderNumber == 3 * 3 %}
         {% include "../ad/list/ad300x250_2.html" %}
-    {% elif loop.index == (slideItem+1) * 3 %}
+    {% elif noSliderNumber == 3 * 5 %}
         {% include "../ad/list/ad300x250_3.html" %}
-    {% elif loop.index == (slideItem+1) * 4 %}
+    {% elif noSliderNumber == 3 * 7 %}
         {% include "../ad/list/ad300x250_4.html" %}
-    {% elif loop.index == (slideItem+1) * 5 %}
+    {% elif noSliderNumber == 3 * 9 %}
         {% include "../ad/list/ad300x250_5.html" %}
-    {% elif loop.index == (slideItem+1) * 6 %}
+    {% elif noSliderNumber == 3 * 11 %}
         {% include "../ad/list/ad300x250_6.html" %}
-    {% elif loop.index == (slideItem+1) * 7 %}
+    {% elif noSliderNumber == 3 * 13 %}
         {% include "../ad/list/ad300x250_7.html" %}
     {% endif %}
 {% else %}
-    {% if loop.index - 3 == (slideItem+1) * 1 %}
+    {% if noSliderNumber == 3 * 2 %}
         {% include "../ad/list/ad320x100_1.html" %}
-    {% elif loop.index - 3 == (slideItem+1) *2 %}
+    {% elif noSliderNumber == 3 * 4 %}
         {% include "../ad/list/ad320x100_2.html" %}
     {% endif %}
 {% endif %}

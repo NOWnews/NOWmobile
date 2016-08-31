@@ -50,7 +50,8 @@
                 {% endif %}
 
                 {# 廣告版位 #}
-                {% if loop.index > slideItem and loop.index % 3 == 0 %}
+                {% set noSliderNumber = loop.index - slideItem %}
+                {% if loop.index > slideItem and noSliderNumber % 3 == 0 %}
                     {% include "../ad/ad-news-block.html" %}
                 {% endif %}
             {% endfor %}
