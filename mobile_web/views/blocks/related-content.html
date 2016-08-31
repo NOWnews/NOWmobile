@@ -6,7 +6,7 @@
             <div class="mui-row one-news">
                 <a href="/news/{{ relatedNews._id }}">
                     <div class="mui-col-xs-5">
-                        <img src="{{ relatedNews.image.thumbnail }}">
+                        <img src="{{ relatedNews.image.thumbnail if relatedNews.image.thumbnail else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
                     </div>
                     <div class="mui-col-xs-7 related-news-info">
                         <h4 class="category-title tid{{ relatedNews.category._id }}">
@@ -31,7 +31,7 @@
             <div class="mui-row one-news">
                 <a href="/news/{{ news._id }}">
                     <div class="mui-col-xs-5">
-                        <img src="{{ news.image.thumbnail }}">
+                        <img src="{{ news.image.thumbnail if relatedNews.image.thumbnail else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
                     </div>
                     <div class="mui-col-xs-7 related-news-info">
                         <h4 class="category-title tid{{ news.category._id }}">
