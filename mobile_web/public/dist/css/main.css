@@ -79,17 +79,17 @@ a:hover {
     right: 0;
 }
 
-.category-select > ul > li {
+.category-select > ul > a {
     display: inline-block;
     font-size: 20px;
     padding: 10px 10px;
 }
 
-.category-select li a {
+.category-select a li {
     color: white;
 }
 
-.category-select li.isActive a{
+.category-select a > li.isActive {
     color: #00FFFE;
 }
 
@@ -191,7 +191,7 @@ header .header-btn > img {
 }
 
 header .mobile-logo {
-    max-width: 80%;
+    max-height: 30%;
 }
 
 /**
