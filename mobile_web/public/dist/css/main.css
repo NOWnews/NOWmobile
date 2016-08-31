@@ -1,8 +1,12 @@
 /*header*/
-// Hidden temp
-// * {
-//     font-family: 'Noto Sans TC', sans-serif;
-// }
+* {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .text-gray {
     color: #888;
     font-size: 12px;
