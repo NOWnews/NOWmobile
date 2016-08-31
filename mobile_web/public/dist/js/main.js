@@ -111,7 +111,7 @@ $(function() {
     // 內頁的 social
     var socialDom = $('#social-link').length > 0;
     if (socialDom) {
-        var socialHeight = $('#social-link').height();
+        var socialHeight = '20px';
         $('.custom-space').css('height', socialHeight);
     }
 

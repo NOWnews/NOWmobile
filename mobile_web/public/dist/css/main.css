@@ -255,21 +255,50 @@ header .mobile-logo {
     min-width: 50px;
 }
 
-.social-link i {
-    color: white;
+/**
+ * social-link CSS
+ */
+
+#social-link .shareaholic-share-buttons-container {
+    height: 40px;
 }
 
-.social-link .bg-fb {
-    background: #0734B5;
+#social-link .shareaholic-share-buttons-wrapper {
+    width: 100%;
 }
-.social-link .bg-line {
-    background: #7EB24A;
+
+#social-link .shareaholic-share-buttons {
+    margin: 0 !important;
+    padding: 0 !important;
 }
-.social-link .bg-google {
-    background: #B5061D;
+
+#social-link .shareaholic-share-buttons li.shareaholic-share-button {
+    padding: 0 !important;
+    display: block !important;
 }
-.social-link .bg-wechat {
-    background: #599B46;
+
+#social-link .shareaholic-share-buttons li.shareaholic-share-button .share-button-sizing {
+    float: none;
+}
+
+#social-link .shareaholic-share-buttons li.shareaholic-share-button .shareaholic-share-button-container {
+    max-height: 40px;
+}
+
+#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Facebook"]{
+    background: #3b5998 !important;
+}
+
+#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Line"]{
+    background: #00c300 !important;
+}
+
+#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Google+"]{
+    background: #dd4b39 !important;
+}
+
+#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Sina Weibo"]{
+    background: #d82829 !important;
 }
 
 /**
