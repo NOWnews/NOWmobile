@@ -849,3 +849,15 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/**
+ * ADS CSS
+ */
+
+.ads-block > div {
+    margin: auto;
+}
+
+.ads-block * {
+    max-width: 100%;
+}

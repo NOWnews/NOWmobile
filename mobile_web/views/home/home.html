@@ -9,6 +9,9 @@
 {% endblock %}
 
 {% block container %}
+    {# 設定輪播的數量 #}
+    {% set slideItem = 5 %}
+
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
         <nav class="category-select mui-container-fluid">
@@ -20,7 +23,7 @@
                 <div class="mui-row">
                     <div class="single-item">
                         {% for news in newsList %}
-                            {% if loop.index < 4 %}
+                            {% if loop.index <= slideItem %}
                                 <div class="slick-news">
                                     <a href="/news/{{ news._id }}">
                                         <div class="slick-news-info">
@@ -38,22 +41,23 @@
             </div>
         </div>
         {# 廣告版位 #}
-        {% include "../ad/ad336x280.html" %}
+        {% include "../ad/list/ad336x280.html" %}
 
-        <div class="nownews-wrapper" {% if taxId %}id="list-wrapper"{% endif %}>
+        <div class="nownews-wrapper" id="{{ 'list-wrapper' if taxId else '' }}">
             {% for news in newsList %}
-                {% if loop.index >= 4 %}
+                {% if loop.index > slideItem %}
                     {% include "../blocks/news-block.html" %}
                 {% endif %}
 
                 {# 廣告版位 #}
-                {% if loop.index > 4 and loop.index % 3 == 0 %}
+                {% set noSliderNumber = loop.index - slideItem %}
+                {% if loop.index > slideItem and noSliderNumber % 3 == 0 %}
                     {% include "../ad/ad-news-block.html" %}
                 {% endif %}
             {% endfor %}
         </div>
 
         {# 廣告版位 #}
-        {% include "../ad/ad320x50.html" %}
+        {% include "../ad/list/ad320x50.html" %}
     </div>
 {% endblock %}
