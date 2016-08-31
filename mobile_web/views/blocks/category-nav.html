@@ -2,27 +2,27 @@
 <div class="right-cover fa-rotate-180"></div>
 <ul>
     {% if categoryType == 'news' %}
-        <li class="{{ 'isActive' if specialType == 'headline' else ''  }}">
-            <a href="/">
+        <a href="/">
+            <li class="{{ 'isActive' if specialType == 'headline' else ''  }}">
                 <span>頭條</span>
-            </a>
-        </li>
-        <li class="{{ 'isActive' if specialType == 'hotNews' else ''  }}">
-            <a href="/news/special/hotNews/">
+            </li>
+        </a>
+        <a href="/news/special/hotNews/">
+            <li class="{{ 'isActive' if specialType == 'hotNews' else ''  }}">
                 <span>熱門</span>
-            </a>
-        </li>
-        <li class="{{ 'isActive' if specialType == 'instant' else ''  }}">
-            <a href="/news/special/instant/">
+            </li>
+        </a>
+        <a href="/news/special/instant/">
+            <li class="{{ 'isActive' if specialType == 'instant' else ''  }}">
                 <span>速報</span>
-            </a>
-        </li>
+            </li>
+        </a>
     {% endif %}
     {% for category in mainCategory %}
-        <li class="{{ 'isActive' if category.tid == taxId else ''  }}">
-            <a href="/{{categoryType}}/category/{{ category.tid }}">
+        <a href="/{{categoryType}}/category/{{ category.tid }}">
+            <li class="{{ 'isActive' if category.tid == taxId else ''  }}">
                 <span>{{ category.name }}</span>
-            </a>
-        </li>
+            </li>
+        </a>
     {% endfor %}
 </ul>
