@@ -118,7 +118,7 @@ $(function() {
             setTimeout(function(){
                 var socialHeight = $('#social-link').height();
                 $('.custom-space').css('height', socialHeight);
-            }, 3500);
+            }, 0);
         }
     });
 
