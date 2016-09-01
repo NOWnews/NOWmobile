@@ -15,7 +15,7 @@ gulp.task('template', function(){
 });
 
 // 編譯 css
-gulp.task('scss:vendor', function() {
+gulp.task('scss', function() {
   return gulp.src('./source/css/*[".css"]')
     .pipe(plugins.plumber())
     .pipe(plugins.concatCss('all.min.css'))
@@ -28,21 +28,12 @@ gulp.task('scss:vendor', function() {
 });
 
 
-// 將 js 編譯成 js
-gulp.task('script:vendor', function() {
-  return gulp.src(['./source/js/jquery-2.2.4.min.js', './source/js/mui.min.js', './source/js/slick.min.js'])
-    .pipe(plugins.concat('vendor.js'))
+// 將 js 編譯成 minify
+gulp.task('script', function() {
+  return gulp.src('./source/js/**.js')
+    .pipe(plugins.concat('all.min.js'))
     .pipe(plugins.plumber())
     .pipe(plugins.uglify())
-    .pipe(plugins.rename({suffix: '.min'}))
-    .pipe(gulp.dest('./public/dist/js'));
-});
-
-gulp.task('script:main', function() {
-  return gulp.src('./source/js/main.js')
-    .pipe(plugins.plumber())
-    .pipe(plugins.uglify())
-    .pipe(plugins.rename({suffix: '.min'}))
     .pipe(gulp.dest('./public/dist/js'));
 });
 
@@ -51,4 +42,4 @@ gulp.task('clean', function() {
   return del(['./views/base.html', './public/dist/css/**.*', './public/dist/js/*.js']);
 });
 
-gulp.task('build:prod', ['template', 'scss:vendor', 'script:vendor', 'script:main']);
+gulp.task('build:prod', ['template', 'scss', 'script']);
