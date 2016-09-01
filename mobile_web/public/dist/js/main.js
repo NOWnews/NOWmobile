@@ -102,6 +102,13 @@ $(function() {
         var isActivePosition = $nav.find('.isActive').offset().left;
         var mobileWidthHalf = $(window).width() / 2;
         var itemWidthHalf = $nav.find('li').outerWidth() / 2;
+
+        // 如果是小於一半的分類往左推自己寬度的 1/2（估計值）;
+        if (isActivePosition < mobileWidthHalf) {
+            $nav.scrollLeft(isActivePosition / 2);
+            return
+        }
+
         $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);
     }
     var navDom = $('.category-select > ul').length > 0;
