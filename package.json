@@ -59,7 +59,6 @@
     "gulp-concat": "^2.6.0",
     "gulp-concat-css": "^2.3.0",
     "gulp-load-plugins": "^1.2.4",
-    "gulp-plumber": "^1.1.0",
     "gulp-uglify": "^2.0.0"
   }
 }

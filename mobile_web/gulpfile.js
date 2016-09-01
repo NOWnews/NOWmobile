@@ -8,7 +8,6 @@ const plugins = require('gulp-load-plugins')({
 // 編譯 css
 gulp.task('css', function() {
     return gulp.src('./source/css/**.css')
-        .pipe(plugins.plumber())
         .pipe(plugins.concatCss('all.min.css'))
         .pipe(plugins.cleanCss())
         .pipe(plugins.autoprefixer({
@@ -20,7 +19,6 @@ gulp.task('css', function() {
 // 將 js 編譯成 minify
 gulp.task('script', function() {
     return gulp.src('./source/js/**.js')
-        .pipe(plugins.plumber())
         .pipe(plugins.concat('all.min.js'))
         .pipe(plugins.uglify())
         .pipe(gulp.dest('./public/dist/js'));
