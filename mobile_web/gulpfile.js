@@ -8,7 +8,7 @@ const plugins = require('gulp-load-plugins')({
 });
 
 // 編譯 css
-gulp.task('scss', function() {
+gulp.task('css', function() {
   return gulp.src([
     './public/dist/css/font-awesome.min.css',
     './public/dist/css/slick.min.css',
@@ -18,7 +18,6 @@ gulp.task('scss', function() {
   ]).pipe(plugins.plumber())
     .pipe(plugins.concatCss('all.min.css'))
     .pipe(cleanCSS())
-    .pipe(plugins.sass({outputStyle: 'compressed'}).on('error', plugins.sass.logError))
     .pipe(plugins.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
@@ -43,4 +42,4 @@ gulp.task('clean', function() {
   return del(['./public/dist/css/all.min.css', './public/dist/js/all.min.js']);
 });
 
-gulp.task('build:prod', ['scss', 'script']);
+gulp.task('build:prod', ['css', 'script']);
