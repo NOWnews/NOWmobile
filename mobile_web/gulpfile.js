@@ -7,20 +7,40 @@ const plugins = require('gulp-load-plugins')({
   replaceString: /\bgulp[\-.]/
 });
 
-gulp.task('template', function(){
-  gulp.src('./views/base.template.html')
-    .pipe(plugins.rename('base.html'))
-    .pipe(gulp.dest('./views'));
-});
-
+// 編譯 css
 gulp.task('scss', function() {
-  return gulp.src('./source/css/*[".css"]')
+  return gulp.src([
+    './public/dist/css/font-awesome.min.css',
+    './public/dist/css/slick.min.css',
+    './public/dist/css/slick-theme.min.css',
+    './public/dist/css/mui.min.css',
+    './public/dist/css/main.css',
+  ]).pipe(plugins.plumber())
+    .pipe(plugins.concatCss('all.min.css'))
+    .pipe(cleanCSS())
+    .pipe(plugins.sass({outputStyle: 'compressed'}).on('error', plugins.sass.logError))
+    .pipe(plugins.autoprefixer({
+      browsers: ['last 2 versions', 'ie >= 9']
+    }))
     .pipe(gulp.dest('./public/dist/css'));
 });
 
+// 將 js 編譯成 minify
 gulp.task('script', function() {
-  return gulp.src(['./source/js/*.js', './source/js/mui.min.js', './source/js/slick.min.js'])
+  return gulp.src([
+    './public/dist/js/jquery-2.2.4.min.js',
+    './public/dist/js/mui.js',
+    './public/dist/js/slick.js',
+    './public/dist/js/main.js',
+  ]).pipe(plugins.concat('all.min.js'))
+    .pipe(plugins.plumber())
+    .pipe(plugins.uglify())
     .pipe(gulp.dest('./public/dist/js'));
 });
 
-gulp.task('dev:build', ['template', 'scss', 'script']);
+// 清掉 dist 裡面 css 跟 js 的資料夾
+gulp.task('clean', function() {
+  return del(['./public/dist/css/all.min.css', './public/dist/js/all.min.js']);
+});
+
+gulp.task('build:prod', ['scss', 'script']);

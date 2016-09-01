@@ -37,3 +37,7 @@ dump.rdb
 
 bower_components
 .DS_Store
+
+mobile_web/public/dist/css/all.min.css
+mobile_web/public/dist/js/all.min.js
+

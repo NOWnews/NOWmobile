@@ -9,6 +9,7 @@ import cors from 'cors';
 import nunjucks from 'nunjucks';
 
 import redirect from './redirect';
+import setLocals from './setLocals';
 
 module.exports = function(app) {
 
@@ -45,8 +46,11 @@ module.exports = function(app) {
     //     }
     // }));
 
+
+
     app.use(redirect(app));
     app.use(logger('dev'));
+    app.use(setLocals());
 
     return function(req, res, next) {
         return next();
