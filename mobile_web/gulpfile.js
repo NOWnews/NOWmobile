@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const del = require('del');
 const path = require('path');
-const cleanCSS = require('gulp-clean-css');
 const plugins = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'gulp.*'],
   replaceString: /\bgulp[\-.]/
@@ -17,7 +16,7 @@ gulp.task('css', function() {
     './public/dist/css/main.css',
   ]).pipe(plugins.plumber())
     .pipe(plugins.concatCss('all.min.css'))
-    .pipe(cleanCSS())
+    .pipe(plugins.cleanCss())
     .pipe(plugins.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
@@ -31,8 +30,8 @@ gulp.task('script', function() {
     './public/dist/js/slick.min.js',
     './public/dist/js/mui.min.js',
     './public/dist/js/main.js',
-  ]).pipe(plugins.concat('all.min.js'))
-    .pipe(plugins.plumber())
+  ]).pipe(plugins.plumber())
+    .pipe(plugins.concat('all.min.js'))
     .pipe(plugins.uglify())
     .pipe(gulp.dest('./public/dist/js'));
 });
