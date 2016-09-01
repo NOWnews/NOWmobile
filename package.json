@@ -4,9 +4,13 @@
   "description": "NOWnews mobile service",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && NODE_ENV=staging DEBUG=NOWmobile* ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
+    "mobile:dev.build": "npm run mobile:clean && ./node_modules/gulp/bin/gulp.js --gulpfile ./mobile_web/gulpfile.js dev:build",
+    "start": "npm install && npm run mobile:dev.build && NODE_ENV=staging DEBUG=NOWmobile* ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
     "admin": "DEBUG=NOWmobile* && npm install && NODE_ENV=staging ./node_modules/nodemon/bin/nodemon.js ./bin/admin.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mobile:clean": "./node_modules/gulp/bin/gulp.js --gulpfile ./mobile_web/gulpfile.prod.js clean",
+    "mobile:prod.build": "npm run mobile:clean && ./node_modules/gulp/bin/gulp.js  --gulpfile ./mobile_web/gulpfile.prod.js build:prod",
+    "mobile:prod": "npm install && npm run mobile:prod.build && ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js"
   },
   "repository": {
     "type": "git",
@@ -47,5 +51,21 @@
     "nunjucks": "^2.4.2",
     "sitemap": "^1.8.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "clean-css": "^3.4.19",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0"
+  }
 }
