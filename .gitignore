@@ -37,3 +37,6 @@ dump.rdb
 
 bower_components
 .DS_Store
+
+mobile_web/public/dist
+
