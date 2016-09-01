@@ -28,8 +28,8 @@ gulp.task('css', function() {
 gulp.task('script', function() {
   return gulp.src([
     './public/dist/js/jquery-2.2.4.min.js',
-    './public/dist/js/mui.js',
-    './public/dist/js/slick.js',
+    './public/dist/js/slick.min.js',
+    './public/dist/js/mui.min.js',
     './public/dist/js/main.js',
   ]).pipe(plugins.concat('all.min.js'))
     .pipe(plugins.plumber())
