@@ -1,5 +1,5 @@
 /*
- * 這個 middleware 是因為怕有人從舊的網址進入，所以要 redirect 到新網址
+ * 設定變數到 nunjucks
  */
 
 module.exports = () => {
