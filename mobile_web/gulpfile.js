@@ -24,9 +24,19 @@ gulp.task('script', function() {
         .pipe(gulp.dest('./public/dist/js'));
 });
 
-// 清掉 dist 裡面 css 跟 js 的資料夾
-gulp.task('clean', function() {
-    return del(['./public/dist/css/all.min.css', './public/dist/js/all.min.js']);
+gulp.task('fonts', function() {
+    return gulp.src('./source/fonts/**.**')
+        .pipe(gulp.dest('./public/dist/fonts'));
 });
 
-gulp.task('build:prod', ['css', 'script']);
+gulp.task('img', function() {
+    return gulp.src('./source/img/**.**')
+        .pipe(gulp.dest('./public/dist/img'));
+});
+
+// 清掉 dist 裡面 css 跟 js 的資料夾
+gulp.task('clean', function() {
+    return del(['./public/dist']);
+});
+
+gulp.task('build:prod', ['css', 'script', 'fonts', 'img']);
