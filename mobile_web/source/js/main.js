@@ -149,7 +149,7 @@ $(function() {
         });
     }
 
-    // 處理圖集 X 按鈕上一頁問題
+    // 處理圖輯 X 按鈕上一頁問題
     $('#photo-one-bar .header-btn').click(function(event) {
         if(history.length > 0) {
             return history.back();
