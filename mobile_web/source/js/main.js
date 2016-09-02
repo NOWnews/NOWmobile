@@ -1,4 +1,9 @@
 $(function() {
+    $('.category-select li a').on('click', function(){
+        event.preventDefault();
+        $(this).parent().addClass('.isActive').siblings('.isActive').removeClass('isActive');
+        location.href = $(this).attr('href');
+    });
     $('.single-item').slick({
         dots: true,
         infinite: true,
