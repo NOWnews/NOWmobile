@@ -24,3 +24,26 @@
 ## 系統資訊
 
 Node.js v6.2.2
+
+
+## 開發方式
+
+### 後台
+
+dev: `npm run admin`
+
+### 手機版 nownews
+
+dev: `npm start`
+
+prod: `npm run mobile:prod`
+
+
+## Server 啟動方式
+
+```
+npm install
+npm run mobile:prod.build
+export NODE_ENV=production
+pm2 start ./bin/mobile_web.js
+```

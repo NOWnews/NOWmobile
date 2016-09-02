@@ -7,8 +7,13 @@ const plugins = require('gulp-load-plugins')({
 
 // 編譯 css
 gulp.task('css', function() {
-    return gulp.src('./source/css/**.css')
-        .pipe(plugins.concatCss('all.min.css'))
+    return gulp.src([
+            './source/css/font-awesome.min.css',
+            './source/css/mui.min.css',
+            './source/css/slick.min.css',
+            './source/css/slick-theme.min.css',
+            './source/css/main.css',
+        ]).pipe(plugins.concatCss('all.min.css'))
         .pipe(plugins.cleanCss())
         .pipe(plugins.autoprefixer({
             browsers: ['last 2 versions', 'ie >= 9']
