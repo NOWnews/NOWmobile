@@ -146,6 +146,11 @@ a:hover {
     text-decoration: none;
 }
 
+#channel-nav a.is-active {
+    font-weight: bold;
+    color: #D09D22;
+}
+
 #channel-nav a:nth-child(2n) div {
     border-left: 1px dashed #000;
 }
