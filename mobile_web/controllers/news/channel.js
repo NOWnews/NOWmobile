@@ -16,6 +16,8 @@ module.exports = (req, res, next) => {
             channelId = mainChannel[0].nodeId;
         }
 
+        let { isOpen } = req.query;
+
         let { newsList, channelName } = yield getApi(`${channelBaseUrl}/${channelId}`);
 
         if(req.query.data === 'PLAYJJ'){
@@ -27,6 +29,7 @@ module.exports = (req, res, next) => {
             mainChannel,
             channelName,
             channelId,
+            isOpen,
         };
 
         return res.render('news/channel', data);
