@@ -824,6 +824,12 @@ header .mobile-logo {
     z-index: 9999999;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    text-align: center;
+}
+
+#loading > span {
+    top: 70%;
+    position: relative;
 }
  /**
  * About
