@@ -2,7 +2,7 @@
 <div class="related-news-block">
     <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
     {% for relatedNews in news.refNews %}
-        {% if loop.index > 3 and loop.index < 7 %}
+        {% if loop.index < 6 %}
             <div class="mui-row one-news">
                 <a href="/news/{{ relatedNews._id }}">
                     <div class="mui-col-xs-5">

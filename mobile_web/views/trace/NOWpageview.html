@@ -14,7 +14,7 @@
     </script>
 {% endif %}
 
-{# 圖集用 pv #}
+{# 圖輯用 pv #}
 {% if photo %}
     <script type="text/javascript">
         $.post( "http://61.67.121.50:10011/news", {
@@ -22,7 +22,7 @@
             url: '{{ photo.url }}',
             type: 'NEWS',
             platform: 'MOBILE',
-            taxId: 449377, // 圖集的 mainCategory id
+            taxId: 449377, // 圖輯的 mainCategory id
             newsCreatedTime: '{{ photo.created * 1000 }}'
         }, function( data ) {});
     </script>
