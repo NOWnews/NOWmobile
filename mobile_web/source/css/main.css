@@ -613,14 +613,16 @@ header .mobile-logo {
     padding-left: 28%;
 }
 
-// TODO: #73 手機不支援 hover
-// .arrow-block .next-arrow:hover {
-//     background-image: url(/static/img/next-hover-btn-bg.png);
-// }
+/**
+* TODO: #73 手機不支援 hover
+* .arrow-block .next-arrow:hover {
+*     background-image: url(/static/img/next-hover-btn-bg.png);
+* }
 
-// .arrow-block .prev-arrow:hover {
-//     background-image: url(/static/img/prev-hover-btn-bg.png);
-// }
+* .arrow-block .prev-arrow:hover {
+*     background-image: url(/static/img/prev-hover-btn-bg.png);
+* }
+**/
 
 .related-news-block .category-title {
     margin: 0;
