@@ -597,20 +597,20 @@ header .mobile-logo {
 }
 
 .arrow-block a {
-    color: #fff;
+    color: #000;
     display: block;
 }
 
 .arrow-block .next-arrow {
     background-image: url(/static/img/next-btn-bg.png);
     background-size: 100% 100%;
-    padding-right: 18%;
+    padding-right: 28%;
 }
 
 .arrow-block .prev-arrow {
     background-image: url(/static/img/prev-btn-bg.png);
     background-size: 100% 100%;
-    padding-left: 18%;
+    padding-left: 28%;
 }
 
 .related-news-block .category-title {
