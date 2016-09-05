@@ -134,20 +134,43 @@ a:hover {
 }
 
 #channel-nav {
-    padding-top: 20px;
-}
-
-#channel-nav > div {
-    display: inline-flex;
-    margin-bottom: 10px;
-    padding-left: 10%;
-    width: 45%;
+    display: none;
+    width: 100%;
+    min-height: calc(100% - 102px);
+    max-height: calc(100% - 102px);
+    overflow: scroll;
 }
 
 #channel-nav a {
     color: black;
-    font-weight: bold;
     text-decoration: none;
+}
+
+#channel-nav a:nth-child(2n) div {
+    border-left: 1px dashed #000;
+}
+
+#channel-nav div {
+    float: left;
+    line-height: 45px;
+    height: 45px;
+    padding-left: 10%;
+    width: 50%;
+    border-bottom: 1px dashed #000;
+}
+
+
+// When channel nav is open
+#channel-nav-block.is-open {
+    height: 100%:
+}
+
+#channel-nav-block.is-open #channel-nav{
+    display: block;
+}
+
+#channel-nav-block.is-open #channel-content{
+    display: block;
 }
 
 /*content*/
