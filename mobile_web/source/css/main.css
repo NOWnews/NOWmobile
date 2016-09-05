@@ -451,7 +451,7 @@ header .mobile-logo {
 
 .news-block {
     position: relative;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
 }
 
 .news-block p {
@@ -465,6 +465,12 @@ header .mobile-logo {
     font-weight: bold;
 }
 
+.news-block .line {
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #AEAEAE;
+    bottom: -30px;
+}
 .news-block .news-info {
     position: absolute;
     line-height: 150%;
