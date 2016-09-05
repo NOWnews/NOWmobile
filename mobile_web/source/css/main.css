@@ -164,17 +164,12 @@ a:hover {
     border-bottom: 1px dashed #000;
 }
 
-
 // When channel nav is open
 #channel-nav-block.is-open {
-    height: 100%:
+    height: 100%;
 }
 
 #channel-nav-block.is-open #channel-nav{
-    display: block;
-}
-
-#channel-nav-block.is-open #channel-content{
     display: block;
 }
 
