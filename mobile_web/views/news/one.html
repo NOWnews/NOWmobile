@@ -11,7 +11,7 @@
 
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
-        <nav class="category-select mui-container-fluid">
+        <nav class="category-select mui-container-fluid nav-down">
             {% set categoryType = 'news' %}
             {% include "../blocks/category-nav.html" %}
         </nav>
@@ -93,6 +93,58 @@
 
         </div>
     </div>
+    <style>
+        .nav-up {
+            top: -10px;
+        }
+        .category-select{
+         transition: all 0.01s ease-in-out;
+         z-index:1;
+        }
+    </style>
+
+    <script>
+        // Hide Header on on scroll down
+        console.log(123123);
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('.category-select').outerHeight();
+
+        $(window).scroll(function(event){
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+                // Scroll Down
+                $('.category-select').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if(st + $(window).height() < $(document).height()) {
+                    $('.category-select').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+
+            lastScrollTop = st;
+        }
+
+    </script>
 
 <!-- 先放置頂廣告，待 11 月初的會議調整
     {# 置底的 social link #}
