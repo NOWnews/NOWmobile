@@ -164,7 +164,7 @@ a:hover {
     border-bottom: 1px dashed #000;
 }
 
-// When channel nav is open
+/* When channel nav is open */
 #channel-nav-block.is-open {
     height: 100%;
 }
