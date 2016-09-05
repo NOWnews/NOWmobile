@@ -9,8 +9,8 @@
         <div class="mui--appbar-height"></div>
         <div id="channel-nav-block" class="{{ 'is-open' if isOpen else '' }}">
             <div class="mui-panel mui--text-center ">
-                <span class="channel-name"> {{ channelName }}</span>
-                <i class="fa fa-play fa-rotate-90" aria-hidden="true"></i>
+                <span class="channel-name {{ 'mui--hide' if isOpen else '' }}"> {{ channelName }}</span>
+                <i class="fa fa-play fa-rotate-90 {{ 'fa-rotate-270' if isOpen else '' }}" aria-hidden="true"></i>
             </div>
             {% include "../blocks/channel-nav.html" %}
         </div>
