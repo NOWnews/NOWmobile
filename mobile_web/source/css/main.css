@@ -546,6 +546,23 @@ header .mobile-logo {
     font-size: 24px;
 }
 
+.news-body .mui--text-dark-secondary {
+    line-height: 120%;
+    font-size: 12px;
+}
+
+.news-body.font-size-small .mui--text-dark-secondary {
+    font-size: 12px;
+}
+
+.news-body.font-size-middle .mui--text-dark-secondary {
+    font-size: 16px;
+}
+
+.news-body.font-size-large .mui--text-dark-secondary {
+    font-size: 20px;
+}
+
 .arrow-block {
     margin: 20px -15px;
     overflow: hidden;
