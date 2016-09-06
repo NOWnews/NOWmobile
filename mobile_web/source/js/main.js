@@ -1,20 +1,26 @@
 $(function() {
     var adsCoverDom = $('.ads-cover').length > 0;
     if (adsCoverDom) {
-        $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
-        $('body').addClass('mui-body--scroll-lock');
-        var adsWidthHalf = 0 - $('#mui-overlay > div > iframe').width()/2;
-        var adsHeightHalf = 0 - $('#mui-overlay > div').height()/2;
-        $('#mui-overlay > div')
-            .css('position', 'absolute')
-            .css('top', '50%')
-            .css('left', '50%')
-            .css('margin-left', adsWidthHalf)
-            .css('margin-top', adsHeightHalf);
+        $( window ).load(function() {
+            $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
+            $('body').addClass('mui-body--scroll-lock');
+            $('#mui-overlay > div').append('<div class="close">X</div>');
+            $('#mui-overlay > div').css('position', 'absolute');
 
-        $('#mui-overlay').click(function(){
-            $(this).attr('id', '').removeClass('mui--show');
-            $('body').removeClass('mui-body--scroll-lock');
+            var closeAdsCover = function () {
+                $('#mui-overlay').attr('id', '').removeClass('mui--show');
+                $('body').removeClass('mui-body--scroll-lock');
+            };
+            $('#mui-overlay').click(closeAdsCover);
+            $('.ads-cover .close').on('click', closeAdsCover);
+
+            var adsWidthHalf = 0 - $('#mui-overlay > div').width()/2;
+            var adsHeightHalf = 0 - $('#mui-overlay > div').height()/2;
+            $('#mui-overlay > div')
+                .css('top', '50%')
+                .css('left', '50%')
+                .css('margin-left', adsWidthHalf)
+                .css('margin-top', adsHeightHalf);
         });
     }
     $('.category-select li a').on('click', function(){
@@ -81,7 +87,7 @@ $(function() {
 
     // 開關 channel nav
     $('#channel-nav-block > .mui-panel').on('click', function() {
-        $('#channel-nav-block').toggleClass("is-open");
+        $('#channel-nav-block').toggleClass('is-open');
         $(this).find('.channel-name').toggleClass('mui--hide');
         $(this).find('i').toggleClass('fa-rotate-270');
         return;
@@ -128,7 +134,7 @@ $(function() {
         // 如果是小於一半的分類往左推自己寬度的 1/2（估計值）;
         if (isActivePosition < mobileWidthHalf) {
             $nav.scrollLeft(isActivePosition / 2);
-            return
+            return;
         }
 
         $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);

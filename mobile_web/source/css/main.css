@@ -946,14 +946,14 @@ footer {
     display: none;
 }
 
-.ads-cover > div::before {
-    content: "X";
+.ads-cover .close {
     color: #fff;
     background: #000;
     border: 2px solid #fafafa;
     font-weight: bold;
     padding: 0px 6px;
     top: -12px;
+    z-index: 1;
     right: 0;
     position: absolute;
     border-radius: 15px;
