@@ -941,3 +941,7 @@ footer {
 .ads-block * {
     max-width: 100%;
 }
+
+.ads-cover {
+    display: none;
+}
