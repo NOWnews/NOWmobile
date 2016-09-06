@@ -956,3 +956,16 @@ footer {
 .ads-block * {
     max-width: 100%;
 }
+
+
+
+/**
+NAV滑動
+**/
+.nav-up {
+    top: -10px;
+}
+.category-select{
+    transition: all 0.01s ease-in-out;
+    z-index:1;
+}

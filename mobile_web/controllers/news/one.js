@@ -14,7 +14,13 @@ module.exports = (req, res, next) => {
 
         let news = yield getApi(`news/${newsId}`);
 
-        let headline = yield getApi(`news/headline`);
+        let result = yield [
+            getApi(`news/headline`),
+            getApi('category/news')
+        ]
+
+        let headline = result[0];
+        let mainCategory = result[1];
 
         debug('news = %j', news);
         // debug('headline = %j', headline);
@@ -25,6 +31,7 @@ module.exports = (req, res, next) => {
 
         return res.render('news/one', {
             news,
+            mainCategory,
             headline
         });
 
