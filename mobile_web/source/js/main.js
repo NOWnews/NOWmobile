@@ -47,7 +47,7 @@ $(function() {
 
     // 文章文字大小調整
     var nownewsFontSize = $.cookie('m-nownewsFontSize');
-    var newsBodyDom = $('.news-body');
+    var newsBodyDom = $('.news-body').length > 0;
     if (newsBodyDom && nownewsFontSize) {
         var beforeClass = $('.news-body').attr('class').match(/font-size-[a-z]+/g) || [];
         $('.news-body').removeClass(beforeClass[0]).addClass(nownewsFontSize);
@@ -116,7 +116,6 @@ $(function() {
             }
 
             scrollStopped = setTimeout(function() {
-                $adsBottom.animate({}, 'fast');
                 $adsBottom.removeClass('mui--hide');
             }, 800);
         };
@@ -232,13 +231,13 @@ $(function() {
 
     if (arrowBtns.length > 0) {
 
-        function arrowStartHandler (event) {
+        var arrowStartHandler = function (event) {
             $(event.currentTarget).addClass('is-active');
-        }
+        };
 
-        function arrowEndHandler (event) {
+        var arrowEndHandler = function (event) {
             $(event.currentTarget).removeClass('is-active');
-        }
+        };
 
         arrowBtns[0].addEventListener('touchstart', arrowStartHandler, false);
         arrowBtns[1].addEventListener('touchstart', arrowStartHandler, false);
