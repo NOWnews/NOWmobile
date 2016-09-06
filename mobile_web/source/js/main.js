@@ -75,7 +75,6 @@ $(function() {
 
     // 偵測 scroll 事件
     var $adsBottom = $('.ads-block.fixed-bottom');
-    var adsBottomOpacity = $adsBottom.css('opacity');
     var adsBottomDom = $adsBottom.length > 0;
     var scrollStopped;
     var adsBottomScrollFunc = function() {
@@ -86,9 +85,7 @@ $(function() {
             }
 
             scrollStopped = setTimeout(function() {
-                $adsBottom.animate({
-                    opacity: 1
-                }, 'fast');
+                $adsBottom.animate({}, 'fast');
                 $adsBottom.removeClass('mui--hide');
             }, 800);
         };
@@ -120,17 +117,16 @@ $(function() {
         navCategoryCenter();
     }
 
-    // 內頁的 social
+    // 原內頁置底的 social
+    // var socialDom = $('#social-link').length > 0;
+    // if (socialDom) {
+    //     var socialHeight = 40;
+    //     $('.custom-space').css('height', socialHeight);
+    // }
     $( window ).load(function() {
         // social 在 safari 會出現 img, 所以要隱藏起來
         $('img[src="http://load.s3.amazonaws.com/pixel.gif"]').hide();
     });
-    var socialDom = $('#social-link').length > 0;
-    if (socialDom) {
-        var socialHeight = 40;
-        $('.custom-space').css('height', socialHeight);
-    }
-
     // 滑到底去抓新聞
     var win = $(window);
     var page = 1;

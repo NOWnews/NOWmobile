@@ -941,9 +941,13 @@ footer {
 }
 
 .fixed-bottom {
-    position: fixed;
+    background: #fff;
     bottom: 0;
+    display: flex;
+    height: 50px;
+    position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 /**
