@@ -118,16 +118,15 @@ $(function() {
     }
 
     // 原內頁置底的 social
-    // $( window ).load(function() {
-    //     // social 在 safari 會出現 img, 所以要隱藏起來
-    //     $('img[src="http://load.s3.amazonaws.com/pixel.gif"]').hide();
-    // });
     // var socialDom = $('#social-link').length > 0;
     // if (socialDom) {
     //     var socialHeight = 40;
     //     $('.custom-space').css('height', socialHeight);
     // }
-
+    $( window ).load(function() {
+        // social 在 safari 會出現 img, 所以要隱藏起來
+        $('img[src="http://load.s3.amazonaws.com/pixel.gif"]').hide();
+    });
     // 滑到底去抓新聞
     var win = $(window);
     var page = 1;
