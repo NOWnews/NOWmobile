@@ -38,7 +38,7 @@
 
             <div class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img src="{{ news.image.url }}" />
+                    <img src="{{ news.image.url if news.image.url else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.image.description }}</p>
                 </div>
                 {{ news.htmlBody | safe }}

@@ -922,6 +922,7 @@ header .mobile-logo {
     max-width: 90%;
     position: relative;
     z-index: 1;
+    border: 1px solid #aeaeae;
 }
 
 .timeline-row {
