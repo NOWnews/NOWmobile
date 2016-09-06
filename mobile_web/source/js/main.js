@@ -4,7 +4,7 @@ $(function() {
         $( window ).load(function() {
             $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
             $('body').addClass('mui-body--scroll-lock');
-            $('#mui-overlay > div').append('<div class="close">X</div>');
+            $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
             $('#mui-overlay > div').css('position', 'absolute');
 
             var closeAdsCover = function () {
@@ -206,8 +206,9 @@ $(function() {
     function hasScrolled() {
         var st = $(this).scrollTop();
         // Make sure they scroll more than delta
-        if(Math.abs(lastScrollTop - st) <= delta)
+        if(Math.abs(lastScrollTop - st) <= delta){
             return;
+        }
         // If they scrolled down and are past the navbar, add class .nav-up.
         // This is necessary so you never see what is "behind" the navbar.
         if (st > lastScrollTop && st > navbarHeight){
@@ -224,7 +225,7 @@ $(function() {
     }
 
     // 上一篇下一篇的回饋感
-    var arrowBtns = document.getElementsByClassName("arrow-btn");
+    var arrowBtns = document.getElementsByClassName('arrow-btn');
 
     if (arrowBtns.length > 0) {
 
@@ -236,9 +237,9 @@ $(function() {
             $(event.currentTarget).removeClass('is-active');
         }
 
-        arrowBtns[0].addEventListener("touchstart", arrowStartHandler, false);
-        arrowBtns[1].addEventListener("touchstart", arrowStartHandler, false);
-        arrowBtns[0].addEventListener("touchend", arrowEndHandler, false);
-        arrowBtns[1].addEventListener("touchend", arrowEndHandler, false);
+        arrowBtns[0].addEventListener('touchstart', arrowStartHandler, false);
+        arrowBtns[1].addEventListener('touchstart', arrowStartHandler, false);
+        arrowBtns[0].addEventListener('touchend', arrowEndHandler, false);
+        arrowBtns[1].addEventListener('touchend', arrowEndHandler, false);
     }
 });
