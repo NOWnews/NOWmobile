@@ -613,8 +613,12 @@ header .mobile-logo {
     padding-left: 28%;
 }
 
+.arrow-block a.is-active, .arrow-block a:hover {
+    font-weight: bold;
+}
+
 /**
-* TODO: #73 手機不支援 hover
+* TODO: #73 手機使用圖片切換會很 lag
 * .arrow-block .next-arrow:hover {
 *     background-image: url(/static/img/next-hover-btn-bg.png);
 * }
