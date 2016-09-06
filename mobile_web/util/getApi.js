@@ -7,7 +7,7 @@ module.exports = function(url) {
     fetchUrl = encodeURI(fetchUrl);
 
     return fetch(fetchUrl, {
-            timeout: 5000,
+            timeout: 10000,
             headers: {
                 'X-NOWnews-API': 'NOWnewsTaiwanNumberOne'
             }
