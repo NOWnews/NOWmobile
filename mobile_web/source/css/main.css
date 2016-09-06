@@ -945,3 +945,17 @@ footer {
 .ads-cover {
     display: none;
 }
+
+.ads-cover > div::before {
+    content: "X";
+    color: #fff;
+    background: #000;
+    border: 2px solid #fafafa;
+    font-weight: bold;
+    padding: 0px 6px;
+    top: -12px;
+    right: 0;
+    position: absolute;
+    border-radius: 15px;
+    cursor: pointer;
+}

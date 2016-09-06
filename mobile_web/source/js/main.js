@@ -1,4 +1,22 @@
 $(function() {
+    var adsCoverDom = $('.ads-cover').length > 0;
+    if (adsCoverDom) {
+        $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
+        $('body').addClass('mui-body--scroll-lock');
+        var adsWidthHalf = 0 - $('#mui-overlay > div > iframe').width()/2;
+        var adsHeightHalf = 0 - $('#mui-overlay > div').height()/2;
+        $('#mui-overlay > div')
+            .css('position', 'absolute')
+            .css('top', '50%')
+            .css('left', '50%')
+            .css('margin-left', adsWidthHalf)
+            .css('margin-top', adsHeightHalf);
+
+        $('#mui-overlay').click(function(){
+            $(this).attr('id', '').removeClass('mui--show');
+            $('body').removeClass('mui-body--scroll-lock');
+        });
+    }
     $('.category-select li a').on('click', function(){
         event.preventDefault();
         $(this).parent().addClass('.isActive').siblings('.isActive').removeClass('isActive');
