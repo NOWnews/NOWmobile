@@ -161,4 +161,23 @@ $(function() {
         window.location.href = document.location.hostname;
     });
 
+    // 上一篇下一篇的回饋感
+    var arrowBtns = document.getElementsByClassName("arrow-btn");
+
+    if (arrowBtns.length > 0) {
+
+        function arrowStartHandler (event) {
+            $(event.currentTarget).addClass('is-active');
+        }
+
+        function arrowEndHandler (event) {
+            $(event.currentTarget).removeClass('is-active');
+        }
+
+        arrowBtns[0].addEventListener("touchstart", arrowStartHandler, false);
+        arrowBtns[1].addEventListener("touchstart", arrowStartHandler, false);
+        arrowBtns[0].addEventListener("touchend", arrowEndHandler, false);
+        arrowBtns[1].addEventListener("touchend", arrowEndHandler, false);
+    }
+
 });
