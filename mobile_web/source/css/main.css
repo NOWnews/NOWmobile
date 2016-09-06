@@ -597,21 +597,36 @@ header .mobile-logo {
 }
 
 .arrow-block a {
-    color: #fff;
+    color: #000;
     display: block;
 }
 
 .arrow-block .next-arrow {
     background-image: url(/static/img/next-btn-bg.png);
     background-size: 100% 100%;
-    padding-right: 18%;
+    padding-right: 28%;
 }
 
 .arrow-block .prev-arrow {
     background-image: url(/static/img/prev-btn-bg.png);
     background-size: 100% 100%;
-    padding-left: 18%;
+    padding-left: 28%;
 }
+
+.arrow-block a.is-active, .arrow-block a:hover {
+    font-weight: bold;
+}
+
+/**
+* TODO: #73 手機使用圖片切換會很 lag
+* .arrow-block .next-arrow:hover {
+*     background-image: url(/static/img/next-hover-btn-bg.png);
+* }
+
+* .arrow-block .prev-arrow:hover {
+*     background-image: url(/static/img/prev-hover-btn-bg.png);
+* }
+**/
 
 .related-news-block .category-title {
     margin: 0;
@@ -907,6 +922,7 @@ header .mobile-logo {
     max-width: 90%;
     position: relative;
     z-index: 1;
+    border: 1px solid #aeaeae;
 }
 
 .timeline-row {
@@ -958,4 +974,15 @@ footer {
     position: absolute;
     border-radius: 15px;
     cursor: pointer;
+}
+
+/**
+NAV滑動
+**/
+.nav-up {
+    top: -10px;
+}
+.category-select{
+    transition: all 0.01s ease-in-out;
+    z-index:1;
 }

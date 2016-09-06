@@ -19,7 +19,7 @@
         </li>
     {% endif %}
     {% for category in mainCategory %}
-        <li class="{{ 'isActive' if category.tid == taxId else ''  }}">
+        <li class="{{ 'isActive' if category.tid == taxId or news.category._id == category.tid else ''  }}">
             <a class="" href="/{{categoryType}}/category/{{ category.tid }}">
                 <span>{{ category.name }}</span>
             </a>
