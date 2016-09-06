@@ -46,7 +46,14 @@ $(function() {
     });
 
     // 文章文字大小調整
+    var nownewsFontSize = $.cookie('m-nownewsFontSize');
+    var newsBodyDom = $('.news-body');
+    if (newsBodyDom && nownewsFontSize) {
+        var beforeClass = $('.news-body').attr('class').match(/font-size-[a-z]+/g) || [];
+        $('.news-body').removeClass(beforeClass[0]).addClass(nownewsFontSize);
+    }
     $('.font-size-controllers .font-link').on('click', function() {
+        $.cookie('m-nownewsFontSize', $(this).attr('class').match(/font-size-[a-z]+/g)[0], { path: '/' });
         var fontClass = $(this).attr('class').match(/font-size-[a-z]+/g);
         var beforeClass = $('.news-body').attr('class').match(/font-size-[a-z]+/g) || [];
         $('.news-body').removeClass(beforeClass[0]).addClass(fontClass[0]);
