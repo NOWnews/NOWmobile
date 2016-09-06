@@ -1,4 +1,28 @@
 $(function() {
+    var adsCoverDom = $('.ads-cover').length > 0;
+    if (adsCoverDom) {
+        $( window ).load(function() {
+            $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
+            $('body').addClass('mui-body--scroll-lock');
+            $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
+            $('#mui-overlay > div').css('position', 'absolute');
+
+            var closeAdsCover = function () {
+                $('#mui-overlay').attr('id', '').removeClass('mui--show');
+                $('body').removeClass('mui-body--scroll-lock');
+            };
+            $('#mui-overlay').click(closeAdsCover);
+            $('.ads-cover .close').on('click', closeAdsCover);
+
+            var adsWidthHalf = 0 - $('#mui-overlay > div').width()/2;
+            var adsHeightHalf = 0 - $('#mui-overlay > div').height()/2;
+            $('#mui-overlay > div')
+                .css('top', '50%')
+                .css('left', '50%')
+                .css('margin-left', adsWidthHalf)
+                .css('margin-top', adsHeightHalf);
+        });
+    }
     $('.category-select li a').on('click', function(){
         event.preventDefault();
         $(this).parent().addClass('.isActive').siblings('.isActive').removeClass('isActive');
@@ -63,7 +87,7 @@ $(function() {
 
     // 開關 channel nav
     $('#channel-nav-block > .mui-panel').on('click', function() {
-        $('#channel-nav-block').toggleClass("is-open");
+        $('#channel-nav-block').toggleClass('is-open');
         $(this).find('.channel-name').toggleClass('mui--hide');
         $(this).find('i').toggleClass('fa-rotate-270');
         return;
@@ -107,7 +131,7 @@ $(function() {
         // 如果是小於一半的分類往左推自己寬度的 1/2（估計值）;
         if (isActivePosition < mobileWidthHalf) {
             $nav.scrollLeft(isActivePosition / 2);
-            return
+            return;
         }
 
         $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);
@@ -178,8 +202,9 @@ $(function() {
     function hasScrolled() {
         var st = $(this).scrollTop();
         // Make sure they scroll more than delta
-        if(Math.abs(lastScrollTop - st) <= delta)
+        if(Math.abs(lastScrollTop - st) <= delta){
             return;
+        }
         // If they scrolled down and are past the navbar, add class .nav-up.
         // This is necessary so you never see what is "behind" the navbar.
         if (st > lastScrollTop && st > navbarHeight){
@@ -196,7 +221,7 @@ $(function() {
     }
 
     // 上一篇下一篇的回饋感
-    var arrowBtns = document.getElementsByClassName("arrow-btn");
+    var arrowBtns = document.getElementsByClassName('arrow-btn');
 
     if (arrowBtns.length > 0) {
 
@@ -208,9 +233,9 @@ $(function() {
             $(event.currentTarget).removeClass('is-active');
         }
 
-        arrowBtns[0].addEventListener("touchstart", arrowStartHandler, false);
-        arrowBtns[1].addEventListener("touchstart", arrowStartHandler, false);
-        arrowBtns[0].addEventListener("touchend", arrowEndHandler, false);
-        arrowBtns[1].addEventListener("touchend", arrowEndHandler, false);
+        arrowBtns[0].addEventListener('touchstart', arrowStartHandler, false);
+        arrowBtns[1].addEventListener('touchstart', arrowStartHandler, false);
+        arrowBtns[0].addEventListener('touchend', arrowEndHandler, false);
+        arrowBtns[1].addEventListener('touchend', arrowEndHandler, false);
     }
 });
