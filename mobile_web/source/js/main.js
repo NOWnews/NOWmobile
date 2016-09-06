@@ -75,7 +75,6 @@ $(function() {
 
     // 偵測 scroll 事件
     var $adsBottom = $('.ads-block.fixed-bottom');
-    var adsBottomOpacity = $adsBottom.css('opacity');
     var adsBottomDom = $adsBottom.length > 0;
     var scrollStopped;
     var adsBottomScrollFunc = function() {
@@ -86,9 +85,7 @@ $(function() {
             }
 
             scrollStopped = setTimeout(function() {
-                $adsBottom.animate({
-                    opacity: 1
-                }, 'fast');
+                $adsBottom.animate({}, 'fast');
                 $adsBottom.removeClass('mui--hide');
             }, 800);
         };
