@@ -1,21 +1,23 @@
-
-<div class="news-block">
-    <div class="mui-container-fluid">
-        <div class="mui-row">
-            <a terget="_blank" href="{{ nativeAds.url() }}">
-                <div calss="ads-block">
-                    <img class="news-main-image" src="{{ nativeAds.img() }}"/>
-                </div>
-                <div class="sponser news-info-with-bg">
-                    <p class="info-caption" style="margin-top:10px"> Sponsor </p>
-                    <p class="info-title">{{ nativeAds.title() }}</p>
-                    <p class="info-caption text-gray"></p>
-                </div>
-                <div class="line"></div>
-            </a>
+{% set nativeAd = nativeAds[noSliderNumber/3].ad %}
+{% if nativeAd !== null %}
+    <div class="news-block">
+        <div class="mui-container-fluid">
+            <div class="mui-row">
+                <a terget="_blank" href="{{ nativeAd.url }}">
+                    <div calss="ads-block">
+                        <img class="news-main-image" src="{{ nativeAd.img }}"/>
+                    </div>
+                    <div class="sponser news-info-with-bg">
+                        <p class="info-caption" style="margin-top:10px"> Sponsor </p>
+                        <p class="info-title">{{ nativeAd.title }}</p>
+                        <p class="info-caption text-gray"></p>
+                    </div>
+                    <div class="line"></div>
+                </a>
+            </div>
         </div>
     </div>
-</div>
+{% endif %}
 
 {#
     廣告邏輯

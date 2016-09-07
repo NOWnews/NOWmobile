@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
 
     co(function*() {
 
-        let news = yield getApi(`news/${newsId}`);
+        let { news, ad } = yield getApi(`news/${newsId}`);
 
         let result = yield [
             getApi(`news/headline`),
@@ -30,6 +30,7 @@ module.exports = (req, res, next) => {
         }
 
         return res.render('news/one', {
+            nativeAd: ad,
             news,
             mainCategory,
             headline

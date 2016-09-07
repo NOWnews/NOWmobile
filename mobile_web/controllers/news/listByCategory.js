@@ -23,14 +23,14 @@ module.exports = (req, res, next) => {
         ];
 
         let mainCategory = result[0];
-        let newsList = result[1];
+        let { newsList, ads } = result[1];
 
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList });
         }
-
         return res.render('home/home', {
+            nativeAds: ads,
             newsList,
             mainCategory,
             taxId,
