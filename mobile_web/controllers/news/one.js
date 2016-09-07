@@ -12,28 +12,25 @@ module.exports = (req, res, next) => {
 
     co(function*() {
 
-        let { news, ad } = yield getApi(`news/${newsId}`);
+        let news = yield getApi(`news/${newsId}`);
 
         let result = yield [
             getApi(`news/headline`),
             getApi('category/news')
         ]
 
-        let headline = result[0];
-        let mainCategory = result[1];
+        let { newsList } = result[0];
 
-        debug('news = %j', news);
-        // debug('headline = %j', headline);
+        let mainCategory = result[1];
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ news, headline });
         }
 
         return res.render('news/one', {
-            nativeAd: ad,
             news,
             mainCategory,
-            headline
+            headline: newsList,
         });
 
     }).catch(next);
