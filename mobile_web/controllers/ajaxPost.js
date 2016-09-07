@@ -17,9 +17,9 @@ router.route('/ajaxPost')
             let template = null;
 
             if ( url.indexOf('news') > -1 ) {
-                result = {
-                    newsList: yield getApi(`category/news/${taxId}?page=${page}`)
-                };
+                // 不直接給是因為回傳的物件裡面還有 ads
+                let { newsList } = yield getApi(`category/news/${taxId}?page=${page}`);
+                result = { newsList };
                 template = 'newsPost';
             } else if  (url.indexOf('video') > -1 ) {
                 result = {
