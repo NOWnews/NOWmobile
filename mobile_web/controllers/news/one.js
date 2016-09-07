@@ -14,6 +14,8 @@ module.exports = (req, res, next) => {
 
         let news = yield getApi(`news/${newsId}`);
 
+        debug('news = %j', news);
+
         let result = yield [
             getApi(`news/headline`),
             getApi('category/news')
