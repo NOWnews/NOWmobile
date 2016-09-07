@@ -988,3 +988,11 @@ NAV滑動
     transition: all 0.01s ease-in-out;
     z-index:1;
 }
+
+.slick-news {
+    display: none;
+}
+
+.slick-news:first-child {
+    display: block;
+}
