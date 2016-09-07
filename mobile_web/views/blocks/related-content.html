@@ -1,28 +1,31 @@
+{% if type != 'video' %}
+    <div class="related-news-block">
+        <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
+        {% for relatedNews in news.refNews %}
+            {% if loop.index < 6 %}
+                <div class="mui-row one-news">
+                    <a href="/news/{{ relatedNews._id }}">
+                        <div class="mui-col-xs-5">
+                            <img src="{{ relatedNews.image.thumbnail if relatedNews.image.thumbnail else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
+                        </div>
+                        <div class="mui-col-xs-7 related-news-info">
+                            <h4 class="category-title tid{{ relatedNews.category._id }}">
+                                {{ relatedNews.category.name or '不分類' }}
+                            </h4>
+                            <div class="mui-divider"></div>
+                            <span> {{ relatedNews.title }}</span>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
 
-<div class="related-news-block">
-    <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
-    {% for relatedNews in news.refNews %}
-        {% if loop.index < 6 %}
-            <div class="mui-row one-news">
-                <a href="/news/{{ relatedNews._id }}">
-                    <div class="mui-col-xs-5">
-                        <img src="{{ relatedNews.image.thumbnail if relatedNews.image.thumbnail else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
-                    </div>
-                    <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title tid{{ relatedNews.category._id }}">
-                            {{ relatedNews.category.name or '不分類' }}
-                        </h4>
-                        <div class="mui-divider"></div>
-                        <span> {{ relatedNews.title }}</span>
-                    </div>
-                </a>
-            </div>
-        {% endif %}
-    {% endfor %}
+        {% include "../ad/ad-related-block.html" %}
 
-    {% include "../ad/ad-related-block.html" %}
+    </div>
+{% endif %}
 
-</div>
+
 
 <div class="related-news-block">
     <h3><i class="fa fa-bolt fa-fw"></i>頭條新聞</h3>
