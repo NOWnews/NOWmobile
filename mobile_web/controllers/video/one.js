@@ -23,6 +23,7 @@ module.exports = (req, res, next) => {
         return res.render('video/one', {
             video,
             headline: newsList,
+            type: "video",
         });
 
     }).catch(next);
