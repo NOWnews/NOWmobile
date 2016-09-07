@@ -29,7 +29,7 @@ module.exports = (req, res, next) => {
         }
 
         return res.render('home/home', {
-            nativeAds: ads,
+            nativeAds: ads || [],
             newsList,
             mainCategory,
             specialType,

@@ -23,7 +23,7 @@ router.route('/')
             }
 
             return res.render('home/home', {
-                nativeAds: ads,
+                nativeAds: ads || [],
                 newsList,
                 mainCategory,
                 specialType: 'headline',
