@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
     co(function*() {
 
         let video = yield getApi(`videos/${videoId}`);
-        let headline = yield getApi(`news/headline`);
+        let { newsList } = yield getApi(`news/headline`);
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ video });
@@ -22,7 +22,7 @@ module.exports = (req, res, next) => {
 
         return res.render('video/one', {
             video,
-            headline,
+            headline: newsList,
         });
 
     }).catch(next);
