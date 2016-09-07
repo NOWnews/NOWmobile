@@ -5,9 +5,6 @@
 {% endblock %}
 
 {% block container %}
-    {# NOWnews Native Ads Data #}
-    {% import "../ad/list/native-ads.html" as nativeAds %}
-
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
         <nav id="video-category-nav" class="category-select mui-container-fluid">
@@ -18,10 +15,12 @@
             {% for video in videoList %}
                 {% include "../blocks/video-block.html" %}
                 {# 廣告版位 #}
-                {% if loop.index % 3 == 0 %}
-                    {% set noSliderNumber = loop.index %}
-                    {% include "../ad/ad-video-block.html" %}
-                {% endif %}
+                {#
+                    {% if loop.index % 3 == 0 %}
+                        {% set noSliderNumber = loop.index %}
+                        {% include "../ad/ad-video-block.html" %}
+                    {% endif %}
+                #}
             {% endfor %}
         </div>
     </div>

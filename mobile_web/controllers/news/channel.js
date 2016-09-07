@@ -18,13 +18,14 @@ module.exports = (req, res, next) => {
 
         let { isOpen } = req.query;
 
-        let { newsList, channelName } = yield getApi(`${channelBaseUrl}/${channelId}`);
+        let { newsList, ads, channelName } = yield getApi(`${channelBaseUrl}/${channelId}`);
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList });
         }
 
         let data = {
+            nativeAds: ads || [],
             newsList,
             mainChannel,
             channelName,
