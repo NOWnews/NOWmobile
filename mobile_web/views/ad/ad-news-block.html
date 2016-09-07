@@ -1,17 +1,14 @@
-{% set adShortTitile = "贊助標題短標贊助標題短標贊助標題短標" %}
-<!-- {% set ad640x360 = "http://lorempixel.com/640/360/technics/" %} -->
-{% set ad640x360 = "https://placehold.it/640x360" %}
 
 <div class="news-block">
     <div class="mui-container-fluid">
         <div class="mui-row">
-            <a href="#">
+            <a terget="_blank" href="{{ nativeAds.url() }}">
                 <div calss="ads-block">
-                    <img class="news-main-image" src="{{ ad640x360 }}"/>
+                    <img class="news-main-image" src="{{ nativeAds.img() }}"/>
                 </div>
                 <div class="sponser news-info-with-bg">
                     <p class="info-caption" style="margin-top:10px"> Sponsor </p>
-                    <p class="info-title">{{ adShortTitile }}</p>
+                    <p class="info-title">{{ nativeAds.title() }}</p>
                     <p class="info-caption text-gray"></p>
                 </div>
                 <div class="line"></div>
