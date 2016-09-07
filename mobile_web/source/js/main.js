@@ -2,25 +2,27 @@ $(function() {
     var adsCoverDom = $('.ads-cover').length > 0;
     if (adsCoverDom) {
         $( window ).load(function() {
-            $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
-            $('body').addClass('mui-body--scroll-lock');
-            $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
-            $('#mui-overlay > div').css('position', 'absolute');
-
             var closeAdsCover = function () {
                 $('#mui-overlay').attr('id', '').removeClass('mui--show');
                 $('body').removeClass('mui-body--scroll-lock');
             };
-            $('#mui-overlay').click(closeAdsCover);
-            $('.ads-cover .close').on('click', closeAdsCover);
+            $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
+            $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
+            $('#mui-overlay > div').css('position', 'absolute');
 
             var adsWidthHalf = 0 - $('#mui-overlay > div').width()/2;
             var adsHeightHalf = 0 - $('#mui-overlay > div').height()/2;
+            if(adsHeightHalf){
+                $('body').addClass('mui-body--scroll-lock');
+            }
             $('#mui-overlay > div')
                 .css('top', '50%')
                 .css('left', '50%')
                 .css('margin-left', adsWidthHalf)
                 .css('margin-top', adsHeightHalf);
+
+            $('#mui-overlay').on('click', closeAdsCover);
+            $('.ads-cover .close').on('click', closeAdsCover);
         });
     }
     $('.category-select li a').on('click', function(){
