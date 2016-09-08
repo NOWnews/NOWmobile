@@ -199,7 +199,7 @@ header.mui-appbar {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
 }
 header ul.mui-list--inline {
     margin-bottom: 0;
@@ -986,7 +986,6 @@ NAV滑動
 }
 .category-select{
     transition: all 0.01s ease-in-out;
-    z-index:1;
 }
 
 .slick-news {
