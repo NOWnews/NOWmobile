@@ -18,6 +18,10 @@ module.exports = (req, res, next) => {
         let photo = yield getApi(`photos/${photoId}`);
         photo.title = photo.title.replace(/▲/, '');
         photo.cite = photo.cite.replace(/▲/, '');
+        photo.collectionImages = _.map(photo.collectionImages, (photo) => {
+            photo.cite = photo.cite.replace(/▲/, '');
+            return photo;
+        });
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ photo });
