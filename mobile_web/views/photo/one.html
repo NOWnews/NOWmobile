@@ -19,7 +19,7 @@
                     <div class="slick-photos">
                         {% for image in photo.collectionImages %}
                             <div class="slick-photo">
-                                <img class="photo-main-image" src="{{ image.thumbnail }}" />
+                                <img class="photo-main-image" data-lazy="{{ image.thumbnail }}" />
                                 <div class="shadow-photo mui--hide">
                                     <div class="shadow-photo-info mui--text-subhead">
                                         {{ image.cite }}
