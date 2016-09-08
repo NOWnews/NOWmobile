@@ -52,10 +52,21 @@ $(function() {
     });
 
     $('.slick-photos').slick({
+        lazyLoad: 'progressive',
         adaptiveHeight: true
     });
     $('.slick-photos').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         $('#photo-one-bar span').html(nextSlide + 1);
+    });
+
+    // 在圖片確認 load 三張以後再加上左右的箭頭
+    var photosIndex = 0;
+    $('.slick-photos').on('lazyLoaded', function(event, slick, image, imageSource) {
+        photosIndex++;
+        if (photosIndex === 3) {
+            $('.slick-photos .slick-next').css('background-image', 'url(/static/img/slick-next.png)');
+            $('.slick-photos .slick-prev').css('background-image', 'url(/static/img/slick-prev.png)');
+        }
     });
 
     // 文章文字大小調整
