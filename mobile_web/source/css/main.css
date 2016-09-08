@@ -968,12 +968,13 @@ footer {
 }
 
 .ads-cover .close {
-    max-width: 25px;
+    cursor: pointer;
+    max-width: 60px;
+    padding: 18px;
     z-index: 1;
     right: 0;
     top: 0;
     position: absolute;
-    margin: 15px;
 }
 
 /**
