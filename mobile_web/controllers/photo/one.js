@@ -16,6 +16,8 @@ module.exports = (req, res, next) => {
     co(function*() {
 
         let photo = yield getApi(`photos/${photoId}`);
+        photo.title = photo.title.replace(/▲/, '');
+        photo.cite = photo.cite.replace(/▲/, '');
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ photo });
@@ -23,7 +25,7 @@ module.exports = (req, res, next) => {
 
         return res.render('photo/one', {
             isPhotoOne: true,
-            photo,
+            photo
         });
 
     }).catch(next);
