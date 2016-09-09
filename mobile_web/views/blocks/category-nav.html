@@ -17,6 +17,7 @@
                 <span>速報</span>
             </a>
         </li>
+
     {% endif %}
     {% for category in mainCategory %}
         <li class="{{ 'isActive' if category.tid == taxId or news.category._id == category.tid else ''  }}">
@@ -25,4 +26,16 @@
             </a>
         </li>
     {% endfor %}
+    {% if categoryType == 'news' %}
+        <li>
+            <a href="http://play.nownews.com/">
+                <span>旅遊</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://healthmedia.nownews.com/">
+                <span>健康</span>
+            </a>
+        </li>
+    {% endif %}
 </ul>
