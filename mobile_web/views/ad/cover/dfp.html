@@ -1,4 +1,4 @@
-<div class="mui--text-center ads-block ads-cover">
+<div class="mui--text-center ads-block ads-cover dfp">
     <script>
         googletag.cmd.push(function() {
             googletag.defineSlot('/5799246/mb_cover_test', [
@@ -7,7 +7,9 @@
                 [300, 250],
                 [320, 480],
                 [260, 480]
-            ], 'div-gpt-ad-1472637688793-0').addService(googletag.pubads());
+            ], 'div-gpt-ad-1472637688793-0')
+                .addService(googletag.pubads())
+                .setCollapseEmptyDiv(true,true);
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
         });
