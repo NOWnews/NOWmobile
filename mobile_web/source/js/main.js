@@ -171,12 +171,6 @@ $(function() {
         navCategoryCenter();
     }
 
-    // 原內頁置底的 social
-    // var socialDom = $('#social-link').length > 0;
-    // if (socialDom) {
-    //     var socialHeight = 40;
-    //     $('.custom-space').css('height', socialHeight);
-    // }
     $( window ).load(function() {
         // social 在 safari 會出現 img, 所以要隱藏起來
         $('img[src="http://load.s3.amazonaws.com/pixel.gif"]').hide();
@@ -214,21 +208,13 @@ $(function() {
         didScroll = true;
     });
 
-    setInterval(function() {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-    }, 50);
-
     function hasScrolled() {
         var st = $(this).scrollTop();
         // Make sure they scroll more than delta
         if(Math.abs(lastScrollTop - st) <= delta){
             return;
         }
-        // If they scrolled down and are past the navbar, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
+
         if (st > lastScrollTop && st > navbarHeight){
             // Scroll Down
             $('.category-select').removeClass('nav-down').addClass('nav-up');
@@ -238,9 +224,15 @@ $(function() {
                 $('.category-select').removeClass('nav-up').addClass('nav-down');
             }
         }
-
         lastScrollTop = st;
     }
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 50);
 
     // 上一篇下一篇的回饋感
     var arrowBtns = document.getElementsByClassName('arrow-btn');

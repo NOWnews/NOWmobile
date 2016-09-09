@@ -647,23 +647,30 @@ header .mobile-logo {
 
 
 /**
- * page freeBody CSS
+ * page freeBody2 CSS
  */
-.freeBody ul {
+.freeBody2 ul {
     padding: 0;
     list-style-type: none;
 }
-.freeBody ul > li > a {
+.freeBody2 ul > li > a {
     coloe: #0083FF;
     padding: 5px 0;
     display: block;
 }
-.freeBody ul > li span {
+.freeBody2 ul > li span {
     margin-left: 10px;
 }
 
-.freeBody ul > li img {
+.freeBody2 ul > li img {
     max-width: 40px;
+}
+
+/**
+ * page freeBody CSS
+ */
+.freeBody {
+    margin-top: 40px;
 }
 
 /**
