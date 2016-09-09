@@ -39,7 +39,7 @@ router.route('/ajaxPost')
 
             // 如果沒資料就回傳掉
             if (!result && !template) {
-                return;
+                return false;
             }
 
             return res.render(`ajaxPost/${template}`, result);
