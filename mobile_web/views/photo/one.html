@@ -36,11 +36,11 @@
     <script type="text/javascript">
         $(function(){
             //首圖圖說
-            var photoInfoText = $('.slick-photo.slick-active .shadow-photo-info').text().replace(/▲/gi, '')
+            var photoInfoText = $('.slick-photo.slick-active .shadow-photo-info').text();
             $('.photo-info .news_item').text(photoInfoText);
             //圖說
             $('.slick-photos').on('afterChange', function(event, slick, currentSlide, nextSlide){
-                photoInfoText = $('.slick-photo.slick-active .shadow-photo-info').text().replace(/▲/gi, '')
+                photoInfoText = $('.slick-photo.slick-active .shadow-photo-info').text();
                 $('.photo-info .news_item').text(photoInfoText);
             });
         });
