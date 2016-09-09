@@ -441,10 +441,9 @@ header .mobile-logo {
 
 /* 左右箭頭 CSS
  */
-.single-item .slick-next, .slick-photos .slick-next {
+.slick-photos .slick-next {
     right: 0;
     height: 46px;
-    background: url(/static/img/slick-next.png);
     background-size: 100%;
 }
 
@@ -452,11 +451,10 @@ header .mobile-logo {
     opacity: 0;
 }
 
-.single-item .slick-prev, .slick-photos .slick-prev {
+.slick-photos .slick-prev {
     left: 0;
     z-index: 1;
     height: 46px;
-    background: url(/static/img/slick-prev.png);
     background-size: 100%;
 }
 
@@ -970,12 +968,13 @@ footer {
 }
 
 .ads-cover .close {
-    max-width: 25px;
+    cursor: pointer;
+    max-width: 60px;
+    padding: 18px;
     z-index: 1;
     right: 0;
     top: 0;
     position: absolute;
-    margin: 15px;
 }
 
 /**
