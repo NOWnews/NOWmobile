@@ -1,4 +1,3 @@
-<!-- for facebook use2-->
 {% if specialType=='headline' %}
     {% set specialName = '頭條' %}
     {% set url = '/' %}
@@ -9,6 +8,12 @@
     {% set specialName = '速報' %}
     {% set url = '/news/special/instant/' %}
 {% endif %}
+<!--for base meta -->
+<title>{{ specialName }} | NOWnews今日新聞</title>
+<meta name="description" content="" />
+<meta name="keywords" content="">
+
+<!-- for facebook use2-->
 <meta property="og:url" content="http://m.nownews.com/{{ url }}">
 <meta property="og:title" content="{{ specialName }} | NOWnews今日新聞">
 <meta property="og:description" content="">

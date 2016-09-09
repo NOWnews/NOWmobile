@@ -1,3 +1,8 @@
+<!--for base meta -->
+<title>{{ video.title }} | {{ video.categories[0].name }} | NOWnews今日新聞</title>
+<meta name="description" content="{{ video.body.summary if video.summary == '' else video.title }}" />
+<meta name="keywords" content="">
+
 <!-- for facebook use2-->
 <meta property="og:url" content="{{ video.jsonld.mainEntityOfPage.id }}">
 <meta property="og:title" content="{{ video.title }} | NOWnews今日新聞">
