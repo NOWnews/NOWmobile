@@ -12,10 +12,11 @@ $(function() {
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
                 if ($('.ads-cover.dfp > div').css('display') === 'none') {
                     $('.ads-cover.onead').addClass('mui--show');
+                    $('.mobile-incover').addClass('mui--show');
                     return;
                 } else {
                     $('.ads-cover.onead').remove();
-					$('.mobile-incover').remove();
+                    $('.mobile-incover').remove();
                 }
                 var closeAdsCover = function () {
                     $('#mui-overlay').attr('id', '').removeClass('mui--show');
