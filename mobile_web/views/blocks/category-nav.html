@@ -17,12 +17,25 @@
                 <span>速報</span>
             </a>
         </li>
+
     {% endif %}
     {% for category in mainCategory %}
         <li class="{{ 'isActive' if category.tid == taxId or news.category._id == category.tid else ''  }}">
-            <a class="" href="/{{categoryType}}/category/{{ category.tid }}">
+            <a href="/{{categoryType}}/category/{{ category.tid }}">
                 <span>{{ category.name }}</span>
             </a>
         </li>
     {% endfor %}
+    {% if categoryType == 'news' %}
+        <li>
+            <a href="http://play.nownews.com/" target="_blank">
+                <span>旅食樂</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://healthmedia.nownews.com/" target="_blank">
+                <span>健康百科</span>
+            </a>
+        </li>
+    {% endif %}
 </ul>
