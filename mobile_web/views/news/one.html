@@ -44,36 +44,11 @@
                 {{ news.htmlBody | safe }}
             </div>
 
-            <!-- 沒有 API 先隱藏 -->
-<!--             <div class="freeBody">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <span>Link</span>
-                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Link</span>
-                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Link</span>
-                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Link</span>
-                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+            {# freeBody 業務用欄位 #}
+            <div class="freeBody">
+                {{ news.freeBody | safe }}
             </div>
- -->
+
             <div class="arrow-block mui--appbar-line-height">
                 {# 廣告版位 #}
                 {% include "../ad/one/ad300x250_2.html" %}
