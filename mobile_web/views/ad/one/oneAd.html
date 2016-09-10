@@ -1,4 +1,4 @@
-<div id = 'oneadMIRTag'></div>
+<div id="oneadMIRTag" class="ads-block onead"></div>
 
 <script type="text/javascript">
     request_isip=function(){
@@ -7,9 +7,9 @@
         window.ONEAD = ONEAD;
         ONEAD.isDfpMode = true;
         (function () {
-         
+
         var slot= document.getElementById('oneadMIRTag');
-        
+
         var slots = ['div-mobile-inread'];
         for (var i = slots.length - 1; i >= 0; i--) {
             var s = document.createElement('div');
@@ -93,7 +93,7 @@
                     slot.style.height = 'auto';
                     slot.style.margin = '0 auto';
                 }
-                
+
             }
             if (ONEAD.isip_index != 0) {parent.window.ONEAD_is_window_onload = true;}
         });
