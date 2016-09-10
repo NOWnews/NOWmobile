@@ -9,7 +9,7 @@ $(function() {
         if (count === 1 || count === 3 || count === 5 || count === 7 ) {
             $( window ).load(function() {
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
-                if ($('.ads-cover.dfp > div').css('display') === 'none') {
+                if ($('.ads-cover#dfp-cover > div').css('display') === 'none') {
                     $('.ads-cover#oneadMICTag').show();
                     $('.mobile-incover').addClass('mui--show');
                     return;
@@ -23,7 +23,7 @@ $(function() {
                     $('body').removeClass('mui-body--scroll-lock');
                 };
 
-                $('.ads-cover').attr('id', 'mui-overlay').addClass('mui--show');
+                $('.ads-cover#dfp-cover').attr('id', 'mui-overlay').addClass('mui--show');
                 $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
                 $('#mui-overlay > div').css('position', 'absolute');
 
