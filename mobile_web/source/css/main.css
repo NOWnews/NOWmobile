@@ -966,7 +966,7 @@ footer {
     max-width: 100%;
 }
 
-.ads-cover {
+.ads-cover, .mobile-incover {
     display: none;
 }
 
