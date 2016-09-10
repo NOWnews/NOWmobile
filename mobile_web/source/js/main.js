@@ -10,21 +10,13 @@ $(function() {
             $( window ).load(function() {
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
                 if ($('.ads-cover.dfp > div').css('display') === 'none') {
-
-                    // 建議改成我這樣的寫法，要不然新聞內頁下面會多出一大片空白
-                    // $('#oneadMICTag').show();
-                    $('.ads-cover.onead').addClass('mui--show');
+                    $('.ads-cover#oneadMICTag').show();
                     $('.mobile-incover').addClass('mui--show');
-                    return;
-                } else {
-                    $('.ads-cover.onead').remove();
-                    $('.mobile-incover').remove();
                     return;
                 }
 
-                // 應該把上面的 else 移來這邊就好了
-                // $('.mobile-incover').remove();
-                // $('#oneadMICTag').remove();
+                $('.mobile-incover').remove();
+                $('#oneadMICTag').remove();
 
                 var closeAdsCover = function () {
                     $('#mui-overlay').attr('id', '').removeClass('mui--show');
