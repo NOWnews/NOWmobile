@@ -892,10 +892,6 @@ footer {
     max-width: 100%;
 }
 
-.ads-cover, .mobile-incover {
-    display: none;
-}
-
 #mui-overlay {
     background-color: rgba(0,0,0,.7);
 }
