@@ -1,4 +1,9 @@
 {% extends "../base.html" %}
+
+{% block socialblock %}
+    {% include "../seo/head-social-category-photo.html" %}
+{% endblock %}
+
 {% block container %}
     <div id="content-wrapper">
         <div class="mui--appbar-height"></div>
@@ -6,14 +11,14 @@
             {% set categoryType = 'photo' %}
             {% include "../blocks/category-nav.html" %}
         </nav>
-        <div class="nownews-wrapper">
+        <div class="nownews-wrapper" {% if taxId %}id="list-wrapper"{% endif %}>
             {% for photo in photoList %}
                 <div class="mui-container-fluid">
                     <div class="mui-row photo-block">
                         <div class="shadow-photo">
                             <a href="/photo/{{photo.nodeId}}">
                                 <div class="shadow-photo-info">
-                                    <p>{{ photo.title }}</p>
+                                    <p class="info-title">{{ photo.title }}</p>
                                 </div>
                                 <img class="photo-main-image" src="{{ photo.thumbnail }}" />
                             </a>
@@ -22,12 +27,13 @@
                 </div>
 
                 {# 廣告版位 #}
-                {% if loop.index % 3 == 0 %}
-                    {% include "../ad/ad-photo-block.html" %}
-                {% endif %}
+                {#
+                    {% if loop.index % 3 == 0 %}
+                        {% set noSliderNumber = loop.index %}
+                        {% include "../ad/ad-photo-block.html" %}
+                    {% endif %}
+                #}
             {% endfor %}
         </div>
-        {# 廣告版位 #}
-        {% include "../ad/ad320x50.html" %}
     </div>
 {% endblock %}

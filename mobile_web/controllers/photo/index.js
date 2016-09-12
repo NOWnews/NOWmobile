@@ -1,14 +1,13 @@
 import express from 'express';
 let router = express.Router();
-
-import listByCateogry from './listByCateogry';
+import listByCategory from './listByCategory';
 import one from './one';
 
-router.route('/photo/')
-    .get(listByCateogry);
+router.route('/photo')
+    .get(listByCategory);
 
 router.route('/photo/category/:taxId')
-    .get(listByCateogry);
+    .get(listByCategory);
 
 router.route('/photo/:photoId')
     .get(one);

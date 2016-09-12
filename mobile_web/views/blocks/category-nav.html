@@ -3,26 +3,39 @@
 <ul>
     {% if categoryType == 'news' %}
         <li class="{{ 'isActive' if specialType == 'headline' else ''  }}">
-            <a href="/">
+            <a class="" href="/">
                 <span>頭條</span>
             </a>
         </li>
         <li class="{{ 'isActive' if specialType == 'hotNews' else ''  }}">
-            <a href="/news/special/hotNews/">
+            <a class="" href="/news/special/hotNews/">
                 <span>熱門</span>
             </a>
         </li>
         <li class="{{ 'isActive' if specialType == 'instant' else ''  }}">
-            <a href="/news/special/instant/">
+            <a class="" href="/news/special/instant/">
                 <span>速報</span>
             </a>
         </li>
+
     {% endif %}
     {% for category in mainCategory %}
-        <li class="{{ 'isActive' if category.tid == taxId else ''  }}">
+        <li class="{{ 'isActive' if category.tid == taxId or news.category._id == category.tid else ''  }}">
             <a href="/{{categoryType}}/category/{{ category.tid }}">
                 <span>{{ category.name }}</span>
             </a>
         </li>
     {% endfor %}
+    {% if categoryType == 'news' %}
+        <li>
+            <a href="http://play.nownews.com/" target="_blank">
+                <span>旅食樂</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://healthmedia.nownews.com/" target="_blank">
+                <span>健康百科</span>
+            </a>
+        </li>
+    {% endif %}
 </ul>

@@ -9,19 +9,27 @@ const debug = require('debug')('NOWmobile:controllers:photo');
 module.exports = (req, res, next) => {
     let { photoId } = req.params;
 
-    if (!photoId) return next();
+    if (!photoId) {
+        return next();
+    }
 
     co(function*() {
 
         let photo = yield getApi(`photos/${photoId}`);
+        photo.title = photo.title.replace(/▲/, '');
+        photo.cite = photo.cite.replace(/▲/, '');
+        photo.collectionImages = _.map(photo.collectionImages, (photo) => {
+            photo.cite = photo.cite.replace(/▲/, '');
+            return photo;
+        });
 
         if(req.query.data === 'PLAYJJ'){
-            return res.json({ photo, headline });
+            return res.json({ photo });
         }
 
         return res.render('photo/one', {
             isPhotoOne: true,
-            photo,
+            photo
         });
 
     }).catch(next);
