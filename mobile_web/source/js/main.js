@@ -43,13 +43,11 @@ $(function() {
                     return;
                 }
                 console.log('沒有 dfp 廣告');
-                window.call_onead = function() {
-                    for (var i = 0; i < window.ONEADs.length; i++) {
-                        if (window.ONEADs[i].play_mode === 'incover') {
-                            window.ONEADs[i].ONEAD_expand_slot();
-                        }
+                for (var i = 0; i < window.ONEADs.length; i++) {
+                    if (window.ONEADs[i].play_mode === 'incover') {
+                        window.ONEADs[i].ONEAD_expand_slot();
                     }
-                };
+                }
             });
         }
     }
