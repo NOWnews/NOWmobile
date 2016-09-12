@@ -1,5 +1,6 @@
 <div id="oneadMICTag" class="ads-block ads-cover onead"></div>
 <script>
+
 request_isip=function(){
     window.is_requesting_isip = true;
     var ONEAD = {};
@@ -42,9 +43,10 @@ request_isip=function(){
     };
 
     ONEAD.response_freq_multiple = {
-		'mobile-incover': "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50"
+		'mobile-incover': "1"
     };
 
+    ONEAD.query_only = true;
     ONEAD.uid = "1000037";
     ONEAD.external_url = "http://demo.onead.com.tw/"; // base_url, post-slash is necessary
     ONEAD.wrapper = 'ONEAD_player_wrapper';
@@ -83,6 +85,7 @@ request_isip=function(){
     }
     parent.ONEAD_on_get_response.push(function (params) {
         // debugger;
+        ONEAD.play_mode = params.play_mode
         if (params !== null) {
             // debugger;
             if (params.play_mode == 'mobile-incover') {
@@ -110,16 +113,17 @@ request_isip=function(){
           return false;
 
 		}
-
-        if (ONEAD.isip_index != 0) {parent.window.ONEAD_is_window_onload = true;}
     });
 
 
 if(parent.window.ONEADs===undefined){
     parent.window.ONEADs=[];
 }
+
 ONEAD.isip_index = parent.window.ONEADs.length;
 parent.window.ONEADs.push(ONEAD);
+
+if (ONEAD.isip_index != 0) {parent.window.ONEAD_is_window_onload = true;}
 
 (function () {
      var src = 'http://ad-specs.guoshipartners.com/static/js/isip.js';
@@ -162,4 +166,5 @@ var check_requesting_isip = function(window){
 }
 
 check_requesting_isip(window.frameElement === null? parent.window: window );
+
 </script>
