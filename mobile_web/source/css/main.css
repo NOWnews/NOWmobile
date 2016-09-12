@@ -289,69 +289,6 @@ header .mobile-logo {
     left: 16px;
 }
 
-/*#menu-social-link ul li i.shareaholic-service-icon[title="Facebook"]{
-    top: 15px;
-    left: 16px;
-}
-
-#menu-social-link ul li i.shareaholic-service-icon[title="Line"]{
-    background: #00c300 !important;
-}
-
-#menu-social-link ul li i.shareaholic-service-icon[title="Google+"]{
-    background: #dd4b39 !important;
-}
-
-#menu-social-link ul li i.shareaholic-service-icon[title="Sina Weibo"]{
-    background: #d82829 !important;
-}*/
-
-/**
- * social-link CSS
- */
-
-#social-link .shareaholic-share-buttons-container {
-    height: 40px;
-}
-
-#social-link .shareaholic-share-buttons-wrapper {
-    width: 100%;
-}
-
-#social-link .shareaholic-share-buttons {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-#social-link .shareaholic-share-buttons li.shareaholic-share-button {
-    padding: 0 !important;
-    display: block !important;
-}
-
-#social-link .shareaholic-share-buttons li.shareaholic-share-button .share-button-sizing {
-    float: none;
-}
-
-#social-link .shareaholic-share-buttons li.shareaholic-share-button .shareaholic-share-button-container {
-    max-height: 40px;
-}
-
-#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Facebook"] {
-    background: #3b5998 !important;
-}
-
-#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Line"] {
-    background: #00c300 !important;
-}
-
-#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Google+"] {
-    background: #dd4b39 !important;
-}
-
-#social-link .shareaholic-share-buttons li.shareaholic-share-button[title="Sina Weibo"] {
-    background: #d82829 !important;
-}
-
 /**
  * Search Bar CSS
  */
@@ -614,17 +551,6 @@ header .mobile-logo {
 .arrow-block a.is-active, .arrow-block a:hover {
     font-weight: bold;
 }
-
-/**
-* TODO: #73 手機使用圖片切換會很 lag
-* .arrow-block .next-arrow:hover {
-*     background-image: url(/static/img/next-hover-btn-bg.png);
-* }
-
-* .arrow-block .prev-arrow:hover {
-*     background-image: url(/static/img/prev-hover-btn-bg.png);
-* }
-**/
 
 .related-news-block .category-title {
     margin: 0;
@@ -985,8 +911,8 @@ footer {
 }
 
 /**
-NAV滑動
-**/
+ * NAV 滑動
+ **/
 .nav-up {
     top: -10px;
 }
