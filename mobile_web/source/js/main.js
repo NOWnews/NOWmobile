@@ -39,15 +39,14 @@ $(function() {
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
                 if (hasDFP) {
                     dfpCover();
-                    console.log('有 dfp 廣告');
                     return;
                 }
-                console.log('沒有 dfp 廣告');
-                for (var i = 0; i < window.ONEADs.length; i++) {
-                    if (window.ONEADs[i].play_mode === 'incover') {
-                        window.ONEADs[i].ONEAD_expand_slot();
-                    }
-                }
+                /* one ad 廣告先隱蔽 */
+                // for (var i = 0; i < window.ONEADs.length; i++) {
+                //     if (window.ONEADs[i].play_mode === 'incover') {
+                //         window.ONEADs[i].ONEAD_expand_slot();
+                //     }
+                // }
             });
         }
     }
