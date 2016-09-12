@@ -33,25 +33,23 @@ $(function() {
             $('.ads-cover .close').on('click', closeAdsCover);
         };
 
-        // if (count === 1 || count === 3 || count === 5 || count === 7 ) {
-        if (true) {
+        if (count === 1 || count === 3 || count === 5 || count === 7 ) {
             $window.load(function() {
+                var hasDFP = $('.ads-cover.dfp > div').css('display') === 'none' ? false : true;
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
-                if ($('.ads-cover.dfp > div').css('display') === 'none') {
-                    console.log('沒有 dfp 廣告');
-                    window.call_onead = function() {
-                        for (var i = 0; i < window.ONEADs.length; i++) {
-                            if (window.ONEADs[i].play_mode === 'incover') {
-                                window.ONEADs[i].ONEAD_expand_slot();
-                            }
-                        }
-                    };
-                    // $('.ads-cover#oneadMICTag').show();
-                    // $('.mobile-incover').addClass('mui--show');
+                if (hasDFP) {
+                    dfpCover();
+                    console.log('有 dfp 廣告');
                     return;
                 }
-
-                dfpCover();
+                console.log('沒有 dfp 廣告');
+                window.call_onead = function() {
+                    for (var i = 0; i < window.ONEADs.length; i++) {
+                        if (window.ONEADs[i].play_mode === 'incover') {
+                            window.ONEADs[i].ONEAD_expand_slot();
+                        }
+                    }
+                };
             });
         }
     }
