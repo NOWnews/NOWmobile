@@ -11,6 +11,9 @@ import check from './check';
 
 module.exports = function(app) {
 
+    // 因為 m.nownews.com// 會造成錯誤，先用這種寫法避開
+    app.use('//', function (req, res, next) {res.redirect('/');});
+
     app.use('/', about);
     app.use('/', home);
     app.use('/', news);
