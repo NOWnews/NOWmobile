@@ -8,6 +8,7 @@ import logger from 'morgan';
 import cors from 'cors';
 import nunjucks from 'nunjucks';
 
+import duplicate from './duplicate';
 import redirect from './redirect';
 import setLocals from './setLocals';
 
@@ -51,6 +52,7 @@ module.exports = function(app) {
 
 
     app.use(redirect(app));
+    app.use(duplicate(app));
     app.use(logger('dev'));
     app.use(setLocals());
 
