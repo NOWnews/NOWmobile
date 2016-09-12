@@ -37,6 +37,8 @@ router.route('/ajaxPost')
                 return res.json(result);
             }
 
+            console.log(`下頁網址 "${result}" -------> 導轉 "category/template/${taxId}?page=${page}"`);
+
             return res.render(`ajaxPost/${template}`, result);
 
         }).catch(next);
