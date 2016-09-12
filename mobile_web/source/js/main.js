@@ -9,50 +9,45 @@ $(function() {
         count++;
         $.cookie('nownews-coverAds', count, { expires: 1, path: '/' });
 
-        // var dfpCover = function () {
-        //     var closeAdsCover = function () {
-        //         $('#mui-overlay').attr('id', '').removeClass('mui--show');
-        //         $('body').removeClass('mui-body--scroll-lock');
-        //     };
-        //     $('.ads-cover.dfp').attr('id', 'mui-overlay').addClass('mui--show');
-        //     $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
-        //     $('#mui-overlay > div').css('position', 'absolute');
-        //
-        //     var adsWidthHalf = 0 - $('#mui-overlay > div').width()/2;
-        //     var adsHeightHalf = 0 - $('#mui-overlay > div').height()/2;
-        //     if(adsHeightHalf){
-        //         $('body').addClass('mui-body--scroll-lock');
-        //     }
-        //     $('#mui-overlay > div')
-        //         .css('top', '50%')
-        //         .css('left', '50%')
-        //         .css('margin-left', adsWidthHalf)
-        //         .css('margin-top', adsHeightHalf);
-        //
-        //     $('#mui-overlay').on('click', closeAdsCover);
-        //     $('.ads-cover .close').on('click', closeAdsCover);
-        // };
+        var dfpCover = function () {
+            var closeAdsCover = function () {
+                $('#mui-overlay').attr('id', '').removeClass('mui--show');
+                $('body').removeClass('mui-body--scroll-lock');
+            };
+            $('.ads-cover.dfp').attr('id', 'mui-overlay').addClass('mui--show');
+            $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
+            $('#mui-overlay > div').css('position', 'absolute');
+
+            var adsWidthHalf = 0 - $('#mui-overlay > div').width()/2;
+            var adsHeightHalf = 0 - $('#mui-overlay > div').height()/2;
+            if(adsHeightHalf){
+                $('body').addClass('mui-body--scroll-lock');
+            }
+            $('#mui-overlay > div')
+                .css('top', '50%')
+                .css('left', '50%')
+                .css('margin-left', adsWidthHalf)
+                .css('margin-top', adsHeightHalf);
+
+            $('#mui-overlay').on('click', closeAdsCover);
+            $('.ads-cover .close').on('click', closeAdsCover);
+        };
 
         if (count === 1 || count === 3 || count === 5 || count === 7 ) {
             $window.load(function() {
+                var hasDFP = $('.ads-cover.dfp > div').css('display') === 'none' ? false : true;
+                // 如果沒有 dfp 廣告就塞入成果的廣告碼
+                if (hasDFP) {
+                    dfpCover();
+                    console.log('有 dfp 廣告');
+                    return;
+                }
+                console.log('沒有 dfp 廣告');
                 for (var i = 0; i < window.ONEADs.length; i++) {
                     if (window.ONEADs[i].play_mode === 'incover') {
                         window.ONEADs[i].ONEAD_expand_slot();
                     }
                 }
-                // var hasDFP = $('.ads-cover.dfp > div').css('display') === 'none' ? false : true;
-                // 如果沒有 dfp 廣告就塞入成果的廣告碼
-                // if (hasDFP) {
-                    // dfpCover();
-                //     console.log('有 dfp 廣告');
-                //     return;
-                // }
-                // console.log('沒有 dfp 廣告');
-                // for (var i = 0; i < window.ONEADs.length; i++) {
-                //     if (window.ONEADs[i].play_mode === 'incover') {
-                //         window.ONEADs[i].ONEAD_expand_slot();
-                //     }
-                // }
             });
         }
     }

@@ -906,6 +906,10 @@ footer {
     position: absolute;
 }
 
+.ads-cover.dfp {
+    display: none;
+}
+
 /**
  * NAV 滑動
  **/
