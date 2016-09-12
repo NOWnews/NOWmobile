@@ -490,7 +490,7 @@ header .mobile-logo {
 }
 
 .news-body img , .news-body p, .news-body iframe{
-    max-width: 100%;
+    max-width: 100% !important;
 }
 
 .font-link {
