@@ -1,4 +1,6 @@
 $(function() {
+    var $window = $(window);
+
     // 蓋版廣告
     var adsCoverDom = $('.ads-cover').length > 0;
     if (adsCoverDom) {
@@ -7,7 +9,7 @@ $(function() {
         count++;
         $.cookie('nownews-coverAds', count, { expires: 1, path: '/' });
         if (count === 1 || count === 3 || count === 5 || count === 7 ) {
-            $( window ).load(function() {
+            $window.load(function() {
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
                 if ($('.ads-cover.dfp > div').css('display') === 'none') {
                     $('.ads-cover#oneadMICTag').show();
@@ -51,6 +53,7 @@ $(function() {
         location.href = $(this).attr('href');
     });
 
+    // 新聞列表輪播的特效
     $('.single-item').slick({
         dots: true,
         infinite: true,
@@ -61,6 +64,7 @@ $(function() {
         arrows: false
     });
 
+    // 圖集換頁的特效
     $('.slick-photos').slick({
         lazyLoad: 'progressive',
         adaptiveHeight: true
@@ -158,40 +162,39 @@ $(function() {
 
     if (adsBottomDom) {
         $('.custom-space').css('height', 50);
-        $(window).on('scroll', adsBottomScrollFunc);
+        $window.on('scroll', adsBottomScrollFunc);
     }
 
     // nav 的 category 置中
     function navCategoryCenter() {
         var $nav = $('.category-select > ul');
         var isActivePosition = $nav.find('.isActive').offset().left;
-        var mobileWidthHalf = $(window).width() / 2;
+        var mobileWidthHalf = $window.width() / 2;
         var itemWidthHalf = $nav.find('li').outerWidth() / 2;
 
         // 如果是小於一半的分類往左推自己寬度的 1/2（估計值）;
         if (isActivePosition < mobileWidthHalf) {
-            $nav.scrollLeft(isActivePosition / 2);
-            return;
+            return $nav.scrollLeft(isActivePosition / 2);
         }
 
-        $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);
+        return $nav.scrollLeft(isActivePosition - mobileWidthHalf + itemWidthHalf);
     }
     var navDom = $('.category-select > ul').length > 0;
     if (navDom) {
         navCategoryCenter();
     }
 
-    $( window ).load(function() {
-        // social 在 safari 會出現 img, 所以要隱藏起來
+    // social 在 safari 會出現 img, 所以要隱藏起來
+    $window.load(function() {
         $('img[src="http://load.s3.amazonaws.com/pixel.gif"]').hide();
     });
+
     // 滑到底去抓新聞
-    var win = $(window);
     var page = 1;
     var hasListWrapperDom = $('#list-wrapper').length > 0;
     if (hasListWrapperDom){
-        win.scroll(function() {
-            if ($(document).height() - win.height() === win.scrollTop()) {
+        $window.scroll(function() {
+            if ($(document).height() - $window.height() === $window.scrollTop()) {
                 $('#loading').removeClass('mui--hide');
                 page++;
                 $.ajax({
@@ -214,7 +217,7 @@ $(function() {
     var delta = 5;
     var navbarHeight = $('.category-select').outerHeight();
 
-    $(window).scroll(function(event){
+    $window.scroll(function(event){
         didScroll = true;
     });
 
@@ -230,7 +233,7 @@ $(function() {
             $('.category-select').removeClass('nav-down').addClass('nav-up');
         } else {
             // Scroll Up
-            if(st + $(window).height() < $(document).height()) {
+            if(st + $window.height() < $(document).height()) {
                 $('.category-select').removeClass('nav-up').addClass('nav-down');
             }
         }
