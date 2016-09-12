@@ -6,6 +6,7 @@ import video from './video';
 import ajaxPost from './ajaxPost';
 import files from './files';
 import sitemap from './sitemap';
+import check from './check';
 
 
 module.exports = function(app) {
@@ -18,6 +19,7 @@ module.exports = function(app) {
     app.use('/', ajaxPost);
     app.use('/', files);
     app.use('/', sitemap);
+    app.use('/', check);
 
     return function(req, res, next) {
         return next();
