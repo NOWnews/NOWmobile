@@ -39,6 +39,10 @@ dev: `npm start`
 prod: `npm run mobile:prod`
 
 
+### 手機版 nownews 的確認端點
+
+`/check`
+
 ## Server 啟動方式
 
 ```
