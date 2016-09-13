@@ -489,7 +489,7 @@ header .mobile-logo {
     line-height: 160%;
 }
 
-.news-body img , .news-body p, .news-body iframe{
+.news-body img , .news-body p, .news-body iframe, .freeBody iframe {
     max-width: 100% !important;
 }
 
