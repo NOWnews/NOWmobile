@@ -2,6 +2,8 @@
  * 這個 middleware 是因為怕有人從舊的網址進入，所以要 redirect 到新網址
  */
 
+import chalk from 'chalk';
+
 module.exports = (app) => {
 
     return (req, res, next) => {
@@ -22,7 +24,7 @@ module.exports = (app) => {
         if(matches !== null && matches.length > 0) {
             let originUrl = matches[0];
             let nodeId = matches[4];
-            console.log(`原網址 "${originUrl}" -------> 導轉 "/news/${nodeId}"`);
+            console.log(chalk.blue.bold(`原網址 "${originUrl}" -------> 導轉 "/news/${nodeId}"`));
             return res.redirect(`/news/${nodeId}${queryString}`);
         }
 
