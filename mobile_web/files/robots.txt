@@ -1,11 +1,11 @@
-User-agent: * 
+User-agent: *
 Allow: /
-User-agent: Googlebot 
+User-agent: Googlebot
 Allow: /
-User-agent: Googlebot-Mobile 
+User-agent: Googlebot-Mobile
 Allow: /
 
-User-agent: bingbot 
-Disallow: /
+User-agent: bingbot
+Allow: /
 User-agent: bingbot-mobile
 Allow: /
