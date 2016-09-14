@@ -37,16 +37,18 @@ $(function() {
             $window.load(function() {
                 var hasDFP = $('.ads-cover.dfp > div').css('display') === 'none' ? false : true;
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
-                if (hasDFP) {
-                    dfpCover();
-                    return;
-                }
-                /* one ad 廣告先隱蔽 */
-                // for (var i = 0; i < window.ONEADs.length; i++) {
-                //     if (window.ONEADs[i].play_mode === 'incover') {
-                //         window.ONEADs[i].ONEAD_expand_slot();
-                //     }
+                // if (hasDFP) {
+                //     dfpCover();
+                //     console.log('有dfp廣告')
+                //     return;
                 // }
+                console.log('沒dfp廣告')
+                /* one ad 廣告先隱蔽 */
+                for (var i = 0; i < window.ONEADs.length; i++) {
+                    if (window.ONEADs[i].play_mode === 'incover') {
+                        window.ONEADs[i].ONEAD_expand_slot();
+                    }
+                }
             });
         }
     }
