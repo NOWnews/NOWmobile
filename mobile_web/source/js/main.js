@@ -33,7 +33,8 @@ $(function() {
             $('.ads-cover .close').on('click', closeAdsCover);
         };
 
-        if (count === 1 || count === 3 || count === 5 || count === 7 ) {
+        // if (count === 1 || count === 3 || count === 5 || count === 7 ) {
+        if (true) {
             $window.load(function() {
                 var hasDFP = $('.ads-cover.dfp > div').css('display') === 'none' ? false : true;
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
