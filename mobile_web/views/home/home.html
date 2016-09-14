@@ -41,13 +41,16 @@
                 </div>
             </div>
         </div>
-        {# 廣告版位 #}
-        {% include "../ad/list/ad336x280.html" %}
 
         <div class="nownews-wrapper" id="{{ 'list-wrapper' if taxId else '' }}">
             {% for news in newsList %}
                 {% if loop.index > slideItem %}
                     {% include "../blocks/news-block.html" %}
+                {% endif %}
+
+                {# 列表頁 slide 後面第二個位置的廣告版位 #}
+                {% if loop.index - slideItem == 1 %}
+                    {% include "../ad/list/ad336x280.html" %}
                 {% endif %}
 
                 {# 廣告版位 #}
