@@ -43,10 +43,10 @@ $(function() {
                 //     console.log('有dfp廣告')
                 //     return;
                 // }
-                console.log('沒dfp廣告')
+                console.log('沒dfp廣告');
                 /* one ad 廣告先隱蔽 */
                 for (var i = 0; i < window.ONEADs.length; i++) {
-                    if (window.ONEADs[i].play_mode === 'incover') {
+                    if (window.ONEADs[i].play_mode === 'mobile-incover') {
                         window.ONEADs[i].ONEAD_expand_slot();
                     }
                 }
