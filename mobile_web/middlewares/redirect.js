@@ -17,7 +17,7 @@ module.exports = (app) => {
         }
 
         if(req.query && req.query.utm_source) {
-            queryString = `?utm_source=${req.query.from}&utm_medium=${req.query.utm_medium}&utm_campaign=${req.query.utm_campaign}`;
+            queryString = `?utm_source=${req.query.utm_source}&utm_medium=${req.query.utm_medium}&utm_campaign=${req.query.utm_campaign}`;
         }
 
         // 有符合到舊的格式就直接 redirect
