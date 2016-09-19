@@ -42,11 +42,11 @@ $(function() {
                     return;
                 }
                 /* one ad 廣告先隱蔽 */
-                // for (var i = 0; i < window.ONEADs.length; i++) {
-                //     if (window.ONEADs[i].play_mode === 'incover') {
-                //         window.ONEADs[i].ONEAD_expand_slot();
-                //     }
-                // }
+                for (var i = 0; i < window.ONEADs.length; i++) {
+                    if (window.ONEADs[i].play_mode === 'mobile-incover') {
+                        window.ONEADs[i].ONEAD_expand_slot();
+                    }
+                }
             });
         }
     }
