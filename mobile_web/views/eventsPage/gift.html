@@ -1,5 +1,103 @@
 <!-- mobile 上線的禮物活動 -->
+<div class="main-im">
+
+    <div id="open_im" class="open-im"><img src="/static/img/gift/gift_icon-02.png" alt="" / style="width:50px">&nbsp;</div>
+
+    <div class="im_main close_im " id="im_main">
+        <div id="close_im" class="close-im close_im"><a href="javascript:void(0);" title="点击关闭">&nbsp;</a></div>
+        <a href="#" class="im-gift gift-a" title="素材位置">
+            <img src="/static/img/gift/now gift-01.png" height="" width="90%" alt="" />
+        </a>
+    </div>
+
+</div>
 
 <script>
+$(function(){
+    $('.close_im').bind('click',function(){
+        $('#main-im').css("height","0");
+        $('#im_main').hide();
+        $('#open_im').show();
+    });
+    $('#open_im').bind('click',function(e){
+        $('#main-im').css("height","272");
+        $('#im_main').show();
+        // $('#im_main').addClass('close_im');
+        $(this).hide();
+    });
+
+});
 
 </script>
+
+
+<style>
+/*main css*/
+
+.main-im {
+    position: fixed;
+    /*right: 10px;*/
+    top: 200px;
+    z-index: 100;
+    width: 100%;
+    max-height: 272px;
+}
+
+.main-im .gift-a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #0484cd;
+    text-align: center;
+    position: relative;
+}
+
+.main-im .gift-a span {
+    bottom: 5px;
+    position: absolute;
+    width: 90px;
+    left: 10px;
+}
+
+
+
+.main-im .im_main {
+    background: #f3f3f3;
+    border-radius: 10px;
+    display: none;
+    margin:0 auto;
+}
+
+.main-im .close-im {
+    position: absolute;
+    right: 10px;
+    top: -12px;
+    z-index: 100;
+    width: 24px;
+    height: 24px;
+}
+
+.main-im .close-im a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(/static/img/gift/close_im.png) no-repeat left top;
+}
+
+.main-im .close-im a:hover {
+    text-decoration: none;
+}
+
+.main-im .open-im {
+    cursor: pointer;
+    margin-left: 18px;
+    width: 50px;
+}
+
+
+.im-gift img {
+    max-width: 550px;
+}
+
+</style>
