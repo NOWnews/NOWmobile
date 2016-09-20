@@ -1,12 +1,16 @@
 <!-- mobile 上線的禮物活動 -->
 <div class="main-gift-div">
 
-    <div id="open_gift" class="open-gift-img"><img src="/static/img/gift/gift_icon-02.png" alt="" / style="width:50px">&nbsp;</div>
+    <div id="open_gift" class="open-gift-img">
+        <img src="/static/img/gift/gift_icon-02.png" style="width:50px" />
+    </div>
 
     <div class="im_main close_gift " id="div_main">
-        <div id="close_img" class="close-im close_gift"><a href="javascript:void(0);" title="點擊關閉">&nbsp;</a></div>
+        <div id="close_img" class="close-im close_gift">
+            <a href="javascript:void(0);" title="點擊關閉">&nbsp;</a>
+        </div>
         <a href="#" class="im-gift gift-a" title="素材位置">
-            <img src="/static/img/gift/now-gift-01.png" height="" width="90%" alt="" />
+            <img src="/static/img/gift/now-gift-01.png" width="90%" alt="" />
         </a>
     </div>
 
@@ -22,6 +26,8 @@
         });
         //開啟
         $('#open_gift').bind('click', function(e) {
+            var giftHeight = $('#div_main').height();
+            $('#div_main').css('margin-top', -1 * giftHeight / 2)
             $('.main-gift-div').css("height", "272");
             $('#div_main').show();
             // $('#im_main').addClass('close_im');
@@ -62,6 +68,8 @@
     }
 
     .main-gift-div .im_main {
+        position: fixed;
+        top:50%;
         background: #f3f3f3;
         border-radius: 10px;
         display: none;
