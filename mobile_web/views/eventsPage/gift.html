@@ -1,10 +1,10 @@
 <!-- mobile 上線的禮物活動 -->
-<div class="main-im">
+<div class="main-gift-div">
 
-    <div id="open_im" class="open-im"><img src="/static/img/gift/gift_icon-02.png" alt="" / style="width:50px">&nbsp;</div>
+    <div id="open_gift" class="open-gift-img"><img src="/static/img/gift/gift_icon-02.png" alt="" / style="width:50px">&nbsp;</div>
 
-    <div class="im_main close_im " id="im_main">
-        <div id="close_im" class="close-im close_im"><a href="javascript:void(0);" title="點擊關閉">&nbsp;</a></div>
+    <div class="im_main close_gift " id="div_main">
+        <div id="close_img" class="close-im close_gift"><a href="javascript:void(0);" title="點擊關閉">&nbsp;</a></div>
         <a href="#" class="im-gift gift-a" title="素材位置">
             <img src="/static/img/gift/now-gift-01.png" height="" width="90%" alt="" />
         </a>
@@ -14,14 +14,16 @@
 
 <script>
     $(function() {
-        $('.close_im').bind('click', function() {
-            $('#main-im').css("height", "0");
-            $('#im_main').hide();
-            $('#open_im').show();
+        //關閉
+        $('.close_gift').bind('click', function() {
+            $('.main-gift-div').css("height", "0");
+            $('#div_main').hide();
+            $('#open_gift').show();
         });
-        $('#open_im').bind('click', function(e) {
-            $('#main-im').css("height", "272");
-            $('#im_main').show();
+        //開啟
+        $('#open_gift').bind('click', function(e) {
+            $('.main-gift-div').css("height", "272");
+            $('#div_main').show();
             // $('#im_main').addClass('close_im');
             $(this).hide();
         });
@@ -33,7 +35,7 @@
 <style>
     /*main css*/
 
-    .main-im {
+    .main-gift-div {
         position: fixed;
         /*right: 10px;*/
         top: 200px;
@@ -42,7 +44,7 @@
         max-height: 272px;
     }
 
-    .main-im .gift-a {
+    .main-gift-div .gift-a {
         display: block;
         width: 100%;
         height: 100%;
@@ -52,21 +54,21 @@
         position: relative;
     }
 
-    .main-im .gift-a span {
+    .main-gift-div .gift-a span {
         bottom: 5px;
         position: absolute;
         width: 90px;
         left: 10px;
     }
 
-    .main-im .im_main {
+    .main-gift-div .im_main {
         background: #f3f3f3;
         border-radius: 10px;
         display: none;
         margin: 0 auto;
     }
 
-    .main-im .close-im {
+    .main-gift-div .close-im {
         position: absolute;
         right: 10px;
         top: -12px;
@@ -75,18 +77,18 @@
         height: 24px;
     }
 
-    .main-im .close-im a {
+    .main-gift-div .close-im a {
         display: block;
         width: 24px;
         height: 24px;
         background: url(/static/img/gift/close_im.png) no-repeat left top;
     }
 
-    .main-im .close-im a:hover {
+    .main-gift-div .close-im a:hover {
         text-decoration: none;
     }
 
-    .main-im .open-im {
+    .main-gift-div .open-gift-img {
         cursor: pointer;
         margin-left: 18px;
         width: 50px;
