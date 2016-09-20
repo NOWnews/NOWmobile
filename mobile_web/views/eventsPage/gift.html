@@ -9,9 +9,14 @@
         <div id="close_img" class="close-im close_gift">
             <a href="javascript:void(0);" title="點擊關閉">&nbsp;</a>
         </div>
-        <a href="#" class="im-gift gift-a" title="素材位置">
-            <img src="/static/img/gift/now-gift-01.png" width="90%" alt="" />
-        </a>
+        <div class="im-gift gift-a" >
+            <a href="http://www.facebook.com/nownews" title="粉絲好禮" target="_blank">
+                <img src="/static/img/gift/now-gift-01.png" width="90%" alt="" />
+            </a>
+        </div>
+        <div class="gift-info" style="padding-bottom:25px">
+            <div>【低頭族集合！NOWnews 陪你new整天】<br/>截當前頁面上傳至NOWnews粉絲團參加抽獎<br/><a href="#">前往活動</a></div>
+        </div>
     </div>
 
 </div>
@@ -74,12 +79,13 @@
         border-radius: 10px;
         display: none;
         margin: 0 auto;
+        width: 100%
     }
 
     .main-gift-div .close-im {
         position: absolute;
-        right: 10px;
-        top: -12px;
+        right: 20px;
+        top: 0px;
         z-index: 100;
         width: 24px;
         height: 24px;
@@ -87,8 +93,8 @@
 
     .main-gift-div .close-im a {
         display: block;
-        width: 24px;
-        height: 24px;
+        width: 40px;
+        height: 40px;
         background: url(/static/img/gift/close_im.png) no-repeat left top;
     }
 
@@ -103,6 +109,15 @@
     }
 
     .im-gift img {
-        max-width: 550px;
+        max-width: 350px;
+    }
+    .gift-info div {
+        text-align: center;
+        width: 100%;
+        font-family: Arial;
+        font-weight: bold;
+        color: #e66d15;
+        font-weight: bold;
+        font-size: 16px;
     }
 </style>
