@@ -23,6 +23,20 @@
 
 <script>
     $(function() {
+        function setGiftCookie () {
+            var count = $.cookie('nownews-mobileGift') || 0;
+            count++;
+            // cookie 設定一天
+            $.cookie('nownews-mobileGift', count, { expires: 1, path: '/' });
+
+            // 第六次小禮物會跑出來, 第九次消失
+            if (count > 5 && count < 9 ) {
+                $('.main-gift-div').show();
+            }
+        }
+
+        setGiftCookie();
+
         //關閉
         $('.close_gift').bind('click', function() {
             $('.main-gift-div').css("height", "0");
@@ -48,7 +62,7 @@
 
     .main-gift-div {
         position: fixed;
-        /*right: 10px;*/
+        display: none;
         top: 200px;
         z-index: 100;
         width: 100%;
