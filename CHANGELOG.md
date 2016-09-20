@@ -7,6 +7,6 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 ## 1.0.1 - 2016-09-20
 ### Added
 - 加入 CHANGELOG 文件做紀錄 @webber
-- 第一個版本正式上線
+- 第一個版本正式上線 @webber
 
 [1.0.1]: https://gitlab.com/nownews/NOWmobile/tree/develop
