@@ -4,6 +4,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.7 - 2016-09-29
+### Changed
+- `mobile_web/views/news/one.html` 加入新的雀巢追蹤碼 `/n/2016/09/30/2229413` @SimonSun
+
 ## 1.0.6 - 2016-09-23
 ### Changed
 - `mobile_web/views/news/one.html` 修正雀巢追蹤碼 @SimonSun
