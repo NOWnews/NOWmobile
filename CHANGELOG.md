@@ -4,6 +4,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.8 - 2016-09-30
+### Added
+- `mobile_web/views/trace/NOWpageview.html` 加入偵測 GPS 定位的 code @Webber
+
 ## 1.0.7 - 2016-09-29
 ### Changed
 - `mobile_web/views/news/one.html` 加入新的雀巢追蹤碼 `/n/2016/09/30/2229413` @SimonSun
