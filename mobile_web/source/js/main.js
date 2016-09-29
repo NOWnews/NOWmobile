@@ -60,7 +60,6 @@ $(function() {
 
     // 新聞列表輪播的特效
     $('.single-item').slick({
-        // lazyLoad: 'progressive',
         dots: true,
         infinite: true,
         autoplay: true,
