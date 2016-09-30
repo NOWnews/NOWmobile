@@ -3,6 +3,19 @@
 {# 新聞用 pv #}
 {% if news %}
     <script type="text/javascript">
+        function sendPageView (address) {
+            $.post( "http://61.67.121.50:10011/news", {
+                title: '{{ news.title }}',
+                url: '{{ news.url }}',
+                type: 'NEWS',
+                platform: 'MOBILE',
+                taxId: '{{ news.category._id }}',
+                newsCreatedTime: '{{ news.created * 1000 }}',
+                address: address
+            }, function( data ) {});
+            return;
+        }
+
         // 定位用資訊
         var address = {
             longgitude: null,
@@ -10,28 +23,17 @@
         }
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(position){
-                longgitude = position.coords.longitude
-                latitude = position.coords.latitude;
+                address.longgitude = position.coords.longitude
+                address.latitude = position.coords.latitude;
+                sendPageView(address);
             },function(error){
-                address = {
-                    error: error
-                };
+                address = { error: 'code ' + error.code + ':' + error.message };
+                sendPageView(address);
             });
         }else{
-            address = {
-                error: "瀏覽器不支援定位"
-            };
+            address = { error: "瀏覽器不支援定位" };
+            sendPageView(address);
         }
-
-        $.post( "http://61.67.121.50:10011/news", {
-            title: '{{ news.title }}',
-            url: '{{ news.url }}',
-            type: 'NEWS',
-            platform: 'MOBILE',
-            taxId: '{{ news.category._id }}',
-            newsCreatedTime: '{{ news.created * 1000 }}',
-            address: address
-        }, function( data ) {});
     </script>
 {% endif %}
 
