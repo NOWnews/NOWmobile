@@ -469,6 +469,14 @@ header .mobile-logo {
     overflow: hidden;
 }
 
+.nownews-wrapper .slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slider-under {
+    margin-top: 15px;
+}
+
 .news-main-image {
     max-width: 100%;
     width: 100%;
