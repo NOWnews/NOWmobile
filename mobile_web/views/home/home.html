@@ -31,7 +31,6 @@
                                                 {{ news.field_short_title.value }}
                                             </p>
                                         </div>
-
                                         <img class="news-main-image" src="{{ news.image.thumbnail if news.image.thumbnail else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                                     </a>
                                 </div>
@@ -42,7 +41,7 @@
             </div>
         </div>
 
-        <div class="nownews-wrapper" id="{{ 'list-wrapper' if taxId else '' }}">
+        <div class="nownews-wrapper slider-under" id="{{ 'list-wrapper' if taxId else '' }}">
             {% for news in newsList %}
                 {% if loop.index > slideItem %}
                     {% include "../blocks/news-block.html" %}
