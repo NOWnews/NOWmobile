@@ -3,19 +3,16 @@
 {# 新聞用 pv #}
 {% if news %}
     <script type="text/javascript">
-        function sendPageView (address) {
-            $.post( "http://61.67.121.50:10011/news", {
-                title: '{{ news.title }}',
-                url: '{{ news.url }}',
-                type: 'NEWS',
-                platform: 'MOBILE',
-                taxId: '{{ news.category._id }}',
-                newsCreatedTime: '{{ news.created * 1000 }}',
-                address: address
-            }, function( data ) {});
-            return;
-        }
+        $.post( "http://61.67.121.50:10011/news", {
+            title: '{{ news.title }}',
+            url: '{{ news.url }}',
+            type: 'NEWS',
+            platform: 'MOBILE',
+            taxId: '{{ news.category._id }}',
+            newsCreatedTime: '{{ news.created * 1000 }}',
+        }, function( data ) {});
 
+        {# GPS 定位現暫時拿掉
         // 定位用資訊
         var address = {
             longgitude: null,
@@ -34,6 +31,7 @@
             address = { error: "瀏覽器不支援定位" };
             sendPageView(address);
         }
+        #}
     </script>
 {% endif %}
 
