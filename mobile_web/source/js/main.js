@@ -1,6 +1,30 @@
 $(function() {
     var $window = $(window);
 
+    // 記錄位置 (列表頁)
+    var nearByNewsBtn = $('.near-by-news').length > 0;
+    if (nearByNewsBtn) {
+        $('.near-by-news a').on('click', function () {
+            event.preventDefault();
+            $('#loading span').text('正在搜尋你附近的人');
+            $('#loading').removeClass('mui--hide');
+            var href = $(this).attr('href');
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position){
+                    var longitude = position.coords.longitude;
+                    var latitude = position.coords.latitude;
+                    location.href = href + '?longitude='+ longitude +'&latitude='+ latitude;
+                },function(error){
+                    alert('請確認您的定位功能!');
+                    $('#loading').addClass('mui--hide');
+                });
+            } else {
+                alert('請確認您的定位功能!');
+                $('#loading').addClass('mui--hide');
+            }
+        });
+    }
+
     // 蓋版廣告
     var adsCoverDom = $('.ads-cover').length > 0;
     if (adsCoverDom) {
@@ -53,6 +77,9 @@ $(function() {
 
     // 反饋感
     $('.category-select li a').on('click', function(){
+        if ($(this).parent().hasClass('near-by-news')) {
+            return;
+        }
         event.preventDefault();
         $(this).parent().addClass('.isActive').siblings('.isActive').removeClass('isActive');
         location.href = $(this).attr('href');
