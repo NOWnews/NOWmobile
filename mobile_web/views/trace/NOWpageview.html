@@ -19,12 +19,12 @@
 
         // 定位用資訊
         var address = {
-            longgitude: null,
+            longitude: null,
             latitude: null
         }
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(position){
-                address.longgitude = position.coords.longitude
+                address.longitude = position.coords.longitude;
                 address.latitude = position.coords.latitude;
                 sendPageView(address);
             },function(error){
