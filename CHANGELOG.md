@@ -4,6 +4,12 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.14.3 - 2016-10-23
+### Added
+- `mobile_web/controllers/news/one.js` 記錄新聞內頁的query(from & line)  @Webber
+- `mobile_web/views/blocks/related-content.html` 頭條跟延伸閱讀的連結給參數  @Webber
+- `mobile_web/views/news/one.html` 上下頁的連結給參數  @Webber
+
 ## 1.0.14.2 - 2016-10-12
 ### Added
 - `mobile_web/views/trace/kbro.html` 加入凱擘的追蹤碼 `/n/2016/10/11/2267535` @SimonSun

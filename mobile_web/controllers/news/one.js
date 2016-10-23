@@ -20,19 +20,31 @@ module.exports = (req, res, next) => {
             getApi('category/news')
         ];
 
+        // record query params
+        let queryParams = '';
+        if(req.query.from){
+            queryParams = `?from=${req.query.from}`;
+        }
+        if(req.query.utm_source){
+            queryParams = `?utm_source=${req.query.utm_source}&utm_medium=${req.query.utm_medium}&utm_campaign=${req.query.utm_campaign}`;
+        }
+
         let { newsList } = result[0];
 
         let mainCategory = result[1];
 
-        if(req.query.data === 'PLAYJJ'){
-            return res.json({ news, newsList });
-        }
-
-        return res.render('news/one', {
+        let data = {
             news,
             mainCategory,
             headline: newsList,
-        });
+            queryParams: queryParams
+        };
+
+        if(req.query.data === 'PLAYJJ'){
+            return res.json( data );
+        }
+
+        return res.render('news/one', data);
 
     }).catch(next);
 };
