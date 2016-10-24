@@ -4,11 +4,18 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
-## 1.0.14.3 - 2016-10-23
+## 1.0.16.0 - 2016-10-24
 ### Added
 - `mobile_web/controllers/news/one.js` 記錄新聞內頁的query(from & line)  @Webber
 - `mobile_web/views/blocks/related-content.html` 頭條跟延伸閱讀的連結給參數  @Webber
 - `mobile_web/views/news/one.html` 上下頁的連結給參數  @Webber
+
+## 1.0.15.0 - 2016-10-21
+### Changed
+- `mobile_web/views/trace/nestle.html` 加入新的雀巢追蹤碼 `/n/2016/10/21/2156980` @SimonSun
+
+### Added
+- 加入 `附近的人在看什麼` 功能 @WebberWu
 
 ## 1.0.14.2 - 2016-10-12
 ### Added
