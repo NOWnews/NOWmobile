@@ -4,7 +4,7 @@ $(function() {
     // 記錄位置 (列表頁)
     var nearByNewsBtn = $('.near-by-news').length > 0;
     if (nearByNewsBtn) {
-        $('.near-by-news a').on('click', function () {
+        $('.near-by-news a').on('click', function (event) {
             event.preventDefault();
             $('#loading span').text('正在搜尋你附近的人');
             $('#loading').removeClass('mui--hide');

@@ -4,6 +4,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.16.2 - 2016-10-26
+### Changed
+- 修正 firefox 無法使用附近的人在看什麼的 bug @Webber
+
 ## 1.0.16.1 - 2016-10-26
 ### Changed
 - `mobile_web/source/js/main.js` 修改成`你的瀏覽器不支援，暫時無法使用此功能!`的文字 @Webber
