@@ -15,11 +15,11 @@ $(function() {
                     var latitude = position.coords.latitude;
                     location.href = href + '?longitude='+ longitude +'&latitude='+ latitude;
                 },function(error){
-                    alert('請確認您的定位功能!');
+                    alert('你的瀏覽器不支援，暫時無法使用此功能!');
                     $('#loading').addClass('mui--hide');
                 });
             } else {
-                alert('請確認您的定位功能!');
+                alert('你的瀏覽器不支援，暫時無法使用此功能!');
                 $('#loading').addClass('mui--hide');
             }
         });
