@@ -9,7 +9,7 @@
     {# NOWnews Page View 偵測碼 #}
     {% include "../trace/NOWpageview.html" %}
 
-    <div id="content-wrapper">
+    <article id="content-wrapper">
         <div class="mui--appbar-height"></div>
 
         {# 廣告版位 #}
@@ -30,28 +30,30 @@
             </div>
             {# 麵包屑結束 #}
 
-            <h1 class="title">{{ video.title }}</h1>
-            <div class="mini-info">
-                <p class="text-gray one-category">
-                {% for category in video.categories %}
-                    <a href="/video/category/{{ category._id }}">{{ category.name }}</a>
-                {% endfor %}
-                </p>
-                <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ video.createdAt}}</p>
-                <div class="font-size-controllers">
-                    <a class="font-link font-size-large mui-btn mui-btn--flat">大</a>
-                    <a class="font-link font-size-middle mui-btn mui-btn--flat">中</a>
-                    <a class="font-link font-size-small mui-btn mui-btn--flat">小</a>
+            <header>
+                <h1 class="title">{{ video.title }}</h1>
+                <div class="mini-info">
+                    <p class="text-gray one-category">
+                    {% for category in video.categories %}
+                        <a href="/video/category/{{ category._id }}">{{ category.name }}</a>
+                    {% endfor %}
+                    </p>
+                    <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ video.createdAt}}</p>
+                    <div class="font-size-controllers">
+                        <a class="font-link font-size-large mui-btn mui-btn--flat">大</a>
+                        <a class="font-link font-size-middle mui-btn mui-btn--flat">中</a>
+                        <a class="font-link font-size-small mui-btn mui-btn--flat">小</a>
+                    </div>
+                    <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25682984'></div>
                 </div>
-                <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25682984'></div>
-            </div>
+            </header>
 
-            <div class="news-body">
+            <section class="news-body">
                 <div class="video-container" >
                     <iframe height="360" src="{{ video.src }}" frameborder="0" allowfullscreen></iframe>
                 </div>
                 {{ video.body.value | safe }}
-            </div>
+            </section>
             <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
             <div class="arrow-block mui--appbar-line-height">
                 {# 廣告版位 #}
@@ -61,7 +63,7 @@
             {% include "../blocks/related-content.html" %}
             {% include "../blocks/free-body.html" %}
         </div>
-    </div>
+    </article>
 
     {# 先放置頂廣告，待 11 月初的會議調整 #}
     {# 置底的 social link #}
