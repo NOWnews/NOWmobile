@@ -9,6 +9,10 @@ const debug = require('debug')('NOWmobile:controllers:news');
 module.exports = (req, res, next) => {
     let { newsId } = req.params;
 
+    if (isNaN(newsId)) {
+        return res.redirect('/');
+    }
+
     co(function*() {
 
         let news = yield getApi(`news/${newsId}`);

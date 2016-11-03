@@ -4,6 +4,16 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.0 - 2016-11-03
+### Changed
+- `mobile_web/controllers/news/one.js` 不分類的網址轉導到首頁 @Webber
+- `mobile_web/middlewares/redirect.js` 主站的影音新聞可以轉導到 mobile 版 @Webber
+- Mobile 內頁 SEO 調整
+  * 內頁 h2 換 h1，樣式 24px @Webber
+  * 內頁首圖img alt塞文字 @Webber
+  * 加入麵包屑 @Webber
+  * 內容加section 屬性 article屬性 @Webber
+
 ## 1.0.16.4 - 2016-11-03
 ### Changed
 - `mobile_web/views/trace/nestle.html` 加入新的雀巢追蹤碼 `/n/2016/11/04/2262347` @SimonSun
