@@ -490,6 +490,15 @@ header .mobile-logo {
     padding: 0 15px;
 }
 
+.news-one-page .title, .news-one-page .title {
+    font-size: 26px;
+}
+
+/* 麵包屑 */
+.news-one-page .breadcrumb, .news-one-page .breadcrumb {
+    display: none;
+}
+
 .news-body {
     margin: 15px 0;
     font-size: 16px;

@@ -16,7 +16,21 @@
         {% include "../ad/one/ad300x250_1.html" %}
 
         <div class="nownews-wrapper news-one-page">
-            <h2>{{ video.title }}</h2>
+            {# 麵包屑開始 #}
+            <div class="breadcrumb">
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="/"><span itemprop="title">NOWnews 今日新聞</span></a>&gt;
+                </span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="/video/category/{{ video.categories[0]._id }}"><span itemprop="title">{{ video.categories[0].name or '不分類' }}</span></a>&gt;
+                </span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="{{ video.url }}"><span itemprop="title">{{ video.title }}</span></a>
+                </span>
+            </div>
+            {# 麵包屑結束 #}
+
+            <h1 class="title">{{ video.title }}</h1>
             <div class="mini-info">
                 <p class="text-gray one-category">
                 {% for category in video.categories %}

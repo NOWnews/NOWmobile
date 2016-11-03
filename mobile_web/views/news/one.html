@@ -19,7 +19,21 @@
         {% include "../ad/one/ad300x250_1.html" %}
 
         <div class="nownews-wrapper news-one-page">
-            <h2>{{ news.title }}</h2>
+            {# 麵包屑開始 #}
+            <div class="breadcrumb">
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="/"><span itemprop="title">NOWnews 今日新聞</span></a>&gt;
+                </span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="/news/category/{{ news.category._id }}"><span itemprop="title">{{ news.category.name or '不分類' }}</span></a>&gt;
+                </span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="{{ news.url }}"><span itemprop="title">{{ news.title }}</span></a>
+                </span>
+            </div>
+            {# 麵包屑結束 #}
+
+            <h1 class="title">{{ news.title }}</h1>
             <div class="mini-info">
                 <p class="text-gray one-category">
                     <a href="/news/category/{{ news.category._id }}">
@@ -38,7 +52,7 @@
 
             <div class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img src="{{ news.image.url if news.image.url else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                    <img alt="{{ news.image.description }}" src="{{ news.image.url if news.image.url else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.image.description }}</p>
                 </div>
                 {{ news.htmlBody | safe }}
