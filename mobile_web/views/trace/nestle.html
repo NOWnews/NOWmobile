@@ -49,7 +49,7 @@
 {% if news.nodeId == 2261170 %}
     {% set traceCode1 = true %}
     {% set traceCode2 = true %}
-    {% set traceCode3 = true %}
+    {% set traceCode4 = true %}
 {% endif %}
 
 {% if traceCode1 %}
@@ -112,6 +112,32 @@
                 w._appierSendQueue.push(j);        
             });
         })(window, document, 'AofB', 'nestleoptipro.com.tw');
+    </script>
+    <script src="//d17m68fovwmgxj.cloudfront.net/js/rt-ext/track-ext-a.js"></script>
+{% endif %}
+
+{% if traceCode4 %}
+    <script>
+        (function(w, d, s, m) {
+            var f = d.getElementsByTagName('script')[0],
+                j = d.createElement('script'),
+                ns = 'APPIER_RETARGET';
+            w._appierSendQueue = w._appierSendQueue || [];
+            j.async = true;
+            j.src = '//jscdn.appier.net/aa.js?id=' + m;
+            f.parentNode.insertBefore(j, f);
+            !w[ns] && (w[ns] = {});
+            (!w[ns].send) && (w[ns].send = function(j) {
+                w._appierSendQueue.push(j);
+            });
+            w[ns].send({
+                t: 'register',
+                content: {
+                    id: s,
+                    site: m
+                }
+            });
+        })(window, document, 'AofB', 'campaign.nestleoptipro.com.tw');
     </script>
     <script src="//d17m68fovwmgxj.cloudfront.net/js/rt-ext/track-ext-a.js"></script>
 {% endif %}
