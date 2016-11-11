@@ -4,6 +4,11 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.4 - 2016-11-11
+### Hotfix
+- `mobile_web/views/news/one.html` 修正 shareaholic Bug @Webber
+- `mobile_web/views/video/one.html` 修正 shareaholic Bug @Webber
+
 ## 1.0.17.3 - 2016-11-11
 ### Changed
 - `mobile_web/views/news/one.html` 內頁加上 FB Like 按鈕 @Webber
