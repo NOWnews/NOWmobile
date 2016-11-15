@@ -1,0 +1,17 @@
+{# 成果 DAN PMP JS 廣告類型 #}
+
+{% if news and news.nodeId %}
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/7682122/DAN_PMP_Nownews_Expandable_pingpong_mobile_320x50', [320, 50], 'div-gpt-ad-1478670293710-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+      });
+    </script>
+{% endif %}
