@@ -2,7 +2,8 @@
 <div class="main-gift-div">
 
     <div id="open_gift" class="open-gift-img">
-        <img src="/static/img/gift/gift_icon-02.png" style="width:50px" />
+        <img src="/static/img/gift/gift_icon-02.png" style="width:100%" />
+        <span>立馬參加</span>
     </div>
 
     <div class="im_main close_gift " id="div_main">
@@ -15,7 +16,7 @@
             </a>
         </div>
         <div class="gift-info" style="padding-bottom:25px">
-            <div>【低頭族集合！NOWnews 陪你new整天】<br/>截當前頁面上傳至NOWnews粉絲團參加抽獎<br/><a href="#">前往活動</a></div>
+            <div>【 NOWnews今日新聞邀您榮耀金馬！】<br/>截當前頁面上傳至NOWnews粉絲團參加抽獎<br/><a href="http://www.facebook.com/nownews">前往活動</a></div>
         </div>
     </div>
 
@@ -23,6 +24,14 @@
 
 <script>
     $(function() {
+        setTimeout(function(){
+            $('#open_gift > img')
+                .css('animation', 'movemove 3s')
+                .css('-moz-animation', 'movemove 3s')
+                .css('-webkit-animation', 'movemove 3s')
+                .css('-o-animation', 'movemove 3s')
+        }, 5000);
+
         function setGiftCookie () {
             var count = $.cookie('nownews-mobileGift') || 0;
             count++;
@@ -123,8 +132,8 @@
 
     .main-gift-div .open-gift-img {
         cursor: pointer;
-        margin-left: 18px;
-        width: 50px;
+        margin-left: 5px;
+        width: 70px;
     }
 
     .im-gift img {
@@ -138,5 +147,64 @@
         color: #e66d15;
         font-weight: bold;
         font-size: 16px;
+    }
+
+    #open_gift span {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 2px 3px;
+        border: 1px solid #ddd;
+        font-weight: bold;
+    }
+
+    #open_gift img {
+        position:relative;
+    }
+
+    @keyframes movemove{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
+    }
+
+    @-moz-keyframes movemove /* Firefox */{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
+    }
+
+    @-webkit-keyframes movemove /* Safari and Chrome */{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
+    }
+
+    @-o-keyframes movemove /* Opera */{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
     }
 </style>
