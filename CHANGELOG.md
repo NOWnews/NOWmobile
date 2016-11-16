@@ -4,6 +4,13 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.7 - 2016-11-15
+### Added
+- 加入金馬活動頁面
+  - 加入圖片 `mobile_web/source/img/gift` @Webber
+  - 加入活動頁 `mobile_web/views/eventsPage/gift.html` @Webber
+  - 修正新聞內頁 `mobile_web/views/news/one.html`, `mobile_web/views/video/one.html` @Webber
+
 ## 1.0.17.6 - 2016-11-15
 ### Added
 - 加入成果 DAN PMP 廣告 `mobile_web/views/ad/one/salesfrontier-html-pmp.html` & `salesfrontier-js-pmp.html`，位置會在內頁置底，會蓋在原本 dfp 之上  @SimonSun

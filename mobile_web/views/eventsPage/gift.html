@@ -1,0 +1,210 @@
+<!-- mobile 上線的禮物活動 -->
+<div class="main-gift-div">
+
+    <div id="open_gift" class="open-gift-img">
+        <img src="/static/img/gift/gift_icon-02.png" style="width:100%" />
+        <span>立馬參加</span>
+    </div>
+
+    <div class="im_main close_gift " id="div_main">
+        <div id="close_img" class="close-im close_gift">
+            <a href="javascript:void(0);" title="點擊關閉">&nbsp;</a>
+        </div>
+        <div class="im-gift gift-a" >
+            <a href="https://goo.gl/2Gz6DE" title="粉絲好禮" target="_blank">
+                <img src="/static/img/gift/now-gift-01.png" width="90%" alt="" />
+            </a>
+        </div>
+        <div class="gift-info" style="padding-bottom:25px">
+            <div>【 NOWnews今日新聞邀您榮耀金馬！】<br/>截當前頁面上傳至NOWnews粉絲團參加抽獎<br/><a href="https://goo.gl/2Gz6DE">前往活動</a></div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(function() {
+        setTimeout(function(){
+            $('#open_gift > img')
+                .css('animation', 'movemove 3s')
+                .css('-moz-animation', 'movemove 3s')
+                .css('-webkit-animation', 'movemove 3s')
+                .css('-o-animation', 'movemove 3s')
+        }, 5000);
+
+        function setGiftCookie () {
+            var count = $.cookie('nownews-mobileGift') || 0;
+            count++;
+            // cookie 設定一天
+            $.cookie('nownews-mobileGift', count, { expires: 1, path: '/' });
+
+            // 第六次小禮物會跑出來, 第九次消失
+            if (count > 5 && count < 9 ) {
+            // if (true ) {
+                $('.main-gift-div').show();
+            }
+        }
+
+        setGiftCookie();
+
+        //關閉
+        $('.close_gift').bind('click', function() {
+            $('.main-gift-div').css("height", "0");
+            $('#mui-overlay').remove()
+            $('#div_main').hide();
+            $('#open_gift').show();
+        });
+        //開啟
+        $('#open_gift').bind('click', function(e) {
+            var giftHeight = $('#div_main').height();
+            $('#div_main').css('margin-top', -1 * giftHeight / 2)
+            $('.main-gift-div').css("height", "272");
+            $('#div_main').show();
+
+            $('.main-gift-div').after('<div id="mui-overlay"></div>');
+
+            // $('#im_main').addClass('close_im');
+            $(this).hide();
+        });
+
+    });
+</script>
+
+
+<style>
+    /*main css*/
+
+    .main-gift-div {
+        position: fixed;
+        display: none;
+        top: 200px;
+        z-index: 100000000;
+        width: 100%;
+        max-height: 272px;
+    }
+
+    .main-gift-div .gift-a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        color: #0484cd;
+        text-align: center;
+        position: relative;
+    }
+
+    .main-gift-div .gift-a span {
+        bottom: 5px;
+        position: absolute;
+        width: 90px;
+        left: 10px;
+    }
+
+    .main-gift-div .im_main {
+        position: fixed;
+        top:50%;
+        background: #f3f3f3;
+        border-radius: 10px;
+        display: none;
+        margin: 0 auto;
+        width: 100%
+    }
+
+    .main-gift-div .close-im {
+        position: absolute;
+        right: 20px;
+        top: 0px;
+        z-index: 100;
+        width: 24px;
+        height: 24px;
+    }
+
+    .main-gift-div .close-im a {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(/static/img/gift/close_im.png) no-repeat left top;
+    }
+
+    .main-gift-div .close-im a:hover {
+        text-decoration: none;
+    }
+
+    .main-gift-div .open-gift-img {
+        cursor: pointer;
+        margin-left: 5px;
+        width: 70px;
+    }
+
+    .im-gift img {
+        max-width: 350px;
+    }
+    .gift-info div {
+        text-align: center;
+        width: 100%;
+        font-family: Arial;
+        font-weight: bold;
+        color: #e66d15;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    #open_gift span {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 2px 3px;
+        border: 1px solid #ddd;
+        font-weight: bold;
+    }
+
+    #open_gift img {
+        position:relative;
+    }
+
+    @keyframes movemove{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
+    }
+
+    @-moz-keyframes movemove /* Firefox */{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
+    }
+
+    @-webkit-keyframes movemove /* Safari and Chrome */{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
+    }
+
+    @-o-keyframes movemove /* Opera */{
+        0%   {left:0px; top:0px;}
+        25%  {left:0px; top:0px;}
+        55%  {left:0px; top:0px;}
+        60%  {left:15px; top:5px;}
+        65%  {left:0px; top:0px;}
+        70%  {left:20px; top:5px;}
+        75%  {left:0px; top:0px;}
+        80%  {left:15px; top:5px;}
+        100% {left:0px; top:0px;}
+    }
+</style>
