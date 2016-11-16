@@ -16,12 +16,14 @@
             </a>
         </div>
         <div class="gift-info" style="padding-bottom:25px">
+            <div style="color:#000;letter-spacing: 2px;">序號:<span class="uuid_num" style="font-size:16px;font-weight:bold"></span></div>
             <div>【 NOWnews今日新聞邀您榮耀金馬！】<br/>截當前頁面上傳至NOWnews粉絲團參加抽獎<br/><a href="https://goo.gl/2Gz6DE">前往活動</a></div>
         </div>
     </div>
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
 <script>
     $(function() {
         setTimeout(function(){
@@ -31,6 +33,10 @@
                 .css('-webkit-animation', 'movemove 3s')
                 .css('-o-animation', 'movemove 3s')
         }, 5000);
+
+        // 序號
+        var uid = uuid.v4().split("-")[0];
+        $(".uuid_num").text(uid);
 
         function setGiftCookie () {
             var count = $.cookie('nownews-mobileGift') || 0;

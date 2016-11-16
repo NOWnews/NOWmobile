@@ -4,6 +4,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.8 - 2016-11-16
+### Added
+- 金馬活動加上序號的功能 @Webber
+
 ## 1.0.17.7 - 2016-11-15
 ### Added
 - 加入金馬活動頁面
