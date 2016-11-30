@@ -4,6 +4,11 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.12 - 2016-11-30
+### Changed
+- `mobile_web/views/news/one.html`, `mobile_web/views/video/one.html` 撤掉金馬活動 @Webber
+- `mobile_web/gulpfile.js` 修正 gulp 無法抓取圖片內資料夾圖片的問題 @Webber
+
 ## 1.0.17.11 - 2016-11-30
 ### Changed
 - `mobile_web/views/trace/nestle.html` 加入新的雀巢追蹤碼 `/n/2016/12/02/2322024` @SimonSun
