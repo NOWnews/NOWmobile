@@ -7,6 +7,7 @@ import ajaxPost from './ajaxPost';
 import files from './files';
 import sitemap from './sitemap';
 import check from './check';
+import event from './event';
 
 
 module.exports = function(app) {
@@ -20,6 +21,7 @@ module.exports = function(app) {
     app.use('/', files);
     app.use('/', sitemap);
     app.use('/', check);
+    app.use('/', event);
 
     return function(req, res, next) {
         return next();
