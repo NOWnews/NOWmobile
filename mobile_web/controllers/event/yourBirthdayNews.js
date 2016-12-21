@@ -1,9 +1,34 @@
 import co from 'co';
 import Promise from 'bluebird';
+import getApi from '../../util/getApi';
 const debug = require('debug')('NOWmobile:controllers:event:yourBirthdayNews');
 
 module.exports = (req, res, next) => {
     co(function*() {
-        return res.send(200);
+
+        let mainCategory = yield getApi('category/news');
+
+        // record query params
+        let queryParams = '';
+        if(req.query.from){
+            queryParams = `?from=${req.query.from}`;
+        }
+        if(req.query.utm_source){
+            queryParams = `?utm_source=${req.query.utm_source}&utm_medium=${req.query.utm_medium}&utm_campaign=${req.query.utm_campaign}`;
+        }
+
+        let news = {
+            title: '均的誕生',
+            category: {
+                name: '粉絲團活動'
+            }
+        }
+
+        let data = {
+            news,
+            mainCategory,
+            queryParams: queryParams
+        };
+        return res.render('eventsPage/yourBirthdayNews.html', data);
     }).catch(next);
 };

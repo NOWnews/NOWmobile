@@ -1,0 +1,40 @@
+{% extends "../base.html" %}
+
+{% block socialblock %}
+    {% include "../seo/head-social-one.html" %}
+{% endblock %}
+
+{% block container %}
+
+    {# NOWnews Page View 偵測碼 #}
+    {% include "../trace/NOWpageview.html" %}
+
+    <article id="content-wrapper">
+
+        <div class="mui--appbar-height"></div>
+        <nav class="category-select mui-container-fluid">
+            {% set categoryType = 'news' %}
+            {% include "../blocks/category-nav.html" %}
+        </nav>
+
+        <section class="news-body" style="background: #78c4d2;padding-top:50px;margin: 0;">
+            <div class="main-image-box mui--text-center" style="max-width:640px;margin: auto;text-">
+            <img src="/static/img/yourBirthdayNews.jpg">
+            <h3>請輸入你的出生年月日<br>(ex. 800213)</h3>
+            <div class="mui-form--inline birthday" style="padding: 20px 0 50px;">
+                <div class="mui-textfield">
+                    <input type="text" class="mui--text-center">
+                </div>
+                <button class="mui-btn">送出</button>
+            </div>
+            <script>
+                $('.birthday button').click(function(e){
+                    window.location.href="/news/" + $('.birthday input').val();
+                });
+            </script>
+            </div>
+        </section>
+
+    </article>
+
+{% endblock %}
