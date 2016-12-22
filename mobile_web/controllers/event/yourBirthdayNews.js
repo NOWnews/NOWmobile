@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
         }
 
         let news = {
-            title: '均的誕生',
+            title: '君的誕辰',
             category: {
                 name: '粉絲團活動'
             }

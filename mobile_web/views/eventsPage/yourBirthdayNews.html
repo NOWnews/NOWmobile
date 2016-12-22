@@ -18,18 +18,105 @@
         </nav>
 
         <section class="news-body" style="background: #78c4d2;padding-top:50px;margin: 0;">
-            <div class="main-image-box mui--text-center" style="max-width:640px;margin: auto;text-">
+            <div class="main-image-box mui--text-center" style="max-width:640px;margin: auto;text-align:center;">
             <img src="/static/img/yourBirthdayNews.jpg">
-            <h3>請輸入你的出生年月日<br>(ex. 800213)</h3>
+            <img src="/static/img/flat_bunting.png" alt="">
+
+            <h3 style="color:#fff;text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);"><i class="fa fa-birthday-cake" aria-hidden="true"></i>請輸入你的出生年月日<br><small>(ex. 800213)</small></h3>
             <div class="mui-form--inline birthday" style="padding: 20px 0 50px;">
                 <div class="mui-textfield">
                     <input type="text" class="mui--text-center">
                 </div>
-                <button class="mui-btn">送出</button>
+                <button type="submit" class="mui-btn mui-btn--raised">送出</button>
             </div>
+            <div class="mainArea_content">
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>活動期間</dt>
+                <dd> 2016/12/25~2017/1/31 </dd>
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>活動內容</dt>
+                <p>活動期間推薦好友成功加入XXXX且被推薦者於2017/1/31前觀看新聞(傳上截圖)，即可獲得抽獎機會 <span style="color:#ca2270"> iPhone7</span>。
+                    <a href="http://www.momoshop.com.tw/edm/cmmedm.jsp?npn=1vEKsQQHCLLF&amp;n=1" target="_blank">詳情說明</a>
+                </p>
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>活動獎品</dt>
+                <dd> iPhone7 </dd>
+                <div class="mui--text-center">
+                <img src="http://store.storeimages.cdn-apple.com/8749/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2016?wid=444&hei=610&fmt=png-alpha&qlt=80&.v=1471892660314" alt="" width="200px" class="main-image-box" style="margin:5px">
+                </div>
+
+            </div>
+            <div class="mui-container" style="background:#2f2f2f;padding-top:20px">
+                <div class="footer_title">關於我們</div>
+                <div class="footer_words word_float_left">想看網路圈的第一手資訊、最熱門消息? NOWnews今日新聞絕對可以滿足你的需求。 最多元的跨平新聞節目 屬於你的台灣新聞第一門戶 「NOWnews今日新聞」只給你喜歡的</div>
+                <div class="footer_title">聯絡我們</div>
+                <div class="footer_words">
+                    ※ 異業結盟合作<br>
+                    <a href="mailto:#">rd@nownews.com</a><br>
+                    ※ 整合行銷合作<br>
+                    <a href="mailto:#">rd@nownews.com</a>
+                </div>
+                <div class="footer_title">NOWnews粉絲團</div>
+            </div>
+            <style>
+                .mainArea_content {
+                    text-align: justify;
+                    background: #fff;
+                }
+                .mainArea_content dt {
+                    padding-left: 18px;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                    padding-left: 18px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: #ca2270;
+                    letter-spacing: -1px;
+                    background-repeat: no-repeat;
+                    background-position: 0px 15px;
+                    border-bottom: 5px solid #d7d7d7;
+                }
+                .mainArea_content dd {
+                    margin-top: 10px;
+                    margin-left: 20px;
+                    margin-bottom: 30px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    color: #636363;
+                }
+                .mainArea_content p {
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: #636363;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    letter-spacing: 1px;
+                }
+                .footer_title {
+                    margin:0 auto;
+                    width:50%;
+                    font-size: 20px;
+                    background-color: #444444;
+                    text-align: center;
+                    font-weight: normal;
+                    letter-spacing: 10px;
+                    padding-top: 5px;
+                    color:#fff;
+                    font-weight: bold;
+                    padding-bottom: 5px;
+                }
+                .footer_words {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #B7B7B7;
+                    padding-top: 10px;
+                    line-height: 25px;
+                }
+                .word_float_left {
+                    text-align:left;
+                }
+            </style>
             <script>
                 $('.birthday button').click(function(e){
-                    window.location.href="/news/" + $('.birthday input').val();
+                    window.location.href="/news/" + $('.birthday input').val() + "?from=fb_events";
                 });
             </script>
             </div>
