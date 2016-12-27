@@ -1,0 +1,211 @@
+{% extends "../base.html" %}
+
+{% block socialblock %}
+    {% include "../seo/head-social-one.html" %}
+{% endblock %}
+
+{% block container %}
+
+    {# NOWnews Page View 偵測碼 #}
+    {% include "../trace/NOWpageview.html" %}
+
+    <article id="content-wrapper">
+
+        <div class="mui--appbar-height"></div>
+        <nav class="category-select mui-container-fluid">
+            {% set categoryType = 'news' %}
+            {% include "../blocks/category-nav.html" %}
+        </nav>
+
+        <section class="news-body" style="background: #78c4d2;padding-top:50px;margin: 0;">
+            <div class="main-image-box mui--text-center" style="max-width:640px;margin: auto;text-align:center;">
+            <img src="/static/img/yourBirthdayNews.jpg">
+            <img src="/static/img/flat_bunting.png" alt="">
+
+            <h3 style="color:#fff;text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);"><i class="fa fa-birthday-cake" aria-hidden="true"></i>請輸入你的出生年月日<br><small>(ex. 800213)</small></h3>
+            <div class="mui-form--inline birthday" style="padding: 20px 0 50px;">
+                <div class="mui-textfield">
+                    <input type="text" name="checkinput" class="mui--text-center" onkeyup="return ValidateNumber($(this),value)">
+                </div>
+                <button type="submit" class="mui-btn mui-btn--raised" onClick="check()">送出</button>
+            </div>
+            <div class="mainArea_content">
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>活動期間</dt>
+                <dd style="line-height:25px;font-size:16px"> 即日起至2017年01月25日(三)</dd>
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>活動說明</dt>
+                <dd style="line-height:25px;font-size:16px">
+                    <p>金鉤悲，金鉤悲，金鉤歐了威～<br>聖誕節過了，是否還在苦惱沒收到想要的聖誕禮物？<br>聖誕節過了，是否也跟小編一樣花錢換了一堆用不到的交換禮物 <br>不哭不哭，眼淚是珍珠(?<br><br>為了感謝2016年全體讀者的支持，<br>我們NOWnews今日新聞不管在品牌形象、流量、以及其他媒體的評比中都有了非常大幅度的成長以及進步，<br>給大家一個掌聲<br>當然只有掌聲是不夠的囉！<br>小編要送給你們一個大禮啦！！！！！<br>那就是潮到出水的iPhone7手機啊啊啊<br><span class="fontbolder">你沒看錯，就是iPhone7</span><br><span class="fontbolder">你沒看錯，就是iPhone7</span><br><span class="fontbolder">你沒看錯，就是iPhone7</span><br>很重要所以說三遍。<br>但要怎麼得到這支手機呢？</p>
+                </dd>
+
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>活動辦法</dt>
+                    <ol class="custom-counter">
+                        <li>第一步當然是要先幫NOWnews今日新聞按讚 :+1:</li>
+                        <li>接著請點上方輸入您自己的出生年月日，再按下送出，神奇的事情就來了，就會出現一篇專屬自己生日的新聞內容啊(登愣</li>
+                        <li>接著再回到粉絲專頁中，貼上此則新聞的截圖，及TAG三位好友，</li>
+                        <li>再將此篇貼文公開分享<—非常重要</li>
+                        <li>就有抽獎資格囉 ヾ(*´∀｀*)ﾉ真的是太好玩啦！！<br>也可以輸入朋友的出生年月日大家互相討論自己的新聞議題喔～
+                        </li>
+                    </ol>
+
+
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>活動獎品</dt>
+                <dd> iPhone7 </dd>
+                <div class="mui--text-center">
+                <img src="http://store.storeimages.cdn-apple.com/8749/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/select/iphone7-select-2016?wid=444&hei=610&fmt=png-alpha&qlt=80&.v=1471892660314" alt="" width="200px" class="main-image-box" style="margin:5px">
+                </div>
+                <dt><i class="fa fa-hand-o-right" aria-hidden="true" style="margin-right:5px"></i>注意事項</dt>
+                <ul style="font-size:14px;color:#333;padding:40px;">
+                    <li>為了確保活動公正性，上傳的新聞截圖，請務必是自己的新聞截圖，之後領獎會檢查中獎人的身分證，如果身分證上出生年月日非活動所輸入的出生年月日，會取消資格抽下一位。</li>
+                    <li>中獎者請到NOWnews今日新聞辦公室領取台北市內湖區堤頂大道二段407巷32號4樓，此為高單價產品，一律不郵寄，可代托友人領取。</li>
+                    <li>為了確保活動公正性，上傳的新聞截圖，請務必是自己的新聞截圖，之後領獎會檢查中獎人的身分證，如果身分證上出生年月日非活動所輸入的出生年月日，會取消資格抽下一位。</li>
+                    <li>中獎者領取獎品時需拍照留存，僅做活動證明用。</li>
+                    <li>依據財政部規定，價值在2萬元以上，必須按照稅法規定，辦理所得扣繳，預先繳納10％的所得稅。</li>
+                    <li>本活動NOWnews今日新聞擁有最終決定權。</li>
+                </ul>
+
+            </div>
+            <div class="mui-container" style="background:#2f2f2f;padding-top:20px">
+                <div class="campaign_footer_title">關於我們</div>
+                <div class="campaign_footer_words word_float_left">想看到全球華人最具影響力的新聞，請隨時關注全球華人最具影響力的新聞平台 NOWnews</div>
+                <div class="campaign_footer_title">聯絡我們</div>
+                <div class="campaign_footer_words">
+                    ※ 異業結盟合作<br>
+                    <a href="mailto:service@nownews.com">service@nownews.com</a><br>
+                    ※ 整合行銷合作<br>
+                    <a href="mailto:service@nownews.com">service@nownews.com</a>
+                </div>
+                <div class="campaign_footer_title">NOWnews粉絲團</div>
+                <div class="campaign_footer_words">
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fnownews%2Fposts%2F10154494267197663&width=500" width="500" height="707" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+            </div>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId=1645406285706481";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <style>
+                .mainArea_content {
+                    text-align: justify;
+                    background: #fff;
+                }
+                .mainArea_content dt {
+                    padding-left: 18px;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                    padding-left: 18px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: #ca2270;
+                    letter-spacing: -1px;
+                    background-repeat: no-repeat;
+                    background-position: 0px 15px;
+                    border-bottom: 5px solid #d7d7d7;
+                }
+                .mainArea_content dd {
+                    margin-top: 10px;
+                    margin-left: 20px;
+                    margin-bottom: 30px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                    color: #636363;
+                }
+                .mainArea_content p {
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: #636363;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    letter-spacing: 1px;
+                }
+                .campaign_footer_title {
+                    margin:0 auto;
+                    width:50%;
+                    font-size: 20px;
+                    background-color: #444444;
+                    text-align: center;
+                    font-weight: normal;
+                    letter-spacing: 10px;
+                    padding-top: 5px;
+                    color:#fff;
+                    font-weight: bold;
+                    padding-bottom: 5px;
+                }
+                .campaign_footer_words {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #B7B7B7;
+                    padding-top: 10px;
+                    line-height: 25px;
+                }
+                .word_float_left {
+                    text-align:left;
+                }
+                .fontbolder {
+                    font-weight: bolder;
+                    color:red;
+                }
+                .custom-counter {
+                  margin: 20px;
+                  padding: 10px;
+                  list-style-type: none;
+                }
+
+                .custom-counter li {
+                  counter-increment: step-counter;
+                  margin-bottom: 10px;
+                  font-weight: bold;
+                }
+
+                .custom-counter li::before {
+                  content: counter(step-counter);
+                  margin-right: 5px;
+                  font-size: 80%;
+                  background-color: rgb(0,200,200);
+                  color: white;
+                  font-weight: bold;
+                  padding: 3px 8px;
+                  border-radius: 3px;
+                }
+            </style>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" type="text/css">
+            <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+            <script>
+
+                function ValidateNumber(e, pnumber)
+                {
+                    if (!/^\d+$/.test(pnumber))
+                    {
+                        $(e).val(/^\d+/.exec($(e).val()));
+                    }
+                    return false;
+                }
+                function check()
+                    {
+                        if(document.getElementsByName("checkinput")[0].value == "")
+                        {
+                            swal({
+                              title: "尚未輸入生日唷:)",
+                              text: "請輸入出生月日ex:800213"
+                            });
+
+                            return false;
+                        }
+                        else {
+                            // $('.birthday button').click(function(e){
+                                window.location.href="/news/" + $('.birthday input').val() + "?from=fb_events";
+                            // });
+                        }
+
+                     }
+            </script>
+            </div>
+        </section>
+
+    </article>
+
+{% endblock %}
