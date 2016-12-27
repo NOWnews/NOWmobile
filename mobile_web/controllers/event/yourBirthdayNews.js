@@ -21,7 +21,11 @@ module.exports = (req, res, next) => {
             title: '君的誕辰',
             category: {
                 name: '粉絲團活動'
-            }
+            },
+            image: {
+                thumbnail: '/static/img/yourBirthdayNews.jpg'
+            },
+            summary: '想看到全球華人最具影響力的新聞，請隨時關注全球華人最具影響力的新聞平台 NOWnews'
         }
 
         let data = {
