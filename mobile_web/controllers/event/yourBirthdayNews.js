@@ -25,7 +25,8 @@ module.exports = (req, res, next) => {
             image: {
                 thumbnail: '/static/img/yourBirthdayNews.jpg'
             },
-            summary: '想看到全球華人最具影響力的新聞，請隨時關注全球華人最具影響力的新聞平台 NOWnews'
+            summary: '來來來，想看看你的生日屬於哪一則新聞呢? 快來抽iPhone，讓 NOWnews 陪你玩個小遊戲，只要輸入你的生日，我們就會找到你生日代表哪一則新聞唷，也不要忘記順便參與粉絲團活動，有好禮送給你唷。想看到全球華人最具影響力的新聞，請隨時關注全球華人最具影響力的新聞平台 NOWnews',
+            keywords: '抽iPhone7,跨年,煙火'
         }
 
         let data = {
