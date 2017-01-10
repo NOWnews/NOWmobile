@@ -28,7 +28,7 @@ module.exports = (req, res, next) => {
 
         // sitemap 資料初始化
         let optinos = {
-            hostname: 'http://m.nownews.com',
+            hostname: 'https://m.nownews.com',
             cacheTime: 600000,
             urls: urls
         };

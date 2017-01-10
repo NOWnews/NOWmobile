@@ -55,7 +55,7 @@
                         <div class='shareaholic-canvas' style="left: -15px;position: relative;" data-app='share_buttons' data-app-id='25682984'></div>
                     </div>
                     <div class="social-box pull-right" style="top: 15px;position: relative;">
-                        <div class="fb-like" data-href="http://www.nownews.com{{ news.url }}" data-layout="box_count" data-action="like" fb-xfbml-state="rendered" data-size="small" data-show-faces="true" data-share="false"></div>
+                        <div class="fb-like" data-href="https://www.nownews.com{{ news.url }}" data-layout="box_count" data-action="like" fb-xfbml-state="rendered" data-size="small" data-show-faces="true" data-share="false"></div>
                     </div>
                     <div class="mui--clearfix"></div>
                 </div>
@@ -63,7 +63,7 @@
 
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img alt="{{ news.image.description }}" src="{{ news.image.url if news.image.url else 'http://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                    <img alt="{{ news.image.description }}" src="{{ news.image.url if news.image.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.image.description }}</p>
                 </div>
                 {{ news.htmlBody | safe }}
