@@ -35,8 +35,9 @@ module.exports = (req, res, next) => {
             return yield Promise.reject(new Error('sitemap api 找不到資料.....'));
         }
 
-        let xmlContents = _.map(sitemapData, (data) => {
-            return `
+        let xmlContents = '';
+        _.forEach(sitemapData, (data) => {
+            xmlContents += `
                 <url>
                     <loc>${data.url}</loc>
                     <news:news>
