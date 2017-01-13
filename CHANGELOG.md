@@ -4,6 +4,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.22 - 2017-01-13
+### Changed
+- 修改 修改FB留言板的data-href https 變成http @WayneLin
+
 ## 1.0.17.21 - 2017-01-13
 ### Changed
 - 修改 mobile web google news 用的新聞sitemap 出版商的名稱改為靜態 @WayneLin
