@@ -16,7 +16,7 @@ const entityMap = {
     "/": '&#x2F;'
 };
 
-// 替換掉違法字元的 function 
+// 替換掉違法字元的 function
 const escapeHtml = function (string) {
     return String(string).replace(/[&<>"'\/]/g, function (s) {
         return entityMap[s];
@@ -42,7 +42,7 @@ module.exports = (req, res, next) => {
                     <loc>${data.url}</loc>
                     <news:news>
                         <news:publication>
-                            <news:name>${data.name}</news:name>
+                            <news:name>NOWnews今日新聞</news:name>
                             <news:language>${data.language}</news:language>
                         </news:publication>
                         <news:genres>${data.genres}</news:genres>
