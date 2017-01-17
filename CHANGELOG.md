@@ -4,6 +4,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.23 - 2017-01-17
+### Changed
+- 修改 facebook og描述 增加og author 修改關鍵字濾掉多餘 贅字 雀巢埋code 2375551 @WayneLin
+
 ## 1.0.17.22 - 2017-01-13
 ### Changed
 - 修改 修改FB留言板的data-href https 變成http @WayneLin
