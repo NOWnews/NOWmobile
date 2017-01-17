@@ -19,6 +19,16 @@ module.exports = (req, res, next) => {
 
         debug('news = %j', news);
 
+        // 過濾關鍵字
+        // console.log(news.keywords.replace('速報', ''),'L23')
+
+        var byeText = ['首頁', '速報', '八卦', '政治', 'google編輯嚴選', 'yahoo名人娛樂', '香港雅虎', '電影', '色區', '生活看板', '社會看板', '國際看板' ,'大陸看板' ,'花生網', '旗艦報', '娛樂報', '花生新鮮事', '花生新鮮事旅遊', '地方', '旅遊看板', '科技看板', '要聞', '花生熱話題', '名人時尚看板'];
+
+        var byeTextFormat = ',' + byeText.join('|,') + '|' + byeText.join('|');
+        var myRegExp = new RegExp(byeTextFormat, 'g');
+        news.keywords = news.keywords.replace(myRegExp, '').replace(/^,/, '');
+
+
         let result = yield [
             getApi(`news/headline`),
             getApi('category/news')
