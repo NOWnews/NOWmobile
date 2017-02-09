@@ -23,6 +23,18 @@ module.exports = function(app) {
     app.use('/', check);
     app.use('/', event);
 
+    app.post('/nestle', function(req, res, next){
+        var fetch = require('node-fetch');
+        var result;
+        fetch('http://ads.adm4000.nownews.com:3001/nestle', { method: 'POST', body: req.body })
+            .then(function(res) {
+                return res.json();
+            }).then(function(json) {
+                return res.send('ok');
+            });
+
+    });
+
     return function(req, res, next) {
         return next();
     };
