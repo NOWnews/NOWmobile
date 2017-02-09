@@ -30,7 +30,6 @@ module.exports = function(app) {
             .then(function(res) {
                 return res.json();
             }).then(function(json) {
-                console.log(json)
                 return res.send('ok');
             });
 
