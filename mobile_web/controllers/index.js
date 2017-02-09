@@ -31,9 +31,9 @@ module.exports = function(app) {
                 return res.json();
             }).then(function(json) {
                 console.log(json)
-                result = json;
+                return res.send('ok');
             });
-        return res.send('ok');
+
     });
 
     return function(req, res, next) {
