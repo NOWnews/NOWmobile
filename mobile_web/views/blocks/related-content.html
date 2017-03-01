@@ -30,6 +30,12 @@
 <div class="related-news-block">
     <h3><i class="fa fa-bolt fa-fw"></i>頭條新聞</h3>
     {% for news in headline %}
+
+        {# 微告台灣原生廣告 #}
+        {% if loop.index == 2 %}
+            {% include "../ad/one/microad.html" %}
+        {% endif %}
+
         {% if loop.index < 4 %}
             <div class="mui-row one-news">
                 <a href="/news/{{ news._id }}{{queryParams}}">

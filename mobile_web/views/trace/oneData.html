@@ -1,0 +1,33 @@
+{# 果實 ONEAD 收集資料合作用的追蹤碼 #}
+
+<script type="text/javascript">
+
+    {# Simon 寫的，用來產生 UUID 用的 #}
+    var guidGenerator = function() {
+        var S4 = function() {
+           return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+        };
+        return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+    };
+
+    var uuid = guidGenerator();
+
+    {# 以下為果實正式的 code #}
+    (function() {
+        var s = document.createElement("script"),
+            el = document.getElementsByTagName("script")[0];
+        s.async = true;
+        s.src = (document.location.protocol === "https:" ? "https:" : "http:") + "//ad-specs.guoshipartners.com/static/js/onead-pixel.min.js?_t=" + Math.floor((new Date).getTime() / 300000);
+        el.parentNode.insertBefore(s, el);
+    })();
+
+    // onead_pixel 執行時機在媒體 sessionid, accountid 產生後呼叫
+
+    var onead_pixel = onead_pixel || [];
+    onead_pixel.push({
+        uid: "1000007",
+        sessionid: uuid,
+        accountid: "",
+        category: ""
+    });
+</script>
