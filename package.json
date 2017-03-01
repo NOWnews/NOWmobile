@@ -1,6 +1,6 @@
 {
     "name": "nowmobile",
-    "version": "1.0.17.28",
+    "version": "1.0.17.29",
     "description": "NOWnews mobile service",
     "main": "index.js",
     "scripts": {
