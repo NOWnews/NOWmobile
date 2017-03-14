@@ -4,6 +4,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.31 - 2017-03-14
+### Changed
+- `mobile_web/views/trace/nestle.html` 加入新的雀巢追蹤碼 `/n/2017/03/16/2414061` @Webber
+
 ## 1.0.17.30 - 2017-03-01
 ### Added
 - 加入微告台灣(microAD)原生廣告 @SimonSun
