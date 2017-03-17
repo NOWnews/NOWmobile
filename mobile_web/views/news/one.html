@@ -74,6 +74,9 @@
                 {{ news.freeBody | safe }}
             </div>
 
+            {# DAN PMP Scrolling 廣告 HTML#}
+            {% include "../ad/one/dan_pmp_scrolling.html" %}
+
             <div class="arrow-block mui--appbar-line-height">
 
                 {# 中信房屋 廣告版位 #}
@@ -94,9 +97,6 @@
                     <span>{{ news.next.field_short_title.value }}</span>
                 </a>
             </section>
-
-            {# DAN PMP Scrolling 廣告 HTML#}
-            {% include "../ad/one/dan_pmp_scrolling.html" %}
 
             {% include "./comment.html" %}
             {% include "../blocks/related-content.html" %}
