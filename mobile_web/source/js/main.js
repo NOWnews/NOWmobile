@@ -17,7 +17,7 @@ $(function() {
                 },function(error){
                     alert('你的瀏覽器不支援，暫時無法使用此功能!');
                     $('#loading').addClass('mui--hide');
-                });
+                }, { maximumAge: Infinity });
             } else {
                 alert('你的瀏覽器不支援，暫時無法使用此功能!');
                 $('#loading').addClass('mui--hide');

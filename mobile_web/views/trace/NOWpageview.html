@@ -42,7 +42,7 @@
             },function(error){
                 address = { error: 'code ' + error.code + ':' + error.message };
                 sendPageView(address);
-            });
+            }, { maximumAge: Infinity });
         }else{
             address = { error: "瀏覽器不支援定位" };
             sendPageView(address);
