@@ -4,6 +4,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## 1.0.17.36 - 2017-03-30
+### Changed
+- 加入新的 microAD 與調整原本新聞內頁相關新聞的廣告位置 @SimonSun
 
 ## 1.0.17.35 - 2017-03-30
 ### Changed
