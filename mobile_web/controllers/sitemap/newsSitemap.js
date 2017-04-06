@@ -30,13 +30,17 @@ module.exports = (req, res, next) => {
         // 從 api 取得 sitemap 的資料
         let sitemapData = yield getApi('sitemap/newsSitemap');
 
-
         if(!sitemapData || sitemapData.length === 0) {
             return yield Promise.reject(new Error('sitemap api 找不到資料.....'));
         }
 
         let xmlContents = '';
         _.forEach(sitemapData, (data) => {
+            // 沒有 Url 則不顯示
+            if (!data.url) {
+                console.error(`時間: ${data.publication_date}, 標題: ${data.title} --- 找不到連結`);
+                return;
+            }
             xmlContents += `
                 <url>
                     <loc>${data.url}</loc>
