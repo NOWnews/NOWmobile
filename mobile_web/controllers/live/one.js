@@ -8,34 +8,23 @@ module.exports = (req, res, next) => {
 
     let { liveId } = req.params;
 
+
+    console.log()
+
     if (!liveId) {
         return next();
     }
 
     co(function*() {
-        let videoBaseUrl = `category/videos`;
-        // let mainCategory = yield getApi(videoBaseUrl);
 
-
-
-        let videoList = yield getApi(`${videoBaseUrl}/8297`);
-
-        // 濾掉 title 上的 ▲
-        videoList = _.map(videoList, (video) => {
-            video.title = video.title.replace(/▲/, '');
-            return video;
-        });
-
-        console.log(videoList,'L30');
-
+        let live = yield getApi('kmt/chairman2017');
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ video });
         }
 
         return res.render('live/one', {
-            type: 'video',
-            videoList
+            live
         });
 
     }).catch(next);

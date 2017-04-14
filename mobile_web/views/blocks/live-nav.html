@@ -1,70 +1,70 @@
-<div class="live-block">
-    <div class="pull-left live-text-block">
-        <span class="mui--text-danger live-text">LIVE</span>
-    </div>
-    <div class="marquee pull-left">
-        <ul>
-            <li><a class="live-link" href="/live/EWRd_e3$ef">緯恩即時串流</a></li>
-            <li><a class="live-link" href="/live/EWRd_e3$ef">緯恩即時串流</a></li>
-            <li><a class="live-link" href="/live/EWRd_e3$ef">緯恩即時串流</a></li>
-        </ul>
+{% if live.campainStatus %}
+    <div class="live-block">
+        <div class="pull-left live-text-block">
+            <span class="mui--text-danger live-text">LIVE</span>
         </div>
-    <div class="clear"></div>
-</div>
-<style>
-.live-text-block {
-    width: 110px;
-    text-align: center;
-}
-.live-text {
-    background: #e72300;
-    color: #fff;
-    padding: 5px 15px;
-    letter-spacing: 2px;
-    font-size: 15px;
-    border-radius: 5px;
-}
-.live-link {
-    font-size: 18px;
-    color: #fff;
-}
-.live-block {
-    background: #000f2e;
-    height: 40px;
-    line-height: 40px;
-}
-.marquee {
-    background: url(/static/img/live-nav-bg.png);
-    width: calc(100% - 110px);
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-}
-
-.marquee > ul {
-    padding-left: 0;
-    display: flex;
-    list-style-type: none;
-    animation: marquee 15s linear infinite;
-    position: absolute;
-}
-
-.marquee > ul > li {
-    white-space: nowrap;
-    margin-right: 2em;
-    font-weight: bold;
-    color: #fff;
-}
-
-@keyframes marquee {
-    0% {
-        left: 100%;
-        transform: translateX(0%);
+        <div class="marquee pull-left">
+            <ul>
+                <li><a class="live-link" href="/live/{{ live.youtubeId }}">{{ live.title }}</a></li>
+            </ul>
+            </div>
+        <div class="clear"></div>
+    </div>
+    <style>
+    .live-text-block {
+        width: 100px;
+        text-align: center;
+    }
+    .live-text {
+        background: #e72300;
+        color: #fff;
+        padding: 5px 15px;
+        letter-spacing: 2px;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+    .live-link {
+        font-size: 18px;
+        color: #fff;
+    }
+    .live-block {
+        background: #000f2e;
+        height: 40px;
+        line-height: 40px;
+    }
+    .marquee {
+        background: url(/static/img/live-nav-bg.png);
+        width: calc(100% - 100px);
+        overflow: hidden;
+        position: relative;
+        height: 100%;
     }
 
-    100% {
-        left: 0;
-        transform: translateX(-100%);
+    .marquee > ul {
+        padding-left: 0;
+        display: flex;
+        list-style-type: none;
+        animation: marquee 15s linear infinite;
+        position: absolute;
     }
-}
-</style>
+
+    .marquee > ul > li {
+        white-space: nowrap;
+        margin-right: 2em;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    @keyframes marquee {
+        0% {
+            left: 100%;
+            transform: translateX(0%);
+        }
+
+        100% {
+            left: 0;
+            transform: translateX(-100%);
+        }
+    }
+    </style>
+{% endif %}

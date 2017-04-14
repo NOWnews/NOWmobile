@@ -15,6 +15,8 @@ router.route('/')
                 getApi('news/headline'),
             ];
 
+            let live = yield getApi('kmt/chairman2017');
+
             let mainCategory = result[0];
             let { newsList, ads } = result[1];
 
@@ -23,6 +25,7 @@ router.route('/')
             }
 
             return res.render('home/home', {
+                live,
                 nativeAds: ads || [],
                 newsList,
                 mainCategory,

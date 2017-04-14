@@ -16,7 +16,7 @@
         <div class="mui--appbar-height"></div>
 
         {# 廣告版位 #}
-        {% include "../ad/one/ad300x250_1.html" %}
+        {# include "../ad/one/ad300x250_1.html" #}
 
         <div class="nownews-wrapper news-one-page">
             {# 麵包屑開始 #}
@@ -41,12 +41,12 @@
                         <a href="/video/category/{{ category._id }}">{{ category.name }}</a>
                     {% endfor %}
                     </p>
-                    <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ video.createdAt}}</p>
-                    <div class="font-size-controllers">
+                    <!-- <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ video.createdAt}}</p> -->
+                    <!-- <div class="font-size-controllers">
                         <a class="font-link font-size-large mui-btn mui-btn--flat">大</a>
                         <a class="font-link font-size-middle mui-btn mui-btn--flat">中</a>
                         <a class="font-link font-size-small mui-btn mui-btn--flat">小</a>
-                    </div>
+                    </div> -->
                     <div class="social-box pull-left" style="width: 220px;">
                         <div class='shareaholic-canvas' style="left: -15px;position: relative;" data-app='share_buttons' data-app-id='25682984'></div>
                     </div>
@@ -70,7 +70,7 @@
             <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
             <div class="arrow-block mui--appbar-line-height">
                 {# 廣告版位 #}
-                {% include "../ad/one/ad300x250_2.html" %}
+                {# include "../ad/one/ad300x250_2.html" #}
             </div>
             {% include "./comment.html" %}
             {% include "../blocks/related-video.html" %}
@@ -83,7 +83,8 @@
     {#{% include "../blocks/social-link.html" %} #}
     <style>
     #app {
-          width: 529px;
+          /*width: 529px;*/
+          width: 100%;
           height: 352px;
           overflow: hidden;
           border-radius: 3px;
@@ -125,24 +126,26 @@
           }
         }
         .live {
-          -webkit-animation: 2s opas infinite;
-          -moz-animation: 2s opas infinite;
-          animation: 2s opas infinite;
-          display: inline-block;
-          background: red;
-          border-radius: 3px;
-          color: #fff;
-          padding: 8px;
-          margin-top: 20px;
-          margin-left: 20px;
-          font-size: 12px;
-          font-weight: 200;
-          font-family: arial;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          position: absolute;
-          top: 0px;
-          left: 30%;
+            -webkit-animation: 2s opas infinite;
+            -moz-animation: 2s opas infinite;
+            animation: 2s opas infinite;
+            display: inline-block;
+            background: red;
+            border-radius: 3px;
+            color: #fff;
+            padding: 8px;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 12px;
+            font-weight: 200;
+            font-family: arial;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: absolute;
+            /*top: 0px;
+            left: 30%;*/
+            top: 20px;
+            right: 8px;
         }
         .mui-btn.mui-btn--flat {
             color:#fff;
