@@ -6,7 +6,6 @@ const debug = require('debug')('NOWmobile:controllers:video');
 
 module.exports = (req, res, next) => {
     let { liveId } = req.params;
-    console.log(123)
 
     if (!liveId) {
         return next();
