@@ -8,6 +8,7 @@ import files from './files';
 import sitemap from './sitemap';
 import check from './check';
 import event from './event';
+import live from './live';
 
 
 module.exports = function(app) {
@@ -22,6 +23,7 @@ module.exports = function(app) {
     app.use('/', sitemap);
     app.use('/', check);
     app.use('/', event);
+    app.use('/', live);
 
     app.post('/nestle', function(req, res, next){
         var fetch = require('node-fetch');
