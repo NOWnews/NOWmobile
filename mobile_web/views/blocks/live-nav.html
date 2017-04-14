@@ -1,5 +1,5 @@
-<div class="mui-panel live-block">
-    <div class="pull-left">
+<div class="live-block">
+    <div class="pull-left live-text-block">
         <span class="mui--text-danger live-text">LIVE</span>
     </div>
     <div class="marquee pull-left">
@@ -12,14 +12,16 @@
     <div class="clear"></div>
 </div>
 <style>
+.live-text-block {
+    width: 110px;
+    text-align: center;
+}
 .live-text {
     background: #e72300;
     color: #fff;
     padding: 5px 15px;
     letter-spacing: 2px;
-    margin-right: 10px;
     font-size: 15px;
-    line-height: 30px;
     border-radius: 5px;
 }
 .live-link {
@@ -28,13 +30,12 @@
 }
 .live-block {
     background: #000f2e;
-    margin: 0;
     height: 40px;
-    padding: 5px 15px;
+    line-height: 40px;
 }
 .marquee {
-    margin-left: 10px;
-    width: calc(100% - 115px);
+    background: url(/static/img/live-nav-bg.png);
+    width: calc(100% - 110px);
     overflow: hidden;
     position: relative;
     height: 100%;
