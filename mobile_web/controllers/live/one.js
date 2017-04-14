@@ -8,23 +8,42 @@ module.exports = (req, res, next) => {
 
     let { liveId } = req.params;
 
-
-    console.log()
-
     if (!liveId) {
         return next();
     }
 
     co(function*() {
+        let videoBaseUrl = `category/videos`;
 
         let live = yield getApi('kmt/chairman2017');
+
+        let videoList = yield getApi(`${videoBaseUrl}/8297`);
+        let { newsList } = yield getApi(`news/headline`);
+
+        // 濾掉 title 上的 ▲
+        videoList = _.map(videoList, (video) => {
+            video.title = video.title.replace(/▲/, '');
+            return video;
+        });
+
+        let news = {
+            refNews: newsList
+        }
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ video });
         }
 
         return res.render('live/one', {
-            live
+            videoList,
+            news,
+            live,
+            video: {
+                title: live.title,
+                categories: {
+                    name: '直播'
+                }
+            }
         });
 
     }).catch(next);

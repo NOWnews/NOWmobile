@@ -22,6 +22,9 @@
         letter-spacing: 2px;
         font-size: 15px;
         border-radius: 5px;
+        -webkit-animation: 2s opas infinite;
+        -moz-animation: 2s opas infinite;
+        animation: 2s opas infinite;
     }
     .live-link {
         font-size: 18px;
@@ -64,6 +67,39 @@
         100% {
             left: 0;
             transform: translateX(-100%);
+        }
+    }
+    @-webkit-keyframes opas {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @-moz-keyframes opas {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes opas {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+        100% {
+            opacity: 1;
         }
     }
     </style>
