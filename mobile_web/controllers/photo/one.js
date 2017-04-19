@@ -7,6 +7,7 @@ let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:photo');
 
 module.exports = (req, res, next) => {
+
     let { photoId } = req.params;
 
     if (!photoId) {
@@ -14,6 +15,7 @@ module.exports = (req, res, next) => {
     }
 
     co(function*() {
+        let live = yield getApi('kmt/chairman2017');
 
         let photo = yield getApi(`photos/${photoId}`);
         photo.title = photo.title.replace(/▲/, '');
@@ -29,7 +31,8 @@ module.exports = (req, res, next) => {
 
         return res.render('photo/one', {
             isPhotoOne: true,
-            photo
+            photo,
+            live
         });
 
     }).catch(next);

@@ -8,6 +8,7 @@ let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:news:category');
 
 module.exports = (req, res, next) => {
+
     let { specialType } = req.params;
 
     if (!specialType) {
@@ -15,6 +16,7 @@ module.exports = (req, res, next) => {
     }
 
     co(function*() {
+        let live = yield getApi('kmt/chairman2017');
 
         let result = yield [
             getApi(`category/news`),
@@ -33,6 +35,7 @@ module.exports = (req, res, next) => {
             newsList,
             mainCategory,
             specialType,
+            live
         });
 
     }).catch(next);

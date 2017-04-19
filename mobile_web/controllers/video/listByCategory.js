@@ -8,6 +8,7 @@ module.exports = (req, res, next) => {
     let { taxId } = req.params;
 
     co(function*() {
+        let live = yield getApi('kmt/chairman2017');
 
         let videoBaseUrl = `category/videos`;
         let mainCategory = yield getApi(videoBaseUrl);
@@ -32,6 +33,7 @@ module.exports = (req, res, next) => {
             videoList,
             mainCategory,
             taxId,
+            live
         });
 
     }).catch(next);

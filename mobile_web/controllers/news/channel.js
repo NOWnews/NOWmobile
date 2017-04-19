@@ -8,6 +8,8 @@ module.exports = (req, res, next) => {
     let { channelId } = req.params;
 
     co(function*() {
+        let live = yield getApi('kmt/chairman2017');
+
         let channelBaseUrl = 'channels/news';
 
         let mainChannel = yield getApi(channelBaseUrl);
@@ -28,6 +30,7 @@ module.exports = (req, res, next) => {
             channelName,
             channelId,
             isOpen,
+            live
         };
 
         if(req.query.data === 'PLAYJJ'){

@@ -1,4 +1,4 @@
-{% if live.campainStatus %}
+{% if live and live.campainStatus %}
     <div class="live-block">
         <div class="pull-left live-text-block">
             <span class="mui--text-danger live-text">LIVE</span>
@@ -36,7 +36,8 @@
         line-height: 40px;
     }
     .marquee {
-        background: url(/static/img/live-nav-bg.png);
+        background: #009 url(/static/img/live-nav-bg.png);
+        background-repeat: no-repeat;
         width: calc(100% - 100px);
         overflow: hidden;
         position: relative;
