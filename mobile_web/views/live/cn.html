@@ -1,0 +1,136 @@
+{% extends "../base.html" %}
+
+{% block socialblock %}
+    {% include "../seo/head-social-one-video.html" %}
+{% endblock %}
+
+{% block container %}
+
+    {# NOWnews Page View 偵測碼 #}
+    {% include "../trace/NOWpageview.html" %}
+
+    <article id="content-wrapper" style="background:#000f2e">
+        {# mobile 上線的禮物活動 #}
+        {# include "../eventsPage/gift.html" #}
+
+        <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
+
+        {# 廣告版位 #}
+        {# include "../ad/one/ad300x250_1.html" #}
+        <div class="mui--text-center">
+            <img src="http://legacy.nownews.com/NOWnews_static/live-banner.jpg" style="width: 100%;max-width: 640px;" alt="黨主席選前直播" />
+        </div>
+
+        <div class="nownews-wrapper news-one-page" style="margin-top: 0;">
+            {# 麵包屑開始 #}
+            <div class="breadcrumb">
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="/"><span itemprop="title">NOWnews 今日新聞</span></a>&gt;
+                </span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="/video/category/{{ video.categories[0]._id }}"><span itemprop="title">{{ video.categories[0].name or '不分類' }}</span></a>&gt;
+                </span>
+                <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <a itemprop="url" href="{{ video.url }}"><span itemprop="title">{{ video.title }}</span></a>
+                </span>
+            </div>
+            {# 麵包屑結束 #}
+
+            <section class="news-body">
+                <div id="app">
+                  <iframe width="100%" height="315" src="{{ live.url }}" frameborder="0" allowfullscreen></iframe>
+                  <div class="live">{{ live.title }}</div>
+                </div>
+                {{ video.body.value | safe }}
+            </section>
+            <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
+            <div class="arrow-block mui--appbar-line-height">
+                {# 廣告版位 #}
+                {# include "../ad/one/ad300x250_2.html" #}
+            </div>
+            {% include "./comment.html" %}
+            {% include "../blocks/related-video.html" %}
+            {% include "../blocks/free-body.html" %}
+        </div>
+    </article>
+
+    {# 先放置頂廣告，待 11 月初的會議調整 #}
+    {# 置底的 social link #}
+    {#{% include "../blocks/social-link.html" %} #}
+    <style>
+    #app {
+          width: 100%;
+          height: 352px;
+          overflow: hidden;
+          border-radius: 3px;
+          box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+          position: relative;
+        }
+
+        @-webkit-keyframes opas {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        @-moz-keyframes opas {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        @keyframes opas {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        .live {
+            -webkit-animation: 2s opas infinite;
+            -moz-animation: 2s opas infinite;
+            animation: 2s opas infinite;
+            display: inline-block;
+            background: red;
+            border-radius: 3px;
+            color: #fff;
+            padding: 8px;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 12px;
+            font-weight: 200;
+            font-family: arial;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: absolute;
+            top: 20px;
+            right: 8px;
+        }
+        .mui-btn.mui-btn--flat {
+            color:#fff;
+        }
+        .font-link {
+            border: 1px solid #fff;
+        }
+        .related-news-block .related-news-info {
+            color:#fff;
+        }
+        .mui--text-title, h3 {
+            color:#fff;
+        }
+    </style>
+{% endblock %}
