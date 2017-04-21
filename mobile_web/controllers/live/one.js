@@ -55,7 +55,8 @@ module.exports = (req, res, next) => {
             return res.render('live/cn', data);
         }
 
-        return res.render('live/one', data);
+        return res.render('live/cn', data);
+        // return res.render('live/one', data);
 
     }).catch(next);
 };
