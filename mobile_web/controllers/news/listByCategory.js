@@ -15,6 +15,8 @@ module.exports = (req, res, next) => {
     }
 
     co(function*() {
+        let live = yield getApi('kmt/chairman2017');
+
         let categoryBaseUrl = 'category/news';
 
         let result = yield [
@@ -33,6 +35,7 @@ module.exports = (req, res, next) => {
             newsList,
             mainCategory,
             taxId,
+            live
         });
 
     }).catch(next);

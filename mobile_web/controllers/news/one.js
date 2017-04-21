@@ -15,6 +15,8 @@ module.exports = (req, res, next) => {
 
     co(function*() {
 
+        let live = yield getApi('kmt/chairman2017');
+
         let news = yield getApi(`news/${newsId}`);
 
         debug('news = %j', news);
@@ -49,7 +51,8 @@ module.exports = (req, res, next) => {
             news,
             mainCategory,
             headline: newsList,
-            queryParams: queryParams
+            queryParams: queryParams,
+            live
         };
 
         if(req.query.data === 'PLAYJJ'){

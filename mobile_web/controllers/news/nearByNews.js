@@ -8,6 +8,8 @@ module.exports = (req, res, next) => {
     let specialType = 'nearByNews';
 
     co(function*() {
+        let live = yield getApi('kmt/chairman2017');
+
         let longitude = req.query.longitude;
         let latitude = req.query.latitude;
         let nearByNewsBaseUrl = `nearByNews?longitude=${longitude}&latitude=${latitude}`;
@@ -25,6 +27,7 @@ module.exports = (req, res, next) => {
             newsList: newsList,
             mainCategory,
             specialType,
+            live
         };
 
         if(req.query.data === 'PLAYJJ'){

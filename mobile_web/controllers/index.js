@@ -8,10 +8,12 @@ import files from './files';
 import sitemap from './sitemap';
 import check from './check';
 import event from './event';
+import live from './live';
 
 
 module.exports = function(app) {
 
+    app.use('/', live);
     app.use('/', about);
     app.use('/', home);
     app.use('/', news);

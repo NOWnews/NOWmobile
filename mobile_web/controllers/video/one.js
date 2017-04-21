@@ -12,6 +12,7 @@ module.exports = (req, res, next) => {
     }
 
     co(function*() {
+        let live = yield getApi('kmt/chairman2017');
 
         let video = yield getApi(`videos/${videoId}`);
         video.title = video.title.replace(/▲/, '');
@@ -25,7 +26,8 @@ module.exports = (req, res, next) => {
         return res.render('video/one', {
             video,
             headline: newsList,
-            type: 'video'
+            type: 'video',
+            live
         });
 
     }).catch(next);

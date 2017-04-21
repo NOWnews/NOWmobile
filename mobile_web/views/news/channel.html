@@ -6,7 +6,7 @@
 
 {% block container %}
     <div id="content-wrapper">
-        <div class="mui--appbar-height"></div>
+        <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
         <div id="channel-nav-block" class="{{ 'is-open' if isOpen else '' }}">
             <div class="mui-panel mui--text-center ">
                 <span class="channel-name {{ 'mui--hide' if isOpen else '' }}"> {{ channelName }}</span>
