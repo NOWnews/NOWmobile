@@ -13,6 +13,7 @@ import live from './live';
 
 module.exports = function(app) {
 
+    app.use('/', live);
     app.use('/', about);
     app.use('/', home);
     app.use('/', news);
@@ -23,7 +24,6 @@ module.exports = function(app) {
     app.use('/', sitemap);
     app.use('/', check);
     app.use('/', event);
-    app.use('/', live);
 
     app.post('/nestle', function(req, res, next){
         var fetch = require('node-fetch');
