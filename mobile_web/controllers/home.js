@@ -17,6 +17,8 @@ router.route('/')
 
             let live = yield getApi('kmt/chairman2017');
 
+            debug('live = %j', live);
+
             let mainCategory = result[0];
             let { newsList, ads } = result[1];
 

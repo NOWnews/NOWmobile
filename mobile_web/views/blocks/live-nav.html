@@ -1,16 +1,30 @@
 {% if live and live.campainStatus %}
     <div class="live-block">
-        <div class="pull-left live-text-block">
-            <span class="mui--text-danger live-text">LIVE</span>
+        <div class="pull-left live-text-block ">
+            {% if live.isOnAir %}
+                <span class="mui--text-danger live-text">LIVE</span>
+            {% else %}
+                <span class="mui--text-danger live-text live-notice">預告</span>
+            {% endif %}
         </div>
         <div class="marquee pull-left">
             <ul>
-                <li><a class="live-link" href="/live/{{ live.youtubeId }}">{{ live.title }}</a></li>
+                <li>
+                    {% if live.isOnAir %}
+                        <a class="live-link" href="/live/{{ live.youtubeId }}">{{ live.title }}</a>
+                    {% else %}
+                        <a class="live-link" href="#">{{ live.teaserTitle }}</a>
+                    {% endif %}
+                </li>
             </ul>
             </div>
         <div class="clear"></div>
     </div>
     <style>
+    .live-notice.live-text {
+        background: none;
+        animation: none;
+    }
     .live-text-block {
         width: 100px;
         text-align: center;
@@ -22,9 +36,9 @@
         letter-spacing: 2px;
         font-size: 15px;
         border-radius: 5px;
-        -webkit-animation: 2s opas infinite;
-        -moz-animation: 2s opas infinite;
-        animation: 2s opas infinite;
+        -webkit-animation: 1s opas infinite;
+        -moz-animation: 1s opas infinite;
+        animation: 1s opas infinite;
     }
     .live-link {
         font-size: 18px;
