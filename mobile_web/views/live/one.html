@@ -109,7 +109,7 @@
             border-radius: 3px;
             color: #fff;
             padding: 8px;
-            margin-top: 20px;
+            margin-top: -15px;
             margin-left: 20px;
             font-size: 12px;
             font-weight: 200;
@@ -133,4 +133,10 @@
             color:#fff;
         }
     </style>
+    <script>
+        $(function(){
+            $('#mui-overlay').attr('id', '').removeClass('mui--show');
+            $('body').removeClass('mui-body--scroll-lock');
+        });
+    </script>
 {% endblock %}
