@@ -27,7 +27,6 @@ module.exports = (req, res, next) => {
         debug('video List = %j', videoList);
         debug('news List = %j', newsList);
 
-
         // 濾掉 title 上的 ▲
         videoList = _.map(videoList, (video) => {
             video.title = video.title.replace(/▲/, '');
@@ -54,6 +53,22 @@ module.exports = (req, res, next) => {
             return res.json({ video });
         }
 
+        // 測試用 ---------------------------------------------------------------
+        if(req.query.data === 'CN'){
+            data.live.title = chineseConv.sify(data.live.title);
+            data.videoList = _.map(data.videoList, (video) => {
+                video.title = chineseConv.sify(video.title);
+                return video;
+            });
+            data.news.refNews = _.map(data.news.refNews, (news) => {
+                news.title = chineseConv.sify(news.title);
+                news.category.name = chineseConv.sify(news.category.name);
+                return news;
+            });
+            return res.render('live/cn', data);
+        }
+        // ---------------------------------------------------------------
+
         // 確認 IP 是否為大陸
         let dirtyIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress || "";
         let ip = dirtyIp.split(',').shift();
@@ -66,7 +81,7 @@ module.exports = (req, res, next) => {
             });
             data.news.refNews = _.map(data.news.refNews, (news) => {
                 news.title = chineseConv.sify(news.title);
-                news.category.name = chineseConv.sify(video.title);
+                news.category.name = chineseConv.sify(news.category.name);
                 return news;
             });
             return res.render('live/cn', data);
