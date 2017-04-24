@@ -18,7 +18,7 @@
         {# 廣告版位 #}
         {# include "../ad/one/ad300x250_1.html" #}
         <div class="mui--text-center">
-            <!-- <img src="http://legacy.nownews.com/NOWnews_static/live-banner.jpg" style="width: 100%;max-width: 640px;" alt="黨主席選前直播" /> -->
+            <img src="http://legacy.nownews.com/NOWnews_static/live-banner.jpg" style="width: 100%;max-width: 640px;" alt="黨主席選前直播" />
         </div>
 
 
@@ -67,7 +67,7 @@
                            loadStream(document.getElementById('userInput').value);
                         }
                         function loadStream(url) {
-                        var $vid_obj = _V_("example_video_1");
+                            var $vid_obj = _V_("example_video_1");
                             $vid_obj.src(url);
                             $vid_obj.on('loadstart',function(){
                                 $vid_obj.play();
@@ -85,56 +85,53 @@
                 {# include "../ad/one/ad300x250_2.html" #}
             </div>
             {% include "./comment.html" %}
-            {% include "../blocks/related-video.html" %}
-            {% include "../blocks/free-body.html" %}
+            {% include "./cn/related-video.html" %}
+            {% include "./cn/free-body.html" %}
         </div>
     </article>
 
-    {# 先放置頂廣告，待 11 月初的會議調整 #}
-    {# 置底的 social link #}
-    {#{% include "../blocks/social-link.html" %} #}
     <style>
-    #app {
-          width: 100%;
-          height: 352px;
-          overflow: hidden;
-          border-radius: 3px;
-          box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 12px 0 rgba(0, 0, 0, 0.4);
-          position: relative;
+        #app {
+            width: 100%;
+            height: 352px;
+            overflow: hidden;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+            position: relative;
         }
 
         @-webkit-keyframes opas {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            opacity: 1;
-          }
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
         }
         @-moz-keyframes opas {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            opacity: 1;
-          }
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
         }
         @keyframes opas {
-          0% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            opacity: 1;
-          }
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
         }
         .live {
             -webkit-animation: 2s opas infinite;
