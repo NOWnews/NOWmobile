@@ -2,8 +2,9 @@ import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
 import geoip from 'geoip-lite';
+import chineseConv from 'chinese-conv';
 
-const debug = require('debug')('NOWmobile:controllers:video');
+const debug = require('debug')('NOWmobile:controllers:live');
 
 module.exports = (req, res, next) => {
 
@@ -18,8 +19,14 @@ module.exports = (req, res, next) => {
 
         let live = yield getApi('kmt/chairman2017');
 
+        debug('live = %j', live);
+
         let videoList = yield getApi(`${videoBaseUrl}/8297`);
         let { newsList } = yield getApi(`news/headline`);
+
+        debug('video List = %j', videoList);
+        debug('news List = %j', newsList);
+
 
         // 濾掉 title 上的 ▲
         videoList = _.map(videoList, (video) => {
@@ -52,11 +59,20 @@ module.exports = (req, res, next) => {
         let ip = dirtyIp.split(',').shift();
         let geo = geoip.lookup(ip);
         if (geo && geo.country === 'CN') {
+            data.live.title = chineseConv.sify(data.live.title);
+            data.videoList = _.map(data.videoList, (video) => {
+                video.title = chineseConv.sify(video.title);
+                return video;
+            });
+            data.news.refNews = _.map(data.news.refNews, (news) => {
+                news.title = chineseConv.sify(news.title);
+                news.category.name = chineseConv.sify(video.title);
+                return news;
+            });
             return res.render('live/cn', data);
         }
 
-        return res.render('live/cn', data);
-        // return res.render('live/one', data);
+        return res.render('live/one', data);
 
     }).catch(next);
 };
