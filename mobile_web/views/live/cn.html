@@ -21,8 +21,6 @@
             <img src="http://legacy.nownews.com/NOWnews_static/live-banner.jpg" style="width: 100%;max-width: 640px;" alt="黨主席選前直播" />
         </div>
 
-
-
         <div class="nownews-wrapper news-one-page" style="margin-top: 0;">
             {# 麵包屑開始 #}
             <div class="breadcrumb">
@@ -39,6 +37,10 @@
             {# 麵包屑結束 #}
 
             <section class="news-body">
+                <h1 class="title" style="color: #fff;">
+                    {% if live.isOnAir %}<span class="live">Live</span>{% endif %}
+                    {{ live.title }}
+                </h1>
                 <div id="app">
                   {#==============================================================#}
                     <link href="https://vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet" type="text/css">
@@ -76,7 +78,6 @@
                         }
                     </script>
                 {#===================================================================================#}
-                  <div class="live">{{ live.title }}</div>
                 </div>
                 {{ video.body.value | safe }}
             </section>
@@ -106,7 +107,7 @@
                 opacity: 1;
             }
             50% {
-                opacity: 0.5;
+                opacity: 0.6;
             }
             100% {
                 opacity: 1;
@@ -117,7 +118,7 @@
                 opacity: 1;
             }
             50% {
-                opacity: 0.5;
+                opacity: 0.6;
             }
             100% {
                 opacity: 1;
@@ -128,31 +129,28 @@
                 opacity: 1;
             }
             50% {
-                opacity: 0.5;
+                opacity: 0.6;
             }
             100% {
                 opacity: 1;
             }
         }
         .live {
-            -webkit-animation: 2s opas infinite;
-            -moz-animation: 2s opas infinite;
-            animation: 2s opas infinite;
-            display: inline-block;
+            -webkit-animation: 1s opas infinite;
+            -moz-animation: 1s opas infinite;
+            animation: 1s opas infinite;
             background: red;
             border-radius: 3px;
             color: #fff;
-            padding: 8px;
-            margin-top: -15px;
-            margin-left: 20px;
+            padding: 3px 4px 3px 5px;
+            margin-left: 10px;
             font-size: 12px;
-            font-weight: 200;
+            font-weight: 600;
             font-family: arial;
             text-transform: uppercase;
             letter-spacing: 2px;
-            position: absolute;
-            top: 20px;
-            right: 8px;
+            position: relative;
+            top: -4px;
         }
         .mui-btn.mui-btn--flat {
             color:#fff;
