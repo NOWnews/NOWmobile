@@ -86,8 +86,9 @@ module.exports = (req, res, next) => {
             });
             return res.render('live/cn', data);
         }
-
-        return res.render('live/one', data);
+        // 過水帳
+        return res.redirect('http://dragon.nownews.com');
+        // return res.render('live/one', data);
 
     }).catch(next);
 };
