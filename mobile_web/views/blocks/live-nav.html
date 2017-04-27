@@ -11,7 +11,8 @@
             <ul>
                 <li>
                     {% if live.isOnAir %}
-                        <a class="live-link" href="/live/{{ live.youtubeId }}">{{ live.title }}</a>
+                        <!-- <a class="live-link" href="/live/{{ live.youtubeId }}">{{ live.title }}</a> -->
+                        <a class="live-link" target="_blank" href="http://dragon.nownews.com">{{ live.title }}</a>
                     {% else %}
                         <a class="live-link" href="#">{{ live.teaserTitle }}</a>
                     {% endif %}
