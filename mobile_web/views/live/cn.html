@@ -17,9 +17,12 @@
 
         {# 廣告版位 #}
         {# include "../ad/one/ad300x250_1.html" #}
-        <div class="mui--text-center">
-            <img src="http://legacy.nownews.com/NOWnews_static/live-banner.jpg" style="width: 100%;max-width: 640px;" alt="黨主席選前直播" />
-        </div>
+
+        {% if live.banner %}
+            <div class="mui--text-center">
+                <img src="{{ live.banner }}" style="width: 100%;max-width: 640px;" alt="{{live.alt}}" />
+            </div>
+        {% endif %}
 
         <div class="nownews-wrapper news-one-page" style="margin-top: 0;">
             {# 麵包屑開始 #}
@@ -31,7 +34,7 @@
                   <a itemprop="url" href="/video/category/{{ video.categories[0]._id }}"><span itemprop="title">{{ video.categories[0].name or '不分類' }}</span></a>&gt;
                 </span>
                 <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                  <a itemprop="url" href="{{ video.url }}"><span itemprop="title">{{ video.title }}</span></a>
+                  <a itemprop="url" href="/live/{{ live.youtubeId }}"><span itemprop="title">{{ live.title }}</span></a>
                 </span>
             </div>
             {# 麵包屑結束 #}
