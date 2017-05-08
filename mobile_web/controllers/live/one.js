@@ -86,9 +86,12 @@ module.exports = (req, res, next) => {
             });
             return res.render('live/cn', data);
         }
-        // 過水帳
-        return res.redirect('http://dragon.nownews.com');
-        // return res.render('live/one', data);
+
+        // 如果有 redirect，就導轉過去
+        if ( live.redirect ) {
+            return res.redirect(live.redirect);
+        }
+        return res.render('live/one', data);
 
     }).catch(next);
 };
