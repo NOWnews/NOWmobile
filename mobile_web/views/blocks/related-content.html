@@ -30,6 +30,7 @@
         {% endfor %}
     </div>
 {% endif %}
+{% include "../ad/one/ad300x250_relation.html" %}
 
 
 
@@ -40,6 +41,11 @@
         {# 微告台灣原生廣告 #}
         {% if loop.index == 2 %}
             {% include "../ad/one/microad.html" %}
+        {% endif %}
+
+        {# advs 原生廣告 #}
+        {% if loop.index == 2 %}
+            {% include "../ad/one/advs.html" %}
         {% endif %}
 
         {% if loop.index < 4 %}
@@ -60,9 +66,4 @@
         {% endif %}
     {% endfor %}
 </div>
-
-{#
-    <div class="related-news-block">
-        <h1>POPIN</h1>
-    </div>
-#}
+{% include "../ad/one/ad300x250_head.html" %}
