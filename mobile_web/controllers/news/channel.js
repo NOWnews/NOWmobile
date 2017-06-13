@@ -11,8 +11,6 @@ module.exports = (req, res, next) => {
     co(function*() {
         let live = yield getApi('kmt/chairman2017');
 
-        let channelBaseUrl = 'channels/news';
-
         let { specialChannels } = yield getV4Api('specialchannels');
 
         let mainChannel = specialChannels;
