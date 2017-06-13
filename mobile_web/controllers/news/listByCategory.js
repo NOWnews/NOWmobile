@@ -1,6 +1,7 @@
 import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 
 let router = express.Router();
 
@@ -17,11 +18,9 @@ module.exports = (req, res, next) => {
     co(function*() {
         let live = yield getApi('kmt/chairman2017');
 
-        let categoryBaseUrl = 'category/news';
-
         let result = yield [
-            getApi(categoryBaseUrl),
-            getApi(`${categoryBaseUrl}/${taxId}`),
+            getV4Api('menus'),
+            getV4Api(`cat/${taxId}`),
         ];
 
         let mainCategory = result[0];
