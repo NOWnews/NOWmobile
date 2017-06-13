@@ -1,6 +1,7 @@
 import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:news:channel');
 
@@ -12,19 +13,21 @@ module.exports = (req, res, next) => {
 
         let channelBaseUrl = 'channels/news';
 
-        let mainChannel = yield getApi(channelBaseUrl);
+        let { specialChannels } = yield getV4Api('specialchannels');
+
+        let mainChannel = specialChannels;
 
         if (!channelId) {
-            channelId = mainChannel[0].nodeId;
+            channelId = mainChannel[0].sn;
         }
 
         let { isOpen } = req.query;
 
-        let { newsList, ads, channelName } = yield getApi(`${channelBaseUrl}/${channelId}`);
-
+        let { newsList, title } = yield getV4Api(`specialchannels/${channelId}`);
+        let channelName = title;
 
         let data = {
-            nativeAds: ads || [],
+            nativeAds: [],
             newsList,
             mainChannel,
             channelName,
