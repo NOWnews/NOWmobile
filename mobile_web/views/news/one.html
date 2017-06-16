@@ -28,10 +28,10 @@
                   <a itemprop="url" href="/"><span itemprop="title">NOWnews 今日新聞</span></a>&gt;
                 </span>
                 <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                  <a itemprop="url" href="/news/category/{{ news.category._id }}"><span itemprop="title">{{ news.category.name or '不分類' }}</span></a>&gt;
+                  <a itemprop="url" href="/news/category/{{ news.MainMenu.categoryName }}"><span itemprop="title">{{ news.MainMenu.name or '不分類' }}</span></a>&gt;
                 </span>
                 <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                  <a itemprop="url" href="{{ news.url }}"><span itemprop="title">{{ news.title }}</span></a>
+                  <a itemprop="url" href="/news/{{ news.sn }}"><span itemprop="title">{{ news.title }}</span></a>
                 </span>
             </div>
             {# 麵包屑結束 #}
@@ -40,12 +40,12 @@
                 <h1 class="title">{{ news.title }}</h1>
                 <div class="mini-info">
                     <p class="text-gray one-category">
-                        <a href="/news/category/{{ news.category._id }}">
-                            {{ news.category.name or '不分類' }}
+                        <a href="/news/category/{{ news.MainMenu.categoryName }}">
+                            {{ news.MainMenu.name or '不分類' }}
                         </a>
                     </p>
-                    <p class="text-gray">{{ news.author }}</p>
-                    <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ news.createdAt}}</p>
+                    <p class="text-gray">{{ news.newsBy }}</p>
+                    <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ news.formatStartedAt}}</p>
                     <div class="font-size-controllers">
                         <a class="font-link font-size-large mui-btn mui-btn--flat">大</a>
                         <a class="font-link font-size-middle mui-btn mui-btn--flat">中</a>
@@ -63,10 +63,10 @@
 
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img alt="{{ news.image.description }}" src="{{ news.image.url if news.image.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
-                    <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.image.description }}</p>
+                    <img alt="{{ news.MainPhoto.desc }}" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.url if news.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                    <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
                 </div>
-                {{ news.htmlBody | safe }}
+                {{ news.content | safe }}
             </section>
 
             {# freeBody 業務用欄位 #}
@@ -88,11 +88,11 @@
             </div>
             <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
             <section class="arrow-block mui--appbar-line-height">
-                <a href="/news/{{ news.prev._id }}{{queryParams}}" class="arrow-btn prev-arrow mui--text-nowrap">
-                    <span>{{ news.prev.field_short_title.value }}</span>
+                <a href="/news/{{ news.prev.sn }}{{queryParams}}" class="arrow-btn prev-arrow mui--text-nowrap">
+                    <span>{{ news.prev.shortTitle }}</span>
                 </a>
-                <a href="/news/{{ news.next._id }}{{queryParams}}" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
-                    <span>{{ news.next.field_short_title.value }}</span>
+                <a href="/news/{{ news.next.sn }}{{queryParams}}" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
+                    <span>{{ news.next.shortTitle }}</span>
                 </a>
             </section>
 

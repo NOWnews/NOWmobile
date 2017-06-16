@@ -1,6 +1,7 @@
 import co from 'co';
 import express from 'express';
 import getApi from '../util/getApi';
+import getV4Api from '../util/getV4Api';
 let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:home');
@@ -11,8 +12,8 @@ router.route('/')
         co(function*() {
 
             let result = yield [
-                getApi('category/news'),
-                getApi('news/headline'),
+                getV4Api('menus'),
+                getV4Api('instant'),
             ];
 
             let live = yield getApi('kmt/chairman2017');
@@ -20,6 +21,7 @@ router.route('/')
             debug('live = %j', live);
 
             let mainCategory = result[0];
+            //TODO 現在沒有 ads
             let { newsList, ads } = result[1];
 
             if(req.query.data === 'PLAYJJ'){
@@ -28,7 +30,7 @@ router.route('/')
 
             return res.render('home/home', {
                 live,
-                nativeAds: ads || [],
+                nativeAds: [],
                 newsList,
                 mainCategory,
                 specialType: 'headline',

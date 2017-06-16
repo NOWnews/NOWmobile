@@ -1,8 +1,8 @@
 <div id="channel-nav">
     {% for channel in mainChannel %}
-        <a class="mui--text-subhead {{ 'is-active' if channel.nodeId == channelId else '' }}" href="/news/channel/{{channel.nodeId}}">
+        <a class="mui--text-subhead {{ 'is-active' if channel.sn == channelId else '' }}" href="/news/channel/{{channel.sn}}">
             <div>
-                {{ channel.name }}
+                {{ channel.title }}
             </div>
         </a>
     {% endfor %}

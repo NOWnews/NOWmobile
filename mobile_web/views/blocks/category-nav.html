@@ -7,6 +7,7 @@
                 <span>頭條</span>
             </a>
         </li>
+        {#### 先暫時隱蔽就好
         <li class="{{ 'isActive' if specialType == 'hotNews' else ''  }}">
             <a class="" href="/news/special/hotNews/">
                 <span>熱門</span>
@@ -17,11 +18,11 @@
                 <span>速報</span>
             </a>
         </li>
-
+        ####}
     {% endif %}
     {% for category in mainCategory %}
-        <li class="{{ 'isActive' if category.tid == taxId or news.category._id == category.tid else ''  }}">
-            <a href="/{{categoryType}}/category/{{ category.tid }}">
+        <li class="{{ 'isActive' if category.categoryName == taxId or news.MainMenu.sn == category.sn else ''  }}">
+            <a href="/{{categoryType}}/category/{{ category.categoryName }}">
                 <span>{{ category.name }}</span>
             </a>
         </li>

@@ -3,33 +3,30 @@ import express from 'express';
 import getApi from '../../util/getApi';
 import getV4Api from '../../util/getV4Api';
 let router = express.Router();
-const debug = require('debug')('NOWmobile:controllers:news:channel');
+const debug = require('debug')('NOWmobile:controllers:news:topic');
 
 module.exports = (req, res, next) => {
-    let { channelId } = req.params;
+    let { topicId } = req.params;
 
     co(function*() {
         let live = yield getApi('kmt/chairman2017');
 
-        let { specialChannels } = yield getV4Api('specialchannels');
+        let { specialTopics } = yield getV4Api('specialtopics');
 
-        let mainChannel = specialChannels;
-
-        if (!channelId) {
-            channelId = mainChannel[0].sn;
-        }
+        _.map(specialTopics, (topic) => {
+            if(topic.url.indexOf('http') < 0){
+                topic.url = '/news/' + topic.url.split('/').pop();
+            }
+            return topic;
+        });
 
         let { isOpen } = req.query;
-
-        let { newsList, title } = yield getV4Api(`specialchannels/${channelId}`);
-        let channelName = title;
-
+        let channelName = '專題';
         let data = {
             nativeAds: [],
-            newsList,
-            mainChannel,
+            specialTopics,
             channelName,
-            channelId,
+            topicId,
             isOpen,
             live
         };
@@ -38,7 +35,7 @@ module.exports = (req, res, next) => {
             return res.json({ data });
         }
 
-        return res.render('news/channel', data);
+        return res.render('news/topic', data);
 
     }).catch(next);
 

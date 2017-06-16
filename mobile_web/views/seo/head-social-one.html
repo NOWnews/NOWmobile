@@ -1,5 +1,5 @@
 <!--for base meta -->
-<title>{{ news.title }} | {{ news.category.name }} | NOWnews今日新聞</title>
+<title>{{ news.title }} | {{ news.MainMenu.name }} | NOWnews今日新聞</title>
 <meta name="description" content="{{ news.summary }}" />
 <meta name="keywords" content="{{ news.keywords }}">
 
@@ -7,19 +7,19 @@
 <meta property="og:url" content="{{ news.jsonld.mainEntityOfPage.id }}">
 <meta property="og:title" content="{{ news.title }}">
 <meta property="og:description" content="{{ news.summary }}">
-<meta property="og:image" content="{{ news.image.thumbnail }}">
-<meta property="og:image" content="{{ news.image.originImage }}">
+<meta property="og:image" content="{{ news.MainPhoto.thumbnail }}">
+<meta property="og:image" content="{{ news.MainPhoto.url }}">
 <meta property="article:author" content="https://www.facebook.com/nownews">
 
 <!-- for Google plus use -->
 <meta itemprop="url" content="{{ news.jsonld.mainEntityOfPage.id }}">
 <meta itemprop="name" content="{{ news.title }}">
 <meta itemprop="description" content="{{ news.summary }}">
-<meta itemprop="image" content="{{ news.image.thumbnail }}">
+<meta itemprop="image" content="{{ news.MainPhoto.url }}">
 
 <meta itemprop="keywords" content="{{ news.keywords }}">
 
-<meta itemprop="articleSection" content="{{ news.category.name }}">
+<meta itemprop="articleSection" content="{{ news.MainMenu.name }}">
 <meta itemprop="dateCreated" content="{{ news.createdAt }}">
 <meta itemprop="dateModified" content="{{ news.updatedAt }}">
 <meta itemprop="datePublished" content="{{ news.createdAt }}">

@@ -26,13 +26,13 @@
                         {% for news in newsList %}
                             {% if loop.index <= slideItem %}
                                 <div class="slick-news">
-                                    <a href="/news/{{ news._id }}">
+                                    <a href="/news/{{ news.sn }}">
                                         <div class="slick-news-info">
                                             <p class="info-title">
-                                                {{ news.field_short_title.value }}
+                                                {{ news.shortTitle }}
                                             </p>
                                         </div>
-                                        <img class="news-main-image" src="{{ news.image.thumbnail if news.image.thumbnail else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                                        <img class="news-main-image" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.url if news.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                                     </a>
                                 </div>
                             {% endif %}

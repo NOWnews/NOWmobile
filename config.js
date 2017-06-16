@@ -28,4 +28,10 @@ module.exports = {
      */
     apiServer: process.env.NODE_ENV === 'production' ? 'http://192.168.20.65:5000' : 'http://v3.api.nownews.com:5000',
 
+
+    /*
+     * V4 api Server
+     */
+    apiV4Server: process.env.NODE_ENV === 'production' ? 'http://107.167.181.83:10001' : 'http://localhost:10001',
+
 };

@@ -1,6 +1,7 @@
 import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 
 let router = express.Router();
 
@@ -15,8 +16,8 @@ module.exports = (req, res, next) => {
         let live = yield getApi('kmt/chairman2017');
 
         let result = yield [
-            getApi('category/news'),
-            getApi(`search?keyword=${keyword}`),
+            getV4Api('menus'),
+            getV4Api(`search/${keyword}?timeRange=lastYear`),
         ];
 
         let mainCategory = result[0];

@@ -173,6 +173,70 @@ a:hover {
     display: block;
 }
 
+
+/* topic Nav */
+
+#topic-nav-block {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
+}
+
+#topic-nav-block > .mui-panel {
+    background: #D09D22;
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    padding-top: 11px;
+    padding-bottom: 10px;
+}
+
+#topic-nav-block .topic-name {
+    margin-right: 10px;
+}
+
+#topic-nav {
+    display: none;
+    width: 100%;
+    min-height: calc(100% - 102px);
+    max-height: calc(100% - 102px);
+    overflow: scroll;
+}
+
+#topic-nav a {
+    color: black;
+    text-decoration: none;
+}
+
+#topic-nav a.is-active {
+    font-weight: bold;
+    color: #1380f5;
+}
+
+#topic-nav a:nth-child(2n) div {
+    border-left: 1px dashed #000;
+}
+
+#topic-nav div {
+    float: left;
+    line-height: 45px;
+    height: 45px;
+    padding-left: 10%;
+    width: 50%;
+    border-bottom: 1px dashed #000;
+    background-size: cover;
+}
+
+/* When channel nav is open */
+#topic-nav-block.is-open {
+    height: 100%;
+}
+
+#topic-nav-block.is-open #topic-nav{
+    display: block;
+}
+
 /*content*/
 .content-box {}
 
