@@ -22,7 +22,7 @@ module.exports = (req, res, next) => {
 
         let nextandprev = yield getV4Api(`news/${newsId}/nextandprev`);
 
-        let refNews = yield getV4Api(`news/${news.sn}/relations`);
+        let refNews = yield getV4Api(`news/${newsId}/relations`);
 
         debug('news = %j', news);
 
