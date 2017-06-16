@@ -71,7 +71,14 @@ module.exports = (req, res, next) => {
             return res.json( data );
         }
 
-        return res.render('news/one', data);
+        if(news.type==='PHOTO'){
+            return res.render('news/one-photo', data);
+        }else if(news.type==='VIDEO'){
+            return res.render('news/one-video', data);
+        }
+        else{
+            return res.render('news/one', data);
+        }
 
     }).catch(next);
 };
