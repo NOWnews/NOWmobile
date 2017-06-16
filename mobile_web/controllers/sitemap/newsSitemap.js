@@ -4,7 +4,7 @@ import co from 'co';
 import Promise from 'bluebird';
 import _ from 'lodash';
 
-import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 
 // 違法字元轉換成正確 xml 字源格式對照表
 const entityMap = {
@@ -28,7 +28,7 @@ module.exports = (req, res, next) => {
     co(function*() {
 
         // 從 api 取得 sitemap 的資料
-        let sitemapData = yield getApi('sitemap/newsSitemap');
+        let sitemapData = yield getV4Api('sitemap/newsSitemap');
 
         if(!sitemapData || sitemapData.length === 0) {
             return yield Promise.reject(new Error('sitemap api 找不到資料.....'));

@@ -3,14 +3,14 @@ import co from 'co';
 import Promise from 'bluebird';
 import _ from 'lodash';
 
-import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 
 module.exports = (req, res, next) => {
 
     co(function*() {
 
         // 從 api 取得 sitemap 的資料
-        let sitemapData = yield getApi('sitemap/googleSSL');
+        let sitemapData = yield getV4Api('sitemap/googleSSL');
 
         if(!sitemapData || sitemapData.length === 0) {
             return yield Promise.reject(new Error('sitemap api 找不到資料.....'));
