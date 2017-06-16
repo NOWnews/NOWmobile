@@ -32,6 +32,6 @@ module.exports = {
     /*
      * V4 api Server
      */
-    apiV4Server: process.env.NODE_ENV === 'production' ? 'http://107.167.181.83:10001' : 'http://107.167.181.83:10001',
+    apiV4Server: process.env.NODE_ENV === 'production' ? 'http://107.167.181.83:10001' : 'http://localhost:10001',
 
 };
