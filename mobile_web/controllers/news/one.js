@@ -73,12 +73,26 @@ module.exports = (req, res, next) => {
 
         if(news.type==='PHOTO'){
             return res.render('news/one-photo', data);
-        }else if(news.type==='VIDEO'){
+        }
+
+        if(news.type==='VIDEO'){
+            if(news.MainVideo.url.indexOf('youtube') > -1){
+                news.MainVideo.videoFrom = 'YOUTUBE';
+            }
+            if(news.MainVideo.url.indexOf('facebook') > -1){
+                news.MainVideo.videoFrom = 'FB';
+                news.MainVideo.vid = news.MainVideo.url.split('/')[5];
+            }
+            if(news.MainVideo.url.indexOf('instagram') > -1){
+                news.MainVideo.videoFrom = 'IG';
+            }
+            if(news.MainVideo.url.indexOf('mlb') > -1){
+                news.MainVideo.videoFrom = 'MLB';
+            }
             return res.render('news/one-video', data);
         }
-        else{
-            return res.render('news/one', data);
-        }
+
+        return res.render('news/one', data);
 
     }).catch(next);
 };

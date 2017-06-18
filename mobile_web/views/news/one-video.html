@@ -63,8 +63,32 @@
 
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img alt="{{ news.MainPhoto.desc }}" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.url if news.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
-                    <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
+                    {% if news.MainVideo.videoFrom == 'YOUTUBE' %}
+                        <link type="text/css" rel="stylesheet" href="/static/css/video-js.min.css" />
+                        <style>
+                            .video-js .vjs-big-play-button {
+                                top: 50%;
+                                left: 50%;
+                                margin-top: -22.5px;
+                                margin-left: -45px;
+                            }
+                        </style>
+                        <video
+                            id="vid1"
+                            class="video-js vjs-default-skin"
+                            controls
+                            poster="{{ news.MainPhoto.url }}"
+                            width="640" height="360"
+                            data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "{{ news.MainVideo.url }}"}] }'
+                        >
+                        </video>
+                        <script src="/static/js/video.min.js"></script>
+                        <script src="/static/js/Youtube.min.js"></script>
+                    {% elif news.MainVideo.videoFrom == 'FB' %}
+                        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fsunnyhundalorg%2Fvideos%2F{{ news.MainVideo.vid }}%2F&show_text=0" height="360" width="640" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                    {% else %}
+                        <video height="400" width="480" controls><source src="{{ news.MainPhoto.url }}" type="video/mp4"></video>
+                    {% endif %}
                 </div>
                 {{ news.content | safe }}
             </section>
