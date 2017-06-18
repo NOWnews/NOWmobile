@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "mui": "^0.6.8"
+    "mui": "^0.6.8",
+    "videojs-youtube": "^2.4.0"
   }
 }

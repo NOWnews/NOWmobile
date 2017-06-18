@@ -12,6 +12,8 @@ gulp.task('css', function() {
             './source/css/mui.min.css',
             './source/css/slick.min.css',
             './source/css/slick-theme.min.css',
+            './source/css/video-js.min.css',
+            './source/css/videojs.socialShare.css',
             './source/css/main.css',
         ]).pipe(plugins.concatCss('all.min.css'))
         .pipe(plugins.cleanCss())
@@ -39,9 +41,14 @@ gulp.task('img', function() {
         .pipe(gulp.dest('./public/dist/img'));
 });
 
+gulp.task('swf', function() {
+    return gulp.src('./source/js/video-js.swf')
+        .pipe(gulp.dest('./public/dist/js'));
+});
+
 // 清掉 dist 裡面 css 跟 js 的資料夾
 gulp.task('clean', function() {
     return del(['./public/dist']);
 });
 
-gulp.task('build:prod', ['css', 'script', 'fonts', 'img']);
+gulp.task('build:prod', ['css', 'script', 'fonts', 'img', 'swf']);

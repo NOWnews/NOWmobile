@@ -22,7 +22,7 @@ module.exports = (req, res, next) => {
 
         let nextandprev = yield getV4Api(`news/${newsId}/nextandprev`);
 
-        let refNews = yield getV4Api(`news/${news.sn}/relations`);
+        let refNews = yield getV4Api(`news/${newsId}/relations`);
 
         debug('news = %j', news);
 
@@ -69,6 +69,27 @@ module.exports = (req, res, next) => {
 
         if(req.query.data === 'PLAYJJ'){
             return res.json( data );
+        }
+
+        if(news.type==='PHOTO'){
+            return res.render('news/one-photo', data);
+        }
+
+        if(news.type==='VIDEO'){
+            if(news.MainVideo.url.indexOf('youtube') > -1){
+                news.MainVideo.videoFrom = 'YOUTUBE';
+            }
+            if(news.MainVideo.url.indexOf('facebook') > -1){
+                news.MainVideo.videoFrom = 'FB';
+                news.MainVideo.vid = news.MainVideo.url.split('/')[5];
+            }
+            if(news.MainVideo.url.indexOf('instagram') > -1){
+                news.MainVideo.videoFrom = 'IG';
+            }
+            if(news.MainVideo.url.indexOf('mlb') > -1){
+                news.MainVideo.videoFrom = 'MLB';
+            }
+            return res.render('news/one-video', data);
         }
 
         return res.render('news/one', data);
