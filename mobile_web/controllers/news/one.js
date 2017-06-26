@@ -59,6 +59,13 @@ module.exports = (req, res, next) => {
             return res.json( data );
         }
 
+
+        // temp for app device
+        if(req.query.device === 'app'){
+            return res.render('news/temp-one', data);
+        }
+        // temp for app device end
+
         return res.render('news/one', data);
 
     }).catch(next);
