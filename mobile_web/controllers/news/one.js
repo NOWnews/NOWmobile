@@ -2,7 +2,7 @@ import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
 import getV4Api from '../../util/getV4Api';
-
+import jsonld from '../../util/jsonld'
 let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:news');
@@ -58,6 +58,9 @@ module.exports = (req, res, next) => {
 
         // 加上 相關新聞
         news.refNews = refNews;
+
+        // 加上 jsonld
+        news.jsonld = jsonld(news);
 
         let data = {
             news,
