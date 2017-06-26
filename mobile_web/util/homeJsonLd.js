@@ -43,7 +43,7 @@ module.exports = function(news) {
         "@type":"ListItem",
         "position":1,
         "item":{
-         "@id":"http://www.nownews.com",
+         "@id":"https://m.nownews.com",
          "name":"行動版｜NOWnews今日新聞"
         }
        }
