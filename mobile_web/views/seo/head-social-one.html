@@ -4,10 +4,14 @@
 <meta name="keywords" content="{{ news.keywords }}">
 
 <!-- for facebook use2-->
-<meta property="og:url" content="{{ news.jsonld.mainEntityOfPage.id }}">
+<meta property="og:url" content="https://m.nownews.com/news/{{news.sn}}">
 <meta property="og:title" content="{{ news.title }}">
 <meta property="og:description" content="{{ news.summary }}">
+{% if news.MainPhoto.thumbnail %}
 <meta property="og:image" content="{{ news.MainPhoto.thumbnail }}">
+{% else %}
+<meta property="og:image" content="{{ news.MainPhoto.url }}">
+{% endif %}
 <meta property="og:image" content="{{ news.MainPhoto.url }}">
 <meta property="article:author" content="https://www.facebook.com/nownews">
 
