@@ -67,6 +67,36 @@ module.exports = (req, res, next) => {
             live
         };
 
+        // temp for app device
+        if(req.query.device === 'app'){
+
+            if(news.type==='PHOTO'){
+            return res.render('news/temp-one-photo', data);
+            }
+
+            if(news.type==='VIDEO'){
+                if(news.MainVideo.url.indexOf('youtube') > -1){
+                    news.MainVideo.videoFrom = 'YOUTUBE';
+                }
+                if(news.MainVideo.url.indexOf('facebook') > -1){
+                    news.MainVideo.videoFrom = 'FB';
+                    news.MainVideo.vid = news.MainVideo.url.split('/')[5];
+                }
+                if(news.MainVideo.url.indexOf('instagram') > -1){
+                    news.MainVideo.videoFrom = 'IG';
+                }
+                if(news.MainVideo.url.indexOf('mlb') > -1){
+                    news.MainVideo.videoFrom = 'MLB';
+                }
+                return res.render('news/temp-one-video', data);
+            }
+
+            return res.render('news/temp-one', data);
+        }
+
+        // temp for app device end
+
+
         if(req.query.data === 'PLAYJJ'){
             return res.json( data );
         }
