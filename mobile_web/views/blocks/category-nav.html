@@ -21,11 +21,21 @@
         ####}
     {% endif %}
     {% for category in mainCategory %}
-        <li class="{{ 'isActive' if category.categoryName == taxId or news.MainMenu.sn == category.sn else ''  }}">
-            <a href="/{{categoryType}}/category/{{ category.categoryName }}">
-                <span>{{ category.name }}</span>
-            </a>
-        </li>
+
+        {% if category.isExternal %}
+            <li>
+                <a href="{{category.url}}">
+                    <span>{{ category.name }}</span>
+                </a>
+            </li>
+        {% else %}
+             <li class="{{ 'isActive' if category.categoryName == taxId or news.MainMenu.sn == category.sn else ''  }}">
+                <a href="/{{categoryType}}/category/{{ category.categoryName }}">
+                    <span>{{ category.name }}</span>
+                </a>
+            </li>
+        {% endif %}
+
     {% endfor %}
     {% if categoryType == 'news' %}
         <li>
