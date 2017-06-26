@@ -1,5 +1,10 @@
 <!doctype html>
+{% if isHomePage %}
+<html itemscope="">
+{% else %}
 <html itemscope="" itemtype="http://schema.org/NewsArticle">
+{% endif %}
+
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
         {% include "./blocks/head-meta.html" %}
         {% include "./blocks/head-include.html" %}

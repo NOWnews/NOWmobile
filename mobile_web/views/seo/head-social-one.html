@@ -12,13 +12,26 @@
 <meta property="article:author" content="https://www.facebook.com/nownews">
 
 <!-- for Google plus use -->
+<meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" />
 <meta itemprop="url" content="{{ news.jsonld.mainEntityOfPage.id }}">
 <meta itemprop="name" content="{{ news.title }}">
 <meta itemprop="description" content="{{ news.summary }}">
-<meta itemprop="image" content="{{ news.MainPhoto.url }}">
-
+<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <img src="{{news.MainPhoto.url}}}"/>
+    <meta itemprop="url" content="{{news.MainPhoto.url}}">
+    <meta itemprop="width" content="696">
+    <meta itemprop="height" content="530">
+</div>
 <meta itemprop="keywords" content="{{ news.keywords }}">
-
+ <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <img src="http://m.nownews.com/static/img/mobile-logo.png"/>
+      <meta itemprop="url" content="http://m.nownews.com/static/img/mobile-logo.png">
+      <meta itemprop="width" content="220">
+      <meta itemprop="height" content="52">
+    </div>
+    <meta itemprop="name" content="NOWnews今日新聞">
+</div>
 <meta itemprop="articleSection" content="{{ news.MainMenu.name }}">
 <meta itemprop="dateCreated" content="{{ news.createdAt }}">
 <meta itemprop="dateModified" content="{{ news.updatedAt }}">
