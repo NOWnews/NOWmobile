@@ -2,7 +2,7 @@ import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
 import getV4Api from '../../util/getV4Api';
-
+import jsonld from '../../util/jsonld'
 let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:news');
@@ -59,6 +59,9 @@ module.exports = (req, res, next) => {
         // 加上 相關新聞
         news.refNews = refNews;
 
+        // 加上 jsonld
+        news.jsonld = jsonld(news);
+
         let data = {
             news,
             mainCategory,
@@ -66,6 +69,36 @@ module.exports = (req, res, next) => {
             queryParams: queryParams,
             live
         };
+
+        // temp for app device
+        if(req.query.device === 'app'){
+
+            if(news.type==='PHOTO'){
+            return res.render('news/temp-one-photo', data);
+            }
+
+            if(news.type==='VIDEO'){
+                if(news.MainVideo.url.indexOf('youtube') > -1){
+                    news.MainVideo.videoFrom = 'YOUTUBE';
+                }
+                if(news.MainVideo.url.indexOf('facebook') > -1){
+                    news.MainVideo.videoFrom = 'FB';
+                    news.MainVideo.vid = news.MainVideo.url.split('/')[5];
+                }
+                if(news.MainVideo.url.indexOf('instagram') > -1){
+                    news.MainVideo.videoFrom = 'IG';
+                }
+                if(news.MainVideo.url.indexOf('mlb') > -1){
+                    news.MainVideo.videoFrom = 'MLB';
+                }
+                return res.render('news/temp-one-video', data);
+            }
+
+            return res.render('news/temp-one', data);
+        }
+
+        // temp for app device end
+
 
         if(req.query.data === 'PLAYJJ'){
             return res.json( data );

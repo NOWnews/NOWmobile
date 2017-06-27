@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../temp-base.html" %}
 
 {% block socialblock %}
     {% include "../seo/head-social-one.html" %}
@@ -13,11 +13,11 @@
         {# mobile 禮物活動 #}
         {# include "../eventsPage/gift.html" #}
 
-        <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
+        <!--<div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
         <nav class="category-select mui-container-fluid">
             {% set categoryType = 'news' %}
             {% include "../blocks/category-nav.html" %}
-        </nav>
+        </nav>-->
         {# 廣告版位 #}
         {% include "../ad/one/ad300x250_1.html" %}
 
@@ -37,7 +37,7 @@
             {# 麵包屑結束 #}
 
             <header>
-                <h1 itemprop="headline" class="title">{{ news.title }}</h1>
+                <h1 class="title">{{ news.title }}</h1>
                 <div class="mini-info">
                     <p class="text-gray one-category">
                         <a href="/news/category/{{ news.MainMenu.categoryName }}">
@@ -88,10 +88,10 @@
             </div>
             <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
             <section class="arrow-block mui--appbar-line-height">
-                <a href="/news/{{ news.prev.sn }}{{queryParams}}" class="arrow-btn prev-arrow mui--text-nowrap">
+                <a href="/news/{{ news.prev.sn }}{{queryParams}}?device=app" class="arrow-btn prev-arrow mui--text-nowrap">
                     <span>{{ news.prev.shortTitle }}</span>
                 </a>
-                <a href="/news/{{ news.next.sn }}{{queryParams}}" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
+                <a href="/news/{{ news.next.sn }}{{queryParams}}?device=app" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
                     <span>{{ news.next.shortTitle }}</span>
                 </a>
             </section>
@@ -99,8 +99,7 @@
             {# 廣告版位 #}
             {% include "../ad/one/ad300x250_2.html" %}
             {% include "./comment.html" %}
-            {% include "../blocks/related-content.html" %}
-            {% include "../ad/one/popin.html" %} {# popin 廣告 #}
+            {% include "../blocks/temp-related-content.html" %}
             {% include "../blocks/free-body.html" %}
         </div>
     </article>

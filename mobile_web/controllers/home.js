@@ -2,6 +2,8 @@ import co from 'co';
 import express from 'express';
 import getApi from '../util/getApi';
 import getV4Api from '../util/getV4Api';
+import jsonLd from '../util/homeJsonLd'
+
 let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:home');
@@ -28,7 +30,14 @@ router.route('/')
                 return res.json({ newsList });
             }
 
+            // 加上 jsonld
+            debug('homeJsonLd...',jsonLd());
+            let homeJsonLd = jsonLd();
+            let isHomePage = true;
+
             return res.render('home/home', {
+                isHomePage,
+                homeJsonLd,
                 live,
                 nativeAds: [],
                 newsList,

@@ -1,4 +1,4 @@
-{% extends "../base.html" %}
+{% extends "../temp-base.html" %}
 
 {% block socialblock %}
     {% include "../seo/head-social-one.html" %}
@@ -13,11 +13,11 @@
         {# mobile 禮物活動 #}
         {# include "../eventsPage/gift.html" #}
 
-        <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
+        <!--<div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
         <nav class="category-select mui-container-fluid">
             {% set categoryType = 'news' %}
             {% include "../blocks/category-nav.html" %}
-        </nav>
+        </nav>-->
         {# 廣告版位 #}
         {% include "../ad/one/ad300x250_1.html" %}
 
@@ -37,7 +37,7 @@
             {# 麵包屑結束 #}
 
             <header>
-                <h1 itemprop="headline" class="title">{{ news.title }}</h1>
+                <h1 class="title">{{ news.title }}</h1>
                 <div class="mini-info">
                     <p class="text-gray one-category">
                         <a href="/news/category/{{ news.MainMenu.categoryName }}">
@@ -63,8 +63,32 @@
 
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img alt="{{ news.MainPhoto.desc }}" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.url if news.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
-                    <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
+                    {% if news.MainVideo.videoFrom == 'YOUTUBE' %}
+                        <link type="text/css" rel="stylesheet" href="/static/css/video-js.min.css" />
+                        <style>
+                            .video-js .vjs-big-play-button {
+                                top: 50%;
+                                left: 50%;
+                                margin-top: -22.5px;
+                                margin-left: -45px;
+                            }
+                        </style>
+                        <video
+                            id="vid1"
+                            class="video-js vjs-default-skin"
+                            controls
+                            poster="{{ news.MainPhoto.url }}"
+                            width="640" height="360"
+                            data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "{{ news.MainVideo.url }}"}] }'
+                        >
+                        </video>
+                        <script src="/static/js/video.min.js"></script>
+                        <script src="/static/js/Youtube.min.js"></script>
+                    {% elif news.MainVideo.videoFrom == 'FB' %}
+                        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fsunnyhundalorg%2Fvideos%2F{{ news.MainVideo.vid }}%2F&show_text=0" height="360" width="640" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                    {% else %}
+                        <video height="400" width="480" controls><source src="{{ news.MainPhoto.url }}" type="video/mp4"></video>
+                    {% endif %}
                 </div>
                 {{ news.content | safe }}
             </section>
@@ -88,10 +112,10 @@
             </div>
             <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
             <section class="arrow-block mui--appbar-line-height">
-                <a href="/news/{{ news.prev.sn }}{{queryParams}}" class="arrow-btn prev-arrow mui--text-nowrap">
+                <a href="/news/{{ news.prev.sn }}{{queryParams}}?device=app" class="arrow-btn prev-arrow mui--text-nowrap">
                     <span>{{ news.prev.shortTitle }}</span>
                 </a>
-                <a href="/news/{{ news.next.sn }}{{queryParams}}" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
+                <a href="/news/{{ news.next.sn }}{{queryParams}}?device=app" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
                     <span>{{ news.next.shortTitle }}</span>
                 </a>
             </section>
@@ -99,8 +123,7 @@
             {# 廣告版位 #}
             {% include "../ad/one/ad300x250_2.html" %}
             {% include "./comment.html" %}
-            {% include "../blocks/related-content.html" %}
-            {% include "../ad/one/popin.html" %} {# popin 廣告 #}
+            {% include "../blocks/temp-related-content.html" %}
             {% include "../blocks/free-body.html" %}
         </div>
     </article>
