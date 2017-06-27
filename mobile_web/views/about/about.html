@@ -1,15 +1,34 @@
 {% extends "../base.html" %}
 {% block container %}
-
+<style>
+    h3.mui--text-subhead {
+        font-weight: bold;
+    }
+</style>
 <div id="content-wrapper">
     <div class="nownews-wrapper">
         <div class="mui-container-fluid">
             <h2 class="mui--text-headline mui--text-center">關於我們</h2>
-            <p class="mui--text-subhead mui--text-center">《NOWnews今日新聞》</p>
+            <h3 class="mui--text-subhead mui--text-center">《NOWnews今日新聞簡介》</h3>
             <p class="about-content">
-                由今日傳媒股份有限公司經營，為台灣網路媒體。每日產製逾4百則以上新聞，內容包含政經、生活、運動、娛樂、國際等軟硬性新聞，屬綜合性的網路新聞網站，新聞內容提供五大新聞網站和四大電信業者，包括YAHOO奇摩、MSN、Hinet、台灣新浪、華視和中華電信、遠傳、台灣大哥大等。 根據Alexa統計2016年05月09日網站排名，《NOWnews今日新聞》目前是台灣第13名網站。 NOWnews今日新聞除了擁有獨立的編採團隊外，並具備影音多媒體內容數位轉製，傳送各類通路平台（從網際網路到平面及行動通訊）的專業技術與能力。因此，除了深耕新聞領域，也積極與各家平面、電子、網路媒體業者進行多方合作。 WEnews為全國最大的公民新聞平台，自2008年底上線迄今，已累積超過六千位公民記者，報導範圍遍布全台各角落。任何使用者不需註冊，就可以立即發布新聞、相片。一經獲得NOWnews的採用，還有機會可以發布到各大入口網站，影響力無遠弗屆。
+                《NOWnews今日新聞》（www.nownews.com）於2008年4月正式上線，是臺灣第一個，同時也是臺灣最大、最即時的網路原生新聞網站。由今日傳媒股份有限公司經營，為數位媒體領導品牌。最大股東分別是美國上市公司NDMT和遊戲橘子（Gamania），公司股東結構健全，致力於打造華人世界最具影響力的新聞媒體。
             </p>
-            <div class="timeline">
+            <h3 class="mui--text-subhead mui--text-center">《NOWnews今日新聞服務項目》</h3>
+            <p class="about-content">
+                今日傳媒股份有限公司目前產品以多元資訊內容為主，提供新聞內容、數位影音內容等媒體內容服務，除了深耕新聞領域，也積極與各家平面、電子、網路媒體業者進行多方合作，提供各大入口網站每日完整新聞服務。在移動載具快速發展時代，今日傳媒更計畫推出許多加值服務平台，包括提供OTT線上影音串流服務、公益平台及生活、旅遊、美食相關平台服務，滿足數位世代全面需求。
+            </p>
+            <h3 class="mui--text-subhead mui--text-center">《NOWnews今日新聞特色》</h3>
+            <p class="about-content">
+                《NOWnews今日新聞》為資深媒體從業人員所創立的專業網路新聞品牌，擁有獨立的編採團隊外，並具備影音多媒體內容數位轉製能力，以及傳送至各類通路平台的專業技術與能力。現由新聞部十大中心組成的專業新聞團隊，每日產製逾600則新聞，類別包含政治、財經、生活、運動、娛樂、國際、社會、旅遊、美食、3C、消費、地方等軟硬性內容，為綜合性的網路新聞網站。除了即時新聞，更有多元化深度專題，帶領讀者看到更多元、專業、深入的觀點。
+            </p>
+            <p class="about-content">
+                此外，《NOWnews今日新聞》還經營美人幫、WEnews、網路追追追、命理大街等多個分眾特色頻道。2017年起，因應消費者對影音及直播需求，更成立專屬的影音中心，以議題式的、知識性的、趣味性的動態影像，豐富讀者生活。隨著行動世代到來之際，《NOWnews今日新聞》不斷強化行動版網站及專屬新聞App，增加讀者使用上的便利程度，優化各種讀者體驗。目前已擁有Facebook、Line、微博、微信等廣大社群基礎，社群總用戶超過150萬人。根據Alexa 2017年4月統計，NOWnews是臺灣前10大網站之一，全面排名360名。官網掌握每日近1500萬點擊數，每月擁有800萬不重複造訪人次，行動官網則每日超越600萬點擊數。
+            </p>
+            <p class="about-content">
+                《NOWnews今日新聞》是各家平面、電子、網路、移動裝置業者積極爭取策略合作的對象，扮演各大媒體、入口網站、通訊商等平臺的新聞內容提供者。合作夥伴除大型入口網站Yahoo、Google、Bing、MSN、鉅亨網、Hinet、台灣新浪、華視網站等，還包括中華電信、遠傳、臺灣大哥大電信業者等。此外，並提供LINE動態新聞，新聞露出能見度高，影響力無遠弗屆。不僅如此，更與央視、中國台灣網進行策略合作，全方位多管道服務全球華人，致力於新聞的跨媒體整合，是OTT時代最具影響力的網路原生媒體。
+            </p>
+            <h2 class="mui--text-headline mui--text-center">NOWnews今日新聞大事紀</h2>
+            <div class="timeline" style="margin-top: 30px;">
                 {% for timeline in timelines %}
                 <div class="timeline-row mui-row">
                     <div class="mui-col-xs-5">
