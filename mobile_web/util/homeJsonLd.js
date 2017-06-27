@@ -1,19 +1,19 @@
 const debug = require('debug')('NOWmobile:libs:homeJsonLd');
 
 
-module.exports = function() {
+module.exports = function(news) {
     const data = [
     {
       "@context": "http://schema.org",
       "@type": "WebSite",
       "name": "行動版|NOWnews今日新聞",
       "alternateName": ["NOWnews今日新聞","NOWnews"],
-      "url": "http://m.nownews.com",
+      "url": "https://m.nownews.com",
       "keywords": ["NOWnews","NOWnews今日新聞"],
     },
     {
       "@context": "http://schema.org",
-        "@id": "http://m.nownews.com",
+        "@id": "https://m.nownews.com",
         "@type": "Organization",
         "name": "行動版｜NOWnews今日新聞",
         "url": "http://www.nownews.com/",
@@ -43,7 +43,7 @@ module.exports = function() {
         "@type":"ListItem",
         "position":1,
         "item":{
-         "@id":"http://m.nownews.com",
+         "@id":"https://m.nownews.com",
          "name":"行動版｜NOWnews今日新聞"
         }
        }
