@@ -13,7 +13,8 @@
         {# mobile 禮物活動 #}
         {# include "../eventsPage/gift.html" #}
 
-        <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
+
+        {# <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div> #}
         <nav class="category-select mui-container-fluid">
             {% set categoryType = 'news' %}
             {% include "../blocks/category-nav.html" %}
@@ -44,7 +45,11 @@
                             {{ news.MainMenu.name or '不分類' }}
                         </a>
                     </p>
-                    <p class="text-gray">{{ news.newsBy }}</p>
+                    <p class="text-gray">
+                        <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">{{ news.newsBy }}</span>
+                        </span>
+                    </p>
                     <p class="text-gray"><i class="fa fa-clock-o fa-fw"></i>{{ news.formatStartedAt}}</p>
                     <div class="font-size-controllers">
                         <a class="font-link font-size-large mui-btn mui-btn--flat">大</a>
@@ -55,7 +60,7 @@
                         <div class='shareaholic-canvas' style="left: -15px;position: relative;" data-app='share_buttons' data-app-id='25682984'></div>
                     </div>
                     <div class="social-box pull-right" style="top: 15px;position: relative;">
-                        <div class="fb-like" data-href="http://www.nownews.com{{ news.url }}" data-layout="box_count" data-action="like" fb-xfbml-state="rendered" data-size="small" data-show-faces="true" data-share="false"></div>
+                        <div class="fb-like" data-href="http://www.nownews.com{{ news.parseUrl }}" data-layout="box_count" data-action="like" fb-xfbml-state="rendered" data-size="small" data-show-faces="true" data-share="false"></div>
                     </div>
                     <div class="mui--clearfix"></div>
                 </div>
