@@ -20,14 +20,14 @@
 <meta itemprop="url" content="{{ news.jsonld.mainEntityOfPage.id }}">
 <meta itemprop="name" content="{{ news.title }}">
 <meta itemprop="description" content="{{ news.summary }}">
-<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+<div class="mui--hide" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
     <img src="{{news.MainPhoto.url}}}"/>
     <meta itemprop="url" content="{{news.MainPhoto.url}}">
     <meta itemprop="width" content="696">
     <meta itemprop="height" content="530">
 </div>
 <meta itemprop="keywords" content="{{ news.keywords }}">
- <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+ <div class="mui--hide" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <img src="https://m.nownews.com/static/img/mobile-logo.png"/>
       <meta itemprop="url" content="https://m.nownews.com/static/img/mobile-logo.png">
