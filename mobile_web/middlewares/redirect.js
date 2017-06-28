@@ -29,7 +29,7 @@ module.exports = (app) => {
             let originUrl = newsMatches[0];
             let nodeId = newsMatches[2];
             console.log(chalk.blue.bold(`原網址 "${originUrl}" -------> 導轉 "/news/${nodeId}"`));
-            return res.redirect(`/news/${nodeId}${queryString}`);
+            return res.status(301).redirect(`/news/${nodeId}${queryString}`);
         }
 
         // 有符合桌面版分類格式就直接 redirect
@@ -37,7 +37,7 @@ module.exports = (app) => {
             let originUrl = categoryMatchs[0];
             let categoryName = categoryMatchs[1];
             console.log(chalk.blue.bold(`原網址 "${originUrl}" -------> 導轉 "/news/category/${categoryName}"`));
-            return res.redirect(`/news/category/${categoryName}${queryString}`);
+            return res.status(301).redirect(`/news/category/${categoryName}${queryString}`);
         }
 
         // 有符合桌面版特輯格式就直接 redirect
@@ -45,7 +45,7 @@ module.exports = (app) => {
             let originUrl = channelMatchs[0];
             let channelId = channelMatchs[1];
             console.log(chalk.blue.bold(`原網址 "${originUrl}" -------> 導轉 "/news/channel/${channelId}"`));
-            return res.redirect(`/news/channel/${channelId}${queryString}`);
+            return res.status(301).redirect(`/news/channel/${channelId}${queryString}`);
         }
 
         return next();
