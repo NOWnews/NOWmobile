@@ -25,7 +25,7 @@ gulp.task('css', function() {
 
 // 將 js 編譯成 minify
 gulp.task('script', function() {
-    return gulp.src('./source/js/**.js')
+    return gulp.src('./source/js/*.js')
         .pipe(plugins.concat('all.min.js'))
         .pipe(plugins.uglify())
         .pipe(gulp.dest('./public/dist/js'));
@@ -46,9 +46,15 @@ gulp.task('swf', function() {
         .pipe(gulp.dest('./public/dist/js'));
 });
 
+gulp.task('video', function() {
+    return gulp.src('./source/js/video/*.js')
+        .pipe(gulp.dest('./public/dist/js/video'));
+});
+
+
 // 清掉 dist 裡面 css 跟 js 的資料夾
 gulp.task('clean', function() {
     return del(['./public/dist']);
 });
 
-gulp.task('build:prod', ['css', 'script', 'fonts', 'img', 'swf']);
+gulp.task('build:prod', ['css', 'script', 'fonts', 'img', 'swf', 'video']);

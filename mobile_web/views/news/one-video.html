@@ -64,7 +64,9 @@
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
                     {% if news.MainVideo.videoFrom == 'YOUTUBE' %}
-                        <link type="text/css" rel="stylesheet" href="/static/css/video-js.min.css" />
+                        {% if NODE_ENV != 'production' %}
+                            <link type="text/css" rel="stylesheet" href="/static/css/video-js.min.css" />
+                        {% endif %}
                         <style>
                             .video-js .vjs-big-play-button {
                                 top: 50%;
@@ -82,8 +84,13 @@
                             data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "{{ news.MainVideo.url }}"}] }'
                         >
                         </video>
-                        <script src="/static/js/video.min.js"></script>
-                        <script src="/static/js/Youtube.min.js"></script>
+                        {% if NODE_ENV == 'production' %}
+                            <script src="/static/js/video/video.min.js"></script>
+                            <script src="/static/js/video/Youtube.min.js"></script>
+                        {% else %}
+                            <script src="/static/js/video.min.js"></script>
+                            <script src="/static/js/Youtube.min.js"></script>
+                        {% endif %}
                     {% elif news.MainVideo.videoFrom == 'FB' %}
                         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fsunnyhundalorg%2Fvideos%2F{{ news.MainVideo.vid }}%2F&show_text=0" height="360" width="640" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
                     {% else %}
