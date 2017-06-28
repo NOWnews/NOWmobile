@@ -3,18 +3,21 @@
 {# 首頁 #}
 {% if homeJsonLd %}
 <script type="application/ld+json">
-        {% for j in homeJsonLd %}
-        {{j | safe}}
-        {% endfor %}
-    </script>
+        {{ homeJsonLd | safe}}
+</script>
 {% endif %}
 
 
 {# 新聞頁 #}
 {% if news and news.jsonld %}
     <script type="application/ld+json">
-        {% for j in news.jsonld %}
-        {{j | safe}}
-        {% endfor %}
+       {{ news.jsonld | safe }}
+    </script>
+{% endif %}
+
+{# 分類頁 #}
+{% if catJsonLd %}
+    <script type="application/ld+json">
+        {{ catJsonLd | safe}}
     </script>
 {% endif %}
