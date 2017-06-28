@@ -12,7 +12,7 @@ module.exports = (url) => {
     return fetch(fetchUrl, {
             timeout: 10000,
             headers: {
-                'X-NOWnews-API': 'NOWnewsTaiwanNumberOne'
+                'X-NOWnews-API': 'YouCanSeeMeJohnCena'
             }
         })
         .then((res) => res.json())
