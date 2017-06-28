@@ -51,9 +51,7 @@ module.exports = function(news) {
     }
   ];
 
-    let stringJsonLd = [] ;
-    data.forEach(function(d){
-      stringJsonLd.push(JSON.stringify(d));
-    });
+    let stringJsonLd = JSON.stringify(data);
+
     return stringJsonLd;
 };

@@ -2,6 +2,7 @@ import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
 import getV4Api from '../../util/getV4Api';
+import jsonLd from '../../util/catJsonLd'
 
 let router = express.Router();
 
@@ -29,7 +30,12 @@ module.exports = (req, res, next) => {
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList });
         }
+
+        // 加上 jsonld
+        let catJsonLd = jsonLd(taxId,newsList[0]);
+
         return res.render('home/home', {
+            catJsonLd,
             nativeAds: ads || [],
             newsList,
             mainCategory,
