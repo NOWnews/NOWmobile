@@ -16,7 +16,7 @@ module.exports = function(news) {
     	  "headline": news.title,
     	  "image": {
     	    "@type": "ImageObject",
-    	    "url": news.MainPhoto.url,
+    	    "url": news.MainPhoto ? news.MainPhoto.url :'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' ,
     	    "width": 696,
     	    "height": 530
     	  },
@@ -53,8 +53,8 @@ module.exports = function(news) {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@id": `http://m.nownews.com/news/category/${news.MainMenu.categoryName}`,
-            "name": news.MainMenu.name,
+            "@id": `http://m.nownews.com/news/category/${news.MainMenu ? news.MainMenu.categoryName : 'index' }`,
+            "name": news.MainMenu ? news.MainMenu.name : '總覽',
             "image": "https://legacy.nownews.com/NOWnews_default/default_terry.jpg"
           }
         },
@@ -64,7 +64,7 @@ module.exports = function(news) {
           "item": {
             "@id": `http://m.nownews.com/news/${news.sn}`,
             "name": news.title,
-            "image": news.MainPhoto.url
+            "image": news.MainPhoto ? news.MainPhoto.url : 'http://m.nownews.com/static/img/mobile-logo.png'
           }
         }]
       }
