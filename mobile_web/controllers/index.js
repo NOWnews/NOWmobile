@@ -37,6 +37,10 @@ module.exports = function(app) {
 
     });
 
+    app.use('*', function(req, res, next){
+        return res.render('error/404');
+    });
+
     return function(req, res, next) {
         return next();
     };
