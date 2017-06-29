@@ -16,7 +16,7 @@ module.exports = function(news) {
         "@id": "https://m.nownews.com",
         "@type": "Organization",
         "name": "行動版｜NOWnews今日新聞",
-        "url": "http://www.nownews.com/",
+        "url": "https://www.nownews.com/",
         "logo": "https://dev.nownews.com/logo.png",
         "contactPoint": [
             {
