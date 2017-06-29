@@ -1,0 +1,8 @@
+{
+    "apiV4Server": {
+        "host": "http://61.220.58.52:10001"
+    },
+    "apiV3Server": {
+        "host": "http://v3.api.nownews.com:5000"
+    }
+}

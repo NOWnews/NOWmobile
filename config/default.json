@@ -1,0 +1,8 @@
+{
+    "apiV4Server": {
+        "host": "https://v4api.nownews.com"
+    },
+    "apiV3Server": {
+        "host": "http://v3.api.nownews.com:5000"
+    }
+}
