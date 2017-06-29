@@ -1,6 +1,7 @@
 import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 
 const debug = require('debug')('NOWmobile:controllers:video:category');
 
@@ -8,7 +9,7 @@ module.exports = (req, res, next) => {
     let { taxId } = req.params;
 
     co(function*() {
-        let live = yield getApi('kmt/chairman2017');
+        let live = yield getV4Api('live/info');
 
         let videoBaseUrl = `category/videos`;
         let mainCategory = yield getApi(videoBaseUrl);
