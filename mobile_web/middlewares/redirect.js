@@ -11,14 +11,6 @@ module.exports = (app) => {
         // 舊的 url 網址格式
         let newsOldMatches = req.path.match(/\/n\/([0-9]{4})\/([0-9]{2})\/([0-9]{2})\/([0-9]+)/);
 
-        // 有符合到舊的新聞內頁格式就直接 redirect
-        if(newsOldMatches !== null && newsOldMatches.length > 0) {
-            let originUrl = newsOldMatches[0];
-            let nodeId = newsOldMatches[4];
-            console.log(chalk.blue.bold(`原網址 "${originUrl}" -------> 導轉 "/news/${nodeId}"`));
-            return res.redirect(`/news/${nodeId}${queryString}`);
-        }
-
         // 桌面的 url 網址格式
         let newsMatches = req.path.match(/\/news\/([0-9]{8})\/([0-9]+)/);
         // 桌面的分類頁
@@ -33,6 +25,14 @@ module.exports = (app) => {
 
         if(req.query && req.query.utm_source) {
             queryString = `?utm_source=${req.query.utm_source}&utm_medium=${req.query.utm_medium}&utm_campaign=${req.query.utm_campaign}`;
+        }
+
+        // 有符合到舊的新聞內頁格式就直接 redirect
+        if(newsOldMatches !== null && newsOldMatches.length > 0) {
+            let originUrl = newsOldMatches[0];
+            let nodeId = newsOldMatches[4];
+            console.log(chalk.blue.bold(`原網址 "${originUrl}" -------> 導轉 "/news/${nodeId}"`));
+            return res.redirect(`/news/${nodeId}${queryString}`);
         }
 
         // 有符合桌面版新聞內頁格式就直接 redirect
