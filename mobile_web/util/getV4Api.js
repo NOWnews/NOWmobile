@@ -10,7 +10,7 @@ module.exports = (url) => {
     debug('Url = ', fetchUrl);
 
     return fetch(fetchUrl, {
-            timeout: 10000,
+            timeout: 100000,
             headers: {
                 'X-NOWnews-API': 'YouCanSeeMeJohnCena'
             }
