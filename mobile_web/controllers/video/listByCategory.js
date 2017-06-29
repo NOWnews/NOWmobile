@@ -11,8 +11,7 @@ module.exports = (req, res, next) => {
     co(function*() {
         let live = yield getV4Api('live/info');
 
-        let videoBaseUrl = `category/videos`;
-        let mainCategory = yield getApi(videoBaseUrl);
+        let mainCategory = yield getV4Api('menus'),
 
         if (!taxId) {
             taxId = mainCategory[0].tid;

@@ -1,7 +1,6 @@
 import co from 'co';
 import express from 'express';
 import getV4Api from '../../util/getV4Api';
-import getApi from '../../util/getApi';
 import geoip from 'geoip-lite';
 import chineseConv from 'chinese-conv';
 
@@ -22,8 +21,8 @@ module.exports = (req, res, next) => {
 
         debug('live = %j', live);
 
-        let videoList = yield getApi(`${videoBaseUrl}/8297`);
-        let { newsList } = yield getApi(`news/headline`);
+        let videoList = [];
+        let { newsList } = yield getV4Api(`instant`);
 
         debug('video List = %j', videoList);
         debug('news List = %j', newsList);
