@@ -4,8 +4,7 @@
   "description": "NOWnews mobile service",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && NODE_ENV=staging DEBUG=NOWmobile* ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
-    "admin": "DEBUG=NOWmobile* && npm install && NODE_ENV=staging ./node_modules/nodemon/bin/nodemon.js ./bin/admin.js",
+    "start": "npm install && NODE_ENV=develop DEBUG=NOWmobile* ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "mobile:clean": "./node_modules/gulp/bin/gulp.js --gulpfile ./mobile_web/gulpfile.js clean",
     "mobile:prod.build": "npm run mobile:clean && ./node_modules/gulp/bin/gulp.js  --gulpfile ./mobile_web/gulpfile.js build:prod",
