@@ -12,8 +12,6 @@ gulp.task('css', function() {
             './source/css/mui.min.css',
             './source/css/slick.min.css',
             './source/css/slick-theme.min.css',
-            './source/css/video-js.min.css',
-            './source/css/videojs.socialShare.css',
             './source/css/main.css',
         ]).pipe(plugins.concatCss('all.min.css'))
         .pipe(plugins.cleanCss())
@@ -46,9 +44,17 @@ gulp.task('swf', function() {
         .pipe(gulp.dest('./public/dist/js'));
 });
 
-gulp.task('video', function() {
+gulp.task('video-js', function() {
     return gulp.src('./source/js/video/*.js')
         .pipe(gulp.dest('./public/dist/js/video'));
+});
+
+gulp.task('video-css', function() {
+    return gulp.src([
+        './source/css/video-js.min.css',
+        './source/css/videojs.socialShare.css',
+        ])
+        .pipe(gulp.dest('./public/dist/css'));
 });
 
 
@@ -57,4 +63,4 @@ gulp.task('clean', function() {
     return del(['./public/dist']);
 });
 
-gulp.task('build:prod', ['css', 'script', 'fonts', 'img', 'swf', 'video']);
+gulp.task('build:prod', ['css', 'script', 'fonts', 'img', 'swf', 'video-js', 'video-css']);
