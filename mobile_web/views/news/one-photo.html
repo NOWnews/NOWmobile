@@ -91,6 +91,11 @@
                 {{ news.freeBody | safe }}
             </div>
 
+            {# freeBody 業務用欄位 #}
+            <div>
+                {{ news.traceCode | safe }}
+            </div>
+
             {# DAN PMP Scrolling 廣告 HTML#}
             {% include "../ad/one/dan_pmp_scrolling.html" %}
 

@@ -14,7 +14,7 @@
         {# include "../eventsPage/gift.html" #}
 
 
-        {# <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div> #}
+        <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
         <nav class="category-select mui-container-fluid">
             {% set categoryType = 'news' %}
             {% include "../blocks/category-nav.html" %}
@@ -77,6 +77,11 @@
             {# freeBody 業務用欄位 #}
             <div class="freeBody">
                 {{ news.freeBody | safe }}
+            </div>
+
+            {# freeBody 業務用欄位 #}
+            <div>
+                {{ news.traceCode | safe }}
             </div>
 
             {# DAN PMP Scrolling 廣告 HTML#}

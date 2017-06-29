@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     let { channelId } = req.params;
 
     co(function*() {
-        let live = yield getApi('kmt/chairman2017');
+        let live = yield getV4Api('live/info');
 
         let { specialChannels } = yield getV4Api('specialchannels');
 

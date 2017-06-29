@@ -1,6 +1,5 @@
 import co from 'co';
 import express from 'express';
-import getApi from '../util/getApi';
 import getV4Api from '../util/getV4Api';
 import jsonLd from '../util/homeJsonLd'
 
@@ -18,7 +17,7 @@ router.route('/')
                 getV4Api('instant'),
             ];
 
-            let live = yield getApi('kmt/chairman2017');
+            let live = yield getV4Api('live/info');
 
             debug('live = %j', live);
 

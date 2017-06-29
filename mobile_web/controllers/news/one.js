@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
 
     co(function*() {
 
-        let live = yield getApi('kmt/chairman2017');
+        let live = yield getV4Api('live/info');
 
         let news = yield getV4Api(`news/${newsId}`);
 
