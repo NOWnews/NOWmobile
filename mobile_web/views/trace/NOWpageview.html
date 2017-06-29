@@ -18,7 +18,7 @@
             #}
             $.post( "https://newpv.nownews.com/news", {
                 title: '{{ news.title }}',
-                url: '{{ news.url }}',
+                url: '{{ news.parseUrl }}',
                 nodeId: '{{ news.nodeId }}',
                 type: 'NEWS',
                 platform: 'MOBILE',

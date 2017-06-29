@@ -1,6 +1,5 @@
 import co from 'co';
 import express from 'express';
-import getApi from '../../util/getApi';
 import getV4Api from '../../util/getV4Api';
 
 let router = express.Router();

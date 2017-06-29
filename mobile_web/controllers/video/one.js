@@ -1,6 +1,7 @@
 import co from 'co';
 import express from 'express';
 import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 
 const debug = require('debug')('NOWmobile:controllers:video');
 
@@ -12,7 +13,7 @@ module.exports = (req, res, next) => {
     }
 
     co(function*() {
-        let live = yield getApi('kmt/chairman2017');
+        let live = yield getV4Api('live/info');
 
         let video = yield getApi(`videos/${videoId}`);
         video.title = video.title.replace(/▲/, '');

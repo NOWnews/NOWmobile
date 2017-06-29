@@ -1,6 +1,6 @@
 import co from 'co';
 import express from 'express';
-import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 import geoip from 'geoip-lite';
 import chineseConv from 'chinese-conv';
 
@@ -17,12 +17,12 @@ module.exports = (req, res, next) => {
     co(function*() {
         let videoBaseUrl = `category/videos`;
 
-        let live = yield getApi('kmt/chairman2017');
+        let live = yield getV4Api('live/info');
 
         debug('live = %j', live);
 
-        let videoList = yield getApi(`${videoBaseUrl}/8297`);
-        let { newsList } = yield getApi(`news/headline`);
+        let videoList = [];
+        let { newsList } = yield getV4Api(`instant`);
 
         debug('video List = %j', videoList);
         debug('news List = %j', newsList);

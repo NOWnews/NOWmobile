@@ -1,5 +1,6 @@
 import co from 'co';
 import express from 'express';
+import getV4Api from '../../util/getV4Api';
 import getApi from '../../util/getApi';
 let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:news:nearByNews');
@@ -8,7 +9,7 @@ module.exports = (req, res, next) => {
     let specialType = 'nearByNews';
 
     co(function*() {
-        let live = yield getApi('kmt/chairman2017');
+        let live = yield getV4Api('live/info');
 
         let longitude = req.query.longitude;
         let latitude = req.query.latitude;

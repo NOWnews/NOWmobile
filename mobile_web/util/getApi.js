@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 module.exports = function(url) {
-    let fetchUrl = `${config.apiServer}/${url}`;
+    let fetchUrl = `${config.get('apiV3Server.host')}/${url}`;
 
     // 如果 url 有中文字，建議 encode 會比較沒有問題
     fetchUrl = encodeURI(fetchUrl);

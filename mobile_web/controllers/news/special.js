@@ -1,7 +1,7 @@
 
 import co from 'co';
 import express from 'express';
-import getApi from '../../util/getApi';
+import getV4Api from '../../util/getV4Api';
 
 let router = express.Router();
 
@@ -16,15 +16,15 @@ module.exports = (req, res, next) => {
     }
 
     co(function*() {
-        let live = yield getApi('kmt/chairman2017');
+        let live = yield getV4Api('live/info');
 
         let result = yield [
-            getApi(`category/news`),
-            getApi(`news/${specialType}`),
+            getV4Api('menus'),
+            getV4Api(`instant`),
         ];
 
         let mainCategory = result[0];
-        let { newsList, ads } = result[1];
+        let { newsList } = result[1];
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList });

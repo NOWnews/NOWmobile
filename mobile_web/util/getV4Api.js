@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 const debug = require('debug')('NOWmobile:util:getV4Api');
 
 module.exports = (url) => {
-    let fetchUrl = `${config.apiV4Server}/${url}`;
+    let fetchUrl = `${config.get('apiV4Server.host')}/${url}`;
 
     // 如果 url 有中文字，建議 encode 會比較沒有問題
     fetchUrl = encodeURI(fetchUrl);
