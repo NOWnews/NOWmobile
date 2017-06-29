@@ -69,6 +69,6 @@ module.exports = function(news) {
         }]
       }
     ]
-    let stringJsonLd = JSON.stringify(data).replace(/</g, '\\u003c')};
+    let stringJsonLd = JSON.stringify(data).replace(/</g, '\\u003c');
     return stringJsonLd;
 };
