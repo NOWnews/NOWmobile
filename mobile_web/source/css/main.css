@@ -1008,3 +1008,42 @@ footer {
 .slick-news:first-child {
     display: block;
 }
+/** 20170703新聞內頁 **/
+span.category-title {
+    font-size:16px;
+    line-height: 1.429;
+    display: block;
+}
+
+h3.relatedNews {
+    font-size:14px;
+}
+
+/** 20170703新聞分類 **/
+h2.category-newstitle {
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin:-5px 0 0 0;
+}
+
+/** 20170703新聞輪播 **/
+
+h2.slide-newstitle {
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom:0;
+    color:#fff;
+    font-size:15px;
+    height:60px;
+    padding: 20px 10px;
+    width: 100%;
+    background-size: 100% 100%;
+}
