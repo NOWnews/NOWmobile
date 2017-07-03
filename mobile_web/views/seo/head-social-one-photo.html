@@ -1,23 +1,24 @@
 <!--for base meta -->
 <title>{{ photo.title }} | {{ photo.categories[0].name }} | NOWnews今日新聞</title>
-<meta name="description" content="{{ photo.jsonld.description }}" />
-<meta name="keywords" content="">
+<meta name="description" content="{{ news.summary }}" />
+<meta name="keywords" content="{{ news.newsKeywords }}">
+<meta name="news_keywords" content="{{ news.newsKeywords }}">
 
 <!-- for facebook use2-->
-<meta property="og:url" content="{{ photo.jsonld.mainEntityOfPage.id }}">
-<meta property="og:title" content="{{ photo.title }} | NOWnews今日新聞">
-<meta property="og:description" content="{{ photo.jsonld.description }}">
-<meta property="og:image" content="{{ photo.mainImage }}">
-<meta property="og:image" content="{{ photo.originImage }}">
+<meta property="og:url" content="https://m.nownews.com/news/{{news.sn}}">
+<meta property="og:title" content="{{ news.title }} | NOWnews今日新聞">
+<meta property="og:description" content="{{ news.summary }}">
+<meta property="og:image" content="{{ news.MainPhoto.thumbnail }}">
+<meta property="og:image" content="{{ news.MainPhoto.url }}">
 
 <!-- for Google plus use -->
-<meta itemprop="url" content="{{ photo.jsonld.mainEntityOfPage.id }}">
+<meta itemprop="url" content="https://m.nownews.com/news/{{news.sn}}">
 <meta itemprop="name" content="{{ photo.title }} | NOWnews今日新聞">
 <meta itemprop="description" content="{{ photo.jsonld.description }}">
 <meta itemprop="image" content="{{ photo.mainImage }}">
 <meta itemprop="keywords" content="">
-<meta itemprop="articleSection" content="{{ photo.categories[0].name }}">
-<meta itemprop="dateCreated" content="{{ photo.jsonld.datePublished }}">
-<meta itemprop="dateModified" content="{{ photo.jsonld.dateModified }}">
-<meta itemprop="datePublished" content="{{ photo.jsonld.datePublished }}">
-<link rel="canonical" href="{{ photo.jsonld.mainEntityOfPage.id }}">
+<meta itemprop="articleSection" content="{{ news.MainMenu.name }}">
+<meta itemprop="dateCreated" content="{{ news.createdAt }}">
+<meta itemprop="dateModified" content="{{ news.updatedAt }}">
+<meta itemprop="datePublished" content="{{ news.createdAt }}">
+<link rel="canonical" href="https://www.nownews.com{{news.parseUrl}}">
