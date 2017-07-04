@@ -113,7 +113,7 @@ module.exports = (req, res, next) => {
         }
 
         if(news.type==='VIDEO'){
-            if(news.MainVideo.url.indexOf('youtube') > -1){
+            if(news.MainVideo.url.indexOf('youtu') > -1){
                 news.MainVideo.videoFrom = 'YOUTUBE';
             }
             if(news.MainVideo.url.indexOf('facebook') > -1){
