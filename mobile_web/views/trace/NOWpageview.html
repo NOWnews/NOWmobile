@@ -4,49 +4,84 @@
 {% if news %}
     <script type="text/javascript">
         function sendPageView (address) {
-            {#
-                $.post( "http://61.67.121.50:10011/news", {
-                title: '{{ news.title }}',
-                url: '{{ news.url }}',
-                nodeId: '{{ news.nodeId }}',
-                type: 'NEWS',
-                platform: 'MOBILE',
-                taxId: '{{ news.category._id }}',
-                newsCreatedTime: '{{ news.created * 1000 }}',
-                address: address
-            }, function( data ) {});
-            #}
-            $.post( "https://newpv.nownews.com/news", {
-                title: '{{ news.title }}',
-                url: '{{ news.parseUrl }}',
-                nodeId: '{{ news.nodeId }}',
-                type: 'NEWS',
-                platform: 'MOBILE',
-                taxId: '{{ news.category._id }}',
-                newsCreatedTime: '{{ news.created * 1000 }}',
-                address: address
-            }, function( data ) {});
+            var guidGenerator = function() {
+                var S4 = function() {
+                   return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+                };
+                return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+            };
+
+            var NOW_cookie = $.cookie('NOW_personalize');
+            if (!NOW_cookie){
+                NOW_cookie = guidGenerator();
+            }
+            $.cookie('NOW_personalize', NOW_cookie);
+
+            var pageviews = $.ajax({
+                url: 'https://v4api.nownews.com/pageviews',
+                headers: {
+                    'X-NOWnews-API': 'YouCanSeeMeJohnCena'
+                },
+                method: 'PUT',
+                data: {
+                    cookie: NOW_cookie,
+                    menuId: '{{ news.MainMenu._id }}',
+                    newsId: '{{ news._id }}',
+                    queryString: window.location.search.replace('?', ''),
+                    url: window.location.pathname
+                },
+                dataType: 'json'
+            });
+
             return;
         }
 
-        // 定位用資訊
-        var address = {
-            longitude: null,
-            latitude: null
-        }
-        if(navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(function(position){
-                address.longitude = position.coords.longitude;
-                address.latitude = position.coords.latitude;
-                sendPageView(address);
-            },function(error){
-                address = { error: 'code ' + error.code + ':' + error.message };
-                sendPageView(address);
-            }, { maximumAge: Infinity });
-        }else{
-            address = { error: "瀏覽器不支援定位" };
-            sendPageView(address);
-        }
+        sendPageView();
+
+        // function sendPageView (address) {
+        //     {#
+        //         $.post( "http://61.67.121.50:10011/news", {
+        //         title: '{{ news.title }}',
+        //         url: '{{ news.url }}',
+        //         nodeId: '{{ news.nodeId }}',
+        //         type: 'NEWS',
+        //         platform: 'MOBILE',
+        //         taxId: '{{ news.category._id }}',
+        //         newsCreatedTime: '{{ news.created * 1000 }}',
+        //         address: address
+        //     }, function( data ) {});
+        //     #}
+        //     $.post( "https://newpv.nownews.com/news", {
+        //         title: '{{ news.title }}',
+        //         url: '{{ news.parseUrl }}',
+        //         nodeId: '{{ news.nodeId }}',
+        //         type: 'NEWS',
+        //         platform: 'MOBILE',
+        //         taxId: '{{ news.category._id }}',
+        //         newsCreatedTime: '{{ news.created * 1000 }}',
+        //         address: address
+        //     }, function( data ) {});
+        //     return;
+        // }
+
+        // // 定位用資訊
+        // var address = {
+        //     longitude: null,
+        //     latitude: null
+        // }
+        // if(navigator.geolocation){
+        //     navigator.geolocation.getCurrentPosition(function(position){
+        //         address.longitude = position.coords.longitude;
+        //         address.latitude = position.coords.latitude;
+        //         sendPageView(address);
+        //     },function(error){
+        //         address = { error: 'code ' + error.code + ':' + error.message };
+        //         sendPageView(address);
+        //     }, { maximumAge: Infinity });
+        // }else{
+        //     address = { error: "瀏覽器不支援定位" };
+        //     sendPageView(address);
+        // }
     </script>
 {% endif %}
 
