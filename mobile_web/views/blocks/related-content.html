@@ -1,6 +1,6 @@
 {% if type != 'video' %}
     <div class="related-news-block">
-        <h3><i class="fa fa-clone fa-fw"></i>相關新聞</h3>
+        <h2><i class="fa fa-clone fa-fw"></i>相關新聞</h2>
         {% for relatedNews in news.refNews %}
 
             {% if loop.index == 2 %}
@@ -18,11 +18,11 @@
                             <img src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + relatedNews.MainPhoto.url if relatedNews.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
                         </div>
                         <div class="mui-col-xs-7 related-news-info">
-                            <h4 class="category-title tid{{ relatedNews.MainMenu.categoryName }}">
+                            <span class="category-title tid{{ relatedNews.MainMenu.categoryName }}">
                                 {{ relatedNews.MainMenu.name or '不分類' }}
-                            </h4>
+                            </span>
                             <div class="mui-divider"></div>
-                            <span> {{ relatedNews.title }}</span>
+                            <span><h3 class="relatedNews">{{ relatedNews.title }}</h3></span>
                         </div>
                     </a>
                 </div>
@@ -35,7 +35,7 @@
 
 
 <div class="related-news-block">
-    <h3><i class="fa fa-bolt fa-fw"></i>頭條新聞</h3>
+    <h2><i class="fa fa-bolt fa-fw"></i>頭條新聞</h2>
     {% for news in headline %}
 
         {# 微告台灣原生廣告 #}
@@ -55,11 +55,11 @@
                         <img src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.url if news.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
                     </div>
                     <div class="mui-col-xs-7 related-news-info">
-                        <h4 class="category-title tid{{ news.MainMenu.categoryName }}">
+                        <span class="category-title tid{{ news.MainMenu.categoryName }}">
                             {{ news.MainMenu.name or '不分類' }}
-                        </h4>
+                        </span>
                         <div class="mui-divider"></div>
-                        <span> {{ news.title }}</span>
+                        <span><h3 class="relatedNews">{{ news.title }}</h3></span>
                     </div>
                 </a>
             </div>

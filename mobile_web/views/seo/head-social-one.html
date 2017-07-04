@@ -1,7 +1,8 @@
 <!--for base meta -->
 <title>{{ news.title }} | {{ news.MainMenu.name }} | NOWnews今日新聞</title>
 <meta name="description" content="{{ news.summary }}" />
-<meta name="keywords" content="{{ news.keywords }}">
+<meta name="keywords" content="{{ news.newsKeywords }}">
+<meta name="news_keywords" content="{{ news.newsKeywords }}">
 
 <!-- for facebook use2-->
 <meta property="og:url" content="https://m.nownews.com/news/{{news.sn}}">
@@ -17,7 +18,7 @@
 
 <!-- for Google plus use -->
 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" />
-<meta itemprop="url" content="{{ news.jsonld.mainEntityOfPage.id }}">
+<meta itemprop="url" content="https://m.nownews.com/news/{{news.sn}}">
 <meta itemprop="name" content="{{ news.title }}">
 <meta itemprop="description" content="{{ news.summary }}">
 <div class="mui--hide" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -26,7 +27,7 @@
     <meta itemprop="width" content="696">
     <meta itemprop="height" content="530">
 </div>
-<meta itemprop="keywords" content="{{ news.keywords }}">
+<meta itemprop="keywords" content="{{ news.newsKeywords }}">
  <div class="mui--hide" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <img src="https://m.nownews.com/static/img/mobile-logo.png"/>
