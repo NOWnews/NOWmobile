@@ -1,6 +1,7 @@
 import co from 'co';
 import express from 'express';
 import getV4Api from '../util/getV4Api';
+import getAdsApi from '../util/getAdsApi';
 import jsonLd from '../util/homeJsonLd'
 
 let router = express.Router();
