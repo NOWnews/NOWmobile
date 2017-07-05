@@ -5,6 +5,7 @@ import news from './news';
 import files from './files';
 import sitemap from './sitemap';
 import live from './live';
+import ads from './ads';
 
 
 module.exports = function(app) {
@@ -14,6 +15,7 @@ module.exports = function(app) {
     app.use('/', home);
     app.use('/', news);
     // app.use('/', ajaxPost);
+    app.use('/', ads);
     app.use('/', files);
     app.use('/', sitemap);
 
