@@ -1,15 +1,26 @@
-{% set nativeAd = news.ad %}
-{% if nativeAd != null %}
-    <div class="mui-row one-news">
-        <a target="_blank" href="{{ nativeAd.url }}">
+    {# 原生廣告部分 #}
+    <script>
+        $(function(){
+            $.get( "/ads/newsone", function(json) {
+                if (json.err) {
+                    return;
+                }
+                $('#news-one').removeClass('mui--hide');
+                $('#news-one img').attr('src', json.img);
+                $('#news-one > a').attr('href', json.url);
+                $('#news-one span').text(json.title);
+            });
+        });
+    </script>
+    <div id="news-one" class="mui-row one-news mui--hide">
+        <a target="_blank" href="">
             <div class="mui-col-xs-5">
-                <img style="max-width: 100%;padding-top:5px;" src="{{ nativeAd.img }}">
+                <img style="max-width: 100%;padding-top:5px;" src="">
             </div>
             <div class="mui-col-xs-7 related-news-info">
                 <h4 class="category-title">Sponsor</h4>
                 <div class="mui-divider"></div>
-                <span> {{ nativeAd.title }}</span>
+                <span></span>
             </div>
         </a>
     </div>
-{% endif %}
