@@ -1,47 +1,35 @@
 
-// import co from 'co';
-// import express from 'express';
-// import getApi from '../util/getApi';
-// let router = express.Router();
+import co from 'co';
+import express from 'express';
+import getV4Api from '../util/getV4Api';
+let router = express.Router();
 
-// const debug = require('debug')('NOWmobile:controllers:ajaxPost');
+const debug = require('debug')('NOWmobile:controllers:ajaxPost');
 
 
-// router.route('/ajaxPost')
-//     .get((req, res, next) => {
-//         let page = req.query.page;
-//         let url = req.query.url;
-//         let taxId = req.query.url.split('/').pop();
+router.route('/ajaxPost')
+    .get((req, res, next) => {
+        let page = req.query.page;
+        let url = req.query.url;
+        let taxId = req.query.url.split('/').pop();
 
-//         co(function*() {
-//             let result = null;
-//             let template = null;
+        co(function*() {
+            let result = null;
+            let template = null;
 
-//             if ( url.indexOf('news') > -1 ) {
-//                 // 不直接給是因為回傳的物件裡面還有 ads
-//                 let { newsList } = yield getApi(`category/news/${taxId}?page=${page}`);
-//                 result = { newsList };
-//                 template = 'newsPost';
-//             } else if  (url.indexOf('video') > -1 ) {
-//                 result = {
-//                     videoList: yield getApi(`category/videos/${taxId}?page=${page}`)
-//                 };
-//                 template = 'videosPost';
-//             } else if ( url.indexOf('photo') > -1 ) {
-//                 result = {
-//                     photoList: yield getApi(`category/photos/${taxId}?page=${page}`)
-//                 };
-//                 template = 'photosPost';
-//             }
+            // 不直接給是因為回傳的物件裡面還有 ads
+            let { newsList } = yield getV4Api(`cat/${taxId}?page=${page}`);
+            result = { newsList };
+            template = 'newsPost';
 
-//             if(req.query.data === 'PLAYJJ'){
-//                 return res.json(result);
-//             }
+            if(req.query.data === 'PLAYJJ'){
+                return res.json(result);
+            }
 
-//             return res.render(`ajaxPost/${template}`, result);
+            return res.render(`ajaxPost/${template}`, result);
 
-//         }).catch(next);
+        }).catch(next);
 
-//     });
+    });
 
-// module.exports = router;
+module.exports = router;

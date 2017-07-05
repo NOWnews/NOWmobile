@@ -1,7 +1,7 @@
 import about from './about';
 import home from './home';
 import news from './news';
-// import ajaxPost from './ajaxPost';
+import ajaxPost from './ajaxPost';
 import files from './files';
 import sitemap from './sitemap';
 import live from './live';
@@ -14,7 +14,7 @@ module.exports = function(app) {
     app.use('/', about);
     app.use('/', home);
     app.use('/', news);
-    // app.use('/', ajaxPost);
+    app.use('/', ajaxPost);
     app.use('/', ads);
     app.use('/', files);
     app.use('/', sitemap);
