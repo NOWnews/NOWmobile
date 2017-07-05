@@ -1,3 +1,4 @@
+
 import express from 'express';
 let router = express.Router();
 
@@ -7,7 +8,6 @@ import listByCategory from './listByCategory';
 import one from './one';
 import search from './search';
 import special from './special';
-import nearByNews from './nearByNews';
 
 router.route('/news/special/:specialType')
     .get(special);
@@ -29,9 +29,6 @@ router.route('/news/category/:taxId')
 
 router.route('/news/search')
     .get(search);
-
-router.route('/news/nearByNews')
-    .get(nearByNews);
 
 router.route('/news/:newsId')
     .get(one);

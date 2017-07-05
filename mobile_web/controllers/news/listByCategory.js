@@ -1,10 +1,7 @@
+
 import co from 'co';
-import express from 'express';
 import getV4Api from '../../util/getV4Api';
 import jsonLd from '../../util/catJsonLd'
-
-let router = express.Router();
-
 
 const debug = require('debug')('NOWmobile:controllers:news:category');
 
