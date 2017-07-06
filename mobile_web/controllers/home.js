@@ -15,7 +15,7 @@ router.route('/')
 
             let result = yield [
                 getV4Api('menus'),
-                getV4Api('instant'),
+                getV4Api('indexpage'),
             ];
 
             let live = yield getV4Api('live/info');
@@ -24,7 +24,9 @@ router.route('/')
 
             let mainCategory = result[0];
             //TODO 現在沒有 ads
-            let { newsList, ads } = result[1];
+            let { carousels, ads } = result[1];
+
+            let newsList = carousels
 
             // TODO ---- 廣告先暫時這樣處理 乾
             ads = [
