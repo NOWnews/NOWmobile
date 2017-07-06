@@ -26,7 +26,7 @@ router.route('/')
             //TODO 現在沒有 ads
             let { carousels, ads } = result[1];
 
-            let newsList = carousels
+            let newsList = carousels;
 
             // TODO ---- 廣告先暫時這樣處理 乾
             ads = [

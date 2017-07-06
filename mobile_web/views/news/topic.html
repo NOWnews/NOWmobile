@@ -1,7 +1,29 @@
 {% extends "../base.html" %}
 
 {% block socialblock %}
-    {% include "../seo/head-social-channel.html" %}
+    <!--for base meta -->
+    <title>{{ topicName }} | NOWnews今日新聞</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+
+    <!-- for facebook use2-->
+    <meta property="og:url" content="https://m.nownews.com/news/topic">
+    <meta property="og:title" content="{{ topicName }} | NOWnews今日新聞">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/static/img/mobile-logo-dark.png">
+
+    <!-- for Google plus use -->
+    <meta itemprop="url" content="https://m.nownews.com/news/topic">
+    <meta itemprop="name" content="{{ topicName }} | NOWnews今日新聞">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/static/img/mobile-logo-dark.png">
+    <meta itemprop="keywords" content="">
+    <meta itemprop="articleSection" content="">
+    <meta itemprop="dateCreated" content="">
+    <meta itemprop="dateModified" content="">
+    <meta itemprop="datePublished" content="">
+    <link rel="canonical" href="https://m.nownews.com/news/topic">
+
 {% endblock %}
 
 {% block container %}
@@ -15,6 +37,33 @@
             {% include "../blocks/topic-nav.html" %}
         </div>
         <div class="nownews-wrapper">
+            {% for news in newsList %}
+                <div class="news-block">
+                    <div class="mui-container-fluid">
+                        <div class="mui-row">
+                            <a href="{{ news.url }}">
+                                <img class="news-main-image" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.url if news.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                                <div class="news-info-bg">
+                                </div>
+                                <div class="news-info">
+                                    <p class="category-title">
+                                        {{ news.MainMenu.name or '專題' }}
+                                    </p>
+                                    <p class="info-title"><h2 class="category-newstitle">{{ news.title }}</h2></p>
+                                    <p class="info-caption text-gray">{{ news.formatCreatedAt }}</p>
+                                </div>
+                                <div class="line"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {# 廣告版位 #}
+                {% if loop.index % 3 == 0 %}
+                    {% set noSliderNumber = loop.index %}
+                    {% include "../ad/ad-news-block.html" %}
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

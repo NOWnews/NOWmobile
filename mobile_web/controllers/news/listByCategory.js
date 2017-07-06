@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
 
         let result = yield [
             getV4Api('menus'),
-            getV4Api(`cat/${taxId}`),
+            getV4Api(`cat/${taxId}?limit=30`),
         ];
 
         let mainCategory = result[0];
