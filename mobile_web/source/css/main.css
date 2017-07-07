@@ -1017,6 +1017,8 @@ span.category-title {
 
 h3.relatedNews {
     font-size:14px;
+    margin-top: 0;
+    line-height: 150%;
 }
 
 /** 20170703新聞分類 **/

@@ -7,10 +7,6 @@
                 {% include "../ad/ad-related-block.html" %}
             {% endif %}
 
-            {% if loop.index == 4 %}
-                {% include "../ad/one/microad2.html" %}
-            {% endif %}
-
             {% if loop.index < 6 %}
                 <div class="mui-row one-news">
                     <a href="/news/{{ relatedNews.sn }}{{queryParams}}">
@@ -26,6 +22,10 @@
                         </div>
                     </a>
                 </div>
+            {% endif %}
+
+            {% if loop.index == 3 %}
+                {% include "../ad/one/microad2.html" %}
             {% endif %}
         {% endfor %}
     </div>
