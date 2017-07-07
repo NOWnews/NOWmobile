@@ -12,6 +12,8 @@ module.exports = (req, res, next) => {
 
         let { specialTopics } = yield getV4Api('specialtopics');
 
+        let newsList = specialTopics;
+
         _.map(specialTopics, (topic) => {
             if(topic.url.indexOf('http') < 0){
                 topic.url = '/news/' + topic.url.split('/').pop();
@@ -20,14 +22,15 @@ module.exports = (req, res, next) => {
         });
 
         let { isOpen } = req.query;
-        let channelName = '專題';
+        let topicName = '專題';
         let data = {
             nativeAds: [],
             specialTopics,
-            channelName,
+            topicName,
             topicId,
-            isOpen,
-            live
+            // isOpen,
+            live,
+            newsList
         };
 
         if(req.query.data === 'PLAYJJ'){

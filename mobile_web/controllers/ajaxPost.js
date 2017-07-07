@@ -18,7 +18,7 @@ router.route('/ajaxPost')
             let template = null;
 
             // 不直接給是因為回傳的物件裡面還有 ads
-            let { newsList } = yield getV4Api(`cat/${taxId}?page=${page}`);
+            let { newsList } = yield getV4Api(`cat/${taxId}?limit=30&page=${page}`);
             result = { newsList };
             template = 'newsPost';
 
