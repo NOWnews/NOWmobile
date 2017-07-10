@@ -1,5 +1,3 @@
-{# pv api #}
-
 {# 新聞用 pv #}
 {% if news %}
     <script type="text/javascript">
@@ -37,50 +35,5 @@
         }
 
         sendPageView();
-
-        // function sendPageView (address) {
-        //     {#
-        //         $.post( "http://61.67.121.50:10011/news", {
-        //         title: '{{ news.title }}',
-        //         url: '{{ news.url }}',
-        //         nodeId: '{{ news.nodeId }}',
-        //         type: 'NEWS',
-        //         platform: 'MOBILE',
-        //         taxId: '{{ news.category._id }}',
-        //         newsCreatedTime: '{{ news.created * 1000 }}',
-        //         address: address
-        //     }, function( data ) {});
-        //     #}
-        //     $.post( "https://newpv.nownews.com/news", {
-        //         title: '{{ news.title }}',
-        //         url: '{{ news.parseUrl }}',
-        //         nodeId: '{{ news.nodeId }}',
-        //         type: 'NEWS',
-        //         platform: 'MOBILE',
-        //         taxId: '{{ news.category._id }}',
-        //         newsCreatedTime: '{{ news.created * 1000 }}',
-        //         address: address
-        //     }, function( data ) {});
-        //     return;
-        // }
-
-        // // 定位用資訊
-        // var address = {
-        //     longitude: null,
-        //     latitude: null
-        // }
-        // if(navigator.geolocation){
-        //     navigator.geolocation.getCurrentPosition(function(position){
-        //         address.longitude = position.coords.longitude;
-        //         address.latitude = position.coords.latitude;
-        //         sendPageView(address);
-        //     },function(error){
-        //         address = { error: 'code ' + error.code + ':' + error.message };
-        //         sendPageView(address);
-        //     }, { maximumAge: Infinity });
-        // }else{
-        //     address = { error: "瀏覽器不支援定位" };
-        //     sendPageView(address);
-        // }
     </script>
 {% endif %}
