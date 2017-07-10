@@ -1,11 +1,17 @@
 <!doctype html>
-<html itemscope="" itemtype="http://schema.org/NewsArticle">
+{% if isHomePage or taxId%}
+<html itemscope="" lang="zh-tw">
+{% else %}
+<html itemscope="" lang="zh-tw" itemtype="http://schema.org/NewsArticle">
+{% endif %}
+
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+        <meta http-equiv="content-language" content="zh-tw">
         {% include "./blocks/head-meta.html" %}
         {% include "./blocks/head-include.html" %}
 
         {# seo block #}
-        {% include "./seo/base/fbBase.html" %}
+        {% include "./seo/fb/fbBase.html" %}
         {% block socialblock %}{% endblock %}
 
         {# JSON-LD 資料 #}
@@ -23,26 +29,14 @@
         {% include "./ad/one/salesfrontier-js-pmp.html" %}
 
         {# comscore #}
-            <!-- Begin comScore all site Tag -->
-            <script>
-              var _comscore = _comscore || [];
-              _comscore.push({ c1: "2", c2: "11473067" });
-              (function() {
-                var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
-                s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
-                el.parentNode.insertBefore(s, el);
-              })();
-            </script>
-            <noscript>
-              <img src="http://b.scorecardresearch.com/p?c1=2&c2=11473067&cv=2.0&cj=1" />
-            </noscript>
-            <!-- End comScore Tag -->
-        {# comscore 結束 #}
+        {% include "./trace/comscore.html" %}
     </head>
 
     <body>
         {# GTM SEO 資料 #}
         {% include "./trace/GTM.html" %}
+        {% include "./blocks/header.html" %}
+        {% include "./blocks/menu-nav.html" %}
         {% block container %}{% endblock %}
         {% include "./blocks/footer.html" %}
 
@@ -56,10 +50,5 @@
         <div class="mui--hide" id="loading">
             <span>下面更精彩 ...</span>
         </div>
-
-        {# google 討厭蓋版 dfp 廣告 #}
-        {% include "./ad/cover/dfp.html" %}
-        {# google 討厭蓋版 onead 廣告 #}
-        {% include "./ad/cover/onead.html" %}
     </body>
 </html>
