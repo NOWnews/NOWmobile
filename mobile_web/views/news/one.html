@@ -72,6 +72,13 @@
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
                 </div>
                 {{ news.content | safe }}
+
+                <div class="keywords">
+                    關鍵字:
+                    {% for tag in news.Tags %}
+                        <a href="/news/search?keyword={{ tag.name }}">{{ tag.name }}</a>
+                    {% endfor %}
+                </div>
             </section>
 
             {# freeContent 業務用欄位 #}

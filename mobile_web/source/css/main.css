@@ -1058,3 +1058,16 @@ h2.slide-newstitle {
     width: 100%;
     background-size: 100% 100%;
 }
+
+/* keywords */
+.keywords {
+    margin-top: 25px;
+}
+.keywords > a {
+    border: 1px solid #000;
+    border-radius: 25px;
+    padding: 7px 8px;
+    color: #000;
+    display: inline-block;
+    margin: 5px;
+}
