@@ -11,6 +11,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 - 從 ad2004 那邊的打回來的時間太久，暫時先把 timeout 時間拉到 20000 @Webber
 - 修正 freeContent 問題
 - mobile icon 圖片縮小
+- 加上關鍵字
 
 
 ## 1.0.17.43 - 2017-06-12
