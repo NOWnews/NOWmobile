@@ -93,9 +93,9 @@
                 {{ news.content | safe }}
             </section>
 
-            {# freeContent 業務用欄位 #}
+            {# freeBody 業務用欄位 #}
             <div class="freeBody">
-                {{ news.freeContent | safe }}
+                {{ news.freeBody | safe }}
             </div>
 
             {# DAN PMP Scrolling 廣告 HTML#}
@@ -110,21 +110,10 @@
                 {% include "../ad/one/oneAd.html" %}
 
             </div>
-            <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
-            <section class="arrow-block mui--appbar-line-height">
-                <a href="/news/{{ news.prev.sn }}{{queryParams}}?device=app" class="arrow-btn prev-arrow mui--text-nowrap">
-                    <span>{{ news.prev.shortTitle }}</span>
-                </a>
-                <a href="/news/{{ news.next.sn }}{{queryParams}}?device=app" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
-                    <span>{{ news.next.shortTitle }}</span>
-                </a>
-            </section>
 
             {# 廣告版位 #}
             {% include "../ad/one/ad300x250_2.html" %}
             {% include "./comment.html" %}
-            {% include "../blocks/temp-related-content.html" %}
-            {% include "../blocks/free-body.html" %}
         </div>
     </article>
 
@@ -137,7 +126,4 @@
     {# 果實追蹤碼 #}
     {# include "../trace/oneData.html" #}
 
-    {# 先放置頂廣告，待 11 月初的會議調整 #}
-    {# 置底的 social link #}
-    {#{% include "../blocks/social-link.html" %} #}
 {% endblock %}

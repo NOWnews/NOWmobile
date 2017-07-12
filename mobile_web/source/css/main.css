@@ -748,26 +748,6 @@ header .mobile-logo {
     max-width:100%;
 }
 
-/* fixed share social link */
-#social-link {
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-}
-
-#social-link ul {
-    padding: 0;
-    text-align: center;
-}
-
-#social-link li {
-    list-style: none;
-    float: left;
-    height: 40px;
-    line-height: 40px;
-    width: 25%;
-}
-
 /**
  * page category
  */
