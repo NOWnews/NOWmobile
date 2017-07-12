@@ -748,67 +748,6 @@ header .mobile-logo {
     max-width:100%;
 }
 
-/**
- * Video CSS
- */
-
-.video-block {
-    position: relative;
-    margin-bottom: 1px;
-}
-
-.video-block p {
-    margin: 0;
-}
-
-.video-block .category-title {
-    margin-top: 10px;
-    color: #1976d2;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.video-block .shadow-photo-info .info-title {
-    color: white;
-}
-.video-block .shadow-photo-info .info-caption {
-    color: white;
-}
-
-.video-block .sponser .info-caption {
-    color: #888;
-}
-
-.video-block .icon-play-circle {
-    position: absolute;
-    width: 15%;
-    z-index: 1;
-    top: 40%;
-    left: 40%;
-}
-
-.video-main-image {
-    max-width: 100%;
-    width: 100%;
-    max-height: 350px;
-    overflow-y: hidden;
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden;
-}
-.video-container iframe,
-.video-container object,
-.video-container embed {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-}
-
 /* fixed share social link */
 #social-link {
     padding: 0;
