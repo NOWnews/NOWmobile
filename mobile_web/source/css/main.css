@@ -1065,9 +1065,9 @@ h2.slide-newstitle {
 }
 .keywords > a {
     border: 1px solid #000;
-    border-radius: 25px;
-    padding: 7px 8px;
+    border-radius: 15px;
+    padding: 2px 7px;
     color: #000;
     display: inline-block;
-    margin: 5px;
+    margin: 2px;
 }
