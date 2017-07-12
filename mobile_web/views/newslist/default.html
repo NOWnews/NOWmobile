@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="nownews-wrapper slider-under" id="{{ 'list-wrapper' if taxId else '' }}">
+        <div class="nownews-wrapper slider-under" id="{{ 'list-wrapper' if categoryName else '' }}">
             {% for news in newsList %}
                 {% if loop.index > slideItem %}
                     {% include "../blocks/news-block.html" %}

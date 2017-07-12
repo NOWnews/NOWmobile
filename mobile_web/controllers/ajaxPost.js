@@ -11,14 +11,14 @@ router.route('/ajaxPost')
     .get((req, res, next) => {
         let page = req.query.page;
         let url = req.query.url;
-        let taxId = req.query.url.split('/').pop();
+        let categoryName = req.query.url.split('/').pop();
 
         co(function*() {
             let result = null;
             let template = null;
 
             // 不直接給是因為回傳的物件裡面還有 ads
-            let { newsList } = yield getV4Api(`cat/${taxId}?limit=30&page=${page}`);
+            let { newsList } = yield getV4Api(`cat/${categoryName}?limit=30&page=${page}`);
             result = { newsList };
             template = 'newsPost';
 

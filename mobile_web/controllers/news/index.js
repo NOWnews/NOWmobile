@@ -4,29 +4,24 @@ let router = express.Router();
 
 import channel from './channel';
 import topic from './topic';
-import listByCategory from './listByCategory';
+import category from './category';
 import one from './one';
 import search from './search';
 
-// 專題頁
+// 分類頁
+router.route('/news/category/:categoryName')
+    .get(category);
+
+// 特輯分類頁
 router.route('/news/channel')
     .get(channel);
 
-// 特輯分類頁
 router.route('/news/channel/:channelId')
     .get(channel);
 
 // 專題頁
 router.route('/news/topic')
     .get(topic);
-
-// 專題頁
-router.route('/news/topic/:topicId')
-    .get(topic);
-
-// 分類頁
-router.route('/news/category/:taxId')
-    .get(listByCategory);
 
 // 新聞搜尋
 router.route('/news/search')
