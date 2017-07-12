@@ -45,7 +45,7 @@
         <div class="nownews-wrapper slider-under" id="{{ 'list-wrapper' if categoryName else '' }}">
             {% for news in newsList %}
                 {% if loop.index > slideItem %}
-                    {% include "../blocks/news-block.html" %}
+                    {% include "./blocks/news-block.html" %}
                 {% endif %}
 
                 {# 列表頁 slide 後面第二個位置的廣告版位 #}

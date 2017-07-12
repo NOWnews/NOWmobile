@@ -7,10 +7,15 @@ import topic from './topic';
 import category from './category';
 import one from './one';
 import search from './search';
+import nextCategory from './nextCategory';
 
 // 分類頁
 router.route('/news/category/:categoryName')
     .get(category);
+
+router.route('/news/nextCategory')
+    .get(nextCategory);
+
 
 // 特輯分類頁
 router.route('/news/channel')

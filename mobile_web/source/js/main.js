@@ -230,7 +230,7 @@ $(function() {
                 $('#loading').removeClass('mui--hide');
                 page++;
                 $.ajax({
-                    url: '/ajaxPost?page=' + page + '&url=' + location.pathname,
+                    url: '/news/nextCategory?page=' + page + '&url=' + location.pathname,
                     dataType: 'html',
                     success: function(html) {
                         $('#list-wrapper').append(html);
