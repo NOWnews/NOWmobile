@@ -12,7 +12,7 @@
                 <span class="channel-name {{ 'mui--hide' if isOpen else '' }}"> {{ channelName }}</span>
                 <i class="fa fa-play fa-rotate-90 {{ 'fa-rotate-270' if isOpen else '' }}" aria-hidden="true"></i>
             </div>
-            {% include "../blocks/channel-nav.html" %}
+            {% include "./blocks/channel-nav.html" %}
         </div>
         <div class="nownews-wrapper">
             {% for news in newsList %}
