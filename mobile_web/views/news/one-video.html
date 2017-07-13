@@ -11,8 +11,6 @@
     {% include "../trace/NOWpageview.html" %}
 
     <article id="content-wrapper">
-        {# mobile 禮物活動 #}
-        {# include "../eventsPage/gift.html" #}
 
         <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
         <nav class="category-select mui-container-fluid">
@@ -133,9 +131,9 @@
             {# 廣告版位 #}
             {% include "../ad/one/ad300x250_2.html" %}
             {% include "./comment.html" %}
-            {% include "../blocks/related-content.html" %}
+            {% include "./blocks/related-content.html" %}
             {% include "../ad/one/popin.html" %} {# popin 廣告 #}
-            {% include "../blocks/free-body.html" %}
+            {% include "./blocks/free-body.html" %}
         </div>
     </article>
 
@@ -148,7 +146,4 @@
     {# 果實追蹤碼 #}
     {# include "../trace/oneData.html" #}
 
-    {# 先放置頂廣告，待 11 月初的會議調整 #}
-    {# 置底的 social link #}
-    {#{% include "../blocks/social-link.html" %} #}
 {% endblock %}

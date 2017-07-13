@@ -50,7 +50,7 @@ module.exports = (req, res, next) => {
             return res.json({ newsList });
         }
 
-        return res.render('news/category', {
+        return res.render('newslist/search', {
             nativeAds: ads || [],
             mainCategory,
             newsList,

@@ -7,9 +7,9 @@ import jsonLd from '../../util/catJsonLd'
 const debug = require('debug')('NOWmobile:controllers:news:category');
 
 module.exports = (req, res, next) => {
-    let { taxId } = req.params;
+    let { categoryName } = req.params;
 
-    if (!taxId) {
+    if (!categoryName) {
         return next();
     }
 
@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
 
         let result = yield [
             getV4Api('menus'),
-            getV4Api(`cat/${taxId}?limit=30`),
+            getV4Api(`cat/${categoryName}?limit=30`),
         ];
 
         let mainCategory = result[0];
@@ -55,14 +55,14 @@ module.exports = (req, res, next) => {
         }
 
         // 加上 jsonld
-        let catJsonLd = jsonLd(taxId,newsList[0]);
+        let catJsonLd = jsonLd(categoryName, newsList[0]);
 
-        return res.render('home/home', {
+        return res.render('newslist/default', {
             catJsonLd,
             nativeAds: ads || [],
             newsList,
             mainCategory,
-            taxId,
+            categoryName,
             live
         });
 

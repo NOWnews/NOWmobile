@@ -28,7 +28,6 @@ module.exports = (req, res, next) => {
             specialTopics,
             topicName,
             topicId,
-            // isOpen,
             live,
             newsList
         };
@@ -37,7 +36,7 @@ module.exports = (req, res, next) => {
             return res.json({ data });
         }
 
-        return res.render('news/topic', data);
+        return res.render('newslist/topic', data);
 
     }).catch(next);
 

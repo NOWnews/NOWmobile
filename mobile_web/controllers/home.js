@@ -63,7 +63,7 @@ router.route('/')
             let homeJsonLd = jsonLd();
             let isHomePage = true;
 
-            return res.render('home/home', {
+            return res.render('newslist/default', {
                 isHomePage,
                 homeJsonLd,
                 live,

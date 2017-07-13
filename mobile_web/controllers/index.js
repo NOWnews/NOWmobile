@@ -1,7 +1,6 @@
 import about from './about';
 import home from './home';
 import news from './news';
-import ajaxPost from './ajaxPost';
 import files from './files';
 import sitemap from './sitemap';
 import live from './live';
@@ -14,7 +13,6 @@ module.exports = function(app) {
     app.use('/', about);
     app.use('/', home);
     app.use('/', news);
-    app.use('/', ajaxPost);
     app.use('/', ads);
     app.use('/', files);
     app.use('/', sitemap);
@@ -26,7 +24,7 @@ module.exports = function(app) {
 
     // 剩下的導去 404 頁面
     app.use('*', function(req, res, next){
-        return res.render('error/404');
+        return res.status(400).render('error/404');
     });
 
     return function(req, res, next) {

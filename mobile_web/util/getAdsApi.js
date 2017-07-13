@@ -12,7 +12,8 @@ module.exports = (ownerId) => {
     debug('Url = ', fetchUrl);
 
     return fetch(fetchUrl, {
-            timeout: 5000
+            // 因為 ad2004 回傳很慢...
+            timeout: 20000
         })
         .then((res) => res.buffer())
         .then((buffer) => iconv.decode(buffer, 'big5'))

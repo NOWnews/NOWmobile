@@ -4,14 +4,14 @@
 <meta name="keywords" content="">
 
 <!-- for facebook use2-->
-<meta property="og:url" content="https://www.nownews.com/news/category/{{ taxId }}">
+<meta property="og:url" content="https://www.nownews.com/news/category/{{ categoryName }}">
 <meta property="og:title" content="{{ newsList[0].MainMenu.name }} | NOWnews今日新聞">
 <meta property="og:description" content="">
 <meta property="og:image" content="/static/img/timeline-circle.jpg">
 
 <!-- for Google plus use -->
-{% if not taxId %}
-<meta itemprop="url" content="https://www.nownews.com/news/category/{{ taxId }}">
+{% if not categoryName %}
+<meta itemprop="url" content="https://www.nownews.com/news/category/{{ categoryName }}">
 <meta itemprop="name" content="{{ newsList[0].MainMenu.name }} | NOWnews今日新聞">
 <meta itemprop="image" content="/static/img/timeline-circle.jpg">
 <meta itemprop="articleSection" content="{{ newsList[0].MainMenu.name }}">
@@ -23,4 +23,4 @@
 <meta itemprop="dateCreated" content="">
 <meta itemprop="dateModified" content="">
 <meta itemprop="datePublished" content="">
-<link rel="canonical" href="https://www.nownews.com/news/category/{{ taxId }}">
+<link rel="canonical" href="https://www.nownews.com/news/category/{{ categoryName }}">

@@ -1,12 +1,6 @@
 {% if specialType=='headline' %}
     {% set specialName = '首頁 | 行動版' %}
     {% set url = '/' %}
-{% elif specialType=='hotNews' %}
-    {% set specialName = '熱門' %}
-    {% set url = '/news/special/hotNews/' %}
-{% elif specialType=='instant' %}
-    {% set specialName = '速報' %}
-    {% set url = '/news/special/instant/' %}
 {% endif %}
 <!--for base meta -->
 <title>{{ specialName }} | NOWnews今日新聞</title>
