@@ -8,10 +8,11 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 ## 1.1.0 - 2017-07-07
 ### Fixed
 - `mobile_web/views/trace/nestle.html` 只留符合現在手機版的 code @Webber
-- 從 ad2004 那邊的打回來的時間太久，暫時先把 timeout 時間拉到 20000 @Webber
+- 從 ad2004 那邊的打回來的時間太久，暫時先把 timeout 時間拉到 20000
 - 修正 freeContent 問題
 - mobile icon 圖片縮小
 - 加上關鍵字
+- 加上 404 頁面
 
 
 ## 1.0.17.43 - 2017-06-12
