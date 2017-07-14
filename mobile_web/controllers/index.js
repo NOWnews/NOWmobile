@@ -24,7 +24,7 @@ module.exports = function(app) {
 
     // 剩下的導去 404 頁面
     app.use('*', function(req, res, next){
-        return res.status(400).render('error/404');
+        return res.status(404).render('error/404');
     });
 
     return function(req, res, next) {
