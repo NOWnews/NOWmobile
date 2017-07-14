@@ -224,15 +224,18 @@ $(function() {
     // 滑到底去抓新聞
     var page = 1;
     var hasListWrapperDom = $('#list-wrapper').length > 0;
+    var isLoading = false;
     if (hasListWrapperDom){
         $window.scroll(function() {
-            if ($(document).height() - $window.height() === $window.scrollTop()) {
+            if (!isLoading && $(document).height() - $window.height() - 100 < $window.scrollTop()) {
+                isLoading = true;
                 $('#loading').removeClass('mui--hide');
                 page++;
                 $.ajax({
                     url: '/news/nextCategory?page=' + page + '&url=' + location.pathname,
                     dataType: 'html',
                     success: function(html) {
+                        isLoading = false;
                         $('#list-wrapper').append(html);
                         $('#loading').addClass('mui--hide');
                     }
