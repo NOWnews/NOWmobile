@@ -1,7 +1,7 @@
 const debug = require('debug')('NOWmobile:libs:jsonld');
 
 
-module.exports = function(taxId,news) {
+module.exports = function(categoryName, news) {
     const data = [
       {
         "@context": "http://schema.org",
@@ -20,8 +20,8 @@ module.exports = function(taxId,news) {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@id": `https://m.nownews.com/news/category/${taxId}`,
-            "name": news ? news.MainMenu.name : taxId,
+            "@id": `https://m.nownews.com/news/category/${categoryName}`,
+            "name": news ? news.MainMenu.name : categoryName,
             "image": "https://legacy.nownews.com/NOWnews_default/default_terry.jpg"
           }
         }]

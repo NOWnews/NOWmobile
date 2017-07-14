@@ -4,7 +4,7 @@
         {% for relatedNews in news.refNews %}
 
             {% if loop.index == 1 %}
-                {% include "../ad/ad-related-block.html" %}
+                {% include "../../ad/ad-related-block.html" %}
             {% endif %}
 
             {% if loop.index < 6 %}
@@ -25,12 +25,12 @@
             {% endif %}
 
             {% if loop.index == 3 %}
-                {% include "../ad/one/microad2.html" %}
+                {% include "../../ad/one/microad2.html" %}
             {% endif %}
         {% endfor %}
     </div>
 {% endif %}
-{% include "../ad/one/ad300x250_relation.html" %}
+{% include "../../ad/one/ad300x250_relation.html" %}
 
 
 
@@ -40,12 +40,12 @@
 
         {# 微告台灣原生廣告 #}
         {% if loop.index == 2 %}
-            {% include "../ad/one/microad.html" %}
+            {% include "../../ad/one/microad.html" %}
         {% endif %}
 
         {# advs 原生廣告 #}
         {% if loop.index == 2 %}
-            {% include "../ad/one/advs.html" %}
+            {% include "../../ad/one/advs.html" %}
         {% endif %}
 
         {% if loop.index < 4 %}
@@ -66,4 +66,4 @@
         {% endif %}
     {% endfor %}
 </div>
-{% include "../ad/one/ad300x250_head.html" %}
+{% include "../../ad/one/ad300x250_head.html" %}

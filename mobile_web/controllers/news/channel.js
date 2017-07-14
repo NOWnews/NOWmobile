@@ -63,7 +63,7 @@ module.exports = (req, res, next) => {
             return res.json({ data });
         }
 
-        return res.render('news/channel', data);
+        return res.render('newslist/channel', data);
 
     }).catch(next);
 
