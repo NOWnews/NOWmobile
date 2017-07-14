@@ -228,7 +228,7 @@ $(function() {
     if (hasListWrapperDom){
         $window.scroll(function() {
             if (!isLoading && $(document).height() - $window.height() - 100 < $window.scrollTop()) {
-              isLoading = true;
+                isLoading = true;
                 $('#loading').removeClass('mui--hide');
                 page++;
                 $.ajax({
