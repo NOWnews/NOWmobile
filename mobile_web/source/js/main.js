@@ -39,7 +39,7 @@ $(function() {
                 $('body').removeClass('mui-body--scroll-lock');
             };
             $('.ads-cover.dfp').attr('id', 'mui-overlay').addClass('mui--show');
-            $('#mui-overlay').append('<a class="close"><img src="/static/img/icons/icon-close.png" /></a>');
+            $('#mui-overlay').append('<a class="close"><img src="/static/img/icon-close.png"/></a>');
             $('#mui-overlay > div').css('position', 'absolute');
 
             var adsWidthHalf = 0 - $('#mui-overlay > div').width()/2;
@@ -224,15 +224,18 @@ $(function() {
     // 滑到底去抓新聞
     var page = 1;
     var hasListWrapperDom = $('#list-wrapper').length > 0;
+    var isLoading = false;
     if (hasListWrapperDom){
         $window.scroll(function() {
-            if ($(document).height() - $window.height() === $window.scrollTop()) {
+            if (!isLoading && $(document).height() - $window.height() - 100 < $window.scrollTop()) {
+              isLoading = true;
                 $('#loading').removeClass('mui--hide');
                 page++;
                 $.ajax({
-                    url: '/news/nextCategory?page=' + page + '&url=' + location.pathname,
+                    url: '/ajaxPost?page=' + page + '&url=' + location.pathname,
                     dataType: 'html',
                     success: function(html) {
+                        isLoading = false;
                         $('#list-wrapper').append(html);
                         $('#loading').addClass('mui--hide');
                     }
