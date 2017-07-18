@@ -5,7 +5,7 @@
 <meta name="news_keywords" content="{{ news.newsKeywords }}">
 
 <!-- for facebook use2-->
-<meta property="og:url" content="https://www.nownews.com{{ news.parseUrl }}">
+<meta property="og:url" content="{{ news.completeUrl }}">
 <meta property="og:title" content="{{ news.title }}">
 <meta property="og:description" content="{{ news.summary }}">
 {% if news.MainPhoto.thumbnail %}
@@ -20,7 +20,7 @@
 
 <!-- for Google plus use -->
 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" />
-<meta itemprop="url" content="https://www.nownews.com{{ news.parseUrl }}">
+<meta itemprop="url" content="{{ news.completeUrl }}">
 <meta itemprop="name" content="{{ news.title }}">
 <meta itemprop="description" content="{{ news.summary }}">
 <div class="mui--hide" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -43,4 +43,4 @@
 <meta itemprop="dateCreated" content="{{ news.createdAt }}">
 <meta itemprop="dateModified" content="{{ news.updatedAt }}">
 <meta itemprop="datePublished" content="{{ news.createdAt }}">
-<link rel="canonical" href="https://www.nownews.com{{news.parseUrl}}">
+<link rel="canonical" href="{{ news.completeUrl }}">

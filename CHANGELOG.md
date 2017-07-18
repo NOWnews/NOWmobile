@@ -5,6 +5,11 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 
+## 1.1.1 - 2017-07-18
+### Fixed
+- 調整 og:url @esbb48
+
+
 ## 1.1.0 - 2017-07-07
 ### Fixed
 - `mobile_web/views/trace/nestle.html` 只留符合現在手機版的 code @Webber
