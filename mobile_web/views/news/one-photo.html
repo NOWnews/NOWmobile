@@ -65,6 +65,11 @@
                         <div class="mui-container-fluid">
                             <div class="mui-row">
                                 {{ news.content | safe }}
+                                <div class="text-slider">
+                                    {% for photo in news.Photos %}
+                                        <div><p>{{photo.desc}}</p></div>
+                                    {% endfor %}
+                                </div>
                                 <div class="slick-photos">
                                     {% for photo in news.Photos %}
                                         <div class="slick-photo">

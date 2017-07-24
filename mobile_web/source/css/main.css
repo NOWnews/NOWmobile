@@ -1,4 +1,5 @@
 /*header*/
+
 * {
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -12,7 +13,7 @@ a:hover {
     font-size: 12px;
 }
 
-.info-title{
+.info-title {
     font-weight: bold;
     font-size: 16px;
     white-space: nowrap;
@@ -23,6 +24,7 @@ a:hover {
 .info-caption {
     font-size: 13px;
 }
+
 
 /*category*/
 
@@ -36,6 +38,7 @@ a:hover {
     padding: 0;
     -webkit-overflow-scrolling: touch;
 }
+
 .category-select > ul {
     width: 100%;
     list-style: none;
@@ -55,33 +58,33 @@ a:hover {
     z-index: 1;
 }
 
-@media (min-width: 500px){
+@media (min-width: 500px) {
     .category-select > div {
         max-width: 15%;
         min-width: 15%;
     }
 }
 
-@media (min-width: 700px){
+@media (min-width: 700px) {
     .category-select > div {
         max-width: 10%;
         min-width: 10%;
     }
 }
 
-@media (min-width: 900px){
+@media (min-width: 900px) {
     .category-select > div {
         max-width: 7%;
         min-width: 7%;
     }
 }
+
 .category-select > .right-cover {
     right: 0;
 }
 
 .category-select > ul > li {
     display: inline-block;
-
 }
 
 .category-select li a {
@@ -91,7 +94,8 @@ a:hover {
     font-size: 20px;
 }
 
-.category-select li.isActive > a, .category-select li > a:hover{
+.category-select li.isActive > a,
+.category-select li > a:hover {
     color: #00FFFE;
 }
 
@@ -110,6 +114,7 @@ a:hover {
 #video-category-nav.category-select > div {
     background: url(/static/img/category-gradient-purple.png);
 }
+
 
 /* channel Nav */
 
@@ -164,12 +169,14 @@ a:hover {
     border-bottom: 1px dashed #000;
 }
 
+
 /* When channel nav is open */
+
 #channel-nav-block.is-open {
     height: 100%;
 }
 
-#channel-nav-block.is-open #channel-nav{
+#channel-nav-block.is-open #channel-nav {
     display: block;
 }
 
@@ -228,30 +235,42 @@ a:hover {
     background-size: cover;
 }
 
+
 /* When channel nav is open */
+
 #topic-nav-block.is-open {
     height: 100%;
 }
 
-#topic-nav-block.is-open #topic-nav{
+#topic-nav-block.is-open #topic-nav {
     display: block;
 }
 
+
 /*content*/
+
 .content-box {}
+
 
 /**
  * Body CSS
  */
 
-html, body {
+html,
+body {
     height: 100%;
 }
-html, body, input, textarea, buttons {
+
+html,
+body,
+input,
+textarea,
+buttons {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
+
 
 /**
  * Header CSS
@@ -265,15 +284,19 @@ header.mui-appbar {
     left: 0;
     z-index: 3;
 }
+
 header ul.mui-list--inline {
     margin-bottom: 0;
 }
+
 header a {
     color: white;
 }
+
 header a:hover {
     color: white;
 }
+
 header .header-btn > img {
     max-width: 25px;
 }
@@ -282,9 +305,11 @@ header .mobile-logo {
     height: 23px;
 }
 
+
 /**
  * MenuNav Bar CSS
  */
+
 #menu-nav-wrapper {
     background-image: url(/static/img/burglist-bg90.png);
     background-repeat: repeat;
@@ -311,6 +336,7 @@ header .mobile-logo {
         min-height: calc(100% - 64px);
     }
 }
+
 #menu-nav-wrapper > .menu-nav-item {
     font-size: 20px;
     height: 60px;
@@ -353,6 +379,7 @@ header .mobile-logo {
     left: 16px;
 }
 
+
 /**
  * Search Bar CSS
  */
@@ -362,12 +389,12 @@ header .mobile-logo {
     padding: 0;
 }
 
-#search-input{
+#search-input {
     color: white;
     border-color: white;
 }
 
-#search-input:focus{
+#search-input:focus {
     border-color: white;
     color: white;
     height: 31px;
@@ -380,6 +407,7 @@ header .mobile-logo {
     font-size: 17px;
 }
 
+
 /**
  * photo one Bar CSS
  */
@@ -389,6 +417,7 @@ header .mobile-logo {
     padding-top: 10px;
 }
 
+
 /**
  * 輪播 CSS
  */
@@ -397,8 +426,10 @@ header .mobile-logo {
     position: relative;
 }
 
+
 /* 豆子 CSS
  */
+
 .single-item .slick-dots {
     bottom: initial;
     bottom: 2px;
@@ -414,6 +445,7 @@ header .mobile-logo {
     color: #fff;
     opacity: 1;
 }
+
 .single-item .slick-dots li button:before {
     color: #fff;
     font-size: 12px;
@@ -426,10 +458,10 @@ header .mobile-logo {
 
 .slick-news .slick-news-info {
     position: absolute;
-    bottom:0;
-    color:#fff;
-    font-size:15px;
-    height:60px;
+    bottom: 0;
+    color: #fff;
+    font-size: 15px;
+    height: 60px;
     padding: 20px 10px;
     background: url(/static/img/slick-news-info-bg.png);
     width: 100%;
@@ -440,8 +472,10 @@ header .mobile-logo {
     margin-top: -5px;
 }
 
+
 /* 左右箭頭 CSS
  */
+
 .slick-photos .slick-next {
     right: 0;
     height: 46px;
@@ -458,6 +492,33 @@ header .mobile-logo {
     height: 46px;
     background-size: 100%;
 }
+
+
+/* 圖片新聞 圖說slider
+ */
+
+
+/*.slider-wrapper {
+  position:relative;
+}
+.text-slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+}*/
+
+.text-slider p {
+    padding: 0 10px 0 10px;
+    font-size: 0.8em;
+    color: white;
+    background-color: #222;
+    opacity: 0.9;
+    line-height: 2;
+    margin: 0;
+}
+
 
 /**
  * Content CSS
@@ -494,6 +555,7 @@ header .mobile-logo {
     border-bottom: 1px solid #dedede;
     bottom: -38px;
 }
+
 .news-block .news-info {
     position: absolute;
     line-height: 150%;
@@ -506,7 +568,8 @@ header .mobile-logo {
     left: -2px;
 }
 
-.news-block .news-info-bg, .sponser.news-info-with-bg{
+.news-block .news-info-bg,
+.sponser.news-info-with-bg {
     position: absolute;
     line-height: 150%;
     bottom: -20px;
@@ -554,12 +617,16 @@ header .mobile-logo {
     padding: 0 15px;
 }
 
-.news-one-page .title, .news-one-page .title {
+.news-one-page .title,
+.news-one-page .title {
     font-size: 26px;
 }
 
+
 /* 麵包屑 */
-.news-one-page .breadcrumb, .news-one-page .breadcrumb {
+
+.news-one-page .breadcrumb,
+.news-one-page .breadcrumb {
     display: none;
 }
 
@@ -570,7 +637,10 @@ header .mobile-logo {
     line-height: 160%;
 }
 
-.news-body img , .news-body p, .news-body iframe, .freeBody iframe {
+.news-body img,
+.news-body p,
+.news-body iframe,
+.freeBody iframe {
     max-width: 100% !important;
 }
 
@@ -581,6 +651,7 @@ header .mobile-logo {
 .font-size-small {
     font-size: 16px;
 }
+
 .font-size-small p > span {
     font-size: 16px!important;
 }
@@ -588,9 +659,11 @@ header .mobile-logo {
 .font-size-middle {
     font-size: 20px;
 }
-.font-size-middle p > span{
+
+.font-size-middle p > span {
     font-size: 20px!important;
 }
+
 .font-size-large {
     font-size: 24px;
 }
@@ -638,7 +711,8 @@ header .mobile-logo {
     padding-left: 28%;
 }
 
-.arrow-block a.is-active, .arrow-block a:hover {
+.arrow-block a.is-active,
+.arrow-block a:hover {
     font-weight: bold;
 }
 
@@ -651,29 +725,32 @@ header .mobile-logo {
     margin-bottom: 15px;
 }
 
-.related-news-block .one-news img{
+.related-news-block .one-news img {
     max-width: 100%;
     padding-top: 5px;
 }
 
 .related-news-block .related-news-info {
     padding-left: 0;
-    color: rgba(0,0,0,.87);
+    color: rgba(0, 0, 0, .87);
 }
 
 
 /**
  * page freeBody2 CSS
  */
+
 .freeBody2 ul {
     padding: 0;
     list-style-type: none;
 }
+
 .freeBody2 ul > li > a {
     coloe: #0083FF;
     padding: 5px 0;
     display: block;
 }
+
 .freeBody2 ul > li span {
     margin-left: 10px;
 }
@@ -682,12 +759,15 @@ header .mobile-logo {
     max-width: 40px;
 }
 
+
 /**
  * page freeBody CSS
  */
+
 .freeBody {
     margin-top: 40px;
 }
+
 
 /**
  * Photo CSS
@@ -698,13 +778,13 @@ header .mobile-logo {
     max-height: 360px;
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
     .photo-block .shadow-photo {
         max-height: 250px;
     }
 }
 
-@media (max-width: 360px){
+@media (max-width: 360px) {
     .photo-block .shadow-photo {
         max-height: 213px;
     }
@@ -734,7 +814,10 @@ header .mobile-logo {
     background-image: url(/static/img/slick-news-info-bg.png);
     background-size: 100% 100%;
 }
- /*.slick-list .draggable {height:100%!important;}*/
+
+
+/*.slick-list .draggable {height:100%!important;}*/
+
 .slick-list {
     height: auto;
 }
@@ -745,12 +828,14 @@ header .mobile-logo {
 
 .photo-main-image {
     width: 100%;
-    max-width:100%;
+    max-width: 100%;
 }
+
 
 /**
  * page category
  */
+
 .one-category {
     padding-bottom: 10px;
     letter-spacing: 3px;
@@ -769,48 +854,63 @@ header .mobile-logo {
 .tid419883 {
     color: #e71900;
 }
+
 .tid419884 {
     color: #ff5a17;
 }
+
 .tid419885 {
     color: #ff9900;
 }
+
 .tid419886 {
     color: #ffe72e;
 }
+
 .tid419887 {
     color: #72ff5c;
 }
+
 .tid419888 {
     color: #53ffe0;
 }
+
 .tid419889 {
     color: #2ee7ff;
 }
+
 .tid419890 {
     color: #0099ff;
 }
+
 .tid419891 {
     color: #2763ff;
 }
+
 .tid419892 {
     color: #6645ff;
 }
+
 .tid419893 {
     color: #ff737d;
 }
+
 .tid419894 {
     color: #ff456e;
 }
+
 .tid419895 {
     color: #ff45d5;
 }
+
 .tid419896 {
     color: #d073ff;
 }
+
 .tid419897 {
     color: #b911f7;
 }
+
 
 /**
  * loading CSS
@@ -833,7 +933,9 @@ header .mobile-logo {
     top: 70%;
     position: relative;
 }
- /**
+
+
+/**
  * About
  */
 
@@ -855,9 +957,9 @@ header .mobile-logo {
     background-color: #f1f1f1;
     left: 16.5%;
     margin-left: -1.5px;
-
 }
-.timeline img{
+
+.timeline img {
     border-radius: 50%;
     max-width: 90%;
     position: relative;
@@ -868,6 +970,7 @@ header .mobile-logo {
 .timeline-row {
     margin-bottom: 15px;
 }
+
 
 /**
  * Footer CSS
@@ -889,6 +992,7 @@ footer {
     z-index: 1;
 }
 
+
 /**
  * ADS CSS
  */
@@ -902,7 +1006,7 @@ footer {
 }
 
 #mui-overlay {
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0, 0, 0, .7);
 }
 
 .ads-cover .close {
@@ -919,13 +1023,16 @@ footer {
     display: none;
 }
 
+
 /**
  * NAV 滑動
  **/
+
 .nav-up {
     top: -10px;
 }
-.category-select{
+
+.category-select {
     transition: all 0.01s ease-in-out;
 }
 
@@ -936,28 +1043,34 @@ footer {
 .slick-news:first-child {
     display: block;
 }
+
+
 /** 20170703新聞內頁 **/
+
 span.category-title {
-    font-size:16px;
+    font-size: 16px;
     line-height: 1.429;
     display: block;
 }
 
 h3.relatedNews {
-    font-size:14px;
+    font-size: 14px;
     margin-top: 0;
     line-height: 150%;
 }
 
+
 /** 20170703新聞分類 **/
+
 h2.category-newstitle {
     font-weight: bold;
     font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin:-5px 0 0 0;
+    margin: -5px 0 0 0;
 }
+
 
 /** 20170703新聞輪播 **/
 
@@ -969,19 +1082,22 @@ h2.slide-newstitle {
     overflow: hidden;
     text-overflow: ellipsis;
     position: absolute;
-    bottom:0;
-    color:#fff;
-    font-size:15px;
-    height:60px;
+    bottom: 0;
+    color: #fff;
+    font-size: 15px;
+    height: 60px;
     padding: 20px 10px;
     width: 100%;
     background-size: 100% 100%;
 }
 
+
 /* keywords */
+
 .keywords {
     margin-top: 25px;
 }
+
 .keywords > a {
     border: 1px solid #000;
     border-radius: 15px;
