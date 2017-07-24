@@ -95,11 +95,21 @@ $(function() {
         adaptiveHeight: true,
         arrows: false
     });
-
+    //圖說
+    $('.text-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      adaptiveHeight: true,
+      asNavFor: '.slick-photos'
+    });
     // 圖集換頁的特效
     $('.slick-photos').slick({
         lazyLoad: 'progressive',
-        adaptiveHeight: true
+        adaptiveHeight: true,
+        infinite: true,
+        asNavFor: '.text-slider',
     });
     $('.slick-photos').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         $('#photo-one-bar span').html(nextSlide + 1);

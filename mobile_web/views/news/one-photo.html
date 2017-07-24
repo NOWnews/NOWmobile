@@ -65,17 +65,22 @@
                         <div class="mui-container-fluid">
                             <div class="mui-row">
                                 {{ news.content | safe }}
-                                <div class="slick-photos">
+                                <div class="text-slider">
                                     {% for photo in news.Photos %}
-                                        <div class="slick-photo">
-                                            <img class="photo-main-image" data-lazy="{{ photo.url }}" />
-                                            <div class="shadow-photo mui--hide">
-                                                <div class="shadow-photo-info mui--text-subhead">
-                                                    {{ photo.title }}
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <div><p style="margin:0;">{{photo.desc}}</p></div>
                                     {% endfor %}
+                                </div>
+                                <div class="slick-photos">
+                                  {% for photo in news.Photos %}
+                                      <div class="slick-photo">
+                                          <img class="photo-main-image" data-lazy="{{ photo.url }}" />
+                                          <div class="shadow-photo mui--hide">
+                                              <div class="shadow-photo-info mui--text-subhead">
+                                                  {{ photo.title }}
+                                              </div>
+                                          </div>
+                                      </div>
+                                  {% endfor %}
                                 </div>
                             </div>
                         </div>
