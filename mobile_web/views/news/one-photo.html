@@ -71,16 +71,16 @@
                                     {% endfor %}
                                 </div>
                                 <div class="slick-photos">
-                                  {% for photo in news.Photos %}
-                                      <div class="slick-photo">
-                                          <img class="photo-main-image" data-lazy="{{ photo.url }}" />
-                                          <div class="shadow-photo mui--hide">
-                                              <div class="shadow-photo-info mui--text-subhead">
-                                                  {{ photo.title }}
-                                              </div>
-                                          </div>
-                                      </div>
-                                  {% endfor %}
+                                    {% for photo in news.Photos %}
+                                        <div class="slick-photo">
+                                            <img class="photo-main-image" data-lazy="{{ photo.url }}" />
+                                            <div class="shadow-photo mui--hide">
+                                                <div class="shadow-photo-info mui--text-subhead">
+                                                    {{ photo.title }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
