@@ -39,7 +39,7 @@ a:hover {
     -webkit-overflow-scrolling: touch;
 }
 
-.category-select>ul {
+.category-select > ul {
     width: 100%;
     list-style: none;
     margin: 0;
@@ -49,7 +49,7 @@ a:hover {
     padding: 0 80px;
 }
 
-.category-select>div {
+.category-select > div {
     background: url(/static/img/category-gradient-black.png);
     position: absolute;
     height: 48px;
@@ -59,31 +59,31 @@ a:hover {
 }
 
 @media (min-width: 500px) {
-    .category-select>div {
+    .category-select > div {
         max-width: 15%;
         min-width: 15%;
     }
 }
 
 @media (min-width: 700px) {
-    .category-select>div {
+    .category-select > div {
         max-width: 10%;
         min-width: 10%;
     }
 }
 
 @media (min-width: 900px) {
-    .category-select>div {
+    .category-select > div {
         max-width: 7%;
         min-width: 7%;
     }
 }
 
-.category-select>.right-cover {
+.category-select > .right-cover {
     right: 0;
 }
 
-.category-select>ul>li {
+.category-select > ul > li {
     display: inline-block;
 }
 
@@ -94,8 +94,8 @@ a:hover {
     font-size: 20px;
 }
 
-.category-select li.isActive>a,
-.category-select li>a:hover {
+.category-select li.isActive > a,
+.category-select li > a:hover {
     color: #00FFFE;
 }
 
@@ -103,7 +103,7 @@ a:hover {
     background: #001971;
 }
 
-#photo-category-nav.category-select>div {
+#photo-category-nav.category-select > div {
     background: url(/static/img/category-gradient-blue.png);
 }
 
@@ -111,7 +111,7 @@ a:hover {
     background: #420073;
 }
 
-#video-category-nav.category-select>div {
+#video-category-nav.category-select > div {
     background: url(/static/img/category-gradient-purple.png);
 }
 
@@ -125,7 +125,7 @@ a:hover {
     background-color: #fff;
 }
 
-#channel-nav-block>.mui-panel {
+#channel-nav-block > .mui-panel {
     background: #D09D22;
     color: white;
     font-size: 18px;
@@ -190,7 +190,7 @@ a:hover {
     background-color: #fff;
 }
 
-#topic-nav-block>.mui-panel {
+#topic-nav-block > .mui-panel {
     background: #D09D22;
     color: white;
     font-size: 18px;
@@ -297,7 +297,7 @@ header a:hover {
     color: white;
 }
 
-header .header-btn>img {
+header .header-btn > img {
     max-width: 25px;
 }
 
@@ -337,7 +337,7 @@ header .mobile-logo {
     }
 }
 
-#menu-nav-wrapper>.menu-nav-item {
+#menu-nav-wrapper > .menu-nav-item {
     font-size: 20px;
     height: 60px;
     line-height: 60px;
@@ -345,7 +345,7 @@ header .mobile-logo {
     border-bottom: 1px solid #5F5D5F;
 }
 
-#menu-nav-wrapper>.menu-nav-item a {
+#menu-nav-wrapper > .menu-nav-item a {
     display: block;
     width: 100%;
     height: 100%;
@@ -652,7 +652,7 @@ header .mobile-logo {
     font-size: 16px;
 }
 
-.font-size-small p>span {
+.font-size-small p > span {
     font-size: 16px!important;
 }
 
@@ -660,7 +660,7 @@ header .mobile-logo {
     font-size: 20px;
 }
 
-.font-size-middle p>span {
+.font-size-middle p > span {
     font-size: 20px!important;
 }
 
@@ -668,7 +668,7 @@ header .mobile-logo {
     font-size: 24px;
 }
 
-.font-size-large p>span {
+.font-size-large p > span {
     font-size: 24px!important;
 }
 
@@ -745,17 +745,17 @@ header .mobile-logo {
     list-style-type: none;
 }
 
-.freeBody2 ul>li>a {
+.freeBody2 ul > li > a {
     coloe: #0083FF;
     padding: 5px 0;
     display: block;
 }
 
-.freeBody2 ul>li span {
+.freeBody2 ul > li span {
     margin-left: 10px;
 }
 
-.freeBody2 ul>li img {
+.freeBody2 ul > li img {
     max-width: 40px;
 }
 
@@ -929,7 +929,7 @@ header .mobile-logo {
     text-align: center;
 }
 
-#loading>span {
+#loading > span {
     top: 70%;
     position: relative;
 }
@@ -997,7 +997,7 @@ footer {
  * ADS CSS
  */
 
-.ads-block>div {
+.ads-block > div {
     margin: auto;
 }
 
@@ -1098,7 +1098,7 @@ h2.slide-newstitle {
     margin-top: 25px;
 }
 
-.keywords>a {
+.keywords > a {
     border: 1px solid #000;
     border-radius: 15px;
     padding: 2px 7px;
