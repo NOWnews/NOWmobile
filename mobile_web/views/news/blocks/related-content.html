@@ -11,7 +11,7 @@
                 <div class="mui-row one-news">
                     <a href="/news/{{ relatedNews.sn }}{{queryParams}}">
                         <div class="mui-col-xs-5">
-                            <img src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + relatedNews.MainPhoto.googleCDN if relatedNews.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
+                            <img src="{{ relatedNews.MainPhoto.googleCDN if relatedNews.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
                         </div>
                         <div class="mui-col-xs-7 related-news-info">
                             <span class="category-title tid{{ relatedNews.MainMenu.categoryName }}">
@@ -52,7 +52,7 @@
             <div class="mui-row one-news">
                 <a href="/news/{{ news.sn }}{{queryParams}}">
                     <div class="mui-col-xs-5">
-                        <img src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.googleCDN if news.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
+                        <img src="{{ news.MainPhoto.googleCDN if news.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
                     </div>
                     <div class="mui-col-xs-7 related-news-info">
                         <span class="category-title tid{{ news.MainMenu.categoryName }}">

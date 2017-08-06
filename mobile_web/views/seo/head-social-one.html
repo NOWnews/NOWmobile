@@ -10,10 +10,10 @@
 <meta property="og:description" content="{{ news.summary }}">
 {% if news.MainPhoto.thumbnail %}
 <meta property="og:image" content="{{ news.MainPhoto.thumbnail }}">
-<meta property="popin:image" content="http://imgapiv2.nownews.com/?w=640&h=360&q=70&src={{ news.MainPhoto.thumbnail }}">
+<meta property="popin:image" content="{{ news.MainPhoto.thumbnail }}">
 {% else %}
 <meta property="og:image" content="{{ news.MainPhoto.googleCDN }}">
-<meta property="popin:image" content="http://imgapiv2.nownews.com/?w=640&h=360&q=70&src={{ news.MainPhoto.googleCDN }}">
+<meta property="popin:image" content="{{ news.MainPhoto.googleCDN }}">
 {% endif %}
 <meta property="og:image" content="{{ news.MainPhoto.googleCDN }}">
 <meta property="article:author" content="https://www.facebook.com/nownews">

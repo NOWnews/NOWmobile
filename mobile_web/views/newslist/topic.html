@@ -42,7 +42,7 @@
                     <div class="mui-container-fluid">
                         <div class="mui-row">
                             <a href="{{ news.url }}">
-                                <img class="news-main-image" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.googleCDN if news.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                                <img class="news-main-image" src="{{ news.MainPhoto.googleCDN if news.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                                 <div class="news-info-bg">
                                 </div>
                                 <div class="news-info">
