@@ -55,8 +55,10 @@
         {% include "./ad/cover/dfp.html" %}
         {# google 討厭蓋版 onead 廣告 #}
         {% include "./ad/cover/onead.html" %}
-        {# 世大運蓋版 測試 #}
-        {% include "./eventPage/XXIX.html" %}
+        {# 世大運蓋版 #}
+        {% if news and news.SummerUniversiade %}
+            {% include "./eventPage/XXIX.html" %}
+        {% endif %}
 
     </body>
 </html>
