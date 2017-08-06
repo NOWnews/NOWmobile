@@ -12,10 +12,10 @@
 <meta property="og:image" content="{{ news.MainPhoto.thumbnail }}">
 <meta property="popin:image" content="{{ news.MainPhoto.thumbnail }}">
 {% else %}
-<meta property="og:image" content="{{ news.MainPhoto.googleCDN }}">
-<meta property="popin:image" content="{{ news.MainPhoto.googleCDN }}">
+<meta property="og:image" content="{{ news.formatImg }}">
+<meta property="popin:image" content="{{ news.formatImg }}">
 {% endif %}
-<meta property="og:image" content="{{ news.MainPhoto.googleCDN }}">
+<meta property="og:image" content="{{ news.formatImg }}">
 <meta property="article:author" content="https://www.facebook.com/nownews">
 
 <!-- for Google plus use -->
@@ -24,8 +24,8 @@
 <meta itemprop="name" content="{{ news.title }}">
 <meta itemprop="description" content="{{ news.summary }}">
 <div class="mui--hide" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-    <img src="{{news.MainPhoto.googleCDN}}"/>
-    <meta itemprop="url" content="{{news.MainPhoto.googleCDN}}">
+    <img src="{{news.formatImg}}"/>
+    <meta itemprop="url" content="{{news.formatImg}}">
     <meta itemprop="width" content="696">
     <meta itemprop="height" content="530">
 </div>

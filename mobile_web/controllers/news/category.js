@@ -3,6 +3,7 @@ import co from 'co';
 import getV4Api from '../../util/getV4Api';
 import getAdsApi from '../../util/getAdsApi';
 import jsonLd from '../../util/catJsonLd'
+import newsImgFormat from '../../util/newsImgFormat';
 
 const debug = require('debug')('NOWmobile:controllers:news:category');
 
@@ -49,6 +50,9 @@ module.exports = (req, res, next) => {
                 ad: yield getAdsApi('3001')
             }];
         // ------------------------
+
+        newsList = newsImgFormat(newsList, true);
+        console.log(newsList, '####')
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList, ads });

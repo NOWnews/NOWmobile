@@ -1,6 +1,8 @@
 import co from 'co';
 import express from 'express';
 import getV4Api from '../../util/getV4Api';
+import newsImgFormat from '../../util/newsImgFormat';
+
 let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:news:topic');
 
@@ -20,6 +22,8 @@ module.exports = (req, res, next) => {
             }
             return topic;
         });
+
+        newsList = newsImgFormat(newsList, true);
 
         let { isOpen } = req.query;
         let topicName = '專題';

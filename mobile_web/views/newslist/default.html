@@ -31,7 +31,7 @@
                                                 <h2 class="slide-newstitle">{{ news.shortTitle }}</h2>
                                             </p>
                                         </div>
-                                        <img class="news-main-image" src="{{ news.MainPhoto.googleCDN if news.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                                        <img class="news-main-image" src="{{ news.formatImg if news.formatImg else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                                     </a>
                                 </div>
                             {% endif %}

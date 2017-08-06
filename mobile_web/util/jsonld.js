@@ -16,7 +16,7 @@ module.exports = function(news) {
             "headline": news.title,
             "image": {
                 "@type": "ImageObject",
-                "url": news.MainPhoto ? news.MainPhoto.googleCDN :'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' ,
+                "url": news.MainPhoto ? news.formatImg :'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' ,
                 "width": 696,
                 "height": 530
             },
@@ -64,7 +64,7 @@ module.exports = function(news) {
                     "item": {
                     "@id": `https://m.nownews.com/news/${news.sn}`,
                         "name": news.title,
-                        "image": news.MainPhoto ? news.MainPhoto.googleCDN : 'https://m.nownews.com/static/img/mobile-logo.png'
+                        "image": news.MainPhoto ? news.formatImg : 'https://m.nownews.com/static/img/mobile-logo.png'
                     }
                 }
             ]
