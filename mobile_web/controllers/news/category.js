@@ -52,7 +52,6 @@ module.exports = (req, res, next) => {
         // ------------------------
 
         newsList = newsImgFormat(newsList, true);
-        console.log(newsList, '####')
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList, ads });
