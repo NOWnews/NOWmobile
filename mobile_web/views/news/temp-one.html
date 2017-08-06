@@ -55,7 +55,7 @@
 
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img alt="{{ news.MainPhoto.desc }}" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.url if news.MainPhoto.url else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                    <img alt="{{ news.MainPhoto.desc }}" src="{{ 'https://imgapiv2.nownews.com/?w=640&h=360&q=70&src=' + news.MainPhoto.googleCDN if news.MainPhoto.googleCDN else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
                 </div>
                 {{ news.content | safe }}
