@@ -2,6 +2,8 @@
 import co from 'co';
 import getV4Api from '../../util/getV4Api';
 import getAdsApi from '../../util/getAdsApi';
+import newsImgFormat from '../../util/newsImgFormat';
+
 const debug = require('debug')('NOWmobile:controllers:news:channel');
 
 module.exports = (req, res, next) => {
@@ -48,6 +50,8 @@ module.exports = (req, res, next) => {
                 ad: yield getAdsApi('3001')
             }];
         // ------------------------
+
+        newsList = newsImgFormat(newsList, true);
 
         let data = {
             nativeAds: ads || [],

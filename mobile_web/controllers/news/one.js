@@ -3,6 +3,8 @@ import co from 'co';
 import getV4Api from '../../util/getV4Api';
 import jsonld from '../../util/jsonld'
 
+import newsImgFormat from '../../util/newsImgFormat';
+
 const debug = require('debug')('NOWmobile:controllers:news');
 
 module.exports = (req, res, next) => {
@@ -64,6 +66,11 @@ module.exports = (req, res, next) => {
 
         // 加上 jsonld
         news.jsonld = jsonld(news);
+
+        news = newsImgFormat(news);
+        news.headline = newsImgFormat(news.headline, true);
+        news.refNews = newsImgFormat(news.refNews, true);
+        newsList = newsImgFormat(newsList, true);
 
         let data = {
             news,

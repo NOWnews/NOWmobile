@@ -3,6 +3,7 @@ import express from 'express';
 import getV4Api from '../util/getV4Api';
 import getAdsApi from '../util/getAdsApi';
 import jsonLd from '../util/homeJsonLd'
+import newsImgFormat from '../util/newsImgFormat';
 
 let router = express.Router();
 
@@ -53,6 +54,8 @@ router.route('/')
                     ad: yield getAdsApi('3001')
                 }];
             // ------------------------
+
+            newsList = newsImgFormat(newsList, true);
 
             if(req.query.data === 'PLAYJJ'){
                 return res.json({ newsList });
