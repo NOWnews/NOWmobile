@@ -3,13 +3,12 @@
     <div class="mui--text-center xxix">
         <div class="hint">
             <i class="fa fa-comment" aria-hidden="true"></i>
-            <span>拍我</span>
+            <img src="/static/img/eventPage/XXIX/hint.png" />
         </div>
         <img src="/static/img/eventPage/XXIX/{{ news.SummerUniversiade.kind }}.gif" />
         <h3>{{ news.SummerUniversiade.createdAt }}{{ news.SummerUniversiade.id }}</h3>
         <a class="callToAction" href='https://www.facebook.com/nownews' target='_blank'>
-            為世大運加油<br/>
-            快來參加活動
+            <img src="/static/img/eventPage/XXIX/calltoaction.png">
         </a>
     </div>
 </div>
@@ -50,10 +49,8 @@
     .xxix-box .callToAction {
         background: #F15BA6;
         display: block;
-        color: white;
         width: 100%;
         margin: auto;
-        font-size: 25px;
     }
     .xxix-box .callToAction:hover {
         color: white;
@@ -68,12 +65,11 @@
         position: absolute;
         left: 20px;
     }
-    .xxix-box .hint span {
+    .xxix-box .hint img {
         position: absolute;
-        left: 35px;
-        top: 20px;
-        font-size: 20px;
-        font-weight: bold;
+        left: 20px;
+        top: 15px;
+        width: 70px;
     }
 </style>
 <script type="text/javascript">
