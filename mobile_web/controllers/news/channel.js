@@ -51,8 +51,7 @@ module.exports = (req, res, next) => {
             }];
         // ------------------------
 
-        // TODO 列表夜改為縮圖api
-        // newsList = newsImgFormat(newsList, true);
+        newsList = newsImgFormat(newsList, true);
 
         let data = {
             nativeAds: ads || [],

@@ -51,8 +51,7 @@ module.exports = (req, res, next) => {
             }];
         // ------------------------
 
-        // TODO 列表夜改為縮圖api
-        // newsList = newsImgFormat(newsList, true);
+        newsList = newsImgFormat(newsList, true);
 
         if(req.query.data === 'PLAYJJ'){
             return res.json({ newsList, ads });
