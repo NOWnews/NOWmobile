@@ -1,7 +1,7 @@
 
 import co from 'co';
 import getV4Api from '../../util/getV4Api';
-
+import newsImgFormat from '../../util/newsImgFormat';
 const debug = require('debug')('NOWmobile:controllers:news:nextCategory');
 
 
@@ -15,6 +15,7 @@ module.exports = (req, res, next) => {
 
         // 不直接給是因為回傳的物件裡面還有 ads
         let { newsList } = yield getV4Api(`cat/${categoryName}?limit=30&page=${page}`);
+        newsList = newsImgFormat(newsList, true);
         result = { newsList };
 
         if(req.query.data === 'PLAYJJ'){
