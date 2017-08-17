@@ -104,7 +104,7 @@ a:hover {
 }
 
 #photo-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-blue.png);
+    background: url(/static/img/category-gradient-blue-1.png);
 }
 
 #video-category-nav {
@@ -112,7 +112,7 @@ a:hover {
 }
 
 #video-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-purple.png);
+    background: url(/static/img/category-gradient-purple-1.png);
 }
 
 
