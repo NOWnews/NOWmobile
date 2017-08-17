@@ -31,14 +31,6 @@ module.exports = (req, res, next) => {
         });
         news.newsKeywords = keywords.join(',');
 
-        // 過濾關鍵字
-        // if (news.keywords && news.keywords.length > 0) {
-        //     let byeText = ['首頁', '速報', '八卦', '政治', 'google編輯嚴選', 'yahoo名人娛樂', '香港雅虎', '電影', '色區', '生活看板', '社會看板', '國際看板' ,'大陸看板' ,'花生網', '旗艦報', '娛樂報', '花生新鮮事', '花生新鮮事旅遊', '地方', '旅遊看板', '科技看板', '要聞', '花生熱話題', '名人時尚看板', '大咖', '娛樂看板', '娛樂', '電視'];
-        //     let byeTextFormat = ',' + byeText.join('|,') + '|' + byeText.join('|');
-        //     let myRegExp = new RegExp(byeTextFormat, 'g');
-        //     news.keywords = news.keywords.replace(myRegExp, '').replace(/^,/, '');
-        // }
-
         let result = yield [
             getV4Api(`instant`),
             getV4Api('menus')
@@ -71,7 +63,7 @@ module.exports = (req, res, next) => {
         news.headline = newsImgFormat(news.headline, true);
         news.refNews = newsImgFormat(news.refNews, true);
         newsList = newsImgFormat(newsList, true);
-
+        let isOnePage = true;
         let data = {
             news,
             mainCategory,
@@ -135,7 +127,14 @@ module.exports = (req, res, next) => {
             return res.render('news/one-video', data);
         }
 
-        return res.render('news/one', data);
+        return res.render('news/one', {
+            news,
+            mainCategory,
+            headline: newsList,
+            queryParams: queryParams,
+            live,
+            isOnePage
+        });
 
     }).catch(next);
 };

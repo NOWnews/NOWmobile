@@ -23,22 +23,9 @@
 <meta itemprop="url" content="{{ news.completeUrl }}">
 <meta itemprop="name" content="{{ news.title }}">
 <meta itemprop="description" content="{{ news.summary }}">
-<div class="mui--hide" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-    <img src="{{news.formatImg}}"/>
-    <meta itemprop="url" content="{{news.formatImg}}">
-    <meta itemprop="width" content="696">
-    <meta itemprop="height" content="530">
-</div>
+
 <meta itemprop="keywords" content="{{ news.newsKeywords }}">
- <div class="mui--hide" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <img src="https://m.nownews.com/static/img/mobile-logo.png"/>
-      <meta itemprop="url" content="https://m.nownews.com/static/img/mobile-logo.png">
-      <meta itemprop="width" content="220">
-      <meta itemprop="height" content="52">
-    </div>
-    <meta itemprop="name" content="NOWnews今日新聞">
-</div>
+
 <meta itemprop="articleSection" content="{{ news.MainMenu.name }}">
 <meta itemprop="dateCreated" content="{{ news.createdAt }}">
 <meta itemprop="dateModified" content="{{ news.updatedAt }}">

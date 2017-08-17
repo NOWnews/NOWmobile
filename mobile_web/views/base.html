@@ -8,8 +8,12 @@
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
         <meta http-equiv="content-language" content="zh-tw">
         {% include "./blocks/head-meta.html" %}
-        {% include "./blocks/head-include.html" %}
+        {% if isOnePage %}
+            {% include "./blocks/head-include-notslide.html" %}
 
+        {% else %}
+            {% include "./blocks/head-include.html" %}
+        {% endif %}
         {# seo block #}
         {% include "./seo/fb/fbBase.html" %}
         {% block socialblock %}{% endblock %}

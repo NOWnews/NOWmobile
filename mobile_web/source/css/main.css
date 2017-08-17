@@ -50,7 +50,7 @@ a:hover {
 }
 
 .category-select > div {
-    background: url(/static/img/category-gradient-black.png);
+    background: url(/static/img/category-gradient-black-1.png);
     position: absolute;
     height: 48px;
     max-width: 20%;
@@ -104,7 +104,7 @@ a:hover {
 }
 
 #photo-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-blue.png);
+    background: url(/static/img/category-gradient-blue-1.png);
 }
 
 #video-category-nav {
@@ -112,7 +112,7 @@ a:hover {
 }
 
 #video-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-purple.png);
+    background: url(/static/img/category-gradient-purple-1.png);
 }
 
 
@@ -311,7 +311,7 @@ header .mobile-logo {
  */
 
 #menu-nav-wrapper {
-    background-image: url(/static/img/burglist-bg90.png);
+    background-image: url(/static/img/burglist-bg90-1.png);
     background-repeat: repeat;
     margin-top: -1px;
     max-height: calc(100% - 56px);

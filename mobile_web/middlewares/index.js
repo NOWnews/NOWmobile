@@ -25,7 +25,13 @@ module.exports = function(app) {
     // 靜態檔案位置
 
     let staticFilePath = (process.env.NODE_ENV === 'production') ? 'public/dist' : 'source';
-    app.use('/static', express.static(`${rootPath}/mobile_web/${staticFilePath}`));
+    app.use('/static', express.static(`${rootPath}/mobile_web/${staticFilePath}`, {
+        etag: 1000,
+        maxAge: 86400000 * 10   // one day
+    }));
+    // app.use('/icons', express.static(`${rootPath}/mobile_web/${staticFilePath}/img/icons`, {
+    //     maxAge: 3153600000  // one day
+    // }));
     app.use(redirect(app));
     app.use(duplicate(app));
     app.use(logger('dev'));
