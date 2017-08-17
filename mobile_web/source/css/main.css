@@ -50,7 +50,7 @@ a:hover {
 }
 
 .category-select > div {
-    background: url(/static/img/category-gradient-black.png);
+    background: url(/static/img/category-gradient-black-1.png);
     position: absolute;
     height: 48px;
     max-width: 20%;
