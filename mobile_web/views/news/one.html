@@ -19,7 +19,7 @@
         {# 廣告版位 #}
         {% include "../ad/one/ad300x250_1.html" %}
         <div class="mui--hide" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-            <img src="http://104.199.239.249/jpeg,640x,q70/{{news.formatImg}}"/>
+            <img src="https://imgapiv2.nownews.com/?w=640&h=360&q=70&src={{news.formatImg}}"/>
             <meta itemprop="url" content="{{ news.formatImg if news.formatImg else 'https://imgapiv2.nownews.com/?w=640&q=70&src=https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
             <meta itemprop="width" content="696">
             <meta itemprop="height" content="530">
