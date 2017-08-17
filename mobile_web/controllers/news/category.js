@@ -53,21 +53,23 @@ module.exports = (req, res, next) => {
 
         newsList = newsImgFormat(newsList, true);
 
-        if(req.query.data === 'PLAYJJ'){
-            return res.json({ newsList, ads });
-        }
-
-        // 加上 jsonld
-        let catJsonLd = jsonLd(categoryName, newsList[0]);
-
-        return res.render('newslist/default', {
+        let data = {
             catJsonLd,
             nativeAds: ads || [],
             newsList,
             mainCategory,
             categoryName,
             live
-        });
+        };
+
+        if(req.query.data === 'PLAYJJ'){
+            return res.json({ data });
+        }
+
+        // 加上 jsonld
+        let catJsonLd = jsonLd(categoryName, newsList[0]);
+
+        return res.render('newslist/default', data);
 
     }).catch(next);
 
