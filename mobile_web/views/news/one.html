@@ -18,7 +18,21 @@
         </nav>
         {# 廣告版位 #}
         {% include "../ad/one/ad300x250_1.html" %}
-
+        <div class="mui--hide" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <img src="http://104.199.239.249/jpeg,640x,q70/{{news.formatImg}}"/>
+            <meta itemprop="url" content="{{ news.formatImg if news.formatImg else 'https://imgapiv2.nownews.com/?w=640&q=70&src=https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
+            <meta itemprop="width" content="696">
+            <meta itemprop="height" content="530">
+        </div>
+        <div class="mui--hide" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                <img src="https://m.nownews.com/static/img/mobile-logo.png"/>
+                <meta itemprop="url" content="https://m.nownews.com/static/img/mobile-logo.png">
+                <meta itemprop="width" content="220">
+                <meta itemprop="height" content="52">
+            </div>
+            <meta itemprop="name" content="NOWnews今日新聞">
+        </div>
         <div class="nownews-wrapper news-one-page">
             {# 麵包屑開始 #}
             <div class="breadcrumb">
@@ -66,7 +80,7 @@
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
                     <div class="mui--text-center">
-                        <img alt="{{ news.MainPhoto.desc }}" style="max-height: 360px" src="{{ news.formatImg if news.formatImg else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                        <img alt="{{ news.MainPhoto.desc }}" style="max-height: 360px" src="http://104.199.239.249/jpeg,640x,q70/{{ news.formatImg if news.formatImg else 'https://imgapiv2.nownews.com/?w=640&q=70&src=https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                     </div>
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
                 </div>

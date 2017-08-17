@@ -6,7 +6,7 @@
                     return;
                 }
                 $('#news-one').removeClass('mui--hide');
-                $('#news-one img').attr('src', json.img);
+                $('#news-one img').attr('src', `https://imgapiv2.nownews.com/?w=234&q=70&src=${json.img}`);
                 $('#news-one > a').attr('href', json.url);
                 $('#news-one span').text(json.title);
             });

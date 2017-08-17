@@ -71,7 +71,7 @@ module.exports = (req, res, next) => {
         news.headline = newsImgFormat(news.headline, true);
         news.refNews = newsImgFormat(news.refNews, true);
         newsList = newsImgFormat(newsList, true);
-
+        let isOnePage = true;
         let data = {
             news,
             mainCategory,
@@ -135,7 +135,14 @@ module.exports = (req, res, next) => {
             return res.render('news/one-video', data);
         }
 
-        return res.render('news/one', data);
+        return res.render('news/one', {
+            news,
+            mainCategory,
+            headline: newsList,
+            queryParams: queryParams,
+            live,
+            isOnePage
+        });
 
     }).catch(next);
 };

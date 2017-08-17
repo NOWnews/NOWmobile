@@ -16,7 +16,7 @@ module.exports = function(news) {
             "headline": news.title,
             "image": {
                 "@type": "ImageObject",
-                "url": news.MainPhoto ? news.formatImg :'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' ,
+                "url": news.MainPhoto ? news.MainPhoto.googleCDN || news.MainPhoto.thumbnail || 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' : 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' ,
                 "width": 696,
                 "height": 530
             },
