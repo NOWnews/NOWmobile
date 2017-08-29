@@ -8,6 +8,7 @@
 <meta property="og:url" content="{{ news.completeUrl }}">
 <meta property="og:title" content="{{ news.title }}">
 <meta property="og:description" content="{{ news.summary }}">
+<meta property="og:image" content="{{ news.MainPhoto.url }}">
 {% if news.MainPhoto.thumbnail %}
 <meta property="og:image" content="{{ news.MainPhoto.thumbnail }}">
 <meta property="popin:image" content="{{ news.MainPhoto.thumbnail }}">
@@ -15,7 +16,6 @@
 <meta property="og:image" content="{{ news.formatImg }}">
 <meta property="popin:image" content="{{ news.formatImg }}">
 {% endif %}
-<meta property="og:image" content="{{ news.MainPhoto.url }}">
 <meta property="article:author" content="https://www.facebook.com/nownews">
 
 <!-- for Google plus use -->
