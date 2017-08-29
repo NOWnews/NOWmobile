@@ -15,10 +15,10 @@ router.route('/video-js.swf')
 router.route('/favicon.ico')
     .get(favicon);
 
-router.route('/apple-app-site-association.crash')
+router.route('/apple-app-site-association')
     .get(iosLink);
 
-router.route('/.well-known/apple-app-site-association.crash')
+router.route('/.well-known/apple-app-site-association')
     .get(iosLink);
 
 module.exports = router;
