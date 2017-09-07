@@ -8,8 +8,6 @@ module.exports = (app) => {
         // 尋找有兩個斜線的情況 (//)
         let matches = req.path.match(/\/\//);
 
-        console.log('---------------- 有兩個斜線的情況 ----------------');
-
         // 移除多餘的 /
         if(matches !== null && matches.index === 0) {
             let splitArray = matches.input.split('//');
