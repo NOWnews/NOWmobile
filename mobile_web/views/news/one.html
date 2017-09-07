@@ -80,7 +80,7 @@
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
                     <div class="mui--text-center">
-                        <img alt="{{ news.MainPhoto.desc }}" style="max-height: 360px" src="https://imgapiv2.nownews.com/?w=640&q=70&src={{ news.MainPhoto.url if news.MainPhoto.url else 'https://imgapiv2.nownews.com/?w=640&q=70&src=https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                        <img alt="{{ news.MainPhoto.desc }}" style="max-height: 360px" src="{{ news.MainPhoto.url if news.MainPhoto.url else 'https://imgapiv2.nownews.com/?w=640&q=70&src=https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
                     </div>
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
                 </div>
