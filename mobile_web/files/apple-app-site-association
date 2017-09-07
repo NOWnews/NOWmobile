@@ -1,0 +1,11 @@
+{
+"applinks": {
+    "apps": [],
+    "details": [
+        {
+            "appID": "JFYFDFD3L6.com.nownews.news",
+            "paths": [ "/www.nownews.com/news/*", "/m.nownews.com/news/*"]
+        }
+    ]
+    }
+}
