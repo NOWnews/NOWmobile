@@ -51,3 +51,60 @@ npm run mobile:prod.build
 export NODE_ENV=production
 pm2 start ./bin/mobile_web.js
 ```
+
+## 頁面架構
+
+1. 關於我們頁面
+   * extends base.html
+   * main about/about.html
+2. 內頁
+   * 一般新聞
+     * extends base.html
+     * main news/one.html
+     * trace
+       * trace/NOWpageview.html
+       * trace/nestle.html
+       * trace/kbro.html
+       * trace/oneData.html
+     * socialblock seo/head-social-one.html
+     * ad
+       * ad/one/ad300x250_1.html
+       * ad/one/dan_pmp_scrolling.html
+       * ad/one/cthouseAd.html
+       * ad/one/oneAd.html
+       * ad/one/ad300x250_2.html
+       * ad/one/popin.html
+   * 圖片新聞
+     * extends base.html
+     * main news/one.html
+     * trace
+       * trace/NOWpageview.html
+       * trace/nestle.html
+       * trace/kbro.html
+       * trace/oneData.html
+     * socialblock seo/head-social-one.html
+     * ad
+       * ad/one/ad300x250_1.html
+       * ad/one/dan_pmp_scrolling.html
+       * ad/one/cthouseAd.html
+       * ad/one/oneAd.html
+       * ad/one/ad300x250_2.html
+       * ad/one/popin.html
+   * 影片新聞
+     * extends base.html
+     * main news/one.html
+     * trace
+       * trace/NOWpageview.html
+       * trace/nestle.html
+       * trace/kbro.html
+       * trace/oneData.html
+     * socialblock seo/head-social-one.html
+     * ad
+       * ad/one/ad300x250_1.html
+       * ad/one/dan_pmp_scrolling.html
+       * ad/one/cthouseAd.html
+       * ad/one/oneAd.html
+       * ad/one/ad300x250_2.html
+       * ad/one/popin.html
+3. 分類頁
+  * ...
