@@ -4,6 +4,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+### changed
+- 加上 iOS9 通用鏈接（Universal Links）的 crash @wb
+
 ## 1.1.3 - 2017-08-21
 ### changed
 - 修正 imgapi 位址 @wb
