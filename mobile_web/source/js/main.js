@@ -1,5 +1,19 @@
+// 設定螢幕區域變數
+mobileWidth = window.screen.width || window.screen.availWidth;
+
 $(function() {
     var $window = $(window);
+
+    var resizeImgFunc = function() {
+        if (mobileWidth > 640) {
+            mobileWidth = 640;
+        }
+        var imgHeight = mobileWidth * 9 / 16;
+        $('.news-main-image').css('height', imgHeight);
+    };
+
+    // 設定圖片高度
+    resizeImgFunc();
 
     // 記錄位置 (列表頁)
     var nearByNewsBtn = $('.near-by-news').length > 0;
@@ -248,6 +262,9 @@ $(function() {
                         isLoading = false;
                         $('#list-wrapper').append(html);
                         $('#loading').addClass('mui--hide');
+
+                        // 設定圖片高度
+                        resizeImgFunc();
                     }
                 });
 

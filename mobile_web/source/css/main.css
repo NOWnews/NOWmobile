@@ -1106,3 +1106,11 @@ h2.slide-newstitle {
     display: inline-block;
     margin: 2px;
 }
+
+/* img style */
+.news-main-image {
+    overflow: hidden;
+}
+.news-main-image img{
+    width: 100%
+}

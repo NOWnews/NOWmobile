@@ -1,15 +1,23 @@
+{# 因為只有專題才會有自己的指定的 url，因此用此判斷  #}
+
 <div class="news-block">
     <div class="mui-container-fluid">
         <div class="mui-row">
-            <a href="/news/{{ news.sn }}">
-                <img class="news-main-image" src="{{ news.formatImg if news.formatImg else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+            <a href="{{ news.url if news.url else '/news/' + news.sn }}">
+                <div class="news-main-image">
+                    <img src="{{ news.MainPhoto.formatImg }}" />
+                </div>
                 <div class="news-info-bg">
                 </div>
                 <div class="news-info">
                     <p class="category-title">
-                        {{ news.MainMenu.name or '不分類' }}
+                        {% if news.url %}
+                            {{ news.MainMenu.name or '專題' }}
+                        {% else %}
+                            {{ news.MainMenu.name or '不分類' }}
+                        {% endif %}
                     </p>
-                    <p class="info-title"><h2 class="category-newstitle">{{ news.shortTitle }}</h2></p>
+                    <p class="info-title"><h2 class="category-newstitle">{{ news.shortTitle or news.title }}</h2></p>
                     <p class="info-caption text-gray">{{ news.formatStartedAt }}</p>
                 </div>
                 <div class="line"></div>
