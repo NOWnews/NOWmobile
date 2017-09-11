@@ -60,9 +60,9 @@ module.exports = (req, res, next) => {
         news.jsonld = jsonld(news);
 
         news = newsImgFormat(news);
-        news.headline = newsImgFormat(news.headline, true);
-        news.refNews = newsImgFormat(news.refNews, true);
-        newsList = newsImgFormat(newsList, true);
+        news.headline = newsImgFormat(news.headline, true, 'thumbnail');
+        news.refNews = newsImgFormat(news.refNews, true, 'thumbnail');
+        newsList = newsImgFormat(newsList, true, 'thumbnail');
         let isOnePage = true;
         let data = {
             news,

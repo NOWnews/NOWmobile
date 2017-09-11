@@ -55,7 +55,7 @@
 
             <section class="news-body">
                 <div class="main-image-box" style="margin: 10px -15px;">
-                    <img alt="{{ news.MainPhoto.desc }}" src="{{ news.formatImg if news.formatImg else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}" />
+                    <img alt="{{ news.MainPhoto.desc }}" src="{{ news.MainPhoto.formatImg }}" />
                     <p style="padding-top: 5px;padding-left: 10px;" class="mui--text-dark-secondary">{{ news.MainPhoto.desc }}</p>
                 </div>
                 {{ news.content | safe }}

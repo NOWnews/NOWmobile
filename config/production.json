@@ -1,8 +1,8 @@
 {
     "apiV4Server": {
-        "host": "https://v4api.nownews.com"
+        "host": "http://10.140.0.9"
     },
-    "apiV3Server": {
-        "host": "http://v3.api.nownews.com:5000"
+    "imgApi": {
+        "host": "https://imgapiv2.nownews.com/"
     }
 }
