@@ -5,6 +5,8 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ### changed
+- 調整 mobile 直接吃內網的ip @wb
+- config 加上縮圖 api 網址 @wb
 - 優化專題頁面邏輯 @wb
 - 加上 iOS9 通用鏈接（Universal Links）的 crash @wb
 
