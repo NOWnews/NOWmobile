@@ -5,6 +5,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ### changed
+- 有可能 api cache 還沒清掉，會沒有 sizeFormat 做的防護 @wb
 - 拿掉投票的網站連結 icon @wb
 - 調整 mobile 直接吃內網的ip @wb
 - config 加上縮圖 api 網址 @wb
