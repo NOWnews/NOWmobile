@@ -4,6 +4,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## [Unreleased]
+
+## 1.1.4 - 2017-09-13
 ### changed
 - 有可能 api cache 還沒清掉，會沒有 sizeFormat 做的防護 @wb
 - 拿掉投票的網站連結 icon @wb
