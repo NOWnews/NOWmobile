@@ -16,6 +16,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 - 加上 iOS9 通用鏈接（Universal Links）的 crash @wb
 
 ### Fixed
+- 修正 jsonld 的錯誤 @wb
 - 修正主圖是長圖的問題 @wb
 
 ## 1.1.3 - 2017-08-21
