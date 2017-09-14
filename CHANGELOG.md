@@ -6,6 +6,13 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+## 1.1.4 - 2017-09-14
+### changed
+- 雀巢追蹤碼現在由後台直接上即可，因此拉掉 @wb
+
+### Fixed
+- 新的 api 沒有 nodeId, 所以 news.nodeId 改成現行的 news.sn @wb
+
 ## 1.1.4 - 2017-09-13
 ### changed
 - 有可能 api cache 還沒清掉，會沒有 sizeFormat 做的防護 @wb
