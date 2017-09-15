@@ -53,7 +53,7 @@ $(function() {
                 $('body').removeClass('mui-body--scroll-lock');
             };
             $('.ads-cover.dfp').attr('id', 'mui-overlay').addClass('mui--show');
-            $('#mui-overlay').append('<a class="close"><img src="/static/img/icons/icon-close.png" /></a>');
+            $('#mui-overlay').append('<a class="close"><img src="/static/img/icons/icon-close-w.png" /></a>');
             $('#mui-overlay > div').css('position', 'absolute');
 
             var adsWidthHalf = 0 - $('#mui-overlay > div').width()/2;
