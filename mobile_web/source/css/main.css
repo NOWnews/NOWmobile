@@ -446,7 +446,7 @@ header .mobile-logo {
     font-size: 15px;
     height: 60px;
     padding: 20px 10px;
-    background: url(/static/img/slick-news-info-bg.png);
+    background: url(/static/img/news/slick-news-info-bg.png);
     width: 100%;
     background-size: 100% 100%;
 }
@@ -556,7 +556,7 @@ header .mobile-logo {
     position: absolute;
     line-height: 150%;
     bottom: -20px;
-    background: url(/static/img/news-info-bg.png);
+    background: url(/static/img/news/news-info-bg.png);
     height: 64px;
     color: #333;
     width: 97%;
@@ -683,13 +683,13 @@ header .mobile-logo {
 }
 
 .arrow-block .next-arrow {
-    background-image: url(/static/img/next-btn-bg.png);
+    background-image: url(/static/img/news/next-btn-bg.png);
     background-size: 100% 100%;
     padding-right: 28%;
 }
 
 .arrow-block .prev-arrow {
-    background-image: url(/static/img/prev-btn-bg.png);
+    background-image: url(/static/img/news/prev-btn-bg.png);
     background-size: 100% 100%;
     padding-left: 28%;
 }
@@ -783,7 +783,7 @@ header .mobile-logo {
     color: #fff;
     height: 80px;
     padding: 20px 30px;
-    background: url(/static/img/slick-news-info-bg.png);
+    background: url(/static/img/news/slick-news-info-bg.png);
     width: 100%;
     background-size: 100% 100%;
 }
@@ -794,7 +794,7 @@ header .mobile-logo {
     height: 80px;
     width: 100%;
     padding: 0 30px 20px 30px;
-    background-image: url(/static/img/slick-news-info-bg.png);
+    background-image: url(/static/img/news/slick-news-info-bg.png);
     background-size: 100% 100%;
 }
 
