@@ -294,7 +294,7 @@ header .mobile-logo {
  */
 
 #menu-nav-wrapper {
-    background-image: url(/static/img/burglist-bg90-1.png);
+    background-image: url(/static/img/burglist-bg90.png);
     background-repeat: repeat;
     margin-top: -1px;
     max-height: calc(100% - 56px);
