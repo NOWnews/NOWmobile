@@ -3,7 +3,7 @@ import _ from 'lodash';
 const debug = require('debug')('NOWmobile:util:newsImgFormat');
 
 module.exports = (news, isList, size = 'large') => {
-    const defaultImgUrl = 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg';
+    const defaultImgUrl = 'https://legacy.nownews.com/NOWnews_default/default.png';
     const imgapi = config.get('imgApi.host');
     const listSize = {
         large: `${imgapi}?w=640&q=70&src=`,

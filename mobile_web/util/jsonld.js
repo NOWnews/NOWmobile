@@ -55,7 +55,7 @@ module.exports = function(news) {
                     "item": {
                         "@id": `https://m.nownews.com/news/category/${news.MainMenu ? news.MainMenu.categoryName : 'index' }`,
                         "name": news.MainMenu ? news.MainMenu.name : '總覽',
-                        "image": "https://legacy.nownews.com/NOWnews_default/default_terry.jpg"
+                        "image": "https://legacy.nownews.com/NOWnews_default/default.png"
                     }
                 },
                 {

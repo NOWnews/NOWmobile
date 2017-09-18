@@ -15,7 +15,7 @@
                 <div class="mui-row one-news">
                     <a href="/news/{{ relatedNews._id }}{{queryParams}}">
                         <div class="mui-col-xs-5">
-                            <img src="{{ relatedNews.image.thumbnail if relatedNews.image.thumbnail else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
+                            <img src="{{ relatedNews.image.thumbnail if relatedNews.image.thumbnail else 'https://legacy.nownews.com/NOWnews_default/default.png' }}">
                         </div>
                         <div class="mui-col-xs-7 related-news-info">
                             <h4 class="category-title tid{{ relatedNews.category._id }}">
@@ -46,7 +46,7 @@
             <div class="mui-row one-news">
                 <a href="/video/{{ video.nodeId }}">
                     <div class="mui-col-xs-5">
-                        <img src="{{ video.youtubeThumbnail if video.youtubeThumbnail else 'https://legacy.nownews.com/NOWnews_default/default_terry.jpg' }}">
+                        <img src="{{ video.youtubeThumbnail if video.youtubeThumbnail else 'https://legacy.nownews.com/NOWnews_default/default.png' }}">
                     </div>
                     <div class="mui-col-xs-7 related-news-info">
                         <h4 class="category-title tid{{ news.category._id }}">
