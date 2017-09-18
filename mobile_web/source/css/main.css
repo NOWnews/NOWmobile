@@ -32,7 +32,7 @@ a:hover {
     position: fixed;
     z-index: 2;
     width: 100%;
-    background: #272829;
+    background: #fec340;
     overflow: hidden;
     height: 48px;
     padding: 0;
@@ -87,7 +87,7 @@ a:hover {
 }
 
 .category-select li a {
-    color: white;
+    color: #000000;
     display: block;
     padding: 10px 10px;
     font-size: 20px;
@@ -95,7 +95,7 @@ a:hover {
 
 .category-select li.isActive > a,
 .category-select li > a:hover {
-    color: #fec340;
+    color: #ffffff;
 }
 
 
@@ -260,7 +260,7 @@ buttons {
  */
 
 header.mui-appbar {
-    background-color: #fec340;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     right: 0;
