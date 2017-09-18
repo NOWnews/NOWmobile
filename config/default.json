@@ -1,4 +1,5 @@
 {
+  	"mode": "default",
     "apiV4Server": {
         "host": "https://v4api.nownews.com"
     },

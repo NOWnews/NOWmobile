@@ -1,4 +1,5 @@
 {
+  	"mode": "china",
     "apiV4Server": {
         "host": "http://61.220.58.52:10001"
     },
