@@ -16,7 +16,7 @@ module.exports = function(news) {
             "headline": news.title,
             "image": {
                 "@type": "ImageObject",
-                "url": news.MainPhoto.formatImg ,
+                "url": news.MainPhoto ? news.MainPhoto.formatImg : '' ,
                 "width": 696,
                 "height": 530
             },
