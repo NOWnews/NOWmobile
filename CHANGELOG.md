@@ -12,6 +12,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ### Fixed
 - 新的 api 沒有 nodeId, 所以 news.nodeId 改成現行的 news.sn @wb
+- 修正找不到新聞時的錯誤處理 @appleoxxo
 
 ## 1.1.4 - 2017-09-13
 ### changed
