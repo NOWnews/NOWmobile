@@ -1114,3 +1114,20 @@ h2.slide-newstitle {
 .news-main-image img{
     width: 100%
 }
+
+/* news one page list img */
+.one-news {
+    overflow: hidden;
+    height: 110px;
+}
+
+@media screen and (max-width: 321px) {
+    .one-news {
+        height: 90px;
+    }
+}
+@media screen and (min-width: 445px) {
+    .one-news {
+        height: 145px;
+    }
+}

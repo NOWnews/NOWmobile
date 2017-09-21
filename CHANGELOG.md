@@ -10,6 +10,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 ### Fixed
 - 找不到新聞時的錯誤處理 修復上一次沒檢查到在production環境時 api-web /news/:sn 的端點會拋與develop不同的訊息 @appleoxxo
 - 修正找不到新聞時的錯誤處理 @appleoxxo
+- 修正內頁 列表新聞圖 @wb
 
 ## 1.1.4 - 2017-09-14
 ### changed
