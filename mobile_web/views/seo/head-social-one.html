@@ -4,18 +4,13 @@
 <meta name="keywords" content="{{ news.newsKeywords }}">
 <meta name="news_keywords" content="{{ news.newsKeywords }}">
 
-<!-- for facebook use2-->
+<!-- for facebook / line use2-->
 <meta property="og:url" content="{{ news.completeUrl }}">
 <meta property="og:title" content="{{ news.title }}">
 <meta property="og:description" content="{{ news.summary }}">
-{% if news.MainPhoto.thumbnail %}
-<meta property="og:image" content="{{ news.MainPhoto.thumbnail }}">
-<meta property="popin:image" content="{{ news.MainPhoto.thumbnail }}">
-{% else %}
-<meta property="og:image" content="{{ news.MainPhoto.formatImg }}">
-<meta property="popin:image" content="{{ news.MainPhoto.formatImg }}">
-{% endif %}
-<meta property="og:image" content="{{ news.MainPhoto.formatImg }}">
+<!-- line 不能接過縮圖 api 的內容 -->
+<meta property="og:image" content="{{ news.MainPhoto.url }}">
+<meta name="popin:image" content="{{ news.MainPhoto.thumbnail }}">
 <meta property="article:author" content="https://www.facebook.com/nownews">
 
 <!-- for Google plus use -->
