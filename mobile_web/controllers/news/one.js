@@ -56,13 +56,14 @@ module.exports = (req, res, next) => {
         // 加上 相關新聞
         news.refNews = refNews;
 
-        // 加上 jsonld
-        news.jsonld = jsonld(news);
-
         news = newsImgFormat(news);
         news.headline = newsImgFormat(news.headline, true, 'thumbnail');
         news.refNews = newsImgFormat(news.refNews, true, 'thumbnail');
         newsList = newsImgFormat(newsList, true, 'thumbnail');
+
+        // 加上 jsonld 
+        news.jsonld = jsonld(news);
+
         let isOnePage = true;
         let data = {
             news,
