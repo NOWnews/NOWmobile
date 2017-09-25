@@ -16,9 +16,14 @@ module.exports = (req, res, next) => {
 
     co(function*() {
 
+        let news = yield getV4Api(`news/${newsId}`);
+
+        if( news.statusCode && news.statusCode !== 200 ){
+             throw new Error(`news/${newsId}找不到新聞!!`);
+        }
+
         let live = yield getV4Api('live/info');
 
-        let news = yield getV4Api(`news/${newsId}`);
 
         let nextandprev = yield getV4Api(`news/${newsId}/nextandprev`);
 
@@ -57,12 +62,13 @@ module.exports = (req, res, next) => {
         news.refNews = refNews;
 
         news = newsImgFormat(news);
+
+        // 加上 jsonld
+        news.jsonld = jsonld(news);
+
         news.headline = newsImgFormat(news.headline, true, 'thumbnail');
         news.refNews = newsImgFormat(news.refNews, true, 'thumbnail');
         newsList = newsImgFormat(newsList, true, 'thumbnail');
-
-        // 加上 jsonld 
-        news.jsonld = jsonld(news);
 
         let isOnePage = true;
         let data = {

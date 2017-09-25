@@ -63,7 +63,6 @@ pm2 start ./bin/mobile_web.js
      * main news/one.html
      * trace
        * trace/NOWpageview.html
-       * trace/nestle.html
        * trace/kbro.html
        * trace/oneData.html
      * socialblock seo/head-social-one.html
@@ -79,7 +78,6 @@ pm2 start ./bin/mobile_web.js
      * main news/one.html
      * trace
        * trace/NOWpageview.html
-       * trace/nestle.html
        * trace/kbro.html
        * trace/oneData.html
      * socialblock seo/head-social-one.html
@@ -95,7 +93,6 @@ pm2 start ./bin/mobile_web.js
      * main news/one.html
      * trace
        * trace/NOWpageview.html
-       * trace/nestle.html
        * trace/kbro.html
        * trace/oneData.html
      * socialblock seo/head-social-one.html
