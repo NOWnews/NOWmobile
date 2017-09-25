@@ -6,6 +6,13 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+### Changed
+- 調整 CI @esbb48
+
+### Fixed
+- Line 圖片預覽問題，Line 不收過 image 縮圖 api 的圖 @esbb48
+
+
 ## 1.1.4 - 2017-09-14
 ### changed
 - 雀巢追蹤碼現在由後台直接上即可，因此拉掉 @wb
