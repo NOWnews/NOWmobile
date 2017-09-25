@@ -1,5 +1,4 @@
 {
-  	"mode": "develop",
     "apiV4Server": {
         "host": "https://devapi.nownews.com"
     },

@@ -1,5 +1,4 @@
 {
-  	"mode": "production",
     "apiV4Server": {
         "host": "http://10.140.0.9"
     },
