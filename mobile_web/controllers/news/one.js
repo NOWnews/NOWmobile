@@ -17,8 +17,8 @@ module.exports = (req, res, next) => {
     co(function*() {
 
         let news = yield getV4Api(`news/${newsId}`);
-
-        if( news.statusCode && news.statusCode !== 200 ){
+        let statusCode = news.statusCode || news.status || 200;
+        if( statusCode !== 200 ){
              throw new Error(`news/${newsId}找不到新聞!!`);
         }
 

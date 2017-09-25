@@ -5,13 +5,17 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
-
 ### Changed
 - 調整 CI @esbb48
 
 ### Fixed
 - Line 圖片預覽問題，Line 不收過 image 縮圖 api 的圖 @esbb48
 
+## 1.1.5 - 2017-09-21
+### Fixed
+- 找不到新聞時的錯誤處理 修復上一次沒檢查到在production環境時 api-web /news/:sn 的端點會拋與develop不同的訊息 @appleoxxo
+- 修正找不到新聞時的錯誤處理 @appleoxxo
+- 修正內頁 列表新聞圖 @wb
 
 ## 1.1.4 - 2017-09-14
 ### changed
@@ -19,7 +23,6 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ### Fixed
 - 新的 api 沒有 nodeId, 所以 news.nodeId 改成現行的 news.sn @wb
-- 修正找不到新聞時的錯誤處理 @appleoxxo
 
 ## 1.1.4 - 2017-09-13
 ### changed
