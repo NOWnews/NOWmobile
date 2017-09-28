@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% block socialblock %}
+    <!--for base meta -->
+    <title>精選 | NOWnews今日新聞</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="今日觀點Sight,ChinaPost,粉樂NOW,保庇Bobee,iFunNOW,PlayNOW,寵毛網,Sport">
+
+    <!-- for facebook use2-->
+    <meta property="og:url" content="https://www.nownews.com/subweb">
+    <meta property="og:title" content="精選 | NOWnews今日新聞">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://legacy.nownews.com/NOWnews_default/default.png">
+
+    <!-- for Google plus use -->
+    <meta itemprop="url" content="https://www.nownews.com/subweb">
+    <meta itemprop="name" content="精選 | NOWnews今日新聞">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://legacy.nownews.com/NOWnews_default/default.png">
+    <meta itemprop="keywords" content="">
+    <meta itemprop="articleSection" content="">
+    <meta itemprop="dateCreated" content="">
+    <meta itemprop="dateModified" content="">
+    <meta itemprop="datePublished" content="">
+    <link rel="canonical" href="https://www.nownews.com/subweb">
+
+{% endblock %}
+
+{% block container %}
+    <div id="content-wrapper">
+        <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
+        <nav class="category-select mui-container-fluid">
+            {% set categoryType = 'news' %}
+            {% include "../blocks/category-nav.html" %}
+        </nav>
+        <div class="nownews-wrapper">
+            {% for item in list %}
+                <div class="mui-container-fluid">
+                    <div class="mui-row">
+                        <a href="{{item.url}}" target="_blank">
+                            <div class="news-main-image">
+                                <img src="/static/img/subweb/{{item.img}}.jpg" alt="{{item.text}}" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

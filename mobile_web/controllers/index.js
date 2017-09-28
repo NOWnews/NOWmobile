@@ -5,6 +5,7 @@ import files from './files';
 import sitemap from './sitemap';
 import live from './live';
 import ads from './ads';
+import subweb from './subweb';
 
 
 module.exports = function(app) {
@@ -16,6 +17,7 @@ module.exports = function(app) {
     app.use('/', ads);
     app.use('/', files);
     app.use('/', sitemap);
+    app.use('/', subweb);
 
     // 確認 mobile server 是否活著
     app.use('/check', function(req, res, next){
