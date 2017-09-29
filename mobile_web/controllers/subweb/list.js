@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
           { img: 'bobee', text: '保庇Bobee', url: 'https://bobee.nownews.com/' },
           { img: 'ifunnow', text: 'iFunNOW', url: 'https://ifunnow.nownews.com/' },
           { img: 'playnow', text: 'PlayNOW', url: 'https://playnow.nownews.com/' },
-          { img: 'petsmao', text: '寵毛網', url: 'https://www.petsmao.com/' },
+          { img: 'petsmao', text: '寵毛網', url: 'https://petsmao.nownews.com/' },
           { img: 'sport', text: 'Sport', url: 'https://sport.nownews.com/' }
         ];
 
