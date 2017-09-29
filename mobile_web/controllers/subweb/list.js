@@ -7,8 +7,8 @@ module.exports = (req, res, next) => {
     co(function*() {
 
         let list = [
-          { img: 'sight', text: '今日觀點 Sight', url: 'https://sight.nownews.com/' },
           { img: 'chinapost', text: 'China Post', url: 'https://chinapost.nownews.com' },
+          { img: 'sight', text: '今日觀點 Sight', url: 'https://sight.nownews.com/' },
           { img: 'pinknow', text: '粉樂NOW', url: 'https://pinknow.nownews.com/' },
           { img: 'bobee', text: '保庇Bobee', url: 'https://bobee.nownews.com/' },
           { img: 'ifunnow', text: 'iFunNOW', url: 'https://ifunnow.nownews.com/' },
