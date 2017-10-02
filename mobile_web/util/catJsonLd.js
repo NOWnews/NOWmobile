@@ -22,7 +22,7 @@ module.exports = function(categoryName, news) {
           "item": {
             "@id": `https://m.nownews.com/news/category/${categoryName}`,
             "name": news ? news.MainMenu.name : categoryName,
-            "image": "https://legacy.nownews.com/NOWnews_default/default_terry.jpg"
+            "image": "https://legacy.nownews.com/NOWnews_default/default.png"
           }
         }]
       }

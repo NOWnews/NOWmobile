@@ -2,10 +2,15 @@
 <div class="right-cover fa-rotate-180"></div>
 <ul>
     {% if categoryType == 'news' %}
-        <li class="{{ 'isActive' if specialType == 'headline' else ''  }}">
-            <a class="" href="/">
+        <li class="{{ 'isActive' if specialType == 'headline' else '' }}">
+            <a href="/">
                 <span>頭條</span>
             </a>
+        </li>
+        <li class="{{ 'isActive' if specialType == 'subweb' else '' }}">
+            <a href="/subweb">
+                <span>精選</span>
+            </a>          
         </li>
     {% endif %}
     {% for category in mainCategory %}

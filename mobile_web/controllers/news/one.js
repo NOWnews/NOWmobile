@@ -69,6 +69,7 @@ module.exports = (req, res, next) => {
         news.headline = newsImgFormat(news.headline, true, 'thumbnail');
         news.refNews = newsImgFormat(news.refNews, true, 'thumbnail');
         newsList = newsImgFormat(newsList, true, 'thumbnail');
+
         let isOnePage = true;
         let data = {
             news,

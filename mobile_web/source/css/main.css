@@ -32,7 +32,7 @@ a:hover {
     position: fixed;
     z-index: 2;
     width: 100%;
-    background: #000;
+    background: #fec340;
     overflow: hidden;
     height: 48px;
     padding: 0;
@@ -50,7 +50,6 @@ a:hover {
 }
 
 .category-select > div {
-    background: url(/static/img/category-gradient-black-1.png);
     position: absolute;
     height: 48px;
     max-width: 20%;
@@ -88,7 +87,7 @@ a:hover {
 }
 
 .category-select li a {
-    color: white;
+    color: #000000;
     display: block;
     padding: 10px 10px;
     font-size: 20px;
@@ -96,23 +95,7 @@ a:hover {
 
 .category-select li.isActive > a,
 .category-select li > a:hover {
-    color: #00FFFE;
-}
-
-#photo-category-nav {
-    background: #001971;
-}
-
-#photo-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-blue-1.png);
-}
-
-#video-category-nav {
-    background: #420073;
-}
-
-#video-category-nav.category-select > div {
-    background: url(/static/img/category-gradient-purple-1.png);
+    color: #ffffff;
 }
 
 
@@ -126,7 +109,7 @@ a:hover {
 }
 
 #channel-nav-block > .mui-panel {
-    background: #D09D22;
+    background: #272829;
     color: white;
     font-size: 18px;
     margin: 0;
@@ -277,7 +260,7 @@ buttons {
  */
 
 header.mui-appbar {
-    background-color: #232323;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     right: 0;
@@ -302,7 +285,7 @@ header .header-btn > img {
 }
 
 header .mobile-logo {
-    height: 23px;
+    max-width: 200px;
 }
 
 
@@ -311,7 +294,7 @@ header .mobile-logo {
  */
 
 #menu-nav-wrapper {
-    background-image: url(/static/img/burglist-bg90-1.png);
+    background-image: url(/static/img/burglist-bg90.png);
     background-repeat: repeat;
     margin-top: -1px;
     max-height: calc(100% - 56px);
@@ -463,7 +446,7 @@ header .mobile-logo {
     font-size: 15px;
     height: 60px;
     padding: 20px 10px;
-    background: url(/static/img/slick-news-info-bg.png);
+    background: url(/static/img/news/slick-news-info-bg.png);
     width: 100%;
     background-size: 100% 100%;
 }
@@ -573,7 +556,7 @@ header .mobile-logo {
     position: absolute;
     line-height: 150%;
     bottom: -20px;
-    background: url(/static/img/news-info-bg.png);
+    background: url(/static/img/news/news-info-bg.png);
     height: 64px;
     color: #333;
     width: 97%;
@@ -700,13 +683,13 @@ header .mobile-logo {
 }
 
 .arrow-block .next-arrow {
-    background-image: url(/static/img/next-btn-bg.png);
+    background-image: url(/static/img/news/next-btn-bg.png);
     background-size: 100% 100%;
     padding-right: 28%;
 }
 
 .arrow-block .prev-arrow {
-    background-image: url(/static/img/prev-btn-bg.png);
+    background-image: url(/static/img/news/prev-btn-bg.png);
     background-size: 100% 100%;
     padding-left: 28%;
 }
@@ -746,7 +729,7 @@ header .mobile-logo {
 }
 
 .freeBody2 ul > li > a {
-    coloe: #0083FF;
+    color: #000000;
     padding: 5px 0;
     display: block;
 }
@@ -800,7 +783,7 @@ header .mobile-logo {
     color: #fff;
     height: 80px;
     padding: 20px 30px;
-    background: url(/static/img/slick-news-info-bg.png);
+    background: url(/static/img/news/slick-news-info-bg.png);
     width: 100%;
     background-size: 100% 100%;
 }
@@ -811,7 +794,7 @@ header .mobile-logo {
     height: 80px;
     width: 100%;
     padding: 0 30px 20px 30px;
-    background-image: url(/static/img/slick-news-info-bg.png);
+    background-image: url(/static/img/news/slick-news-info-bg.png);
     background-size: 100% 100%;
 }
 
