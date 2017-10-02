@@ -5,6 +5,8 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+
+## 1.1.6 - 2017-10-02
 ### Added
 - 增加精選子網站 @esbb48
 ### Changed
