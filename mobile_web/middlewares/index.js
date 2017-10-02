@@ -26,7 +26,7 @@ module.exports = function(app) {
 
     let staticFilePath = (process.env.NODE_ENV === 'production') ? 'public/dist' : 'source';
     app.use('/static', express.static(`${rootPath}/mobile_web/${staticFilePath}`, {
-        etag: 1000,
+        etag: 2000,
         maxAge: 86400000 * 10   // one day
     }));
     // app.use('/icons', express.static(`${rootPath}/mobile_web/${staticFilePath}/img/icons`, {
