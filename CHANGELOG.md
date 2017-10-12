@@ -5,6 +5,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+
+
+## 1.1.7 - 2017-10-12
 ### Added
 - crowdynews 重新上線 @esbb48
 
