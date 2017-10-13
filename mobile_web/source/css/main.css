@@ -373,13 +373,11 @@ header .mobile-logo {
 }
 
 #search-input {
-    color: white;
     border-color: white;
 }
 
 #search-input:focus {
     border-color: white;
-    color: white;
     height: 31px;
     margin: 0;
 }
