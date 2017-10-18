@@ -4,11 +4,13 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 格式基於 [Keep a Changelog](http://keepachangelog.com/zh-TW/0.3.0/)
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
+## [Unreleased]
+
 ### Added
 - 加上18禁標語 @wb
 
-## [Unreleased]
-
+### Fixed
+- 調整 search bar 的文字顏色 @wb
 
 ## 1.1.7 - 2017-10-12
 ### Added
