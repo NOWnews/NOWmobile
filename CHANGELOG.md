@@ -10,6 +10,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 - 加上18禁標語 @wb
 - 使用 pm2 config 控管 @esbb48
 
+### Changed
+- 調整單純化 package.json build 的 cli @esbb48
+
 ### Fixed
 - 調整 search bar 的文字顏色 @wb
 
