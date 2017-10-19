@@ -1,0 +1,23 @@
+{% if news.isAdult %}
+<script>
+    // 18禁標語
+    function closeOverlay() {
+        mui.overlay('off');
+    }
+    function isAdult() {
+        var options = {
+            'static': true,
+            'onclose': function() {}
+        };
+        var adultOverlay = document.createElement('div');
+        adultOverlay.setAttribute('id', 'adult-overlay');
+        adultOverlay.innerHTML =
+            '<i class="fa fa-exclamation-circle fa-3x"></i>' +
+            '<p>警告：未滿十八歲不得觀賞瀏覽</p>' +
+            '<p>您是否已經年滿18歲？</p>' +
+            '<div><button class="mui-btn mui-btn--raised" onclick="closeOverlay()">是</button><a href="/" class="mui-btn mui-btn--raised">否</a></div>';
+        mui.overlay('on', options, adultOverlay);
+    }
+    isAdult();
+</script>
+{% endif %}
