@@ -6,6 +6,9 @@
     "env": {
       "NODE_ENV": "develop"
     },
+    "env_china" : {
+      "NODE_ENV": "china"
+    },
     "env_staging" : {
       "NODE_ENV": "staging"
     },
