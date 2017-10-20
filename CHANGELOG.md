@@ -6,6 +6,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+## 1.1.8 - 2017-10-19
 ### Added
 - 加上18禁標語 @wb
 - 使用 pm2 config 控管 @esbb48
