@@ -5,10 +5,15 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+### Added
+- 使用 pm2 config 控管 @esbb48
 
 ## 1.1.8 - 2017-10-19
 ### Added
 - 加上18禁標語 @wb
+
+### Changed
+- 調整單純化 package.json build 的 cli @esbb48
 
 ### Fixed
 - 調整 search bar 的文字顏色 @wb
