@@ -6,9 +6,9 @@
   "scripts": {
     "start": "npm install && NODE_ENV=develop DEBUG=NOWmobile* ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mobile:clean": "./node_modules/gulp/bin/gulp.js --gulpfile ./mobile_web/gulpfile.js clean",
-    "mobile:prod.build": "npm run mobile:clean && ./node_modules/gulp/bin/gulp.js  --gulpfile ./mobile_web/gulpfile.js build:prod",
-    "mobile:prod": "npm install && npm run mobile:prod.build && NODE_ENV=production ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js"
+    "clean": "./node_modules/gulp/bin/gulp.js --gulpfile ./mobile_web/gulpfile.js clean",
+    "build": "npm run clean && ./node_modules/gulp/bin/gulp.js  --gulpfile ./mobile_web/gulpfile.js build:prod",
+    "prod": "npm install && npm run build && NODE_ENV=production ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js"
   },
   "repository": {
     "type": "git",
