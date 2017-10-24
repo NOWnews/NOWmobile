@@ -1,5 +1,4 @@
 
-import co from 'co';
 import Promise from 'bluebird';
 import getV4Api from '../../util/getV4Api';
 import getAdsApi from '../../util/getAdsApi';

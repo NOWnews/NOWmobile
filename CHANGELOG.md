@@ -5,6 +5,14 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+
+### Changed
+- 將 `function(){}` 改為 `()=>{}` @SimonSun
+- 將 `co(function*(){})` 改為 `async()=>{}` @SimonSun
+- 使用 Node.js V8.7 @SimonSun
+- 升級所有 npm 套件 @SimonSun
+- 拿掉 `co` 套件 @SimonSun
+
 ### Added
 - 使用 pm2 config 控管 @esbb48
 

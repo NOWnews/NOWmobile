@@ -1,5 +1,4 @@
 
-import co from 'co';
 import getV4Api from '../../util/getV4Api';
 import getAdsApi from '../../util/getAdsApi';
 import newsImgFormat from '../../util/newsImgFormat';

@@ -1,5 +1,4 @@
 
-import co from 'co';
 import getV4Api from '../../util/getV4Api';
 import newsImgFormat from '../../util/newsImgFormat';
 const debug = require('debug')('NOWmobile:controllers:news:nextCategory');

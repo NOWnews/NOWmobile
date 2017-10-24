@@ -1,5 +1,3 @@
-import co from 'co';
-import express from 'express';
 import getV4Api from '../../util/getV4Api';
 import geoip from 'geoip-lite';
 import chineseConv from 'chinese-conv';

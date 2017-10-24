@@ -1,4 +1,3 @@
-import co from 'co';
 import getV4Api from '../../util/getV4Api';
 
 const debug = require('debug')('NOWmobile:controllers:subweb:list');

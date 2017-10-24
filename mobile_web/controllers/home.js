@@ -1,4 +1,3 @@
-import co from 'co';
 import Promise from 'bluebird';
 import express from 'express';
 import getV4Api from '../util/getV4Api';
