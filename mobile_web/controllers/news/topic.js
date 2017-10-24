@@ -6,13 +6,54 @@ import newsImgFormat from '../../util/newsImgFormat';
 let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:news:topic');
 
-module.exports = (req, res, next) => {
-    let { topicId } = req.params;
+// module.exports = (req, res, next) => {
+//     let { topicId } = req.params;
 
-    co(function*() {
-        let live = yield getV4Api('live/info');
+//     co(function*() {
+//         let live = yield getV4Api('live/info');
 
-        let { specialTopics } = yield getV4Api('specialtopics');
+//         let { specialTopics } = yield getV4Api('specialtopics');
+
+//         let newsList = specialTopics;
+
+//         _.map(specialTopics, (topic) => {
+//             if(topic.url.indexOf('http') < 0){
+//                 topic.url = '/news/' + topic.url.split('/').pop();
+//             }
+//             return topic;
+//         });
+
+//         newsList = newsImgFormat(newsList, true);
+
+//         let { isOpen } = req.query;
+//         let topicName = '專題';
+//         let data = {
+//             nativeAds: [],
+//             specialTopics,
+//             topicName,
+//             topicId,
+//             live,
+//             newsList
+//         };
+
+//         if(req.query.data === 'PLAYJJ'){
+//             return res.json({ data });
+//         }
+
+//         return res.render('newslist/topic', data);
+
+//     }).catch(next);
+
+// };
+
+module.exports = async (req, res, next) => {
+    try {
+
+        let { topicId } = req.params;
+
+        let live = await getV4Api('live/info');
+
+        let { specialTopics } = await getV4Api('specialtopics');
 
         let newsList = specialTopics;
 
@@ -42,6 +83,7 @@ module.exports = (req, res, next) => {
 
         return res.render('newslist/topic', data);
 
-    }).catch(next);
-
+    } catch (err) {
+        return next(err);
+    }
 };

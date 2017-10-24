@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import Promise from 'bluebird';
 const debug = require('debug')('NOWmobile:util:getV4Api');
 
 module.exports = (url) => {
@@ -18,3 +19,33 @@ module.exports = (url) => {
         .then((res) => res.json())
         .then((json) => Promise.resolve(json));
 };
+
+// module.exports = async (url) => {
+//     try {
+//         let fetchUrl = `${config.get('apiV4Server.host')}/${url}`;
+
+//         // 如果 url 有中文字，建議 encode 會比較沒有問題
+//         fetchUrl = encodeURI(fetchUrl);
+
+//         debug('Url = ', fetchUrl);
+
+//         let json = await fetch(fetchUrl, {
+//                 timeout: 100000,
+//                 headers: {
+//                     'X-NOWnews-API': 'YouCanSeeMeJohnCena'
+//                 }
+//             })
+//             .then((res) => {
+//                 return res.json()
+//             })
+//             .then((json) => {
+//                 // console.log(json);
+//                 return Promise.resolve(json)
+//             });
+//         // console.log(json);
+//         return Promise.resolve(json);
+
+//     } catch (err) {
+//         return Promise.reject(err);
+//     }
+// };

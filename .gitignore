@@ -40,3 +40,5 @@ bower_components
 
 mobile_web/public/dist
 
+package-lock.json
+
