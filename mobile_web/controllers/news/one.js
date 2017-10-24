@@ -4,6 +4,7 @@ import getV4Api from '../../util/getV4Api';
 import jsonld from '../../util/jsonld'
 
 import newsImgFormat from '../../util/newsImgFormat';
+import getContentAd from '../../util/getContentAd';
 
 const debug = require('debug')('NOWmobile:controllers:news');
 
@@ -69,6 +70,11 @@ module.exports = (req, res, next) => {
         news.headline = newsImgFormat(news.headline, true, 'thumbnail');
         news.refNews = newsImgFormat(news.refNews, true, 'thumbnail');
         newsList = newsImgFormat(newsList, true, 'thumbnail');
+
+        // 文中廣告
+        if (news.hasContentAd) {
+            news.content = getContentAd(news);
+        }
 
         let isOnePage = true;
         let data = {
