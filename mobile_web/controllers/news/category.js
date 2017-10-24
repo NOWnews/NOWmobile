@@ -93,8 +93,6 @@ module.exports = async (req, res, next) => {
         let mainCategory = result[0];
         let { newsList, ads } = result[1];
 
-        console.log(mainCategory);
-
         // TODO ---- 廣告先暫時這樣處理 乾
         ads = [
             {
