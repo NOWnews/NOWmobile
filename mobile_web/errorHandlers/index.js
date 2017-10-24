@@ -1,8 +1,8 @@
 
-module.exports = function(app) {
+module.exports = (app) => {
 
-    app.use(function(err, req, res, next) {
-        var errObject = {
+    app.use((err, req, res, next) => {
+        let errObject = {
             message: err.message,
             stack: err.stack.split('\n')
         };
@@ -16,7 +16,7 @@ module.exports = function(app) {
         return res.render('error/404');
     });
 
-    return function(req, res, next) {
+    return (req, res, next) => {
         return next();
     };
 };
