@@ -47,9 +47,9 @@ prod: `npm run mobile:prod`
 
 ```
 npm install
-npm run mobile:prod.build
+npm run build
 export NODE_ENV=production
-pm2 start ./bin/mobile_web.js
+pm2 start pm2/mobile-web.json --env production
 ```
 
 ## 頁面架構
