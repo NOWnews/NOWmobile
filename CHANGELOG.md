@@ -5,6 +5,8 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+
+## 1.1.9 - 2017-10-28
 ### Added
 - 使用 pm2 config 控管 @esbb48
 
