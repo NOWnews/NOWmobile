@@ -9,7 +9,7 @@ import duplicate from './duplicate';
 import redirect from './redirect';
 import setLocals from './setLocals';
 
-module.exports = function(app) {
+module.exports = (app) => {
 
     app.use(compression());
     app.use(cors());
@@ -37,7 +37,7 @@ module.exports = function(app) {
     app.use(logger('dev'));
     app.use(setLocals());
 
-    return function(req, res, next) {
+    return (req, res, next) => {
         return next();
     };
 };
