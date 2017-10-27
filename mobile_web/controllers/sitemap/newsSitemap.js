@@ -1,6 +1,5 @@
 
 import sm from 'sitemap';
-import co from 'co';
 import Promise from 'bluebird';
 import _ from 'lodash';
 
@@ -23,15 +22,13 @@ const escapeHtml = function (string) {
     });
 };
 
-module.exports = (req, res, next) => {
-
-    co(function*() {
-
+module.exports = async (req, res, next) => {
+    try {
         // 從 api 取得 sitemap 的資料
-        let sitemapData = yield getV4Api('sitemap/newsSitemap');
+        let sitemapData = await getV4Api('sitemap/newsSitemap');
 
         if(!sitemapData || sitemapData.length === 0) {
-            return yield Promise.reject(new Error('sitemap api 找不到資料.....'));
+            return Promise.reject(new Error('sitemap api 找不到資料.....'));
         }
 
         let xmlContents = '';
@@ -65,6 +62,7 @@ module.exports = (req, res, next) => {
 
         res.header('Content-Type', 'application/xml');
         return res.send(xml);
-    })
-    .catch(next);
+    } catch (err) {
+        return next(err);
+    }
 };
