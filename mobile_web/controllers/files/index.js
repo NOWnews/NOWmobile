@@ -5,6 +5,10 @@ import robots from './robots';
 import video from './video';
 import favicon from './favicon';
 import iosLink from './iosLink';
+import adsTxt from './adsTxt';
+
+router.route('/ads.txt')
+    .get(adsTxt);
 
 router.route('/robots.txt')
     .get(robots);

@@ -5,6 +5,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+### Added
+- 依照業務需求加入 ads.txt @wb
+
 ### Changed
 - 將 `function(){}` 改為 `()=>{}` @SimonSun
 - 將 `co(function*(){})` 改為 `async()=>{}` @SimonSun
