@@ -19,7 +19,7 @@ module.exports = function(news) {
       });
     </script>
     <!-- ${slot} -->
-    <div id='div-gpt-ad-1508398836058-0' style='text-align: center'>
+    <div id='div-gpt-ad-1508398836058-0' style='text-align: center; margin-bottom: 10px'>
       <script>
       googletag.cmd.push(function() { googletag.display('div-gpt-ad-1508398836058-0'); });
     </script>
