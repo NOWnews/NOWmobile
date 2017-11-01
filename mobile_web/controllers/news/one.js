@@ -1,5 +1,4 @@
 
-import co from 'co';
 import getV4Api from '../../util/getV4Api';
 import jsonld from '../../util/jsonld'
 
@@ -8,27 +7,27 @@ import getContentAd from '../../util/getContentAd';
 
 const debug = require('debug')('NOWmobile:controllers:news');
 
-module.exports = (req, res, next) => {
-    let { newsId } = req.params;
+module.exports = async (req, res, next) => {
+    try {
 
-    if (isNaN(newsId)) {
-        return res.redirect('/');
-    }
+        let { newsId } = req.params;
 
-    co(function*() {
+        if (isNaN(newsId)) {
+            return res.redirect('/');
+        }
 
-        let news = yield getV4Api(`news/${newsId}`);
+        let news = await getV4Api(`news/${newsId}`);
         let statusCode = news.statusCode || news.status || 200;
         if( statusCode !== 200 ){
              throw new Error(`news/${newsId}找不到新聞!!`);
         }
 
-        let live = yield getV4Api('live/info');
+        let live = await getV4Api('live/info');
 
 
-        let nextandprev = yield getV4Api(`news/${newsId}/nextandprev`);
+        let nextandprev = await getV4Api(`news/${newsId}/nextandprev`);
 
-        let refNews = yield getV4Api(`news/${newsId}/relations`);
+        let refNews = await getV4Api(`news/${newsId}/relations`);
 
         debug('news = %j', news);
 
@@ -37,10 +36,10 @@ module.exports = (req, res, next) => {
         });
         news.newsKeywords = keywords.join(',');
 
-        let result = yield [
+        let result = await Promise.all([
             getV4Api(`instant`),
             getV4Api('menus')
-        ];
+        ]);
 
         // record query params
         let queryParams = '';
@@ -149,5 +148,7 @@ module.exports = (req, res, next) => {
             isOnePage
         });
 
-    }).catch(next);
+    } catch (err) {
+        return next(err);
+    }
 };

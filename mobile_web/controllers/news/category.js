@@ -1,5 +1,5 @@
 
-import co from 'co';
+import Promise from 'bluebird';
 import getV4Api from '../../util/getV4Api';
 import getAdsApi from '../../util/getAdsApi';
 import jsonLd from '../../util/catJsonLd'
@@ -7,20 +7,20 @@ import newsImgFormat from '../../util/newsImgFormat';
 
 const debug = require('debug')('NOWmobile:controllers:news:category');
 
-module.exports = (req, res, next) => {
-    let { categoryName } = req.params;
+module.exports = async (req, res, next) => {
+    try {
+        let { categoryName } = req.params;
 
-    if (!categoryName) {
-        return next();
-    }
+        if (!categoryName) {
+            return next();
+        }
 
-    co(function*() {
-        let live = yield getV4Api('live/info');
+        let live = await getV4Api('live/info');
 
-        let result = yield [
+        let result = await Promise.all([
             getV4Api('menus'),
             getV4Api(`cat/${categoryName}?limit=30`),
-        ];
+        ]);
 
         let mainCategory = result[0];
         let { newsList, ads } = result[1];
@@ -29,25 +29,25 @@ module.exports = (req, res, next) => {
         ads = [
             {
                 sn: 1,
-                ad: yield getAdsApi('2995')
+                ad: await getAdsApi('2995')
             },{
                 sn: 2,
-                ad: yield getAdsApi('2996')
+                ad: await getAdsApi('2996')
             },{
                 sn: 3,
-                ad: yield getAdsApi('2997')
+                ad: await getAdsApi('2997')
             },{
                 sn: 4,
-                ad: yield getAdsApi('2998')
+                ad: await getAdsApi('2998')
             },{
                 sn: 5,
-                ad: yield getAdsApi('2999')
+                ad: await getAdsApi('2999')
             },{
                 sn: 6,
-                ad: yield getAdsApi('3000')
+                ad: await getAdsApi('3000')
             },{
                 sn: 7,
-                ad: yield getAdsApi('3001')
+                ad: await getAdsApi('3001')
             }];
         // ------------------------
 
@@ -70,7 +70,7 @@ module.exports = (req, res, next) => {
         let catJsonLd = jsonLd(categoryName, newsList[0]);
 
         return res.render('newslist/default', data);
-
-    }).catch(next);
-
+    } catch (err) {
+        return next(err);
+    }
 };

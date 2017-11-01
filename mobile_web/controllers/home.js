@@ -1,4 +1,4 @@
-import co from 'co';
+import Promise from 'bluebird';
 import express from 'express';
 import getV4Api from '../util/getV4Api';
 import getAdsApi from '../util/getAdsApi';
@@ -9,17 +9,15 @@ let router = express.Router();
 
 const debug = require('debug')('NOWmobile:controllers:home');
 
-
 router.route('/')
-    .get((req, res, next) => {
-        co(function*() {
-
-            let result = yield [
+    .get(async (req, res, next) => {
+        try {
+            let result = await Promise.all([
                 getV4Api('menus'),
                 getV4Api('indexpage'),
-            ];
+            ]);
 
-            let live = yield getV4Api('live/info');
+            let live = await getV4Api('live/info');
 
             debug('live = %j', live);
 
@@ -33,25 +31,25 @@ router.route('/')
             ads = [
                 {
                     sn: 1,
-                    ad: yield getAdsApi('2995')
+                    ad: await getAdsApi('2995')
                 },{
                     sn: 2,
-                    ad: yield getAdsApi('2996')
+                    ad: await getAdsApi('2996')
                 },{
                     sn: 3,
-                    ad: yield getAdsApi('2997')
+                    ad: await getAdsApi('2997')
                 },{
                     sn: 4,
-                    ad: yield getAdsApi('2998')
+                    ad: await getAdsApi('2998')
                 },{
                     sn: 5,
-                    ad: yield getAdsApi('2999')
+                    ad: await getAdsApi('2999')
                 },{
                     sn: 6,
-                    ad: yield getAdsApi('3000')
+                    ad: await getAdsApi('3000')
                 },{
                     sn: 7,
-                    ad: yield getAdsApi('3001')
+                    ad: await getAdsApi('3001')
                 }];
             // ------------------------
 
@@ -75,9 +73,9 @@ router.route('/')
                 mainCategory,
                 specialType: 'headline',
             });
-
-        }).catch(next);
-
+        } catch (err) {
+            return next(err);
+        }
     });
 
 module.exports = router;

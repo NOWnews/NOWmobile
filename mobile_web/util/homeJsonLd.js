@@ -1,7 +1,6 @@
 const debug = require('debug')('NOWmobile:libs:homeJsonLd');
 
-
-module.exports = function(news) {
+module.exports = (news) => {
     const data = [
         {
             "@context": "http://schema.org",

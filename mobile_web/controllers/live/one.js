@@ -1,28 +1,25 @@
-import co from 'co';
-import express from 'express';
 import getV4Api from '../../util/getV4Api';
 import geoip from 'geoip-lite';
 import chineseConv from 'chinese-conv';
 
 const debug = require('debug')('NOWmobile:controllers:live');
 
-module.exports = (req, res, next) => {
+module.exports = async (req, res, next) => {
+    try {
+        let { liveId } = req.params;
 
-    let { liveId } = req.params;
+        if (!liveId) {
+            return next();
+        }
 
-    if (!liveId) {
-        return next();
-    }
-
-    co(function*() {
         let videoBaseUrl = `category/videos`;
 
-        let live = yield getV4Api('live/info');
+        let live = await getV4Api('live/info');
 
         debug('live = %j', live);
 
         let videoList = [];
-        let { newsList } = yield getV4Api(`instant`);
+        let { newsList } = await getV4Api(`instant`);
 
         debug('video List = %j', videoList);
         debug('news List = %j', newsList);
@@ -93,5 +90,7 @@ module.exports = (req, res, next) => {
         }
         return res.render('live/one', data);
 
-    }).catch(next);
+    } catch (err) {
+        return next(err);
+    }
 };
