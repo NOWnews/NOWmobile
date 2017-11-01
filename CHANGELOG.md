@@ -6,6 +6,18 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 ### Added
+- 依照業務需求加入 ads.txt @wb
+- 增加文中 DFP `/5799246/Nownews_all_article_300x250_artm` 廣告 @esbb48
+
+### Changed
+- 將 `function(){}` 改為 `()=>{}` @SimonSun
+- 將 `co(function*(){})` 改為 `async()=>{}` @SimonSun
+- 使用 Node.js V8.7 @SimonSun
+- 升級所有 npm 套件 @SimonSun
+- 拿掉 `co` 套件 @SimonSun
+
+## 1.1.9 - 2017-10-28
+### Added
 - 使用 pm2 config 控管 @esbb48
 
 ## 1.1.8 - 2017-10-19

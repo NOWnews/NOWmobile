@@ -1,4 +1,4 @@
-import co from 'co';
+
 import express from 'express';
 import getV4Api from '../../util/getV4Api';
 import newsImgFormat from '../../util/newsImgFormat';
@@ -6,13 +6,14 @@ import newsImgFormat from '../../util/newsImgFormat';
 let router = express.Router();
 const debug = require('debug')('NOWmobile:controllers:news:topic');
 
-module.exports = (req, res, next) => {
-    let { topicId } = req.params;
+module.exports = async (req, res, next) => {
+    try {
 
-    co(function*() {
-        let live = yield getV4Api('live/info');
+        let { topicId } = req.params;
 
-        let { specialTopics } = yield getV4Api('specialtopics');
+        let live = await getV4Api('live/info');
+
+        let { specialTopics } = await getV4Api('specialtopics');
 
         let newsList = specialTopics;
 
@@ -42,6 +43,7 @@ module.exports = (req, res, next) => {
 
         return res.render('newslist/topic', data);
 
-    }).catch(next);
-
+    } catch (err) {
+        return next(err);
+    }
 };

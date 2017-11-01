@@ -1,6 +1,6 @@
 {
     "apiV4Server": {
-        "host": "https://devapi.nownews.com"
+        "host": "http://localhost:10001"
     },
     "imgApi": {
         "host": "https://imgapiv2.nownews.com/"
