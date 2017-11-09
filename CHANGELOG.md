@@ -5,6 +5,12 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+
+## 1.1.10 - 2017-11-09
+### Changed
+- 依照業務需求加入 ads.txt @wb
+
+## 1.1.10 - 2017-11-02
 ### Added
 - 依照業務需求加入 ads.txt @wb
 - 增加文中 DFP `/5799246/Nownews_all_article_300x250_artm` 廣告 @esbb48
