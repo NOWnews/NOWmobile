@@ -1,3 +1,7 @@
+{# 設定 autotrack 與 queryString 的值給 news-block.html #}
+{% set eventCategory = 'cat-' + categoryName %}
+{% set queryString = categoryName %}
+
 {% for news in newsList %}
     {% include "./blocks/news-block.html" %}
 
