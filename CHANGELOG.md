@@ -6,6 +6,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+### Added
+- 加入 autotrack @esbb48
+
 ## 1.1.10 - 2017-11-09
 ### Changed
 - 依照業務需求加入 ads.txt @wb
