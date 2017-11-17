@@ -3,7 +3,8 @@
 <div class="news-block">
     <div class="mui-container-fluid">
         <div class="mui-row">
-            <a href="{{ news.url if news.url else '/news/' + news.sn }}">
+            <a href="{{ news.url if news.url else '/news/' + news.sn }}?from=m{{queryString}}list"
+                data-on='click' data-event-category='m-{{eventCategory}}' data-event-action="list">
                 <div class="news-main-image">
                     <img src="{{ news.MainPhoto.formatImg }}" />
                 </div>
