@@ -12,6 +12,9 @@
             {% include "../blocks/category-nav.html" %}
         </nav>
         <div class="nownews-wrapper">
+            {# 設定 autotrack 與 queryString 的值給 news-block.html #}
+            {% set eventCategory = 'search' %}
+            {% set queryString = 'search' %}
             {% for news in newsList %}
                 {% include "./blocks/news-block.html" %}
                 {# 廣告版位 #}

@@ -13,9 +13,9 @@
                     </form>
                 </td>
                 <td class="mui--text-title fa-close-area" align="right">
-                    <a class="header-btn">
+                    <a data-on='click' data-event-category='m-search' data-event-action='close'
+                        class="header-btn">
                         <img src="/static/img/icons/icon-close-b.png" />
-                        <!-- <i class="fa fa-fw fa-lg fa-close"></i> -->
                     </a>
                 </td>
             </tr>
@@ -28,12 +28,13 @@
                     </a>
                 </td>
                 <td class="mui--text-center">
-                    <a href="/">
+                    <a data-on='click' data-event-category='m-common' data-event-action='logo' href='/?from=logo'>
                         <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
                     </a>
                 </td>
                 <td class="mui--text-title fa-close-area" align="right">
-                    <a class="header-btn" href="#">
+                    <a data-on='click' data-event-category='m-menu' data-event-action='close'
+                        class="header-btn" href="#">
                         <img src="/static/img/icons/icon-close-b.png" />
                     </a>
                 </td>
@@ -43,17 +44,19 @@
             <tr id="header-bar" class="mui--appbar-height
                 {{ 'mui--hide' if (isPhotoOne or isSearch) else '' }}">
                 <td class="mui--text-title fa-bars-area">
-                    <a class="header-btn">
+                    <a data-on='click' data-event-category='m-menu' data-event-action='open' class="header-btn">
                         <img src="/static/img/icons/icon-menu.png" />
                     </a>
                 </td>
                 <td class="mui--text-center">
-                    <a href="/">
+                    <a data-on='click' data-event-category='m-common' data-event-action='logo' href='/?from=logo'>
                         <img class="mobile-logo" src="/static/img/mobile-logo.png" title="NOWnews"/>
                     </a>
                 </td>
                 <td class="mui--text-title fa-search-area" align="right">
-                    <a class="header-btn" href="#">
+                    <a>
+                    <a data-on='click' data-event-category='m-search' data-event-action='open'
+                        class="header-btn" href="#">
                         <img src="/static/img/icons/icon-search.png" />
                     </a>
                 </td>
