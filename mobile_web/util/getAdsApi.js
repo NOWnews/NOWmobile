@@ -24,17 +24,22 @@ module.exports = async (ownerId) => {
                 return Promise.resolve(iconv.decode(buffer, 'big5'));
             })
             .then((ad) => {
-                // 如果廣告關閉
-                if (ad === '') {
-                    return Promise.resolve({err: '沒有廣告'});
-                }
+                let result = {img: '', title: '', url: ''};
+                try {
+                    // 如果廣告關閉
+                    if (ad === '') {
+                        return Promise.resolve({err: '沒有廣告'});
+                    }
 
-                // 如果廣告沒有其他東西
-                if (ad.indexOf('"title"') < 0 && ad.indexOf('"img"') < 0 && ad.indexOf('"url"') < 0) {
-                    return Promise.resolve({err: '廣告格式錯誤'});
-                }
+                    // 如果廣告沒有其他東西
+                    if (ad.indexOf('"title"') < 0 && ad.indexOf('"img"') < 0 && ad.indexOf('"url"') < 0) {
+                        return Promise.resolve({err: '廣告格式錯誤'});
+                    }
 
-                return Promise.resolve(JSON.parse(ad));
+                    result = JSON.parse(ad);
+                } catch (e) { }
+
+                return Promise.resolve(result);
             });
 
             return Promise.resolve(ad);
