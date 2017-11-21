@@ -9,7 +9,8 @@
 
             {% if loop.index < 6 %}
                 <div class="mui-row one-news">
-                    <a href="/news/{{ relatedNews.sn }}{{queryParams}}">
+                    <a data-on='click' data-event-category='m-news' data-event-action='relation-news'
+                        href="/news/{{ relatedNews.sn }}{{queryParams}}">
                         <div class="mui-col-xs-5">
                             <img src="{{ relatedNews.MainPhoto.formatImg }}">
                         </div>
@@ -50,7 +51,8 @@
 
         {% if loop.index < 4 %}
             <div class="mui-row one-news">
-                <a href="/news/{{ news.sn }}{{queryParams}}">
+                <a data-on='click' data-event-category='m-news' data-event-action='headline-news'
+                    href="/news/{{ news.sn }}{{queryParams}}">
                     <div class="mui-col-xs-5">
                         <img src="{{ news.MainPhoto.formatImg }}">
                     </div>

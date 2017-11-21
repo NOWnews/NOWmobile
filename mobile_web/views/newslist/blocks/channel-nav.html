@@ -1,7 +1,7 @@
 <div id="channel-nav">
     {% for channel in mainChannel %}
-        <a class="mui--text-subhead {{ 'is-active' if channel.sn == channelId else '' }}" href="/news/channel/{{channel.sn}}">
-            <div>
+        <a class="mui--text-subhead {{ 'is-active' if channel.sn == channelId else '' }}" href="/news/channel/{{channel.sn}}?from=mchannelnav">
+            <div data-on='click' data-event-category='m-channel' data-event-action='nav'>
                 {{ channel.title }}
             </div>
         </a>

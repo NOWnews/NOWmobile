@@ -3,12 +3,13 @@
 <ul>
     {% if categoryType == 'news' %}
         <li class="{{ 'isActive' if specialType == 'headline' else '' }}">
-            <a href="/">
+            <a data-on='click' data-event-category='m-common' data-event-action='nav' href="/?from=mnav">
                 <span>頭條</span>
             </a>
         </li>
         <li class="{{ 'isActive' if specialType == 'subweb' else '' }}">
-            <a href="/subweb">
+            <a data-on='click' data-event-category='m-common' data-event-action='nav' href="/subweb?from=mnav">
+
                 <span>精選</span>
             </a>          
         </li>
@@ -17,13 +18,15 @@
 
         {% if category.isExternal %}
             <li>
-                <a href="{{category.url}}">
+                <a data-on='click' data-event-category='m-common' data-event-action='nav'
+                    href="{{category.url}}?from=mnav">
                     <span>{{ category.name }}</span>
                 </a>
             </li>
         {% else %}
              <li class="{{ 'isActive' if category.categoryName == categoryName or news.MainMenu.sn == category.sn else ''  }}">
-                <a href="/{{categoryType}}/category/{{ category.categoryName }}">
+                <a data-on='click' data-event-category='m-common' data-event-action='nav'
+                    href="/{{categoryType}}/category/{{ category.categoryName }}?from=mnav">
                     <span>{{ category.name }}</span>
                 </a>
             </li>
