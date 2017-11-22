@@ -1139,3 +1139,11 @@ h2.slide-newstitle {
     height: 50px;
 }
 
+/* 內文圖說 style */
+.imgdesc img {
+    padding-bottom: 7px;
+}
+.imgdesc {
+    line-height: 130%;
+    color: #585a56;
+}

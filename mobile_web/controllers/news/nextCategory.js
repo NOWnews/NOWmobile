@@ -15,7 +15,7 @@ module.exports = async (req, res, next) => {
         // 不直接給是因為回傳的物件裡面還有 ads
         let { newsList } = await getV4Api(`cat/${categoryName}?limit=30&page=${page}`);
         newsList = newsImgFormat(newsList, true);
-        result = { newsList };
+        result = { categoryName, newsList };
 
         if(req.query.data === 'PLAYJJ'){
             return res.json(result);

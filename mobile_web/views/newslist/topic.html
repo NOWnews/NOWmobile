@@ -37,6 +37,9 @@
             {% include "../blocks/topic-nav.html" %}
         </div>
         <div class="nownews-wrapper">
+            {# 設定 autotrack 與 queryString 的值給 news-block.html #}
+            {% set eventCategory = 'topic' %}
+            {% set queryString = 'topic' %}
             {% for news in newsList %}
                 {% include "./blocks/news-block.html" %}
 

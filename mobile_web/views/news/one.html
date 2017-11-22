@@ -8,6 +8,7 @@
 
     {# NOWnews Page View 偵測碼 #}
     {% include "../trace/NOWpageview.html" %}
+    {% set categoryName = news.MainMenu.categoryName %}
 
     <article id="content-wrapper">
 
@@ -52,7 +53,8 @@
                 <h1 itemprop="headline" class="title">{{ news.title }}</h1>
                 <div class="mini-info">
                     <p class="text-gray one-category">
-                        <a href="/news/category/{{ news.MainMenu.categoryName }}">
+                        <a data-on='click' data-event-category='m-news' data-event-action='category'
+                            href="/news/category/{{ news.MainMenu.categoryName }}?from=m{{categoryName}}category">
                             {{ news.MainMenu.name or '不分類' }}
                         </a>
                     </p>
@@ -89,7 +91,8 @@
                 <div class="keywords">
                     關鍵字:
                     {% for tag in news.Tags %}
-                        <a href="/news/search?keyword={{ tag.name }}">{{ tag.name }}</a>
+                        <a data-on='click' data-event-category='m-news' data-event-action='tag'
+                            href="/news/search?keyword={{ tag.name }}&from=mnewstag">{{ tag.name }}</a>
                     {% endfor %}
                 </div>
             </section>
@@ -118,10 +121,12 @@
             </div>
             <div class='shareaholic-canvas' data-app='share_buttons' data-app-id='25683106'></div>
             <section class="arrow-block mui--appbar-line-height">
-                <a href="/news/{{ news.prev.sn }}{{queryParams}}" class="arrow-btn prev-arrow mui--text-nowrap">
+                <a data-on='click' data-event-category='m-news' data-event-action='prev'
+                    href="/news/{{ news.prev.sn }}{{queryParams}}" class="arrow-btn prev-arrow mui--text-nowrap">
                     <span>{{ news.prev.shortTitle }}</span>
                 </a>
-                <a href="/news/{{ news.next.sn }}{{queryParams}}" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
+                <a data-on='click' data-event-category='m-news' data-event-action='next'
+                    href="/news/{{ news.next.sn }}{{queryParams}}" class="arrow-btn next-arrow mui--text-nowrap mui--text-right">
                     <span>{{ news.next.shortTitle }}</span>
                 </a>
             </section>

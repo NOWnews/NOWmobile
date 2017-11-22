@@ -37,7 +37,8 @@
             {% for item in list %}
                 <div class="mui-container-fluid">
                     <div class="mui-row">
-                        <a href="{{item.url}}" target="_blank">
+                        <a data-on='click' data-event-category='m' data-event-action='subweb'
+                            href="{{item.url}}?utm_source=mobile_subweb&utm_medium=nownews&utm_campaign=post" target="_blank">
                             <div class="news-main-image">
                                 <img src="/static/img/subweb/{{item.img}}.jpg" alt="{{item.text}}" />
                             </div>

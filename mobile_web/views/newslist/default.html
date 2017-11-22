@@ -11,6 +11,9 @@
 {% block container %}
     {# 設定輪播的數量 #}
     {% set slideItem = 5 %}
+    {# 設定 autotrack 與 queryString 的值給 news-block.html #}
+    {% set eventCategory = specialType if specialType == 'headline' else 'cat-' + categoryName %}
+    {% set queryString = specialType if specialType == 'headline' else categoryName %}
 
     <div id="content-wrapper">
         <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
@@ -25,7 +28,8 @@
                         {% for news in newsList %}
                             {% if loop.index <= slideItem %}
                                 <div class="slick-news">
-                                    <a href="/news/{{ news.sn }}">
+                                    <a href="/news/{{ news.sn }}?from=m{{queryString}}slide" 
+                                        data-on='click' data-event-category='m-{{eventCategory}}' data-event-action="slide">
                                         <div class="slick-news-info">
                                             <p class="info-title">
                                                 <h2 class="slide-newstitle">{{ news.shortTitle }}</h2>
@@ -44,6 +48,7 @@
         </div>
 
         <div class="nownews-wrapper slider-under" id="{{ 'list-wrapper' if categoryName else '' }}">
+
             {% for news in newsList %}
                 {% if loop.index > slideItem %}
                     {% include "./blocks/news-block.html" %}
