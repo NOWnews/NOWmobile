@@ -6,6 +6,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+## 1.1.11 - 2017-11-23
 ### Add
 - 加入內文圖說 style @wb
 - 廣告加入防呆機制 @wb
