@@ -18,6 +18,10 @@ module.exports = async (req, res, next) => {
 
         let news = await getV4Api(`news/${newsId}`);
         let statusCode = news.statusCode || news.status || 200;
+
+        // 發布過的新聞，再送審中的例外處理
+        if (news.status !== 'RELEASE') { statusCode = 200;}
+
         if( statusCode !== 200 ){
              throw new Error(`news/${newsId}找不到新聞!!`);
         }
