@@ -6,6 +6,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+### Fixed
+- 調整發布後，再次送審會404的問題 @wb
+
 ## 1.1.11 - 2017-11-23
 ### Add
 - 加入內文圖說 style @wb
