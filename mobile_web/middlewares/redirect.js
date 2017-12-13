@@ -24,7 +24,7 @@ module.exports = (app) => {
         }
 
         if(req.query && req.query.utm_source) {
-            queryString = `?utm_source=${req.query.utm_source}&utm_medium=${req.query.utm_medium}&utm_campaign=${req.query.utm_campaign}`;
+            queryString = `?utm_source=${req.query.utm_source}&utm_medium=${req.query.utm_medium}&utm_campaign=${req.query.utm_campaign}&utm_term=${req.query.utm_term}&utm_content=${req.query.utm_content}`;
         }
 
         // 有符合到舊的新聞內頁格式就直接 redirect
