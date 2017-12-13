@@ -6,6 +6,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+## 1.1.14 - 2017-12-13
 ### Changed
 - 新增能接受的 utm query string 參數, utm_content 和 utm_term @appleoxxo
 
