@@ -28,9 +28,6 @@ module.exports = (app) => {
             if(req.query.utm_source){
                 queryString += `utm_source=${req.query.utm_source}`;
             }
-            if(req.query.utm_source){
-                queryString += `&utm_source=${req.query.utm_source}`;
-            }
             if(req.query.utm_medium){
                 queryString += `&utm_medium=${req.query.utm_medium}`;
             }
