@@ -8,7 +8,8 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## 1.1.15 - 2017-12-14
 ### Add
-哀悼樣式 @wb
+- 哀悼樣式 @wb
+- 廣告 ad1 server 不穩定 @appleoxxo
 
 ## 1.1.14 - 2017-12-13
 ### Changed

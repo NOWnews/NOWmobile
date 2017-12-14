@@ -44,6 +44,7 @@ module.exports = async (ownerId) => {
 
             return Promise.resolve(ad);
     } catch (err) {
-        return Promise.reject(err);
+        return Promise.resolve({});
+        // return Promise.reject(err);
     }
 };
