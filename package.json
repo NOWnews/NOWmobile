@@ -1,10 +1,10 @@
 {
   "name": "nowmobile",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "NOWnews mobile service",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && NODE_ENV=china DEBUG=NOWmobile* ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
+    "start": "npm install && NODE_ENV=develop DEBUG=NOWmobile* ./node_modules/nodemon/bin/nodemon.js ./bin/mobile_web.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "./node_modules/gulp/bin/gulp.js --gulpfile ./mobile_web/gulpfile.js clean",
     "build": "npm run clean && ./node_modules/gulp/bin/gulp.js  --gulpfile ./mobile_web/gulpfile.js build:prod",
