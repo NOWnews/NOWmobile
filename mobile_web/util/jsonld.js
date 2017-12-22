@@ -28,7 +28,7 @@ module.exports = (news) => {
                 "name": "NOWnews今日新聞",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://m.nownews.com/static/img/mobile-logo.png",
+                    "url": "https://m.nownews.com/static/img/mobile-logo-condonlence.png",
                     "width": 220,
                     "height": 52
                 }
@@ -45,7 +45,7 @@ module.exports = (news) => {
                     "item": {
                         "@id": "https://m.nownews.com",
                         "name": "NOWnews今日新聞",
-                        "image": "https://m.nownews.com/static/img/mobile-logo.png"
+                        "image": "https://m.nownews.com/static/img/mobile-logo-condonlence.png"
                     }
                 },
                 {
@@ -63,7 +63,7 @@ module.exports = (news) => {
                     "item": {
                     "@id": `https://m.nownews.com/news/${news.sn}`,
                         "name": news.title,
-                        "image": news.MainPhoto ? news.MainPhoto.originalImg : 'https://m.nownews.com/static/img/mobile-logo.png'
+                        "image": news.MainPhoto ? news.MainPhoto.originalImg : 'https://m.nownews.com/static/img/mobile-logo-condonlence.png'
                     }
                 }
             ]
