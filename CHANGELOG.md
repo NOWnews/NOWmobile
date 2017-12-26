@@ -6,6 +6,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+### Add
+- 加上 safari icon @wb
+
 ## 1.1.16 - 2017-12-15
 ### Changed
 - 移除哀悼樣式 包含 logo @appleoxxo
