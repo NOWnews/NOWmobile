@@ -6,6 +6,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+### Add
+- 加上十週年 logo @wb
+
 ## 1.1.17 - 2017-12-28
 ### Add
 - 加上 safari icon @wb
