@@ -6,6 +6,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 
+## 1.1.18 - 2018-01-02
 ### Add
 - 加上十週年 logo @wb
 
