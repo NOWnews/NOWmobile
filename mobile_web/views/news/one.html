@@ -88,6 +88,11 @@
                 </div>
                 {{ news.content | safe }}
 
+                {# freeContent 業務用欄位 #}
+                <div class="freeBody">
+                    {{ news.freeContent | safe }}
+                </div>
+
                 <div class="keywords">
                     關鍵字:
                     {% for tag in news.Tags %}
@@ -96,11 +101,6 @@
                     {% endfor %}
                 </div>
             </section>
-
-            {# freeContent 業務用欄位 #}
-            <div class="freeBody">
-                {{ news.freeContent | safe }}
-            </div>
 
             {# traceCode 業務用欄位 #}
             <div>
