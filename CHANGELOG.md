@@ -8,6 +8,9 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 ### Add
 - 加上媒體小農 @esbb48
 
+### Changed
+- 自由欄位的位置與主站統一  @wb
+
 ## 1.1.18 - 2018-01-02
 ### Add
 - 加上十週年 logo @wb
@@ -15,9 +18,6 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 ## 1.1.17 - 2017-12-28
 ### Add
 - 加上 safari icon @wb
-
-### Changed
-- 自由欄位的位置與主站統一  @wb
 
 ## 1.1.16 - 2017-12-15
 ### Changed
