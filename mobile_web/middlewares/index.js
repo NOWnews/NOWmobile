@@ -4,6 +4,7 @@ import compression from 'compression';
 import logger from 'morgan';
 import cors from 'cors';
 import nunjucks from 'nunjucks';
+import helmet from 'helmet';
 
 import duplicate from './duplicate';
 import redirect from './redirect';
@@ -11,6 +12,7 @@ import setLocals from './setLocals';
 
 module.exports = (app) => {
 
+    app.use(helmet());
     app.use(compression());
     app.use(cors());
 

@@ -38,6 +38,7 @@
     "debug": "3.1.0",
     "express": "4.16.2",
     "geoip-lite": "1.2.1",
+    "helmet": "^3.9.0",
     "iconv-lite": "0.4.19",
     "is_js": "0.9.0",
     "lodash": "4.17.4",
