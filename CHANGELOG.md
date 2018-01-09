@@ -7,6 +7,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 ## [Unreleased]
 ## 1.1.19 - 2018-01-08
 ### Fixed
+- 直接在全域的 googletag 加上 SafeFrame @wb
 - dfp 加上 SafeFrame @wb
 - 拿掉 crowdynews @wb
 
