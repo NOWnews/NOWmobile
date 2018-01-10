@@ -5,6 +5,12 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+## 1.1.20 - 2018-01-10
+### Changed
+- crowdynews 跟 popin 交換位置，crowdynews在下，popin 在上 @wb
+- 暫時下掉廣告小農 @wb
+- 加強安全性，拿掉 cors, cookie js 拿掉第三方 cdn @wb
+
 ## 1.1.19 - 2018-01-08
 ### Fixed
 - 直接在全域的 googletag 加上 SafeFrame @wb

@@ -2,7 +2,6 @@
 import express from 'express';
 import compression from 'compression';
 import logger from 'morgan';
-import cors from 'cors';
 import nunjucks from 'nunjucks';
 import helmet from 'helmet';
 
@@ -14,7 +13,6 @@ module.exports = (app) => {
 
     app.use(helmet());
     app.use(compression());
-    app.use(cors());
 
     // view engine 設定與 views 擺放位置設定
     app.set('view engine', 'html');
