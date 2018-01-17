@@ -5,6 +5,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+
+### Changed
+- 調整 Header 十週年 Logo @esbb48
+
 ## 1.1.20 - 2018-01-11
 ### Changed
 - crowdynews 跟 popin 交換位置，crowdynews在下，popin 在上 @wb
