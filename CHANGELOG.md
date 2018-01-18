@@ -5,7 +5,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+
+## 1.1.21 - 2018-01-18
 ### Changed
+- 拿掉 SafeFrame 限制 @wb
 - 調整 Header 十週年 Logo @esbb48
 - 恢復廣告小農 @appleoxxo
 
