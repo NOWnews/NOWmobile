@@ -6,6 +6,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 
 ## [Unreleased]
 ### Changed
+- 調整 Header 十週年 Logo @esbb48
 - 恢復廣告小農 @appleoxxo
 
 ## 1.1.20 - 2018-01-11
