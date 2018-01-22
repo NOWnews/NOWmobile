@@ -7,7 +7,7 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 ## [Unreleased]
 
 ### Add
-- 增加 Freakou code @wb
+- 增加 Freakout code @wb
 
 ## 1.1.21 - 2018-01-18
 ### Changed
