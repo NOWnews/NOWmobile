@@ -9,7 +9,7 @@
     {# NOWnews Page View 偵測碼 #}
     {% include "../trace/NOWpageview.html" %}
 
-    <article id="content-wrapper" style="background:#000f2e">
+    <article id="content-wrapper" style="background:#f8d38f">
 
         <div class="mui--appbar-height">{% include "../blocks/live-height.html" %}</div>
 
@@ -32,7 +32,7 @@
                   <a itemprop="url" href="/video/category/{{ video.categories[0]._id }}"><span itemprop="title">{{ video.categories[0].name or '不分類' }}</span></a>&gt;
                 </span>
                 <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                  <a itemprop="url" href="/live/{{ live.youtubeId }}"><span itemprop="title">{{ live.title }}</span></a>
+                  <a itemprop="url" href="/live/{{ live.liveUrl }}"><span itemprop="title">{{ live.title }}</span></a>
                 </span>
             </div>
             {# 麵包屑結束 #}
@@ -44,7 +44,7 @@
                 </h1>
                 <div id="app">
                   {#==============================================================#}
-                    <link href="https://vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet" type="text/css">
+                    <!-- <link href="https://vjs.zencdn.net/5.11/video-js.min.css" rel="stylesheet" type="text/css">
                     <script src="https://vjs.zencdn.net/5.11/video.min.js"></script>
                     <script>
                         videojs.options.flash.swf = "/video-js.swf";
@@ -77,6 +77,28 @@
                                 $vid_obj.play();
                             });
                         }
+                    </script> -->
+                    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+                    <video id="video" class="videoCentered" controls autoplay></video>
+                    <script>
+                    if(Hls.isSupported()) {
+                        var video = document.getElementById('video');
+                        var hls = new Hls();
+                        hls.loadSource('{{ live.wowza }}');
+                        hls.attachMedia(video);
+                        hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                        video.play();
+                    });
+                    }
+                    // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+                    // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+                    // This is using the built-in support of the plain video element, without using hls.js.
+                    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                        video.src = 'https://5a5ab4e1760b0.streamlock.net/live/c000.stream/playlist.m3u8?pf=mm';
+                        video.addEventListener('canplay',function() {
+                        video.play();
+                        });
+                    }
                     </script>
                 {#===================================================================================#}
                 </div>
@@ -95,8 +117,8 @@
 
     <style>
         #app {
-            width: 100%;
-            height: 352px;
+            /* width: 100%;
+            height: 352px; */
             overflow: hidden;
             border-radius: 3px;
             box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 12px 0 rgba(0, 0, 0, 0.4);
@@ -164,6 +186,12 @@
         }
         .mui--text-title, h3 {
             color:#fff;
+        }
+        .videoCentered{
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
     </style>
     <script>
