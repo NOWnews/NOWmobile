@@ -51,7 +51,7 @@ module.exports = async (req, res, next) => {
         }
 
         // 測試用 ---------------------------------------------------------------
-        if (geo && geo.country === 'CN') {
+        if (req.query.data === 'CN') {
             data.live.title = chineseConv.sify(data.live.title);
             data.videoList = _.map(data.videoList, (video) => {
                 video.title = chineseConv.sify(video.title);
