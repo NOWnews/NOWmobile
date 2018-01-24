@@ -5,6 +5,8 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+### Add
+- 增加 1/28直播 code @wn
 
 ## 1.1.22 - 2018-01-24
 ### Add

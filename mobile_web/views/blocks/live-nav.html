@@ -1,7 +1,7 @@
-{% if live and live.campainStatus %}
+{% if live and live.campainStatusforFungshui %}
     <div class="live-block">
         <div class="pull-left live-text-block ">
-            {% if live.isOnAir %}
+            {% if live.isOnAirforFungshui %}
                 <span class="mui--text-danger live-text">LIVE</span>
             {% else %}
                 <span class="mui--text-danger live-text live-notice">預告</span>
@@ -10,8 +10,8 @@
         <div class="marquee pull-left">
             <ul>
                 <li>
-                    {% if live.isOnAir %}
-                        <a class="live-link" href="/live/{{ live.youtubeId }}">{{ live.title }}</a>
+                    {% if live.isOnAirforFungshui %}
+                        <a class="live-link" href="/live/{{ live.liveUrl }}">{{ live.title }}</a>
                     {% else %}
                         <a class="live-link" href="#">{{ live.teaserTitle }}</a>
                     {% endif %}
@@ -42,15 +42,16 @@
     }
     .live-link {
         font-size: 18px;
-        color: #fff;
+        color: #000;
+        /* color: #fff; */
     }
     .live-block {
-        background: #000f2e;
+        background: #f8d38f;
         height: 40px;
         line-height: 40px;
     }
     .marquee {
-        background: #009 url({{ live.background }});
+        background: #fff url({{ live.background }});
         background-size: cover;
         background-repeat: no-repeat;
         width: calc(100% - 100px);
