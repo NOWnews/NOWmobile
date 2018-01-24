@@ -51,8 +51,7 @@ module.exports = async (req, res, next) => {
         }
 
         // 測試用 ---------------------------------------------------------------
-        // if (geo && geo.country === 'CN') {
-        if(req.query.data === 'CN'){
+        if (geo && geo.country === 'CN') {
             data.live.title = chineseConv.sify(data.live.title);
             data.videoList = _.map(data.videoList, (video) => {
                 video.title = chineseConv.sify(video.title);
@@ -71,7 +70,7 @@ module.exports = async (req, res, next) => {
         let dirtyIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress || "";
         let ip = dirtyIp.split(',').shift();
         let geo = geoip.lookup(ip);
-        if (req.query.data === 'CNLive') {
+        if (geo && geo.country === 'CN') {
             data.live.title = chineseConv.sify(data.live.title);
             data.videoList = _.map(data.videoList, (video) => {
                 video.title = chineseConv.sify(video.title);
@@ -79,6 +78,7 @@ module.exports = async (req, res, next) => {
             });
             data.news.refNews = _.map(data.news.refNews, (news) => {
                 news.title = chineseConv.sify(news.title);
+                //目前拿到的沒有name
                 // news.category.name = chineseConv.sify(news.category.name);
                 return news;
             });
