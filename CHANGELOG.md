@@ -5,6 +5,10 @@ NOWmobile 的所有改變將在此 CHANGELOG 文件中記錄。
 而項目則基於 [Semantic Versioning](http://semver.org/lang/zh-TW/).
 
 ## [Unreleased]
+## 1.1.25 - 2018-01-30
+### Fixed
+- remove crowdynews to ads.txt 增加移除信任名單 @wn
+
 ## 1.1.24 - 2018-01-29
 ### Fixed
 - 直接在全域的 googletag 加上 SafeFrame @wn
