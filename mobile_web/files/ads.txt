@@ -14,6 +14,3 @@ spotxchange.com,174264,RESELLER,7842df1d2fe2db34
 spotx.tv,174264,RESELLER,7842df1d2fe2db34
 google.com,pub-5746030484598936,RESELLER
 google.com,pub-6331119926849614,RESELLER
-adtrue.com, 1444, RESELLER
-appnexus.com, 7080, RESELLER, f5ab79cb980f11d1
-adtech.com,4671,RESELLER
