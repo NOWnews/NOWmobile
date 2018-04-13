@@ -27,10 +27,10 @@ router.route('/apple-app-site-association')
 router.route('/.well-known/apple-app-site-association')
     .get(iosLink);
 
-router.route('firebase-messaging-sw.js')
+router.route('/firebase-messaging-sw.js')
     .get(firebaseMessagingSw);
 
-router.route('manifest.json')
+router.route('/manifest.json')
     .get(manifest);
 
 module.exports = router;
