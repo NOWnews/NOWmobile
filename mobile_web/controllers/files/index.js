@@ -6,6 +6,8 @@ import video from './video';
 import favicon from './favicon';
 import iosLink from './iosLink';
 import adsTxt from './adsTxt';
+import firebaseMessagingSw from './firebaseMessagingSw';
+import manifest from './manifest';
 
 router.route('/ads.txt')
     .get(adsTxt);
@@ -24,5 +26,11 @@ router.route('/apple-app-site-association')
 
 router.route('/.well-known/apple-app-site-association')
     .get(iosLink);
+
+router.route('firebase-messaging-sw.js')
+    .get(firebaseMessagingSw);
+
+router.route('manifest.json')
+    .get(manifest);
 
 module.exports = router;
