@@ -15,5 +15,6 @@ function getUpdateTime(now)
 }
 
 self.SENDER_ID = '';
-// importScripts('https://www.likr.com.tw/pushEndPoint/js/sw_fcm_import.js?' + getUpdateTime(0));
+
+importScripts('//pwa.js');
 
