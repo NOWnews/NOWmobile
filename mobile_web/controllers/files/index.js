@@ -10,6 +10,8 @@ import firebaseMessagingSw from './firebaseMessagingSw';
 import manifest from './manifest';
 import pwa from './pwa';
 import registerSw from './registerSw';
+import icon192 from './icon192';
+import icon512 from './icon512';
 
 router.route('/ads.txt')
     .get(adsTxt);
@@ -40,5 +42,11 @@ router.route('/pwa.js')
 
 router.route('/register-sw.js')
     .get(registerSw);
+
+router.route('/icon_192.png')
+    .get(icon192);
+
+router.route('/icon_512.png')
+    .get(icon512);
 
 module.exports = router;
