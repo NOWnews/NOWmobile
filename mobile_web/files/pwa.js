@@ -3,7 +3,7 @@
 const cacheName = 'devm.nownews.com-pwa';
 const startPage = 'https://devm.nownews.com';
 const offlinePage = 'https://devm.nownews.com';
-const fallbackImage = 'https://storage.googleapis.com/sight-images/images/2018/05/d3a43265-1525747158-9051639106abc9b9f1508982d580462d.png';
+const fallbackImage = 'https://devm.nownews.com/icon_512.png';
 const filesToCache = [startPage, offlinePage, fallbackImage];
 const neverCacheUrls = [''];
 
