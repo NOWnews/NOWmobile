@@ -4,10 +4,10 @@
  */
 'use strict';
 
-const cacheName = 'devm.nownews.com-pwa';
-const startPage = 'https://devm.nownews.com';
-const offlinePage = 'https://devm.nownews.com';
-const fallbackImage = 'https://devm.nownews.com/icon_512.png';
+const cacheName = 'm.nownews.com-pwa';
+const startPage = 'https://m.nownews.com';
+const offlinePage = 'https://m.nownews.com';
+const fallbackImage = 'https://m.nownews.com/icon_512.png';
 const filesToCache = [startPage, offlinePage, fallbackImage];
 const neverCacheUrls = ['/nocache'];
 
