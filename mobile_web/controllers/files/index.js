@@ -8,6 +8,7 @@ import iosLink from './iosLink';
 import adsTxt from './adsTxt';
 import firebaseMessagingSw from './firebaseMessagingSw';
 import manifest from './manifest';
+import pwa from './pwa';
 
 router.route('/ads.txt')
     .get(adsTxt);
@@ -32,5 +33,8 @@ router.route('/firebase-messaging-sw.js')
 
 router.route('/manifest.json')
     .get(manifest);
+
+router.route('/pwa.js')
+    .get(pwa);
 
 module.exports = router;
