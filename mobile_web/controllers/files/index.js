@@ -9,6 +9,7 @@ import adsTxt from './adsTxt';
 import firebaseMessagingSw from './firebaseMessagingSw';
 import manifest from './manifest';
 import pwa from './pwa';
+import registerSw from './registerSw';
 
 router.route('/ads.txt')
     .get(adsTxt);
@@ -36,5 +37,8 @@ router.route('/manifest.json')
 
 router.route('/pwa.js')
     .get(pwa);
+
+router.route('/register-sw.js')
+    .get(registerSw);
 
 module.exports = router;
