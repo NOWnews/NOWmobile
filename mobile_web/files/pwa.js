@@ -15,7 +15,7 @@ const neverCacheUrls = ['/nocache'];
 importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js');
 firebase.initializeApp({
-    'messagingSenderId': self.SENDER_ID ? self.SENDER_ID : '912321621860'
+    'messagingSenderId': self.SENDER_ID ? self.SENDER_ID : '103953800507'
 });
 const messaging = firebase.messaging();
 
