@@ -5,13 +5,13 @@ const debug = require('debug')('NOWmobile:controllers:ads:newslist');
 module.exports = async (req, res, next) => {
     try {
         let ads = [
-            await getAdsApi('2995'),
-            await getAdsApi('2996'),
-            await getAdsApi('2997'),
-            await getAdsApi('2998'),
-            await getAdsApi('2999'),
-            await getAdsApi('3000'),
-            await getAdsApi('3001'),
+            await getAdsApi('38'),
+            await getAdsApi('39'),
+            await getAdsApi('40'),
+            await getAdsApi('41'),
+            await getAdsApi('42'),
+            await getAdsApi('43'),
+            await getAdsApi('44'),
         ];
 
         return res.json(ads);

@@ -6,7 +6,7 @@ const debug = require('debug')('NOWmobile:util:getAdsApi');
 
 module.exports = async (ownerId) => {
     try {
-        let fetchUrl = `http://ad1.nownews.com/ads.php?ownerid=${ownerId}`;
+        let fetchUrl = `https://ad2018.nownews.com/ad/${ownerId}`;
 
         // 如果 url 有中文字，建議 encode 會比較沒有問題
         fetchUrl = encodeURI(fetchUrl);
