@@ -12,6 +12,8 @@ import pwa from './pwa';
 import registerSw from './registerSw';
 import icon192 from './icon192';
 import icon512 from './icon512';
+import w7hxhqf5qj0sd1vjrl90tbwnobypro from './w7hxhqf5qj0sd1vjrl90tbwnobypro';
+
 
 router.route('/ads.txt')
     .get(adsTxt);
@@ -48,5 +50,9 @@ router.route('/icon_192.png')
 
 router.route('/icon_512.png')
     .get(icon512);
+
+router.route('/w7hxhqf5qj0sd1vjrl90tbwnobypro.html')
+    .get(w7hxhqf5qj0sd1vjrl90tbwnobypro);
+
 
 module.exports = router;
