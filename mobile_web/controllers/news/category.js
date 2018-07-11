@@ -10,12 +10,14 @@ const debug = require('debug')('NOWmobile:controllers:news:category');
 module.exports = async (req, res, next) => {
     try {
         let { categoryName } = req.params;
+        let { isIndex1 } = 0;
 
         if (!categoryName) {
             return next();
         }
         
         if (categoryName == "index") {
+            isIndex1 = true;
             categoryName= "index1";
         }
 
@@ -25,6 +27,10 @@ module.exports = async (req, res, next) => {
             getV4Api('menus'),
             getV4Api(`cat/${categoryName}?limit=30`),
         ]);
+        
+        if (isIndex1) {
+            categoryName= "index";
+        }
 
         let mainCategory = result[0];
         let { newsList, ads } = result[1];
