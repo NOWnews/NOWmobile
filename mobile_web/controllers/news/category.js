@@ -14,6 +14,10 @@ module.exports = async (req, res, next) => {
         if (!categoryName) {
             return next();
         }
+        
+        if (categoryName == "index") {
+            categoryName= "index1";
+        }
 
         let live = await getV4Api('live/info');
 
