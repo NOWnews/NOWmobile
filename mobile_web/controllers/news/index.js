@@ -15,7 +15,7 @@ router.route('/news/category/:categoryName')
 
 router.route('/news/nextCategory')
     .get(nextCategory);
-/news/search
+
 
 // 特輯分類頁
 router.route('/news/channel')
