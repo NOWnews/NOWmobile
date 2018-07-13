@@ -13,6 +13,8 @@ import registerSw from './registerSw';
 import icon192 from './icon192';
 import icon512 from './icon512';
 import w7hxhqf5qj0sd1vjrl90tbwnobypro from './w7hxhqf5qj0sd1vjrl90tbwnobypro';
+import trend from './trend';
+import games from './games';
 
 
 router.route('/ads.txt')
@@ -53,6 +55,12 @@ router.route('/icon_512.png')
 
 router.route('/w7hxhqf5qj0sd1vjrl90tbwnobypro.html')
     .get(w7hxhqf5qj0sd1vjrl90tbwnobypro);
+
+router.route('/trend.jpg')
+    .get(trend);
+
+router.route('/games.jg')
+    .get(games);
 
 
 module.exports = router;
