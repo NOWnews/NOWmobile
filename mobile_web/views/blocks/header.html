@@ -6,11 +6,7 @@
             <tr id="search-bar" class="mui--appbar-height
                 {{ '' if isSearch else 'mui--hide' }}">
                 <td>
-                    <form action="/news/search">
-                        <div class="mui-textfield">
-                            <input id="search-input" name="keyword" type="text" placeholder="搜尋新聞" value="{{ keyword }}">
-                        </div>
-                    </form>
+                    {% include "../trace/gcs.html" %}
                 </td>
                 <td class="mui--text-title fa-close-area" align="right">
                     <a data-on='click' data-event-category='m-search' data-event-action='close'
