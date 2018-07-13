@@ -6,10 +6,11 @@
             <tr id="search-bar" class="mui--appbar-height
                 {{ '' if isSearch else 'mui--hide' }}">
                 <td>
-                    <div style="border: 1px solid blue;">
-                        Area 1 (for example a sidebar)
-                        <gcse:searchbox></gcse:searchbox>
-                    </div>
+                    <form action="/news/search">
+                        <div class="mui-textfield">
+                            <input id="search-input" name="keyword" type="text" placeholder="搜尋新聞" value="{{ keyword }}">
+                        </div>
+                    </form>
                 </td>
                 <td class="mui--text-title fa-close-area" align="right">
                     <a data-on='click' data-event-category='m-search' data-event-action='close'
