@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
             { img: 'trend', text: 'Trend', url: 'https://trend.nownews.com/' },
             { img: 'chinapost', text: 'China Post', url: 'https://chinapost.nownews.com' },
             { img: 'petsmao', text: '寵毛網', url: 'https://petsmao.nownews.com/' },
-            { img: 'games', text: 'Games', url: 'http://nownews.nicegame.com.tw/' },
+            { img: 'games', text: 'Games', url: 'http://nownews.nicegame.com.tw/' }
         ];
 
         let mainCategory = await getV4Api('menus');
