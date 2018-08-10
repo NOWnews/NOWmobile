@@ -40,8 +40,11 @@ $(function() {
     }
 
     // 蓋版廣告
+    var userAgent = navigator.userAgent;
+    var beangoRe = /BeanGo/;
+    var isBeanfun = beangoRe.test(userAgent);
     var adsCoverDom = $('.ads-cover').length > 0;
-    if (adsCoverDom) {
+    if (adsCoverDom && !isBeanfun) {
         // 計算次數處理
         var count = $.cookie('nownews-coverAds') || 0;
         count++;
@@ -71,9 +74,8 @@ $(function() {
             $('.ads-cover .close').on('click', closeAdsCover);
         };
 
-            var userAgent = navigator.userAgent;
-            var beangoRe = /BeanGo/;
-            if ((count === 1 || count === 3 || count === 5 || count === 7) && (!beangoRe.test(userAgent))) {
+
+            if ((count === 1 || count === 3 || count === 5 || count === 7)) {
             $window.load(function() {
                 var hasDFP = $('.ads-cover.dfp > div').css('display') === 'none' ? false : true;
                 // 如果沒有 dfp 廣告就塞入成果的廣告碼
